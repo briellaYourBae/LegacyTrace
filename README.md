@@ -125,9 +125,9 @@ LegacyTrace bertujuan untuk:
 - Mendidik konsumen tentang pentingnya ethical consumption
 - Melestarikan warisan budaya Indonesia untuk generasi mendatang
 - Mendukung Sustainable Development Goals (SDGs) khususnya:
-  - SDG 8: Decent Work and Economic Growth
-  - SDG 12: Responsible Consumption and Production
-  - SDG 17: Partnerships for the Goals
+- SDG 8: Decent Work and Economic Growth
+- SDG 12: Responsible Consumption and Production
+- SDG 17: Partnerships for the Goals
 
 ### 👥 Target Audience
 
