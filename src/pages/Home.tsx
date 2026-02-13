@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useEffect } from 'react'
 
 export const Home = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
   const features = [
     { 
       icon: '🔗', 
@@ -91,7 +95,7 @@ export const Home = () => {
         </motion.div>
 
         <motion.div
-          className="flex items-center justify-center min-h-96 bg-gradient-to-br from-gold/20 to-green-accent/20 rounded-3xl text-9xl relative overflow-hidden"
+          className="hidden lg:flex items-center justify-center min-h-96 bg-gradient-to-br from-gold/20 to-green-accent/20 rounded-3xl text-9xl relative overflow-hidden"
           initial={{ x: 50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}

@@ -10,7 +10,7 @@ export const products: Product[] = [
     village: 'Cirebon, West Java',
     category: 'batik',
     description: 'Traditional hand-drawn batik with Mega Mendung motif, symbolizing protection and prosperity in Sundanese culture.',
-    imageUrl: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=500&fit=crop',
+    imageUrl: '/assets/img/batik-mega-mendung.jpg',
     ethicalBadges: ['100% Hand-Drawn', 'Fair Trade', 'Eco-Dye', 'Artisan Certified'],
     steps: [
       {
@@ -82,7 +82,7 @@ export const products: Product[] = [
     village: 'Solo, Central Java',
     category: 'batik',
     description: 'Classic Parang Rusak motif representing warrior strength and confidence.',
-    imageUrl: 'https://images.unsplash.com/photo-1595563365619-7e1900ef4c0e?w=500&h=500&fit=crop',
+    imageUrl: '/assets/img/batik-parang-rusak.png',
     ethicalBadges: ['Heritage Pattern', 'Natural Materials', 'Solo Authentic'],
     steps: [
       {
@@ -143,74 +143,74 @@ export const products: Product[] = [
   // ===== SNACKS =====
   {
     id: 'snacks-001',
-    name: 'Tahu Goreng Pedas Authentik',
-    umkm: 'Tahu Goreng Mak Sumi',
-    umkmStory: 'Family-run business for 18 years, producing deep-fried tofu snacks using traditional recipes passed down through generations.',
-    village: 'Bandung, West Java',
+    name: 'Keripik Tempe Original',
+    umkm: 'Keripik Tempe Sanan',
+    umkmStory: 'Established in 1980, Keripik Tempe Sanan has been producing authentic tempe chips for over 40 years from the famous tempe village of Sanan, Malang.',
+    village: 'Sanan, Malang, East Java',
     category: 'snacks',
-    description: 'Crispy deep-fried tofu with spicy seasoning, a beloved local street snack packed with authentic flavors.',
-    imageUrl: 'https://images.unsplash.com/photo-1599599810694-2a7a49d60908?w=500&h=500&fit=crop',
-    ethicalBadges: ['Locally Sourced', 'No Preservatives', 'Family Recipe', 'Fresh Daily'],
+    description: 'Crispy tempe chips made from premium fermented soybeans, a beloved traditional Indonesian snack known nationwide.',
+    imageUrl: '/assets/img/keripik-tempe-original.png',
+    ethicalBadges: ['Traditional Recipe', 'No Preservatives', 'Handmade', 'Natural Ingredients'],
     steps: [
       {
         id: 'snacks-step-1',
-        title: 'Soybean Sourcing',
-        actor: 'Bean Farmers',
-        location: 'Bandung Region',
-        description: 'High-quality soybeans sourced from local farmers, supporting community agriculture.',
+        title: 'Soybean Selection',
+        actor: 'Local Farmers',
+        location: 'Malang Region',
+        description: 'Premium soybeans sourced from local farmers in East Java.',
         icon: '🫘',
         imageUrl: 'https://images.unsplash.com/photo-1599599810694-2a7a49d60908?w=400&h=300&fit=crop'
       },
       {
         id: 'snacks-step-2',
-        title: 'Soybean Processing',
-        actor: 'Processing Team',
-        location: 'Bandung Workshop',
-        description: 'Soybeans are cleaned, soaked, and ground to create fresh soy milk for tofu production.',
-        icon: '⚙️',
+        title: 'Tempe Fermentation',
+        actor: 'Fermentation Master',
+        location: 'Sanan Workshop',
+        description: 'Soybeans are fermented with traditional ragi for 36-48 hours to create quality tempe.',
+        icon: '🦠',
         imageUrl: 'https://images.unsplash.com/photo-1576866209365-74ba233f3f48?w=400&h=300&fit=crop'
       },
       {
         id: 'snacks-step-3',
-        title: 'Tofu Making',
-        actor: 'Tofu Master',
-        location: 'Bandung Workshop',
-        description: 'Soy milk is coagulated and pressed into firm tofu blocks using traditional methods, 5am start daily.',
-        icon: '🏭',
+        title: 'Slicing',
+        actor: 'Preparation Team',
+        location: 'Sanan Kitchen',
+        description: 'Fresh tempe is thinly sliced by hand to ensure uniform crispiness.',
+        icon: '🔪',
         imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop'
       },
       {
         id: 'snacks-step-4',
+        title: 'Seasoning',
+        actor: 'Seasoning Specialist',
+        location: 'Sanan Kitchen',
+        description: 'Tempe slices are coated with secret spice blend passed down through generations.',
+        icon: '🌿',
+        imageUrl: 'https://images.unsplash.com/photo-1596040995857-ba42d16cb0f2?w=400&h=300&fit=crop'
+      },
+      {
+        id: 'snacks-step-5',
         title: 'Deep Frying',
-        actor: 'Mak Sumi Team',
-        location: 'Bandung Kitchen',
-        description: 'Tofu is cut into cubes and deep-fried in premium oil until golden and crispy.',
+        actor: 'Frying Master',
+        location: 'Sanan Kitchen',
+        description: 'Seasoned tempe is deep-fried in premium oil until golden and crispy.',
         icon: '🍳',
         imageUrl: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop'
       },
       {
-        id: 'snacks-step-5',
-        title: 'Spice Coating',
-        actor: 'Seasoning Specialist',
-        location: 'Bandung Kitchen',
-        description: 'Fresh-fried tofu is coated with secret spice blend, made from grinding traditional spices daily.',
-        icon: '🌶️',
-        imageUrl: 'https://images.unsplash.com/photo-1596040995857-ba42d16cb0f2?w=400&h=300&fit=crop'
-      },
-      {
         id: 'snacks-step-6',
-        title: 'Packaging & Distribution',
-        actor: 'Distribution Team',
-        location: 'Bandung',
-        description: 'Hot tofu is packed in paper bags to maintain crispiness, distributed to local markets within hours.',
-        icon: '🚗',
+        title: 'Packaging',
+        actor: 'Packaging Team',
+        location: 'Sanan',
+        description: 'Crispy tempe chips are packed in airtight bags to maintain freshness.',
+        icon: '📦',
         imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
     ],
-    artisanName: 'Mak Sumi',
-    artisanExperience: 18,
-    artisanQuote: 'Simple ingredients, made with love. That\'s the secret to delicious tahu goreng.',
-    culturalValue: 'Tahu goreng is a staple street food that brings communities together in Indonesian culture.'
+    artisanName: 'Pak Hadi Santoso',
+    artisanExperience: 35,
+    artisanQuote: 'Tempe is Indonesia\'s pride. Every chip carries the tradition of Sanan village.',
+    culturalValue: 'Tempe is a traditional Indonesian superfood, and Sanan village in Malang is renowned as the center of tempe production.'
   },
 
   {
@@ -221,7 +221,7 @@ export const products: Product[] = [
     village: 'Semarang, Central Java',
     category: 'snacks',
     description: 'Fresh soft spring rolls filled with vegetables and meat, wrapped in thin golden crepes.',
-    imageUrl: 'https://images.unsplash.com/photo-1586985289688-cacf35b827dc?w=500&h=500&fit=crop',
+    imageUrl: '/assets/img/kue-lumpia-basah.png',
     ethicalBadges: ['Fresh Ingredients', 'No MSG', 'Traditional Recipe', 'Handmade Wrappers'],
     steps: [
       {
@@ -288,7 +288,7 @@ export const products: Product[] = [
     village: 'Yogyakarta, Special Region',
     category: 'crafts',
     description: 'Hand-carved leather shadow puppets, intricate pieces of theatrical art that tell stories of Indonesian heritage.',
-    imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=500&h=500&fit=crop',
+    imageUrl: '/assets/img/wayang-kulit.png',
     ethicalBadges: ['Handcarved', 'UNESCO Heritage', 'Cultural Preservation', 'Master Craft'],
     steps: [
       {
@@ -360,7 +360,7 @@ export const products: Product[] = [
     village: 'Cirebon, West Java',
     category: 'crafts',
     description: 'Handmade wooden masks with vibrant colors, used in traditional Cirebon mask dance.',
-    imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=500&h=500&fit=crop',
+    imageUrl: '/assets/img/topeng-cirebon.png',
     ethicalBadges: ['Handcrafted', 'Traditional Art', 'Natural Paint'],
     steps: [
       {
@@ -427,7 +427,7 @@ export const products: Product[] = [
     village: 'Lombok, Nusa Tenggara Barat',
     category: 'woven',
     description: 'Hand-woven ikat fabric with intricate geometric patterns, using traditional techniques passed down for generations.',
-    imageUrl: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=500&h=500&fit=crop',
+    imageUrl: '/assets/img/tenun-ikat-lombok.jpg',
     ethicalBadges: ['Hand-Woven', 'Fair Trade Certified', 'Artisan Support', '200+ Year Heritage'],
     steps: [
       {
@@ -499,7 +499,7 @@ export const products: Product[] = [
     village: 'Palembang, South Sumatra',
     category: 'woven',
     description: 'Luxury hand-woven fabric with gold and silver thread accents, traditionally worn for special occasions.',
-    imageUrl: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=500&h=500&fit=crop',
+    imageUrl: '/assets/img/kain-songket-palembang.png',
     ethicalBadges: ['Gold Thread', 'Royal Quality', 'Hand-Woven', 'Festival Wear'],
     steps: [
       {
@@ -566,7 +566,7 @@ export const products: Product[] = [
     village: 'Bantul, Yogyakarta',
     category: 'pottery',
     description: 'Handmade pottery with traditional Javanese motifs, crafted using ancient clay and firing techniques.',
-    imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=500&h=500&fit=crop',
+    imageUrl: '/assets/img/gerabah-kosongan.png',
     ethicalBadges: ['Handmade', 'Natural Clay', 'Cultural Icon', 'Artisan Community'],
     steps: [
       {
@@ -638,7 +638,7 @@ export const products: Product[] = [
     village: 'Bandung, West Java',
     category: 'pottery',
     description: 'Functional earthenware cookware, perfect for traditional Indonesian cooking methods.',
-    imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=500&h=500&fit=crop',
+    imageUrl: '/assets/img/periuk-tanah-liat.png',
     ethicalBadges: ['Functional Art', 'Natural Clay', 'Eco-Friendly', 'Traditional'],
     steps: [
       {
@@ -705,7 +705,7 @@ export const products: Product[] = [
     village: 'Yogyakarta, Special Region',
     category: 'herbal',
     description: 'Authentic traditional herbal drink made from natural herbs and spices, no artificial additives.',
-    imageUrl: 'https://images.unsplash.com/photo-1597318970834-a57ae9eb4f4d?w=500&h=500&fit=crop',
+    imageUrl: '/assets/img/jamu-tradisional.png',
     ethicalBadges: ['100% Natural', 'No Additives', 'Family Recipe', 'Organic Herbs'],
     steps: [
       {
@@ -771,72 +771,73 @@ export const products: Product[] = [
 
   {
     id: 'herbal-002',
-    name: 'Minyak Kayu Putih Organik',
-    umkm: 'Minyak Kayu Putih Adi Jaya',
-    umkmStory: 'Extracting essential oils from cajeput trees for 20 years using sustainable methods.',
-    village: 'Ambon, Maluku',
+    name: 'Wedang Uwuh Tradisional',
+    umkm: 'Wedang Uwuh Imogiri',
+    umkmStory: 'Preserving traditional Javanese herbal drink recipe for over 25 years, using natural ingredients from local forests.',
+    village: 'Imogiri, Yogyakarta',
     category: 'herbal',
-    description: 'Pure cajeput oil with soothing and medicinal properties, extracted from native Maluku trees.',
-    imageUrl: 'https://images.unsplash.com/photo-1618047651857-87773836f890?w=500&h=500&fit=crop',
-    ethicalBadges: ['Pure Essential Oil', 'Sustainable Harvest', 'Maluku Native', 'Organic'],
+    description: 'Traditional Javanese herbal tea blend made from spices, herbs, and natural ingredients for warmth and wellness.',
+    imageUrl: '/assets/img/wedang-uwuh.png',
+    ethicalBadges: ['100% Natural', 'Traditional Recipe', 'Organic Spices', 'No Sugar Added'],
     steps: [
       {
-        id: 'minyak-step-1',
-        title: 'Tree Selection',
-        actor: 'Forester',
-        location: 'Ambon Forest',
-        description: 'Select mature cajeput trees for harvest.',
-        icon: '🌳',
-        imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop'
+        id: 'wedang-step-1',
+        title: 'Spice Harvesting',
+        actor: 'Local Farmers',
+        location: 'Imogiri Hills',
+        description: 'Fresh ginger, cloves, cinnamon, and herbs harvested from organic gardens.',
+        icon: '🌿',
+        imageUrl: 'https://images.unsplash.com/photo-1597318970834-a57ae9eb4f4d?w=400&h=300&fit=crop'
       },
       {
-        id: 'minyak-step-2',
-        title: 'Leaf Harvesting',
-        actor: 'Harvester',
-        location: 'Ambon Forest',
-        description: 'Carefully harvest fresh leaves.',
-        icon: '🍃',
-        imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop'
+        id: 'wedang-step-2',
+        title: 'Ingredient Drying',
+        actor: 'Drying Team',
+        location: 'Imogiri Workshop',
+        description: 'Spices and herbs sun-dried naturally to preserve aroma and benefits.',
+        icon: '☀️',
+        imageUrl: 'https://images.unsplash.com/photo-1571513200266-1d8c3d9bf2fb?w=400&h=300&fit=crop'
       },
       {
-        id: 'minyak-step-3',
-        title: 'Leaf Cleaning',
-        actor: 'Cleaner',
-        location: 'Ambon Workshop',
-        description: 'Clean leaves from dirt and debris.',
-        icon: '🧹'
+        id: 'wedang-step-3',
+        title: 'Ingredient Selection',
+        actor: 'Quality Master',
+        location: 'Imogiri Workshop',
+        description: 'Only premium quality spices selected for the blend.',
+        icon: '✨'
       },
       {
-        id: 'minyak-step-4',
-        title: 'Distillation Process',
-        actor: 'Distiller',
-        location: 'Ambon Workshop',
-        description: 'Steam distillation to extract pure oil.',
-        icon: '🔬',
+        id: 'wedang-step-4',
+        title: 'Traditional Blending',
+        actor: 'Herbalist',
+        location: 'Imogiri Workshop',
+        description: 'Ingredients mixed according to ancestral recipe for perfect balance.',
+        icon: '🧪',
         imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       },
       {
-        id: 'minyak-step-5',
-        title: 'Oil Filtering',
-        actor: 'Filterer',
-        location: 'Ambon Workshop',
-        description: 'Filter oil to remove impurities.',
-        icon: '⚙️'
+        id: 'wedang-step-5',
+        title: 'Quality Testing',
+        actor: 'Taster',
+        location: 'Imogiri Workshop',
+        description: 'Each batch tested for aroma, taste, and quality.',
+        icon: '☕',
+        imageUrl: 'https://images.unsplash.com/photo-1597318970834-a57ae9eb4f4d?w=400&h=300&fit=crop'
       },
       {
-        id: 'minyak-step-6',
-        title: 'Bottling',
-        actor: 'Packager',
-        location: 'Ambon',
-        description: 'Bottle in dark glass to preserve quality.',
-        icon: '🧴',
-        imageUrl: 'https://images.unsplash.com/photo-1618047651857-87773836f890?w=400&h=300&fit=crop'
+        id: 'wedang-step-6',
+        title: 'Packaging',
+        actor: 'Packaging Team',
+        location: 'Imogiri',
+        description: 'Packed in airtight bags to maintain freshness and aroma.',
+        icon: '📦',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
     ],
-    artisanName: 'Pak Ambo',
-    artisanExperience: 20,
-    artisanQuote: 'Nature provides; we just extract its essence respectfully.',
-    culturalValue: 'Cajeput oil is an essential part of Indonesian traditional medicine and wellness.'
+    artisanName: 'Pak Joko Susilo',
+    artisanExperience: 25,
+    artisanQuote: 'Wedang uwuh warms the body and soothes the soul, just like our ancestors intended.',
+    culturalValue: 'Wedang uwuh is a traditional Javanese herbal drink that represents hospitality and wellness culture.'
   }
 ]
 
@@ -1097,24 +1098,24 @@ export const quizzes: Record<string, QuizQuestion[]> = {
   'herbal-002': [
     {
       id: 'q1',
-      question: 'Where does cajeput oil originate from?',
-      options: ['Java', 'Sumatra', 'Maluku', 'Bali'],
-      correct: 2,
-      explanation: 'Cajeput trees are native to Maluku islands, where the oil is sustainably harvested.'
+      question: 'What is the main benefit of wedang uwuh?',
+      options: ['Cooling', 'Warmth and wellness', 'Weight loss', 'Sleep aid'],
+      correct: 1,
+      explanation: 'Wedang uwuh provides warmth and promotes wellness through natural spices and herbs.'
     },
     {
       id: 'q2',
-      question: 'What method is used to extract cajeput oil?',
-      options: ['Pressing', 'Steam distillation', 'Chemical extraction', 'Soaking'],
+      question: 'What are the main ingredients in wedang uwuh?',
+      options: ['Coffee and sugar', 'Ginger, cloves, cinnamon, herbs', 'Tea leaves', 'Fruit juice'],
       correct: 1,
-      explanation: 'Pure cajeput oil is extracted using steam distillation process from fresh leaves.'
+      explanation: 'Traditional wedang uwuh is made from ginger, cloves, cinnamon, and various natural herbs.'
     },
     {
       id: 'q3',
-      question: 'How many years has this production method been used?',
-      options: ['5 years', '10 years', '20 years', '30 years'],
+      question: 'How long has Pak Joko been making wedang uwuh?',
+      options: ['10 years', '15 years', '25 years', '30 years'],
       correct: 2,
-      explanation: 'Adi Jaya has been extracting essential oils using sustainable methods for 20 years.'
+      explanation: 'Pak Joko Susilo has been preserving the traditional recipe for over 25 years.'
     }
   ]
 }

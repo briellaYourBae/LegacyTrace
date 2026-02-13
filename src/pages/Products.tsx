@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { products } from '../data/products'
 import { ProductCard } from '../components/ProductCard'
@@ -8,6 +8,10 @@ type Category = 'all' | 'batik' | 'snacks' | 'crafts' | 'woven' | 'pottery' | 'h
 export const Products = () => {
     const [selectedCategory, setSelectedCategory] = useState<Category>('all')
     const [selectedVillage, setSelectedVillage] = useState('all')
+
+    useEffect(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, [selectedCategory, selectedVillage])
 
 const categories: Array<{ value: Category; label: string; emoji: string }> = [{ value: 'all', label: 'All Products', emoji: '🌍' },
     { value: 'batik', label: 'Batik', emoji: '🎨' },

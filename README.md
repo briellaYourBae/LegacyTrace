@@ -1,73 +1,176 @@
-# React + TypeScript + Vite
+# 🌟 LegacyTrace - Ethical Supply Chain Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Tentang Proyek
 
-Currently, two official plugins are available:
+**LegacyTrace** adalah platform web interaktif yang dirancang untuk meningkatkan transparansi supply chain produk UMKM Indonesia dan mempromosikan perdagangan yang etis dan berkelanjutan.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🎯 Tujuan Utama
 
-## React Compiler
+1. **Transparansi Supply Chain** - Memberikan visibilitas penuh terhadap perjalanan produk dari artisan hingga konsumen
+2. **Pemberdayaan UMKM** - Mendukung pengrajin lokal Indonesia dengan memberikan platform untuk menceritakan kisah mereka
+3. **Edukasi Konsumen** - Meningkatkan kesadaran tentang fair trade, praktik etis, dan pelestarian budaya
+4. **Pelestarian Warisan Budaya** - Melestarikan teknik kerajinan tradisional Indonesia yang telah diwariskan turun-temurun
+5. **Sustainable Commerce** - Mempromosikan praktik produksi yang ramah lingkungan dan berkelanjutan
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ✨ Fitur Utama
 
-## Expanding the ESLint configuration
+#### 🛂 Digital Passport
+- Setiap produk memiliki "paspor digital" yang menampilkan:
+  - Perjalanan lengkap supply chain (6 tahapan produksi)
+  - Profil artisan dan UMKM
+  - Lokasi produksi dan bahan baku
+  - Ethical badges (Fair Trade, Eco-Friendly, dll)
+  - Nilai budaya dan filosofi produk
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+#### 🗺️ Explore by Region
+- Jelajahi produk berdasarkan 10 region Indonesia:
+  - **5 Pulau Besar**: Sumatra, Jawa, Kalimantan, Sulawesi, Papua
+  - **5 Pulau Kecil Terkenal**: Bali, Lombok, Maluku, Nusa Tenggara, Kepulauan Riau
+- Setiap region menampilkan produk unggulan dan keunikan budayanya
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+#### 🎮 Interactive Learning (Edutainment)
+- Quiz interaktif per pulau besar (10 soal per pulau)
+- Pembelajaran tentang:
+  - Fair Trade dan ethical production
+  - Supply chain transparency
+  - Cultural preservation
+  - Sustainable practices
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+#### 📦 Kategori Produk
+- 🎨 **Batik** - Kain batik tulis tradisional
+- 🍴 **Snacks** - Makanan ringan tradisional
+- 🎭 **Crafts** - Kerajinan tangan budaya
+- 🧵 **Woven** - Tenun dan songket
+- 🏺 **Pottery** - Gerabah dan keramik
+- 🌿 **Herbal** - Produk herbal tradisional
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🛠️ Tech Stack
+
+- **Frontend Framework**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Animation**: Framer Motion
+- **Routing**: React Router DOM
+- **State Management**: React Hooks
+
+### 📂 Struktur Proyek
+
+```
+LegacyTrace/
+├── public/
+│   └── assets/
+│       ├── img/          # Product images
+│       └── logo/         # Brand assets
+├── src/
+│   ├── components/       # Reusable components
+│   │   ├── ProductCard.tsx
+│   │   ├── QuizCard.tsx
+│   │   ├── TimelineStep.tsx
+│   │   └── ...
+│   ├── data/            # Data sources
+│   │   ├── products.ts  # Product catalog
+│   │   ├── regions.ts   # Regional data
+│   │   └── team.ts      # Team information
+│   ├── pages/           # Page components
+│   │   ├── Home.tsx
+│   │   ├── Products.tsx
+│   │   ├── Passport.tsx
+│   │   ├── Regions.tsx
+│   │   ├── Edutainment.tsx
+│   │   └── ...
+│   ├── types/           # TypeScript types
+│   └── App.tsx          # Main app component
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+#### Installation
+
+```bash
+# Clone repository
+git clone <repository-url>
+
+# Navigate to project directory
+cd LegacyTrace
+
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
+
+### 🎨 Design Philosophy
+
+- **Earthy Color Palette**: Menggunakan warna coklat, emas, dan hijau untuk mencerminkan nilai natural dan tradisional
+- **Responsive Design**: Optimized untuk desktop, tablet, dan mobile
+- **Smooth Animations**: Menggunakan Framer Motion untuk transisi yang halus
+- **User-Centric**: Interface yang intuitif dan mudah dinavigasi
+
+### 🌍 Impact & Goals
+
+LegacyTrace bertujuan untuk:
+- Meningkatkan pendapatan UMKM melalui transparansi dan kepercayaan konsumen
+- Mendidik konsumen tentang pentingnya ethical consumption
+- Melestarikan warisan budaya Indonesia untuk generasi mendatang
+- Mendukung Sustainable Development Goals (SDGs) khususnya:
+  - SDG 8: Decent Work and Economic Growth
+  - SDG 12: Responsible Consumption and Production
+  - SDG 17: Partnerships for the Goals
+
+### 👥 Target Audience
+
+- **Conscious Consumers**: Konsumen yang peduli dengan asal-usul produk dan praktik etis
+- **Cultural Enthusiasts**: Pecinta budaya dan kerajinan tradisional Indonesia
+- **UMKM Owners**: Pengrajin yang ingin meningkatkan visibilitas produk mereka
+- **Educators**: Guru dan institusi pendidikan yang mengajarkan tentang sustainability
+
+### 📈 Future Development
+
+- [ ] Integration dengan payment gateway
+- [ ] User authentication dan wishlist
+- [ ] Review dan rating system
+- [ ] Mobile app (React Native)
+- [ ] Blockchain untuk supply chain verification
+- [ ] Multi-language support
+- [ ] AR/VR untuk virtual workshop tour
+
+### 📄 License
+
+This project is created for educational and social impact purposes.
+
+### 👥 Tim Pengembang
+
+#### Muhammad Faqih - Founder & Creative Director
+- 🐙 GitHub: [@muhammadfaqih](https://github.com/briellaYourBae)
+- 📸 Instagram: [@muhammadfaqih](https://instagram.com/voidbriella)
+- 💼 LinkedIn: [Muhammad Faqih]
+
+#### Kaffqa Tegar Gayuh Pamungkas - Lead Developer & Tech Strategist
+- 🐙 GitHub: [Coming Soon]
+- 📸 Instagram: [Coming Soon]
+- 💼 LinkedIn: [Coming Soon]
+
+#### V-- - Content & Community Manager
+- 🐙 GitHub: [Coming Soon]
+- 📸 Instagram: [Coming Soon]
+- 💼 LinkedIn: [Coming Soon]
+
+### 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+**Built with ❤️ for Indonesian Artisans and Conscious Consumers**

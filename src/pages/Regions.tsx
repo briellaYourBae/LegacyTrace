@@ -1,10 +1,14 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { regions } from '../data/regions'
 
 export const Regions = () => {
   const [selectedRegion, setSelectedRegion] = useState(regions[0])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [selectedRegion])
 
   const containerVariants = {
     hidden: { opacity: 0 },
