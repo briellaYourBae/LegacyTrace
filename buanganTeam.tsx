@@ -1,19 +1,4 @@
-
-
-
-
-
-
-
-
-// end
-
-
-
-
-
-
-
+// nothing
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { teamMembers } from '../data/team'
