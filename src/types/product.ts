@@ -13,7 +13,7 @@ export interface Product {id: string
     umkm: string
     umkmStory: string
     village: string
-    category: 'batik' | 'makanan' | 'crafts' | 'woven' | 'pottery' | 'herbal'
+    category: 'batik' | 'makanan' | 'kerajinan' | 'tenun' | 'gerabah' | 'herbal'
     description: string
     imageUrl: string
     ethicalBadges: string[]

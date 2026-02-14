@@ -2,8 +2,9 @@ import { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { products } from '../data/products'
 import { ProductCard } from '../components/ProductCard'
+import { BackgroundShapes } from '../components/BackgroundShapes'
 
-type Category = 'all' | 'batik' | 'makanan' | 'crafts' | 'woven' | 'pottery' | 'herbal'
+type Category = 'all' | 'batik' | 'makanan' | 'kerajinan' | 'tenun' | 'gerabah' | 'herbal'
 
 export const Products = () => {
     const [selectedCategory, setSelectedCategory] = useState<Category>('all')
@@ -16,9 +17,9 @@ export const Products = () => {
 const categories: Array<{ value: Category; label: string; emoji: string }> = [{ value: 'all', label: 'Semua Produk', emoji: '🌍' },
     { value: 'batik', label: 'Batik', emoji: '🎨' },
     { value: 'makanan', label: 'Makanan', emoji: '🍴' },
-    { value: 'crafts', label: 'Kerajinan', emoji: '🎭' },
-    { value: 'woven', label: 'Tenun', emoji: '🧵' },
-    { value: 'pottery', label: 'Gerabah', emoji: '🏺' },
+    { value: 'kerajinan', label: 'Kerajinan', emoji: '🎭' },
+    { value: 'tenun', label: 'Tenun', emoji: '🧵' },
+    { value: 'gerabah', label: 'Gerabah', emoji: '🏺' },
     { value: 'herbal', label: 'Herbal', emoji: '🌿' }
 ]
 
@@ -36,10 +37,12 @@ const categories: Array<{ value: Category; label: string; emoji: string }> = [{ 
     }, [selectedCategory, selectedVillage])
 
     return (
-      <div className="min-h-screen pb-20">
+      <div className="min-h-screen pb-20 relative">
+          <BackgroundShapes variant="minimal" />
+          
           {/* Header */}
           <motion.section
-            className="max-w-6xl mx-auto px-8 py-12 text-center"
+            className="max-w-6xl mx-auto px-8 py-12 text-center relative z-10"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}

@@ -283,7 +283,7 @@ export const Home = () => {
           >
             <p className="text-2xl font-bold text-brown-primary mb-6">Jelajahi Produk Berdasarkan Region</p>
             <motion.button
-              className="px-8 py-4 bg-gradient-to-r from-gold to-gold/80 text-brown-primary font-semibold rounded-full hover:shadow-lg transition-all"
+              className="px-8 py-4 bg-brown-primary text-white font-semibold rounded-full hover:bg-brown-primary/90 transition-colors hover:shadow-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

@@ -5,6 +5,7 @@ import { products, quizzes } from '../data/products'
 import { Product, QuizQuestion } from '../types/product'
 import { TimelineStep } from '../components/TimelineStep'
 import { QuizCard } from '../components/QuizCard'
+import { BackgroundShapes } from '../components/BackgroundShapes'
 
 export const Passport = () => {
   const { productId } = useParams()
@@ -32,7 +33,8 @@ export const Passport = () => {
   if (!product) return null
 
   return (
-    <div className="min-height-screen pb-20 md:pb-20">
+    <div className="min-height-screen pb-20 md:pb-20 relative">
+      <BackgroundShapes variant="minimal" />
       {/* Header */}
       <motion.section
         className="bg-gradient-to-r from-cream to-gold/10 max-w-6xl mx-auto px-8 py-12 rounded-2xl my-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
