@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { QuizCard } from '../components/QuizCard'
 import { 
   Map, Landmark, Trees, Palmtree, Bird, 
@@ -380,7 +381,12 @@ const islandQuizzes: Record<Island, QuizQuestion[]> = {
 }
 
 export const Edutainment = () => {
+  const location = useLocation()
   const [selectedIsland, setSelectedIsland] = useState<Island>('java')
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
   
   const scrollToQuiz = () => {
     const quizSection = document.getElementById('quiz-section')

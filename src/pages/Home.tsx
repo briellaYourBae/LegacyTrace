@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { BackgroundShapes } from '../components/BackgroundShapes'
@@ -10,6 +10,8 @@ import {
 } from 'lucide-react'
 
 export const Home = () => {
+  const location = useLocation()
+  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])

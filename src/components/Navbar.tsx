@@ -26,6 +26,13 @@ export const Navbar = () => {
     setIsOpen(false)
   }, [location.pathname])
 
+  const handleNavClick = (e: React.MouseEvent, path: string) => {
+    if (location.pathname === path) {
+      e.preventDefault()
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+  }
+
   const navItems = [
     { 
       label: 'Beranda', 
@@ -62,15 +69,17 @@ export const Navbar = () => {
           <div className="flex justify-between items-center gap-8 md:gap-20">
           
             {/* Logo - Kiri */}
-            <Link to="/">
-              <motion.div
-                className="text-xl md:text-2xl font-bold gradient-text font-serif flex-shrink-0 tracking-wide"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                LegacyTrace
-              </motion.div>
-            </Link>
+            <div onClick={(e) => handleNavClick(e, '/')}>
+              <Link to="/">
+                <motion.div
+                  className="text-xl md:text-2xl font-bold gradient-text font-serif flex-shrink-0 tracking-wide"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  LegacyTrace
+                </motion.div>
+              </Link>
+            </div>
 
             {/* Desktop Navigation - Tengah */}
             <div className="hidden md:flex items-center gap-8 lg:gap-12">
@@ -78,30 +87,32 @@ export const Navbar = () => {
                 const isActive = item.isActive(location.pathname)
                 
                 return (
-                  <Link key={idx} to={item.path}>
-                    <motion.div
-                      className="relative pb-1"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span className={`text-sm font-medium transition-colors duration-250 ${
-                        isActive 
-                          ? 'text-edu-blue dark:text-neon-edu-blue font-bold' 
-                          : 'text-slate-text dark:text-dark-body hover:text-edu-blue dark:hover:text-neon-edu-blue'
-                      }`}>
-                        {item.label}
-                      </span>
+                  <div key={idx} onClick={(e) => handleNavClick(e, item.path)}>
+                    <Link to={item.path}>
+                      <motion.div
+                        className="relative pb-1"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <span className={`text-sm font-medium transition-colors duration-250 ${
+                          isActive 
+                            ? 'text-edu-blue dark:text-neon-edu-blue font-bold' 
+                            : 'text-slate-text dark:text-dark-body hover:text-edu-blue dark:hover:text-neon-edu-blue'
+                        }`}>
+                          {item.label}
+                        </span>
 
-                      {/* Underline Aktif */}
-                      {isActive && (
-                        <motion.div
-                          className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-edu-blue via-growth-green to-edu-blue dark:from-neon-edu-blue dark:via-glow-green dark:to-neon-edu-blue rounded-full shadow-lg shadow-edu-blue/50 dark:shadow-neon-edu-blue/50"
-                          layoutId="navbar-underline"
-                          transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
-                        />
-                      )}
-                    </motion.div>
-                  </Link>
+                        {/* Underline Aktif */}
+                        {isActive && (
+                          <motion.div
+                            className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-edu-blue via-growth-green to-edu-blue dark:from-neon-edu-blue dark:via-glow-green dark:to-neon-edu-blue rounded-full shadow-lg shadow-edu-blue/50 dark:shadow-neon-edu-blue/50"
+                            layoutId="navbar-underline"
+                            transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
+                          />
+                        )}
+                      </motion.div>
+                    </Link>
+                  </div>
                 )
               })}
             </div>
@@ -152,18 +163,20 @@ export const Navbar = () => {
                 const isActive = item.isActive(location.pathname)
                 
                 return (
-                  <Link key={idx} to={item.path} onClick={() => setIsOpen(false)}>
-                    <motion.div
-                      className={`px-6 py-4 rounded-lg text-lg font-medium transition-all duration-250 ${
-                        isActive 
-                          ? 'bg-sky-soft-blue dark:bg-blue-glow-soft text-edu-blue dark:text-neon-edu-blue font-bold border-l-4 border-edu-blue dark:border-neon-edu-blue' 
-                          : 'text-slate-text dark:text-dark-body hover:text-edu-blue dark:hover:text-neon-edu-blue hover:bg-mist-gray dark:hover:bg-soft-dark-border'
-                      }`}
-                      whileHover={{ x: 4 }}
-                    >
-                      {item.label}
-                    </motion.div>
-                  </Link>
+                  <div key={idx} onClick={(e) => handleNavClick(e, item.path)}>
+                    <Link to={item.path} onClick={() => setIsOpen(false)}>
+                      <motion.div
+                        className={`px-6 py-4 rounded-lg text-lg font-medium transition-all duration-250 ${
+                          isActive 
+                            ? 'bg-sky-soft-blue dark:bg-blue-glow-soft text-edu-blue dark:text-neon-edu-blue font-bold border-l-4 border-edu-blue dark:border-neon-edu-blue' 
+                            : 'text-slate-text dark:text-dark-body hover:text-edu-blue dark:hover:text-neon-edu-blue hover:bg-mist-gray dark:hover:bg-soft-dark-border'
+                        }`}
+                        whileHover={{ x: 4 }}
+                      >
+                        {item.label}
+                      </motion.div>
+                    </Link>
+                  </div>
                 )
               })}
 

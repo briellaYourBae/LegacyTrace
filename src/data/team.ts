@@ -22,14 +22,14 @@ export const teamMembers: TeamMember[] = [
     id: 'team-001',
     name: 'Muhammad Faqih',
     role: 'Beban Fakultas',
-    position: 'Project Lead',
+    position: 'Beban Fakultas',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
     image: '/assets/team/golden-gunungan-wayang-design-indonesian-javanese-culture-free-png-removebg-preview.png',
     email: 'faqih@legacytrace.id',
     phone: '+62 812-3456-7890',
     social: {
       linkedin: '#',
-      instagram: '#'
+      instagram: 'https://instagram.com/voidbriella'
     },
     expertise: ['Beban Kampus'],
     experience: 8,
@@ -39,7 +39,7 @@ export const teamMembers: TeamMember[] = [
     id: 'team-002',
     name: 'Kaffqa Tegar Gayuh Pamungkas',
     role: 'Beban Fakultas',
-    position: 'CTO',
+    position: 'Beban Fakultas',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
     image: '/assets/team/golden-gunungan-wayang-design-indonesian-javanese-culture-free-png-removebg-preview.png',
     email: 'kaffqa@legacytrace.id',
@@ -54,9 +54,9 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 'team-003',
-    name: 'V--',
+    name: 'Desmonda Varel Robel Salim',
     role: 'Beban Fakultas',
-    position: 'Community Lead',
+    position: 'Beban Fakultas',
     bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
     image: '/assets/team/golden-gunungan-wayang-design-indonesian-javanese-culture-free-png-removebg-preview.png',
     email: 'v@legacytrace.id',

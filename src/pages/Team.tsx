@@ -1,8 +1,16 @@
 import { motion } from 'framer-motion'
+import { useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import { teamMembers } from '../data/team'
 import { Mail, Phone, Linkedin, Instagram } from 'lucide-react'
 
 export const Team = () => {
+  const location = useLocation()
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
+  
   return (
     <div className="min-h-screen pb-20 page-transition">
       {/* Header */}

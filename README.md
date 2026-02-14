@@ -152,17 +152,17 @@ This project is created for educational and social impact purposes.
 
 ### 👥 Tim Pengembang
 
-#### Muhammad Faqih - Founder & Creative Director
+#### Muhammad Faqih - Beban Fakultas
 - 🐙 GitHub: [@muhammadfaqih](https://github.com/briellaYourBae)
 - 📸 Instagram: [@muhammadfaqih](https://instagram.com/voidbriella)
 - 💼 LinkedIn: [Muhammad Faqih]
 
-#### Kaffqa Tegar Gayuh Pamungkas - Lead Developer & Tech Strategist
+#### Kaffqa Tegar Gayuh Pamungkas - Beban Fakultas
 - 🐙 GitHub: [Coming Soon]
 - 📸 Instagram: [Coming Soon]
 - 💼 LinkedIn: [Coming Soon]
 
-#### V-- - Content & Community Manager
+#### Desmonda Varel Robel Salim - Beban Fakultas
 - 🐙 GitHub: [Coming Soon]
 - 📸 Instagram: [Coming Soon]
 - 💼 LinkedIn: [Coming Soon]
