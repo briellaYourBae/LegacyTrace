@@ -40,7 +40,7 @@ export const Home = () => {
   const categories = [
     { icon: <Palette className="w-12 h-12 mb-4 text-edu-blue" />, name: 'Batik', desc: 'Pola batik tulis tradisional' },
     { icon: <Utensils className="w-12 h-12 mb-4 text-action-orange" />, name: 'Makanan', desc: 'Kuliner lokal autentik' },
-    { icon: <Hammer className="w-12 h-12 mb-4 text-brown-primary" />, name: 'Kerajinan', desc: 'Artefak budaya buatan tangan' },
+    { icon: <Hammer className="w-12 h-12 mb-4 text-amber-700" />, name: 'Kerajinan', desc: 'Artefak budaya buatan tangan' },
     { icon: <Scissors className="w-12 h-12 mb-4 text-purple-500" />, name: 'Tenun', desc: 'Tenunan tekstil rumit' },
     { icon: <Coffee className="w-12 h-12 mb-4 text-growth-green" />, name: 'Gerabah', desc: 'Kreasi keramik artisan' },
     { icon: <Leaf className="w-12 h-12 mb-4 text-green-600" />, name: 'Herbal', desc: 'Produk kesehatan tradisional' }
