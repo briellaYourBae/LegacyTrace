@@ -157,7 +157,7 @@ export const products: Product[] = [
     village: 'Padang, West Sumatra',
     category: 'makanan',
     description: 'Slow-cooked beef in rich coconut milk and spices, recognized by CNN as World\'s Most Delicious Food.',
-    imageUrl: 'https://images.unsplash.com/photo-1625937286074-9ca519d5d9df?w=500&h=500&fit=crop',
+    imageUrl: '/assets/img/rendang-padang.jpg',
     ethicalBadges: ['Resep Tradisional', 'Tanpa Pengawet', 'Bersertifikat Halal', 'Dimasak Lambat'],
     steps: [
       {
@@ -230,7 +230,7 @@ export const products: Product[] = [
     village: 'Banyumas, Central Java',
     category: 'makanan',
     description: 'Thin-sliced tempe coated in crispy batter with aromatic herbs, a beloved traditional snack from Banyumas region.',
-    imageUrl: '/assets/img/keripik-tempe-original.png',
+    imageUrl: '/assets/img/mendoan-banyumas.png',
     ethicalBadges: ['Resep Tradisional', 'Tanpa Pengawet', 'Buatan Tangan', 'Rempah Lokal'],
     steps: [
       {
@@ -961,7 +961,7 @@ export const products: Product[] = [
     village: 'Yogyakarta, Special Region',
     category: 'batik',
     description: 'Traditional batik with Kawung motif symbolizing purity and longevity in Javanese philosophy.',
-    imageUrl: '/assets/img/batik-mega-mendung.jpg',
+    imageUrl: '/assets/img/batik-kawung.jpg',
     ethicalBadges: ['Pola Kerajaan', 'Gambar Tangan', 'Pewarna Alami', 'Kerajinan Warisan'],
     steps: [
       { id: 'batik3-s1', title: 'Persiapan Kain Mori', actor: 'Tim Persiapan', location: 'Yogyakarta', description: 'Kain mori putih berkualitas tinggi dicuci bersih dan dikeringkan untuk menghilangkan kanji dan kotoran, siap untuk proses pembatikan.', icon: 'I', imageUrl: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=300&fit=crop' },
@@ -987,7 +987,7 @@ export const products: Product[] = [
     village: 'Surakarta, Central Java',
     category: 'kerajinan',
     description: 'Traditional Javanese ceremonial dagger with intricate patterns, Kerajinan Tangan by master blacksmith.',
-    imageUrl: '/assets/img/wayang-kulit.png',
+    imageUrl: '/assets/img/keris-jawa.png',
     ethicalBadges: ['Kerajinan Master', 'Seni Sakral', 'Warisan UNESCO', 'Tempa Tangan'],
     steps: [
       { id: 'keris-s1', title: 'Pemilihan Besi Berkualitas', actor: 'Empu', location: 'Surakarta', description: 'Besi meteorit dan besi tua berkualitas tinggi dipilih dengan cermat sebagai bahan dasar pembuatan keris yang akan memiliki pamor indah.', icon: 'I', imageUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop' },
@@ -1013,7 +1013,7 @@ export const products: Product[] = [
     village: 'Lake Toba, North Sumatra',
     category: 'tenun',
     description: 'Sacred Batak textile with symbolic patterns, traditionally used in important life ceremonies.',
-    imageUrl: '/assets/img/tenun-ikat-lombok.jpg',
+    imageUrl: '/assets/img/tenun-ulos-batak.png',
     ethicalBadges: ['Tekstil Sakral', 'Tenun Tangan', 'Cultural Heritage', 'Pewarna Alami'],
     steps: [
       { id: 'ulos-s1', title: 'Persiapan Benang Kapas', actor: 'Penenun', location: 'Danau Toba', description: 'Benang kapas berkualitas tinggi disiapkan dan dipintal dengan tangan untuk menghasilkan benang yang kuat dan halus untuk tenun ulos.', icon: 'I', imageUrl: 'https://images.unsplash.com/photo-1617635279887-4e5d75e5a09d?w=400&h=300&fit=crop' },
@@ -1039,7 +1039,7 @@ export const products: Product[] = [
     village: 'Dinoyo, Malang, East Java',
     category: 'gerabah',
     description: 'Decorative and functional ceramics with Glasir Berwarnas, Kerajinan Tangan by local artisans.',
-    imageUrl: '/assets/img/gerabah-kosongan.png',
+    imageUrl: '/assets/img/keramik-dinoyo.jpg',
     ethicalBadges: ['Buatan Tangan', 'Glasir Berwarna', 'Kerajinan Desa', 'Ramah Lingkungan'],
     steps: [
       { id: 'dinoyo-s1', title: 'Penggalian Tanah Liat Lokal', actor: 'Penambang', location: 'Dinoyo', description: 'Tanah liat lokal berkualitas baik digali dari area Dinoyo yang terkenal dengan deposit tanah liatnya yang cocok untuk pembuatan keramik.', icon: 'I', imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=400&h=300&fit=crop' },
@@ -1059,27 +1059,27 @@ export const products: Product[] = [
   // ===== HERBAL (NEW) =====
   {
     id: 'herbal-003',
-    name: 'Madu Hutan Sumbawa',
-    umkm: 'Madu Organik Nusantara',
-    umkmStory: 'Mengumpulkan madu hutan liar selama lebih dari 20 tahun dari hutan Sumbawa yang masih alami, bekerja sama dengan masyarakat lokal untuk menjaga kelestarian hutan.',
-    village: 'Sumbawa, Nusa Tenggara Barat',
+    name: 'Minyak Kayu Putih Ambon',
+    umkm: 'Essential Oil Maluku',
+    umkmStory: 'Producing authentic cajuput oil for over 45 years using traditional distillation methods.',
+    village: 'Ambon, Maluku',
     category: 'herbal',
-    description: 'Madu hutan murni dari lebah liar Sumbawa dengan khasiat kesehatan alami, dipanen secara tradisional tanpa merusak ekosistem.',
-    imageUrl: '/assets/img/jamu-tradisional.png',
-    ethicalBadges: ['100% Murni', 'Madu Liar', 'Ramah Lingkungan', 'Organik'],
+    description: 'Pure cajuput essential oil with Terapeutik properties, traditionally used for wellness.',
+    imageUrl: '/assets/img/madu-hutan-sumbawa.png',
+    ethicalBadges: ['100% Murni', 'Metode Tradisional', 'Terapeutik', 'Organik'],
     steps: [
-      { id: 'madu-s1', title: 'Pencarian Sarang Lebah', actor: 'Pencari Madu', location: 'Hutan Sumbawa', description: 'Pencari madu berpengalaman mencari sarang lebah liar di pohon-pohon tinggi hutan Sumbawa dengan menggunakan pengetahuan turun-temurun tentang perilaku lebah.', icon: 'I', imageUrl: 'https://images.unsplash.com/photo-1597318970834-a57ae9eb4f4d?w=400&h=300&fit=crop' },
-      { id: 'madu-s2', title: 'Persiapan Alat Tradisional', actor: 'Tim Pemanen', location: 'Hutan Sumbawa', description: 'Alat tradisional seperti tangga bambu, wadah kayu, dan asap alami disiapkan untuk proses pemanenan madu yang aman bagi lebah dan lingkungan.', icon: 'II', imageUrl: 'https://images.unsplash.com/photo-1571513200266-1d8c3d9bf2fb?w=400&h=300&fit=crop' },
-      { id: 'madu-s3', title: 'Pemanenan Madu Hati-hati', actor: 'Pemanen Ahli', location: 'Hutan Sumbawa', description: 'Madu dipanen dengan sangat hati-hati menggunakan asap alami untuk menenangkan lebah, hanya mengambil sebagian madu agar koloni lebah tetap sehat dan produktif.', icon: 'III', imageUrl: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=300&fit=crop' },
-      { id: 'madu-s4', title: 'Penyaringan Alami', actor: 'Tim Penyaring', location: 'Workshop Sumbawa', description: 'Madu disaring secara alami menggunakan kain halus untuk memisahkan lilin lebah dan kotoran tanpa proses pemanasan yang dapat merusak enzim alami madu.', icon: 'IV', imageUrl: 'https://images.unsplash.com/photo-1596040995857-ba42d16cb0f2?w=400&h=300&fit=crop' },
-      { id: 'madu-s5', title: 'Pengujian Kualitas', actor: 'Tim Kontrol Kualitas', location: 'Workshop Sumbawa', description: 'Setiap batch madu diuji kemurnian, kadar air, dan kualitasnya untuk memastikan standar madu hutan premium tanpa campuran atau pemalsuan.', icon: 'V', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' },
-      { id: 'madu-s6', title: 'Pembotolan dalam Kaca', actor: 'Tim Pengemasan', location: 'Sumbawa', description: 'Madu murni dibotolkan dalam botol kaca food grade untuk menjaga kualitas, keaslian, dan khasiat terapeutik madu hutan hingga sampai ke konsumen.', icon: 'VI', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' }
+      { id: 'kayu-s1', title: 'Pemanenan Daun Kayu Putih', actor: 'Petani', location: 'Ambon', description: 'Daun kayu putih segar dipanen dari pohon kayu putih (Melaleuca leucadendra) yang tumbuh di hutan Ambon pada pagi hari saat kandungan minyaknya optimal.', icon: 'I', imageUrl: 'https://images.unsplash.com/photo-1597318970834-a57ae9eb4f4d?w=400&h=300&fit=crop' },
+      { id: 'kayu-s2', title: 'Penyortiran Daun Berkualitas', actor: 'Tim Sortir', location: 'Ambon', description: 'Daun kayu putih yang baru dipanen disortir untuk memilih hanya daun segar dan berkualitas tinggi, membuang daun yang rusak atau kering.', icon: 'II', imageUrl: 'https://images.unsplash.com/photo-1571513200266-1d8c3d9bf2fb?w=400&h=300&fit=crop' },
+      { id: 'kayu-s3', title: 'Distilasi Uap Tradisional', actor: 'Operator Distilasi', location: 'Ambon', description: 'Daun kayu putih dimasukkan ke dalam alat distilasi uap tradisional dan dipanaskan dengan uap panas untuk mengekstrak minyak esensial dari daun.', icon: 'III', imageUrl: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=300&fit=crop' },
+      { id: 'kayu-s4', title: 'Pemisahan Minyak dari Air', actor: 'Teknisi', location: 'Ambon', description: 'Minyak kayu putih yang terekstrak dipisahkan dari air menggunakan metode dekantasi karena minyak lebih ringan dan mengapung di atas air.', icon: 'IV', imageUrl: 'https://images.unsplash.com/photo-1596040995857-ba42d16cb0f2?w=400&h=300&fit=crop' },
+      { id: 'kayu-s5', title: 'Kontrol Kualitas dan Kemurnian', actor: 'Tim Kontrol Kualitas', location: 'Ambon', description: 'Minyak kayu putih diuji kualitas dan kemurniannya untuk memastikan kandungan cineole (senyawa aktif) mencapai standar dan tidak ada campuran bahan lain.', icon: 'V', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' },
+      { id: 'kayu-s6', title: 'Pembotolan dalam Kaca Gelap', actor: 'Tim Pengemasan', location: 'Ambon', description: 'Minyak kayu putih murni dibotolkan dalam botol kaca berwarna gelap untuk melindungi dari cahaya dan menjaga kualitas serta khasiat terapeutiknya.', icon: 'VI', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' }
     ],
-    artisanName: 'Pak Hamzah',
-    artisanExperience: 20,
-    artisanQuote: 'Madu hutan Sumbawa adalah anugerah alam yang harus kita jaga dengan bijak untuk generasi mendatang.',
-    artisanQuoteLocal: 'Madu hutan Sumbawa adalah anugerah alam yang harus kita jaga dengan bijak untuk generasi mendatang.',
-    culturalValue: 'Madu hutan Sumbawa terkenal dengan kualitas premium dan khasiat kesehatan yang tinggi, menjadi bagian dari tradisi pengobatan alami masyarakat Nusa Tenggara.'
+    artisanName: 'Pak Yusuf',
+    artisanExperience: 45,
+    artisanQuote: 'Minyak kayu putih Ambon adalah obat alami terbaik dari alam Maluku.',
+    artisanQuoteLocal: 'Minyak kayu putih Ambon adalah obat alami terbaik dari alam Maluku.',
+    culturalValue: 'Cajuput oil from Ambon is renowned for its Terapeutik quality and traditional healing properties.'
   }
 ]
 
@@ -1361,28 +1361,3 @@ export const quizzes: Record<string, QuizQuestion[]> = {
     }
   ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

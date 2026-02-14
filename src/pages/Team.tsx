@@ -1,92 +1,112 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
+import { teamMembers } from '../data/team'
+import { Mail, Phone, Linkedin, Instagram } from 'lucide-react'
 
 export const Team = () => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center pb-20">
-      {/* Coming Soon Section */}
+    <div className="min-h-screen pb-20">
+      {/* Header */}
       <motion.section
-        className="text-center"
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
+        className="bg-gradient-to-br from-sky-soft-blue to-leaf-soft-green dark:from-edu-blue/10 dark:to-growth-green/10 max-w-6xl mx-auto px-8 py-16 rounded-2xl my-8 text-center relative overflow-hidden border border-soft-border dark:border-soft-dark-border"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Main Icon */}
-        <motion.div
-          className="text-9xl mb-8"
-          animate={{ y: [0, -10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          🚀
-        </motion.div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-edu-blue/10 dark:bg-neon-edu-blue/10 rounded-full"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 bg-growth-green/10 dark:bg-glow-green/10 rounded-lg rotate-45"></div>
+        </div>
 
-        {/* Title */}
-        <motion.h1
-          className="text-5xl md:text-6xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          COMING SOON
-        </motion.h1>
+        <div className="relative z-10">
+          <h1 className="text-5xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-3">👥 Meet Our Team</h1>
+          <p className="text-xl text-slate-text dark:text-dark-body">
+            Tim passionate yang berdedikasi untuk melestarikan warisan budaya UMKM Indonesia
+          </p>
+        </div>
+      </motion.section>
 
-        {/* Subtitle */}
-        <motion.p
-          className="text-2xl text-action-orange dark:text-dark-action-orange font-bold mb-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
-          WEB DEV PROSES BUAT
-        </motion.p>
-
-        {/* Description */}
-        <motion.p
-          className="text-lg text-slate-text dark:text-dark-body max-w-2xl mx-auto mb-12"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          Kami sedang mempersiapkan halaman tim yang menakjubkan. Segera hadir dengan profil lengkap dan kisah inspiratif dari setiap anggota tim kami.
-        </motion.p>
-
-        {/* Back Button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <Link to="/">
-            <motion.button
-              className="px-8 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold text-lg rounded-full shadow-md hover:shadow-lg transition-all duration-250"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              ← Back to Home
-            </motion.button>
-          </Link>
-        </motion.div>
-
-        {/* Animated Dots */}
-        <motion.div
-          className="flex justify-center gap-3 mt-16"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          {[0, 1, 2].map((dot) => (
+      {/* Team Members */}
+      <motion.section
+        className="max-w-6xl mx-auto px-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {teamMembers.map((member, idx) => (
             <motion.div
-              key={dot}
-              className="w-3 h-3 rounded-full bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green"
-              animate={{ y: [0, -10, 0] }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                delay: dot * 0.2
-              }}
-            />
+              key={member.id}
+              className="bg-pure-card dark:bg-dark-surface rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-250 border border-soft-border dark:border-soft-dark-border"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              whileHover={{ y: -8 }}
+            >
+              {/* Image */}
+              <div className="relative h-80 overflow-hidden">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink-black/80 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-2xl font-serif font-bold text-white mb-1">{member.name}</h3>
+                  <p className="text-action-orange dark:text-dark-action-orange font-semibold">{member.role}</p>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <p className="text-slate-text dark:text-dark-body text-sm mb-4 leading-relaxed">{member.bio}</p>
+
+                {/* Quote */}
+                <div className="bg-sky-soft-blue dark:bg-blue-glow-soft p-4 rounded-lg mb-4 border-l-4 border-edu-blue dark:border-neon-edu-blue">
+                  <p className="text-ink-black dark:text-dark-heading text-sm italic">"{member.quote}"</p>
+                </div>
+
+                {/* Expertise */}
+                <div className="mb-4">
+                  <h4 className="text-sm font-bold text-edu-blue dark:text-neon-edu-blue mb-2">Expertise:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {member.expertise.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 bg-mist-gray dark:bg-soft-dark-border text-ink-black dark:text-dark-body text-xs rounded-full"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Contact & Social */}
+                <div className="flex flex-wrap gap-3 pt-4 border-t border-soft-border dark:border-soft-dark-border">
+                  {member.social.linkedin && (
+                    <a
+                      href={member.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-edu-blue dark:text-neon-edu-blue hover:text-growth-green dark:hover:text-glow-green transition-colors"
+                    >
+                      <Linkedin size={20} />
+                    </a>
+                  )}
+                  {member.social.instagram && (
+                    <a
+                      href={member.social.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-edu-blue dark:text-neon-edu-blue hover:text-growth-green dark:hover:text-glow-green transition-colors"
+                    >
+                      <Instagram size={20} />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </motion.section>
     </div>
   )

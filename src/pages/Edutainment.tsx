@@ -426,15 +426,23 @@ export const Edutainment = () => {
     <div className="min-h-screen pb-20">
       {/* Header */}
       <motion.section
-        className="max-w-6xl mx-auto px-8 py-12 text-center"
+        className="bg-gradient-to-br from-sky-soft-blue to-leaf-soft-green dark:from-edu-blue/10 dark:to-growth-green/10 max-w-6xl mx-auto px-8 py-12 rounded-2xl my-8 text-center relative overflow-hidden border border-soft-border dark:border-soft-dark-border"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-5xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-3">🎓 Edutainment Hub</h1>
-        <p className="text-xl text-slate-text dark:text-dark-body">
-          Pelajari tentang produksi ethical, fair trade, dan komunitas artisan
-        </p>
+        {/* Background Patterns */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-edu-blue/10 dark:bg-neon-edu-blue/10 rounded-full"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 bg-growth-green/10 dark:bg-glow-green/10 rounded-lg rotate-45"></div>
+        </div>
+
+        <div className="relative z-10">
+          <h1 className="text-5xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-3">🎓 Edutainment Hub</h1>
+          <p className="text-xl text-slate-text dark:text-dark-body">
+            Pelajari tentang produksi ethical, fair trade, dan komunitas artisan
+          </p>
+        </div>
       </motion.section>
 
       {/* Lessons Grid */}
