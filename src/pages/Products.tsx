@@ -12,11 +12,10 @@ type Category = 'all' | 'batik' | 'makanan' | 'kerajinan' | 'tenun' | 'gerabah' 
 
 export const Products = () => {
     const [selectedCategory, setSelectedCategory] = useState<Category>('all')
-    const [selectedVillage, setSelectedVillage] = useState('all')
 
     useEffect(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
-    }, [selectedCategory, selectedVillage])
+    }, [selectedCategory])
 
   const categories: Array<{ value: Category; label: string; icon: React.ReactNode }> = [
     { value: 'all', label: 'Semua Produk', icon: <Globe className="w-5 h-5" /> },
@@ -28,18 +27,11 @@ export const Products = () => {
     { value: 'herbal', label: 'Herbal', icon: <Leaf className="w-5 h-5" /> }
   ]
 
-    const villages = useMemo(() => {
-      const unique = ['all', ...new Set(products.map(p => p.village))]
-      return unique
-    }, [])
-
     const filtered = useMemo(() => {
       return products.filter(p => {
-          const catMatch = selectedCategory === 'all' || p.category === selectedCategory
-          const villMatch = selectedVillage === 'all' || p.village === selectedVillage
-          return catMatch && villMatch
+          return selectedCategory === 'all' || p.category === selectedCategory
       })
-    }, [selectedCategory, selectedVillage])
+    }, [selectedCategory])
 
     return (
       <div className="min-h-screen pb-20 relative">
@@ -54,7 +46,7 @@ export const Products = () => {
           >
             <h1 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2">Jelajahi Produk Ethical</h1>
             <p className="text-lg text-slate-text dark:text-dark-body">
-                Filter berdasarkan kategori atau wilayah untuk menemukan produk handcrafted favorit Anda
+                Filter berdasarkan kategori untuk menemukan produk handcrafted favorit Anda
             </p>
           </motion.section>
 
@@ -81,20 +73,7 @@ export const Products = () => {
                 </div>
             </div>
 
-            <div>
-                <h3 className="text-lg font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">Desa / Wilayah</h3>
-                <select
-                  className="px-4 py-2 border-2 border-soft-border dark:border-soft-dark-border rounded-lg bg-pure-card dark:bg-dark-surface text-ink-black dark:text-dark-body hover:border-edu-blue dark:hover:border-neon-edu-blue focus:border-edu-blue dark:focus:border-neon-edu-blue outline-none transition-colors duration-250"
-                  value={selectedVillage}
-                  onChange={(e) => setSelectedVillage(e.target.value)}
-                >
-                  {villages.map(v => (
-                      <option key={v} value={v}>
-                        {v === 'all' ? 'Semua Wilayah' : v}
-                      </option>
-                  ))}
-                </select>
-            </div>
+
           </div>
 
           {/* Products Grid */}
