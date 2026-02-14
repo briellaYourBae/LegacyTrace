@@ -8,46 +8,74 @@ interface TimelineStepProps {
 }
 
 export const TimelineStep = ({ step, index, isVisible }: TimelineStepProps) => {
-  const isLeft = index % 2 === 0
+  const isRight = index % 2 === 0
 
   return (
     <motion.div
-      className={`flex mb-12 ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}
-      initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-      animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: isLeft ? -50 : 50 }}
-      transition={{ duration: 0.6, delay: 0.1 }}
+      className="relative flex items-center"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.3 }}
     >
-      {/* Marker */}
-      <div className="flex justify-center w-1/3">
+      {/* Left Side - Empty or Content */}
+      <div className="w-1/2 pr-4 md:pr-12">
+        {!isRight && (
+          <motion.div
+            className="bg-white p-5 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all ml-auto max-w-sm md:max-w-lg"
+            whileHover={{ scale: 1.02 }}
+          >
+            <div className="text-right">
+              <h4 className="text-base md:text-xl font-serif font-bold text-brown-primary mb-3">{step.title}</h4>
+              <p className="text-xs md:text-base text-brown-light font-semibold mb-2">👤 {step.actor}</p>
+              <p className="text-xs md:text-base text-brown-light font-semibold mb-4">📍 {step.location}</p>
+              <p className="text-dark leading-relaxed text-sm md:text-base mb-4">{step.description}</p>
+              {step.imageUrl && (
+                <motion.img 
+                  src={step.imageUrl} 
+                  alt={step.title}
+                  className="w-full h-40 md:h-56 object-cover rounded-lg mt-3 shadow-md"
+                  whileHover={{ scale: 1.05 }}
+                />
+              )}
+            </div>
+          </motion.div>
+        )}
+      </div>
+
+      {/* Center Line with Marker */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
         <motion.div
-          className="w-16 h-16 bg-white border-4 border-gold rounded-full shadow-md flex items-center justify-center text-2xl hover:scale-125 transition-transform z-10"
-          whileHover={{ scale: 1.2 }}
+          className="w-14 h-14 md:w-20 md:h-20 bg-white border-4 md:border-[6px] border-gold rounded-full shadow-xl flex items-center justify-center text-xl md:text-3xl"
+          whileHover={{ scale: 1.2, rotate: 360 }}
           transition={{ type: 'spring', stiffness: 300 }}
         >
           {step.icon}
         </motion.div>
       </div>
 
-      {/* Content */}
-      <motion.div
-        className={`w-1/3 ${isLeft ? 'pr-12' : 'pl-12'}`}
-        whileHover={{ backgroundColor: '#f5f1e8' }}
-      >
-        <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-          <h4 className="text-lg font-serif font-bold text-brown-primary mb-2">{step.title}</h4>
-          <p className="text-sm text-brown-light font-semibold mb-1">👤 {step.actor}</p>
-          <p className="text-sm text-brown-light font-semibold mb-3">📍 {step.location}</p>
-          <p className="text-dark leading-relaxed text-sm mb-3">{step.description}</p>
-          {step.imageUrl && (
-            <motion.img 
-              src={step.imageUrl} 
-              alt={step.title}
-              className="w-full h-48 object-cover rounded-lg mt-3"
-              whileHover={{ scale: 1.05 }}
-            />
-          )}
-        </div>
-      </motion.div>
+      {/* Right Side - Empty or Content */}
+      <div className="w-1/2 pl-4 md:pl-12">
+        {isRight && (
+          <motion.div
+            className="bg-white p-5 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all mr-auto max-w-sm md:max-w-lg"
+            whileHover={{ scale: 1.02 }}
+          >
+            <h4 className="text-base md:text-xl font-serif font-bold text-brown-primary mb-3">{step.title}</h4>
+            <p className="text-xs md:text-base text-brown-light font-semibold mb-2">👤 {step.actor}</p>
+            <p className="text-xs md:text-base text-brown-light font-semibold mb-4">📍 {step.location}</p>
+            <p className="text-dark leading-relaxed text-sm md:text-base mb-4">{step.description}</p>
+            {step.imageUrl && (
+              <motion.img 
+                src={step.imageUrl} 
+                alt={step.title}
+                className="w-full h-40 md:h-56 object-cover rounded-lg mt-3 shadow-md"
+                whileHover={{ scale: 1.05 }}
+              />
+            )}
+          </motion.div>
+        )}
+      </div>
     </motion.div>
   )
 }

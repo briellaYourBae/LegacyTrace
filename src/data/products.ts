@@ -15,62 +15,63 @@ export const products: Product[] = [
     steps: [
       {
         id: 'batik-step-1',
-        title: 'Cotton Sourcing',
-        actor: 'Local Farmers',
-        location: 'West Java Fields',
-        description: 'Premium cotton is harvested from sustainable farms in West Java, ensuring quality and ethical farming practices.',
+        title: 'Pengadaan Kapas',
+        actor: 'Petani Lokal',
+        location: 'Ladang Jawa Barat',
+        description: 'Kapas premium dipanen dari pertanian berkelanjutan di Jawa Barat, memastikan kualitas dan praktik pertanian yang etis.',
         icon: '🌾',
         imageUrl: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=300&fit=crop'
       },
       {
         id: 'batik-step-2',
-        title: 'Fabric Preparation',
-        actor: 'Preparation Team',
-        location: 'Cirebon Workshop',
-        description: 'Cotton is washed, dried, and prepared for the batik process using traditional methods.',
+        title: 'Persiapan Kain',
+        actor: 'Tim Persiapan',
+        location: 'Workshop Cirebon',
+        description: 'Kapas dicuci, dikeringkan, dan disiapkan untuk proses batik menggunakan metode tradisional.',
         icon: '🧵',
         imageUrl: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=300&fit=crop'
       },
       {
         id: 'batik-step-3',
-        title: 'Hand Drawing with Wax',
-        actor: 'Master Artisan',
-        location: 'Cirebon Workshop',
-        description: 'Skilled artisans hand-draw the Mega Mendung motif using hot wax, a process that takes 8-12 hours per piece.',
+        title: 'Menggambar dengan Lilin',
+        actor: 'Artisan Master',
+        location: 'Workshop Cirebon',
+        description: 'Pengrajin terampil menggambar motif Mega Mendung menggunakan lilin panas, proses yang memakan waktu 8-12 jam per kain.',
         icon: '🖌️',
         imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       },
       {
         id: 'batik-step-4',
-        title: 'Natural Dyeing',
-        actor: 'Dye Master',
-        location: 'Cirebon Workshop',
-        description: 'Fabric is immersed in natural indigo dye, creating the iconic deep blue color through traditional techniques.',
+        title: 'Pewarnaan Alami',
+        actor: 'Master Pewarna',
+        location: 'Workshop Cirebon',
+        description: 'Kain dicelup dalam pewarna indigo alami, menciptakan warna biru tua ikonik melalui teknik tradisional.',
         icon: '🎨',
         imageUrl: 'https://images.unsplash.com/photo-1536228637022-db989d6c8e5b?w=400&h=300&fit=crop'
       },
       {
         id: 'batik-step-5',
-        title: 'Wax Removal & Finishing',
-        actor: 'Finishing Team',
-        location: 'Cirebon Workshop',
-        description: 'Hot wax is carefully removed, revealing the intricate pattern. Final pressing ensures perfect finish.',
+        title: 'Pelepasan Lilin & Finishing',
+        actor: 'Tim Finishing',
+        location: 'Workshop Cirebon',
+        description: 'Lilin panas dilepas dengan hati-hati, mengungkapkan pola yang rumit. Penyetrikaan akhir memastikan hasil sempurna.',
         icon: '✨',
         imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop'
       },
       {
         id: 'batik-step-6',
-        title: 'Quality Check & Packaging',
-        actor: 'Quality Team',
-        location: 'Cirebon Warehouse',
-        description: 'Each piece is inspected for quality, then carefully packaged with eco-friendly materials.',
+        title: 'Pengecekan Kualitas & Pengemasan',
+        actor: 'Tim Kualitas',
+        location: 'Gudang Cirebon',
+        description: 'Setiap kain diperiksa kualitasnya, kemudian dikemas dengan hati-hati menggunakan bahan ramah lingkungan.',
         icon: '📦',
         imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
     ],
     artisanName: 'Ibu Siti Nurhaliza',
     artisanExperience: 28,
-    artisanQuote: 'Every pattern tells a story of our ancestors. I am just a keeper of this beautiful tradition.',
+    artisanQuote: 'Setiap pola menceritakan kisah leluhur kami. Saya hanya penjaga tradisi indah ini.',
+    artisanQuoteLocal: 'Unggal pola nyaritakeun carita karuhun urang. Abdi ngan ukur panjaga tradisi geulis ieu.',
     culturalValue: 'Mega Mendung symbolizes protection and continuous flow of prosperity in Sundanese culture.'
   },
 
@@ -87,67 +88,147 @@ export const products: Product[] = [
     steps: [
       {
         id: 'batik2-step-1',
-        title: 'Thread Preparation',
-        actor: 'Master Threader',
+        title: 'Persiapan Benang',
+        actor: 'Master Benang',
         location: 'Solo',
-        description: 'Cotton threads selected for durability and quality.',
-        icon: '🧶'
+        description: 'Benang kapas dipilih untuk daya tahan dan kualitas.',
+        icon: '🧶',
+        imageUrl: 'https://images.unsplash.com/photo-1617635279887-4e5d75e5a09d?w=400&h=300&fit=crop'
       },
       {
         id: 'batik2-step-2',
-        title: 'Pattern Design',
-        actor: 'Designer',
-        location: 'Solo Workshop',
-        description: 'Parang Rusak pattern carefully drafted.',
-        icon: '✏️'
+        title: 'Desain Pola',
+        actor: 'Desainer',
+        location: 'Workshop Solo',
+        description: 'Pola Parang Rusak dirancang dengan hati-hati.',
+        icon: '✏️',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       },
       {
         id: 'batik2-step-3',
-        title: 'Wax Application',
-        actor: 'Wax Master',
-        location: 'Solo Workshop',
-        description: 'Hot wax applied to create resist.',
-        icon: '🖌️'
+        title: 'Aplikasi Lilin',
+        actor: 'Master Lilin',
+        location: 'Workshop Solo',
+        description: 'Lilin panas diaplikasikan untuk membuat resist.',
+        icon: '🖌️',
+        imageUrl: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=300&fit=crop'
       },
       {
         id: 'batik2-step-4',
-        title: 'Indigo Bath',
-        actor: 'Dyer',
-        location: 'Solo Workshop',
-        description: 'Multiple dye baths for deep color.',
-        icon: '🎨'
+        title: 'Rendaman Indigo',
+        actor: 'Pewarna',
+        location: 'Workshop Solo',
+        description: 'Beberapa rendaman pewarna untuk warna yang dalam.',
+        icon: '🎨',
+        imageUrl: 'https://images.unsplash.com/photo-1536228637022-db989d6c8e5b?w=400&h=300&fit=crop'
       },
       {
         id: 'batik2-step-5',
-        title: 'Wax Boiling',
+        title: 'Perebusan Lilin',
         actor: 'Finisher',
-        location: 'Solo Workshop',
-        description: 'Wax melted off to reveal pattern.',
-        icon: '🔥'
+        location: 'Workshop Solo',
+        description: 'Lilin dilelehkan untuk mengungkapkan pola.',
+        icon: '🔥',
+        imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop'
       },
       {
         id: 'batik2-step-6',
-        title: 'Finishing Touch',
-        actor: 'QC Team',
+        title: 'Sentuhan Akhir',
+        actor: 'Tim QC',
         location: 'Solo',
-        description: 'Quality checked and packaged.',
-        icon: '✨'
+        description: 'Diperiksa kualitasnya dan dikemas.',
+        icon: '✨',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
     ],
     artisanName: 'Pak Santoso',
     artisanExperience: 32,
-    artisanQuote: 'Parang Rusak carries the spirit of our warrior ancestors.',
+    artisanQuote: 'Parang Rusak membawa semangat leluhur prajurit kami.',
+    artisanQuoteLocal: 'Parang Rusak nggawa semangat leluhur prajurit kita.',
     culturalValue: 'Represents warrior strength and dignity in Javanese tradition.'
   },
 
-  // ===== SNACKS =====
+  // ===== MAKANAN =====
   {
-    id: 'snacks-001',
+    id: 'makanan-001',
+    name: 'Rendang Padang Asli',
+    umkm: 'Rendang Mak Uni',
+    umkmStory: 'Established in 1985, Rendang Mak Uni has been cooking authentic Padang rendang for over 35 years using grandmother\'s secret recipe.',
+    village: 'Padang, West Sumatra',
+    category: 'makanan',
+    description: 'Slow-cooked beef in rich coconut milk and spices, recognized by CNN as World\'s Most Delicious Food.',
+    imageUrl: 'https://images.unsplash.com/photo-1625937286074-9ca519d5d9df?w=500&h=500&fit=crop',
+    ethicalBadges: ['Traditional Recipe', 'No Preservatives', 'Halal Certified', 'Slow Cooked'],
+    steps: [
+      {
+        id: 'rendang-step-1',
+        title: 'Persiapan Bumbu',
+        actor: 'Master Bumbu',
+        location: 'Dapur Padang',
+        description: 'Bumbu segar digiling menjadi pasta: cabai, lengkuas, jahe, kunyit, serai.',
+        icon: '🌶️',
+        imageUrl: 'https://images.unsplash.com/photo-1596040995857-ba42d16cb0f2?w=400&h=300&fit=crop'
+      },
+      {
+        id: 'rendang-step-2',
+        title: 'Pemilihan Daging',
+        actor: 'Tukang Daging',
+        location: 'Pasar Padang',
+        description: 'Potongan daging sapi premium dipilih untuk kelembutan dan kualitas.',
+        icon: '🥩',
+        imageUrl: 'https://images.unsplash.com/photo-1588347818036-8fc8d1d6b7b7?w=400&h=300&fit=crop'
+      },
+      {
+        id: 'rendang-step-3',
+        title: 'Ekstraksi Santan',
+        actor: 'Spesialis Kelapa',
+        location: 'Dapur Padang',
+        description: 'Santan segar diekstrak dari kelapa lokal.',
+        icon: '🥥',
+        imageUrl: 'https://images.unsplash.com/photo-1587049352846-4a222e784422?w=400&h=300&fit=crop'
+      },
+      {
+        id: 'rendang-step-4',
+        title: 'Memasak Perlahan',
+        actor: 'Master Masak',
+        location: 'Dapur Padang',
+        description: 'Daging dimasak perlahan selama 4-6 jam hingga empuk dan gelap.',
+        icon: '🍲',
+        imageUrl: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop'
+      },
+      {
+        id: 'rendang-step-5',
+        title: 'Karamelisasi',
+        actor: 'Master Masak',
+        location: 'Dapur Padang',
+        description: 'Memasak berlanjut hingga minyak terpisah dan daging berkaramel.',
+        icon: '🔥',
+        imageUrl: 'https://images.unsplash.com/photo-1625937286074-9ca519d5d9df?w=400&h=300&fit=crop'
+      },
+      {
+        id: 'rendang-step-6',
+        title: 'Pengemasan',
+        actor: 'Tim Pengemasan',
+        location: 'Padang',
+        description: 'Disegel vakum untuk menjaga kesegaran dan rasa autentik.',
+        icon: '📦',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
+      }
+    ],
+    artisanName: 'Mak Uni',
+    artisanExperience: 35,
+    artisanQuote: 'Rendang bukan sekadar makanan, ini warisan kami yang dimasak dengan kesabaran dan cinta.',
+    artisanQuoteLocal: 'Randang indak cuma makanan, ko warisan kami nan dimasak jo kasabaran dan cinto.',
+    culturalValue: 'Rendang represents Minangkabau culinary excellence and is served at important ceremonies.'
+  },
+
+  {
+    id: 'makanan-002',
     name: 'Keripik Tempe Original',
     umkm: 'Keripik Tempe Sanan',
     umkmStory: 'Established in 1980, Keripik Tempe Sanan has been producing authentic tempe chips for over 40 years from the famous tempe village of Sanan, Malang.',
     village: 'Sanan, Malang, East Java',
-    category: 'snacks',
+    category: 'makanan',
     description: 'Crispy tempe chips made from premium fermented soybeans, a beloved traditional Indonesian snack known nationwide.',
     imageUrl: '/assets/img/keripik-tempe-original.png',
     ethicalBadges: ['Traditional Recipe', 'No Preservatives', 'Handmade', 'Natural Ingredients'],
@@ -209,7 +290,8 @@ export const products: Product[] = [
     ],
     artisanName: 'Pak Hadi Santoso',
     artisanExperience: 35,
-    artisanQuote: 'Tempe is Indonesia\'s pride. Every chip carries the tradition of Sanan village.',
+    artisanQuote: 'Tempe adalah kebanggaan Indonesia. Setiap keripik membawa tradisi desa Sanan.',
+    artisanQuoteLocal: 'Tempe iku kebanggaan Indonesia. Saben keripik nggawa tradisi desa Sanan.',
     culturalValue: 'Tempe is a traditional Indonesian superfood, and Sanan village in Malang is renowned as the center of tempe production.'
   },
 
@@ -226,51 +308,57 @@ export const products: Product[] = [
     steps: [
       {
         id: 'lumpia-step-1',
-        title: 'Flour Milling',
-        actor: 'Miller',
+        title: 'Penggilingan Tepung',
+        actor: 'Penggiling',
         location: 'Semarang',
-        description: 'Premium flour milled from local rice.',
-        icon: '🌾'
+        description: 'Tepung premium digiling dari beras lokal.',
+        icon: '🌾',
+        imageUrl: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&h=300&fit=crop'
       },
       {
         id: 'lumpia-step-2',
-        title: 'Dough Preparation',
-        actor: 'Baker',
-        location: 'Semarang Kitchen',
-        description: 'Flour mixed with water for crepe batter.',
-        icon: '👨‍🍳'
+        title: 'Persiapan Adonan',
+        actor: 'Pembuat Kue',
+        location: 'Dapur Semarang',
+        description: 'Tepung dicampur dengan air untuk adonan crepe.',
+        icon: '👨‍🍳',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       },
       {
         id: 'lumpia-step-3',
-        title: 'Crepe Making',
-        actor: 'Crepe Master',
-        location: 'Semarang Kitchen',
-        description: 'Thin crepes cooked on hot griddle.',
-        icon: '🔥'
+        title: 'Pembuatan Crepe',
+        actor: 'Master Crepe',
+        location: 'Dapur Semarang',
+        description: 'Crepe tipis dimasak di atas wajan panas.',
+        icon: '🔥',
+        imageUrl: 'https://images.unsplash.com/photo-1556910110-a5a63dfd393c?w=400&h=300&fit=crop'
       },
       {
         id: 'lumpia-step-4',
-        title: 'Filling Preparation',
-        actor: 'Filling Team',
-        location: 'Semarang Kitchen',
-        description: 'Vegetables and meat sautéed.',
-        icon: '🥘'
+        title: 'Persiapan Isian',
+        actor: 'Tim Isian',
+        location: 'Dapur Semarang',
+        description: 'Sayuran dan daging ditumis.',
+        icon: '🥘',
+        imageUrl: 'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&h=300&fit=crop'
       },
       {
         id: 'lumpia-step-5',
-        title: 'Rolling & Wrapping',
-        actor: 'Wrapper',
-        location: 'Semarang Kitchen',
-        description: 'Hand-rolled with care.',
-        icon: '🌯'
+        title: 'Menggulung & Membungkus',
+        actor: 'Pembungkus',
+        location: 'Dapur Semarang',
+        description: 'Digulung dengan tangan dengan hati-hati.',
+        icon: '🌯',
+        imageUrl: 'https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=400&h=300&fit=crop'
       },
       {
         id: 'lumpia-step-6',
-        title: 'Packaging',
-        actor: 'Team',
+        title: 'Pengemasan',
+        actor: 'Tim',
         location: 'Semarang',
-        description: 'Packed in boxes for delivery.',
-        icon: '📦'
+        description: 'Dikemas dalam kotak untuk pengiriman.',
+        icon: '📦',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
     ],
     artisanName: 'Ibu Retno',
@@ -348,7 +436,8 @@ export const products: Product[] = [
     ],
     artisanName: 'Ki Purbo',
     artisanExperience: 35,
-    artisanQuote: 'Wayang is not just art—it is the voice of our ancestors, the conscience of our people.',
+    artisanQuote: 'Wayang bukan hanya seni—ini adalah suara leluhur kami, hati nurani rakyat kami.',
+    artisanQuoteLocal: 'Wayang dudu mung seni—iki swara leluhur kita, ati nurani wong kita.',
     culturalValue: 'Wayang kulit is a UNESCO-recognized intangible cultural heritage representing Indonesian philosophical values.'
   },
 
@@ -365,51 +454,57 @@ export const products: Product[] = [
     steps: [
       {
         id: 'topeng-step-1',
-        title: 'Wood Selection',
-        actor: 'Carpenter',
+        title: 'Pemilihan Kayu',
+        actor: 'Tukang Kayu',
         location: 'Cirebon',
-        description: 'Select lightweight wood suitable for mask.',
-        icon: '🌳'
+        description: 'Pilih kayu ringan yang cocok untuk topeng.',
+        icon: '🌳',
+        imageUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop'
       },
       {
         id: 'topeng-step-2',
-        title: 'Wood Carving',
-        actor: 'Master Carver',
-        location: 'Cirebon Studio',
-        description: 'Carve facial features and expressions.',
-        icon: '⚒️'
+        title: 'Ukiran Kayu',
+        actor: 'Master Ukir',
+        location: 'Studio Cirebon',
+        description: 'Ukir fitur wajah dan ekspresi.',
+        icon: '⚒️',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       },
       {
         id: 'topeng-step-3',
-        title: 'Sanding',
+        title: 'Pengamplasan',
         actor: 'Finisher',
-        location: 'Cirebon Studio',
-        description: 'Smooth the surface.',
-        icon: '🪵'
+        location: 'Studio Cirebon',
+        description: 'Haluskan permukaan.',
+        icon: '🪵',
+        imageUrl: 'https://images.unsplash.com/photo-1565193566173-7cba06dab0d4?w=400&h=300&fit=crop'
       },
       {
         id: 'topeng-step-4',
-        title: 'Base Coating',
-        actor: 'Painter',
-        location: 'Cirebon Studio',
-        description: 'Apply white base coat.',
-        icon: '🎨'
+        title: 'Pengecatan Dasar',
+        actor: 'Pelukis',
+        location: 'Studio Cirebon',
+        description: 'Aplikasikan cat dasar putih.',
+        icon: '🎨',
+        imageUrl: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop'
       },
       {
         id: 'topeng-step-5',
-        title: 'Color Painting',
-        actor: 'Artist',
-        location: 'Cirebon Studio',
-        description: 'Paint vibrant colors and details.',
-        icon: '🖌️'
+        title: 'Pengecatan Warna',
+        actor: 'Seniman',
+        location: 'Studio Cirebon',
+        description: 'Cat warna-warna cerah dan detail.',
+        icon: '🖌️',
+        imageUrl: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=300&fit=crop'
       },
       {
         id: 'topeng-step-6',
-        title: 'Assembly',
-        actor: 'Assembler',
-        location: 'Cirebon Studio',
-        description: 'Attach elastic and final touches.',
-        icon: '✨'
+        title: 'Perakitan',
+        actor: 'Perakit',
+        location: 'Studio Cirebon',
+        description: 'Pasang karet elastis dan sentuhan akhir.',
+        icon: '✨',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
     ],
     artisanName: 'Pak Darmanto',
@@ -487,7 +582,8 @@ export const products: Product[] = [
     ],
     artisanName: 'Pak Wayan',
     artisanExperience: 42,
-    artisanQuote: 'My grandfather taught my father, my father taught me, and now I teach my daughter. This is our legacy.',
+    artisanQuote: 'Kakek saya mengajari ayah saya, ayah saya mengajari saya, dan sekarang saya mengajari putri saya. Ini warisan kami.',
+    artisanQuoteLocal: 'Kaki tiang ngajahin bapa tiang, bapa tiang ngajahin tiang, tur mangkin tiang ngajahin pianak tiang. Puniki warisan tiange.',
     culturalValue: 'Tenun ikat represents the cultural identity and spiritual beliefs of Lombok communities.'
   },
 
@@ -504,51 +600,57 @@ export const products: Product[] = [
     steps: [
       {
         id: 'songket-step-1',
-        title: 'Thread Sourcing',
-        actor: 'Thread Master',
+        title: 'Pengadaan Benang',
+        actor: 'Master Benang',
         location: 'Palembang',
-        description: 'Premium silk and metallic threads sourced.',
-        icon: '✨'
+        description: 'Benang sutra dan metalik premium diperoleh.',
+        icon: '✨',
+        imageUrl: 'https://images.unsplash.com/photo-1617635279887-4e5d75e5a09d?w=400&h=300&fit=crop'
       },
       {
         id: 'songket-step-2',
-        title: 'Thread Organization',
-        actor: 'Organizer',
-        location: 'Palembang Workshop',
-        description: 'Threads organized by color and type.',
-        icon: '🧶'
+        title: 'Pengorganisasian Benang',
+        actor: 'Pengorganisir',
+        location: 'Workshop Palembang',
+        description: 'Benang diorganisir berdasarkan warna dan jenis.',
+        icon: '🧶',
+        imageUrl: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=300&fit=crop'
       },
       {
         id: 'songket-step-3',
-        title: 'Loom Setup',
-        actor: 'Loom Master',
-        location: 'Palembang Workshop',
-        description: 'Traditional loom prepared for weaving.',
-        icon: '⚙️'
+        title: 'Pengaturan Alat Tenun',
+        actor: 'Master Alat Tenun',
+        location: 'Workshop Palembang',
+        description: 'Alat tenun tradisional disiapkan untuk menenun.',
+        icon: '⚙️',
+        imageUrl: 'https://images.unsplash.com/photo-1565193566173-7cba06dab0d4?w=400&h=300&fit=crop'
       },
       {
         id: 'songket-step-4',
-        title: 'Gold Thread Weaving',
-        actor: 'Master Weaver',
-        location: 'Palembang Workshop',
-        description: 'Carefully weave gold/silver threads into pattern.',
-        icon: '🧵'
+        title: 'Menenun Benang Emas',
+        actor: 'Master Penenun',
+        location: 'Workshop Palembang',
+        description: 'Hati-hati menenun benang emas/perak ke dalam pola.',
+        icon: '🧵',
+        imageUrl: 'https://images.unsplash.com/photo-1617635279887-4e5d75e5a09d?w=400&h=300&fit=crop'
       },
       {
         id: 'songket-step-5',
-        title: 'Quality Inspection',
-        actor: 'QC Inspector',
-        location: 'Palembang Workshop',
-        description: 'Check pattern and thread quality.',
-        icon: '🔍'
+        title: 'Inspeksi Kualitas',
+        actor: 'Inspektur QC',
+        location: 'Workshop Palembang',
+        description: 'Periksa pola dan kualitas benang.',
+        icon: '🔍',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       },
       {
         id: 'songket-step-6',
-        title: 'Royal Packaging',
-        actor: 'Team',
+        title: 'Pengemasan Royal',
+        actor: 'Tim',
         location: 'Palembang',
-        description: 'Packaged in premium boxes.',
-        icon: '📦'
+        description: 'Dikemas dalam kotak premium.',
+        icon: '📦',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
     ],
     artisanName: 'Ibu Mariamah',
@@ -626,7 +728,8 @@ export const products: Product[] = [
     ],
     artisanName: 'Pak Sulaiman',
     artisanExperience: 38,
-    artisanQuote: 'Clay connects us to earth and tradition, each piece carries the spirit of our ancestors.',
+    artisanQuote: 'Tanah liat menghubungkan kami dengan bumi dan tradisi, setiap karya membawa roh leluhur kami.',
+    artisanQuoteLocal: 'Lempung nyambungake kita karo bumi lan tradhisi, saben karya nggawa roh leluhur kita.',
     culturalValue: 'Kasongan pottery fosters community identity and preserves Javanese artistic heritage.'
   },
 
@@ -643,51 +746,57 @@ export const products: Product[] = [
     steps: [
       {
         id: 'periuk-step-1',
-        title: 'Clay Mining',
-        actor: 'Miner',
+        title: 'Penambangan Tanah Liat',
+        actor: 'Penambang',
         location: 'Bandung',
-        description: 'Extract natural clay from earth.',
-        icon: '⛏️'
+        description: 'Ekstrak tanah liat alami dari bumi.',
+        icon: '⛏️',
+        imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=400&h=300&fit=crop'
       },
       {
         id: 'periuk-step-2',
-        title: 'Clay Refinement',
-        actor: 'Refiner',
-        location: 'Bandung Workshop',
-        description: 'Remove stones and impurities.',
-        icon: '🧹'
+        title: 'Penyulingan Tanah Liat',
+        actor: 'Penyuling',
+        location: 'Workshop Bandung',
+        description: 'Buang batu dan kotoran.',
+        icon: '🧹',
+        imageUrl: 'https://images.unsplash.com/photo-1576066211575-d60bbb31ac0e?w=400&h=300&fit=crop'
       },
       {
         id: 'periuk-step-3',
-        title: 'Hand Molding',
-        actor: 'Molder',
-        location: 'Bandung Workshop',
-        description: 'Mold clay into pot shape.',
-        icon: '🤲'
+        title: 'Pencetakan Tangan',
+        actor: 'Pencetak',
+        location: 'Workshop Bandung',
+        description: 'Cetak tanah liat menjadi bentuk periuk.',
+        icon: '🤲',
+        imageUrl: 'https://images.unsplash.com/photo-1565193566173-7cba06dab0d4?w=400&h=300&fit=crop'
       },
       {
         id: 'periuk-step-4',
-        title: 'Handle Attachment',
-        actor: 'Assembler',
-        location: 'Bandung Workshop',
-        description: 'Attach handles to pot.',
-        icon: '🔗'
+        title: 'Pemasangan Pegangan',
+        actor: 'Perakit',
+        location: 'Workshop Bandung',
+        description: 'Pasang pegangan ke periuk.',
+        icon: '🔗',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       },
       {
         id: 'periuk-step-5',
-        title: 'Kiln Firing',
-        actor: 'Kiln Master',
-        location: 'Bandung Kiln',
-        description: 'Fire in traditional kiln.',
-        icon: '🔥'
+        title: 'Pembakaran Kiln',
+        actor: 'Master Kiln',
+        location: 'Kiln Bandung',
+        description: 'Bakar dalam kiln tradisional.',
+        icon: '🔥',
+        imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=400&h=300&fit=crop'
       },
       {
         id: 'periuk-step-6',
-        title: 'Quality Testing',
-        actor: 'Tester',
-        location: 'Bandung Workshop',
-        description: 'Test for durability and function.',
-        icon: '✅'
+        title: 'Pengujian Kualitas',
+        actor: 'Penguji',
+        location: 'Workshop Bandung',
+        description: 'Uji daya tahan dan fungsi.',
+        icon: '✅',
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
     ],
     artisanName: 'Pak Hendra',
@@ -765,7 +874,8 @@ export const products: Product[] = [
     ],
     artisanName: 'Ibu Citra',
     artisanExperience: 30,
-    artisanQuote: 'Jamu is not just a drink, it is healing wisdom from our ancestors.',
+    artisanQuote: 'Jamu bukan sekadar minuman, ini adalah kebijaksanaan penyembuhan dari leluhur kami.',
+    artisanQuoteLocal: 'Jamu dudu mung unjukan, iki kawruh marasake sehat saka leluhur kita.',
     culturalValue: 'Traditional jamu represents centuries of Indonesian healing practices and wellness culture.'
   },
 
@@ -836,7 +946,8 @@ export const products: Product[] = [
     ],
     artisanName: 'Pak Joko Susilo',
     artisanExperience: 25,
-    artisanQuote: 'Wedang uwuh warms the body and soothes the soul, just like our ancestors intended.',
+    artisanQuote: 'Wedang uwuh menghangatkan tubuh dan menenangkan jiwa, seperti yang dimaksudkan leluhur kami.',
+    artisanQuoteLocal: 'Wedang uwuh anget awak lan ayem jiwa, kaya sing dikarepake leluhur kita.',
     culturalValue: 'Wedang uwuh is a traditional Javanese herbal drink that represents hospitality and wellness culture.'
   }
 ]

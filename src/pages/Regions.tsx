@@ -42,7 +42,7 @@ export const Regions = () => {
         </div>
 
         <div className="relative z-10">
-          <h1 className="text-5xl font-serif font-bold text-brown-primary mb-4">🗺️ Explore by Region</h1>
+          <h1 className="text-5xl font-serif font-bold text-brown-primary mb-4">🗺️ Jelajahi by Region</h1>
           <p className="text-xl text-brown-light max-w-3xl mx-auto">
             Temukan kerajinan tradisional unik dari 5 pulau besar dan 5 pulau kecil terkenal Indonesia.
           </p>

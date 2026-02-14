@@ -15,7 +15,7 @@ export const Footer = () => {
         
         {/* Copyright - Centered */}
         <p className="text-sm text-brown-light">
-          © {currentYear} <span className="font-semibold text-brown-primary">LegacyTrace</span> — Preserving Indonesian Artisan Heritage. All rights reserved.
+          © {currentYear} <span className="font-semibold text-brown-primary">LegacyTrace</span> — Melestarikan Warisan Artisan Indonesia. All rights reserved.
         </p>
 
       </div>

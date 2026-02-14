@@ -392,20 +392,20 @@ export const Edutainment = () => {
   
   const lessons = [
     {
-      title: 'What is Fair Trade?',
-      content: 'Fair trade ensures that artisans and farmers receive fair compensation for their work, promoting sustainable livelihoods and ethical production practices.'
+      title: 'Apa itu Fair Trade?',
+      content: 'Fair trade memastikan bahwa artisan dan petani menerima kompensasi yang adil untuk pekerjaan mereka, mempromosikan kehidupan sustainable dan praktik produksi ethical.'
     },
     {
-      title: 'Supply Chain Transparency',
-      content: 'Knowing where products come from and how they\'re made creates accountability and supports communities that deserve recognition for their craftsmanship.'
+      title: 'Transparansi Supply Chain',
+      content: 'Mengetahui dari mana produk berasal dan bagaimana dibuat menciptakan akuntabilitas dan mendukung komunitas yang layak mendapat pengakuan atas craftsmanship mereka.'
     },
     {
-      title: 'Cultural Preservation',
-      content: 'Traditional handcrafts carry cultural heritage. Supporting artisans helps preserve centuries-old techniques and cultural identity.'
+      title: 'Pelestarian Cultural',
+      content: 'Kerajinan tradisional membawa warisan budaya. Mendukung artisan membantu melestarikan teknik berabad-abad dan identitas cultural.'
     },
     {
-      title: 'Sustainable Practices',
-      content: 'Many UMKM use natural materials and eco-friendly methods, reducing environmental impact while maintaining quality and authenticity.'
+      title: 'Praktik Sustainable',
+      content: 'Banyak UMKM menggunakan bahan alami dan metode eco-friendly, mengurangi dampak lingkungan sambil mempertahankan kualitas dan authenticity.'
     }
   ]
 
@@ -433,7 +433,7 @@ export const Edutainment = () => {
       >
         <h1 className="text-5xl font-serif font-bold text-brown-primary mb-3">🎓 Edutainment Hub</h1>
         <p className="text-xl text-brown-light">
-          Learn about ethical production, fair trade, and artisan communities
+          Pelajari tentang produksi ethical, fair trade, dan komunitas artisan
         </p>
       </motion.section>
 
@@ -512,13 +512,13 @@ export const Edutainment = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-serif font-bold text-brown-primary text-center mb-12">💚 Our Commitment</h2>
+        <h2 className="text-4xl font-serif font-bold text-brown-primary text-center mb-12">💚 Komitmen Kami</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: '🌍', title: 'Global Community', desc: 'Supporting UMKM across Indonesia' },
-            { icon: '✨', title: 'Quality Craftsmanship', desc: 'Preserving traditional techniques' },
-            { icon: '💰', title: 'Fair Compensation', desc: 'Ensuring artisans earn what they deserve' },
-            { icon: '🌱', title: 'Sustainable Production', desc: 'Eco-friendly and ethical practices' }
+            { icon: '🌍', title: 'Komunitas Global', desc: 'Mendukung UMKM di seluruh Indonesia' },
+            { icon: '✨', title: 'Quality Craftsmanship', desc: 'Melestarikan teknik tradisional' },
+            { icon: '💰', title: 'Kompensasi Fair', desc: 'Memastikan artisan mendapat yang layak' },
+            { icon: '🌱', title: 'Produksi Sustainable', desc: 'Praktik eco-friendly dan ethical' }
           ].map((item, idx) => (
             <div key={idx} className="bg-gradient-to-br from-gold/10 to-green-accent/10 p-8 rounded-2xl text-center hover:shadow-md transition-all">
               <div className="text-5xl mb-4">{item.icon}</div>

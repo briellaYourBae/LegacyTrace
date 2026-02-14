@@ -9,33 +9,33 @@ export const Home = () => {
   const features = [
     { 
       icon: '🔗', 
-      title: 'Transparent Supply Chain', 
+      title: 'Rantai Pasokan Transparan', 
       desc: 'Lihat perjalanan lengkap dari setiap produk dari artisan hingga ke tangan Anda. Transparansi penuh adalah komitmen kami.' 
     },
     { 
       icon: '✋', 
-      title: 'Ethical Crafting', 
+      title: 'Kerajinan Etis', 
       desc: 'Dukung perdagangan adil dan komunitas artisan. Setiap pembelian memberdayakan pengrajin lokal.' 
     },
     { 
       icon: '🛂', 
-      title: 'Digital Passport', 
-      desc: 'Setiap produk memiliki digital passport interaktif yang menceritakan kisah uniknya.' 
+      title: 'Paspor Digital', 
+      desc: 'Setiap produk memiliki paspor digital interaktif yang menceritakan kisah uniknya.' 
     },
     { 
       icon: '📖', 
-      title: 'Artisan Stories', 
+      title: 'Kisah Artisan', 
       desc: 'Temui para pembuat di balik produk. Dengarkan kisah hidup, passion, dan budaya mereka.' 
     }
   ]
 
   const categories = [
-    { icon: '🎨', name: 'Batik', desc: 'Traditional hand-drawn batik patterns' },
-    { icon: '🍴', name: 'Snacks', desc: 'Authentic local delicacies' },
-    { icon: '🎭', name: 'Crafts', desc: 'Handmade cultural artifacts' },
-    { icon: '🧵', name: 'Woven', desc: 'Intricate textile weaving' },
-    { icon: '🏺', name: 'Pottery', desc: 'Artisan ceramic creations' },
-    { icon: '🌿', name: 'Herbal', desc: 'Traditional wellness products' }
+    { icon: '🎨', name: 'Batik', desc: 'Pola batik tulis tradisional' },
+    { icon: '🍴', name: 'Makanan', desc: 'Kuliner lokal autentik' },
+    { icon: '🎭', name: 'Kerajinan', desc: 'Artefak budaya buatan tangan' },
+    { icon: '🧵', name: 'Tenun', desc: 'Tenunan tekstil rumit' },
+    { icon: '🏺', name: 'Gerabah', desc: 'Kreasi keramik artisan' },
+    { icon: '🌿', name: 'Herbal', desc: 'Produk kesehatan tradisional' }
   ]
 
   const containerVariants = {
@@ -67,7 +67,7 @@ export const Home = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h1 className="text-6xl lg:text-7xl font-serif font-bold bg-gradient-to-r from-brown-primary to-green-accent bg-clip-text text-transparent mb-6">
-            Every Product Has a Story
+            Setiap Produk Punya Cerita
           </h1>
           <p className="text-xl text-brown-light mb-8 leading-relaxed">
             Temukan perjalanan etis di balik setiap produk UMKM Indonesia. Dari artisan hingga tangan Anda dengan transparansi penuh dan cerita yang menginspirasi.
@@ -79,7 +79,7 @@ export const Home = () => {
                 whileHover={{ scale: 1.05, boxShadow: '0 12px 24px rgba(0,0,0,0.15)' }}
                 whileTap={{ scale: 0.95 }}
               >
-                Explore Stories →
+                Jelajahi Cerita →
               </motion.button>
             </Link>
             <Link to="/edutainment">
@@ -88,7 +88,7 @@ export const Home = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Learn More
+                Pelajari Lebih Lanjut
               </motion.button>
             </Link>
           </div>
@@ -223,10 +223,10 @@ export const Home = () => {
         <h2 className="text-4xl font-serif font-bold text-brown-primary text-center mb-16 relative z-10">Bagaimana Cara Kerja?</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative z-10">
           {[
-            { step: '1', title: 'Browse', desc: 'Jelajahi koleksi produk UMKM etis kami' },
-            { step: '2', title: 'Discover', desc: 'Pelajari cerita unik di balik setiap produk' },
-            { step: '3', title: 'Learn', desc: 'Ikuti quiz interaktif tentang supply chain' },
-            { step: '4', title: 'Support', desc: 'Dukung artisan dengan pembelian yang bermakna' }
+            { step: '1', title: 'Jelajahi', desc: 'Jelajahi koleksi produk UMKM etis kami' },
+            { step: '2', title: 'Temukan', desc: 'Pelajari cerita unik di balik setiap produk' },
+            { step: '3', title: 'Belajar', desc: 'Ikuti quiz interaktif tentang supply chain' },
+            { step: '4', title: 'Dukung', desc: 'Dukung artisan dengan pembelian yang bermakna' }
           ].map((item, idx) => (
             <motion.div
               key={idx}

@@ -19,17 +19,17 @@ export const Navbar = () => {
 
   const navItems = [
     { 
-      label: 'Home', 
+      label: 'Beranda', 
       path: '/',
       isActive: (path: string) => path === '/'
     },
     { 
-      label: 'Explore', 
+      label: 'Jelajahi', 
       path: '/products',
       isActive: (path: string) => path.startsWith('/products') || path.startsWith('/passport')
     },
     { 
-      label: 'Learn', 
+      label: 'Belajar', 
       path: '/edutainment',
       isActive: (path: string) => path.startsWith('/edutainment')
     }
@@ -53,7 +53,7 @@ export const Navbar = () => {
           maxWidth: 'calc(100% - 20px)', 
           width: 'fit-content', 
           margin: '16px auto',
-          padding: '16px 64px'
+          padding: '12px 48px'
         }}
       >
         <div className="flex justify-between items-center gap-20">
@@ -61,7 +61,7 @@ export const Navbar = () => {
           {/* Logo - Kiri */}
           <Link to="/">
             <motion.div
-              className="text-xl font-bold text-brown-primary font-serif flex-shrink-0 tracking-wide"
+              className="text-2xl md:text-xl font-bold text-brown-primary font-serif flex-shrink-0 tracking-wide"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -118,7 +118,7 @@ export const Navbar = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="md:hidden text-brown-primary text-xl flex-shrink-0"
+              className="md:hidden text-brown-primary flex-shrink-0 text-3xl"
               onClick={() => setIsOpen(!isOpen)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -135,17 +135,17 @@ export const Navbar = () => {
           animate={{ height: isOpen ? 'auto' : 0 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="space-y-3 pt-4">
+          <div className="space-y-4 pt-6">
             {navItems.map((item, idx) => {
               const isActive = item.isActive(location.pathname)
               
               return (
                 <Link key={idx} to={item.path} onClick={() => setIsOpen(false)}>
                   <motion.div
-                    className={`px-4 py-2 rounded text-sm font-medium transition-all ${
+                    className={`px-6 py-4 rounded-lg text-lg font-medium transition-all ${
                       isActive 
-                        ? 'bg-brown-primary/10 text-brown-primary font-bold border-b-2 border-gold' 
-                        : 'text-brown-light hover:text-brown-primary'
+                        ? 'bg-brown-primary/10 text-brown-primary font-bold border-l-4 border-gold' 
+                        : 'text-brown-light hover:text-brown-primary hover:bg-brown-primary/5'
                     }`}
                     whileHover={{ x: 4 }}
                   >
@@ -157,7 +157,7 @@ export const Navbar = () => {
 
             <Link to="/team" onClick={() => setIsOpen(false)}>
               <motion.button
-                className="w-full px-6 py-2 bg-gradient-to-r from-gold to-gold/80 text-brown-primary font-semibold text-sm rounded-full mt-4"
+                className="w-full px-6 py-4 bg-gradient-to-r from-gold to-gold/80 text-brown-primary font-semibold text-lg rounded-full mt-2"
                 whileHover={{ scale: 1.02 }}
               >
                 Team

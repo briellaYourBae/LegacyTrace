@@ -102,21 +102,17 @@ export const Passport = () => {
         <h2 className="text-3xl font-serif font-bold text-brown-primary mb-12">🔗 Supply Chain Journey</h2>
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gold to-green-accent"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gold via-green-accent to-brown-primary"></div>
 
           {/* Steps */}
           <div className="space-y-12">
             {product.steps.map((step, idx) => (
-              <div
+              <TimelineStep
                 key={step.id}
-                onMouseEnter={() => handleStepScroll(idx)}
-              >
-                <TimelineStep
-                  step={step}
-                  index={idx}
-                  isVisible={visibleSteps.has(idx)}
-                />
-              </div>
+                step={step}
+                index={idx}
+                isVisible={true}
+              />
             ))}
           </div>
         </div>
@@ -134,9 +130,14 @@ export const Passport = () => {
         <div className="bg-gradient-to-r from-brown-primary/5 to-green-accent/5 p-8 rounded-lg border-l-4 border-gold">
           <h3 className="text-2xl font-serif font-bold text-brown-primary mb-1">{product.artisanName}</h3>
           <p className="text-lg text-brown-light font-semibold mb-4">Craft Master • {product.artisanExperience}+ years experience</p>
-          <blockquote className="text-xl italic text-brown-primary leading-relaxed">
+          <blockquote className="text-xl italic text-brown-primary leading-relaxed mb-3">
             "{product.artisanQuote}"
           </blockquote>
+          {product.artisanQuoteLocal && (
+            <blockquote className="text-lg italic text-brown-light leading-relaxed border-t border-brown-primary/10 pt-3 mt-3">
+              "{product.artisanQuoteLocal}"
+            </blockquote>
+          )}
         </div>
       </motion.section>
 

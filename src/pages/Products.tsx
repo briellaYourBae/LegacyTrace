@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { products } from '../data/products'
 import { ProductCard } from '../components/ProductCard'
 
-type Category = 'all' | 'batik' | 'snacks' | 'crafts' | 'woven' | 'pottery' | 'herbal'
+type Category = 'all' | 'batik' | 'makanan' | 'crafts' | 'woven' | 'pottery' | 'herbal'
 
 export const Products = () => {
     const [selectedCategory, setSelectedCategory] = useState<Category>('all')
@@ -13,12 +13,12 @@ export const Products = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }, [selectedCategory, selectedVillage])
 
-const categories: Array<{ value: Category; label: string; emoji: string }> = [{ value: 'all', label: 'All Products', emoji: '🌍' },
+const categories: Array<{ value: Category; label: string; emoji: string }> = [{ value: 'all', label: 'Semua Produk', emoji: '🌍' },
     { value: 'batik', label: 'Batik', emoji: '🎨' },
-    { value: 'snacks', label: 'Snacks', emoji: '🍴' },
-    { value: 'crafts', label: 'Crafts', emoji: '🎭' },
-    { value: 'woven', label: 'Woven', emoji: '🧵' },
-    { value: 'pottery', label: 'Pottery', emoji: '🏺' },
+    { value: 'makanan', label: 'Makanan', emoji: '🍴' },
+    { value: 'crafts', label: 'Kerajinan', emoji: '🎭' },
+    { value: 'woven', label: 'Tenun', emoji: '🧵' },
+    { value: 'pottery', label: 'Gerabah', emoji: '🏺' },
     { value: 'herbal', label: 'Herbal', emoji: '🌿' }
 ]
 
@@ -44,16 +44,16 @@ const categories: Array<{ value: Category; label: string; emoji: string }> = [{ 
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl font-serif font-bold text-brown-primary mb-2">Explore Ethical Products</h1>
+            <h1 className="text-4xl font-serif font-bold text-brown-primary mb-2">Jelajahi Produk Ethical</h1>
             <p className="text-lg text-brown-light">
-                Filter by category or region to discover your favorite handcrafted items
+                Filter berdasarkan kategori atau wilayah untuk menemukan produk handcrafted favorit Anda
             </p>
           </motion.section>
 
           {/* Filters */}
           <div className="max-w-6xl mx-auto px-8 mb-8 bg-white rounded-2xl shadow-sm p-8">
             <div className="mb-6">
-                <h3 className="text-lg font-serif font-bold text-brown-primary mb-4">Category</h3>
+                <h3 className="text-lg font-serif font-bold text-brown-primary mb-4">Kategori</h3>
                 <div className="flex flex-wrap gap-3">
                   {categories.map(cat => (
                       <motion.button
@@ -74,7 +74,7 @@ const categories: Array<{ value: Category; label: string; emoji: string }> = [{ 
             </div>
 
             <div>
-                <h3 className="text-lg font-serif font-bold text-brown-primary mb-4">Village / Region</h3>
+                <h3 className="text-lg font-serif font-bold text-brown-primary mb-4">Desa / Wilayah</h3>
                 <select
                   className="px-4 py-2 border-2 border-brown-primary/20 rounded-lg bg-white hover:border-gold focus:border-gold outline-none transition-colors"
                   value={selectedVillage}
@@ -82,7 +82,7 @@ const categories: Array<{ value: Category; label: string; emoji: string }> = [{ 
                 >
                   {villages.map(v => (
                       <option key={v} value={v}>
-                        {v === 'all' ? 'All Regions' : v}
+                        {v === 'all' ? 'Semua Wilayah' : v}
                       </option>
                   ))}
                 </select>
@@ -113,7 +113,7 @@ const categories: Array<{ value: Category; label: string; emoji: string }> = [{ 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 >
-                  <p className="text-lg">No products found. Try adjusting your filters!</p>
+                  <p className="text-lg">Tidak ada produk ditemukan. Coba sesuaikan filter Anda!</p>
                 </motion.div>
             )}
           </motion.div>
