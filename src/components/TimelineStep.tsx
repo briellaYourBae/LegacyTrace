@@ -46,11 +46,11 @@ export const TimelineStep = ({ step, index, isVisible }: TimelineStepProps) => {
       {/* Center Line with Marker */}
       <div className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center z-10">
         <motion.div
-          className="w-14 h-14 md:w-20 md:h-20 bg-pure-card dark:bg-dark-surface border-4 md:border-[6px] border-edu-blue dark:border-neon-edu-blue rounded-full shadow-xl flex items-center justify-center text-xl md:text-3xl"
+          className="w-14 h-14 md:w-20 md:h-20 bg-gradient-to-br from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green rounded-full shadow-xl flex items-center justify-center"
           whileHover={{ scale: 1.2, rotate: 360 }}
           transition={{ type: 'spring', stiffness: 300 }}
         >
-          {step.icon}
+          <span className="text-white font-bold text-lg md:text-2xl">{step.icon}</span>
         </motion.div>
       </div>
 

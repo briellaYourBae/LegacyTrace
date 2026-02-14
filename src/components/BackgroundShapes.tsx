@@ -18,8 +18,9 @@ export const BackgroundShapes = ({ variant = 'default' }: BackgroundShapesProps)
             height: `${40 + i * 30}px`,
             left: `${10 + i * 15}%`,
             top: `${i * 20}%`,
-            border: '2px solid rgba(212, 165, 116, 0.15)',
-            borderRadius: i % 3 === 0 ? '50%' : i % 3 === 1 ? '20px' : '0px'
+            border: '2px solid rgba(37, 99, 235, 0.12)',
+            borderRadius: i % 3 === 0 ? '50%' : i % 3 === 1 ? '20px' : '0px',
+            backgroundColor: i % 2 === 0 ? 'rgba(37, 99, 235, 0.03)' : 'rgba(22, 163, 74, 0.03)'
           }}
           animate={{ 
             rotate: 360,

@@ -51,16 +51,16 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
         <div className="text-6xl mb-4">
           {score === questions.length ? '🏆' : score >= questions.length * 0.6 ? '⭐' : '📚'}
         </div>
-        <h3 className="text-2xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2">Quiz Complete!</h3>
+        <h3 className="text-2xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2">Kuis Selesai!</h3>
         <p className="text-lg text-growth-green dark:text-glow-green font-semibold mb-2">
-          You scored {score} out of {questions.length}
+          Skor Anda {score} dari {questions.length}
         </p>
         <p className="text-slate-text dark:text-dark-body mb-6 text-base">
           {score === questions.length 
-            ? 'Perfect! You\'re an expert on this product\'s story!'
+            ? 'Sempurna! Anda ahli dalam kisah produk ini!'
             : score >= questions.length * 0.6
-            ? 'Great job! You understand the supply chain well!'
-            : 'Good effort! Learn more about ethical production!'}
+            ? 'Bagus sekali! Anda memahami rantai pasokan dengan baik!'
+            : 'Usaha yang baik! Pelajari lebih lanjut tentang produksi etis!'}
         </p>
         <motion.button
           className="px-6 py-3 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white rounded-full font-semibold transition-colors duration-250 shadow-md"
@@ -68,7 +68,7 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
           whileTap={{ scale: 0.95 }}
           onClick={resetQuiz}
         >
-          Retake Quiz
+          Ulangi Kuis
         </motion.button>
       </motion.div>
     )
@@ -87,7 +87,7 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
           />
         </div>
         <p className="text-sm text-slate-text dark:text-dark-body font-medium">
-          Question {currentQ + 1} of {questions.length}
+          Pertanyaan {currentQ + 1} dari {questions.length}
         </p>
       </div>
 
@@ -155,7 +155,7 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
-              {currentQ === questions.length - 1 ? 'See Results' : 'Next Question'}
+              {currentQ === questions.length - 1 ? 'Lihat Hasil' : 'Pertanyaan Berikutnya'}
             </motion.button>
           )}
         </motion.div>

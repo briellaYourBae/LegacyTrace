@@ -34,7 +34,7 @@ export const FloatingMenu = () => {
           >
             {/* Back to Top */}
             <motion.button
-              className="w-14 h-14 bg-brown-primary text-white rounded-full shadow-xl flex items-center justify-center text-2xl"
+              className="w-14 h-14 bg-edu-blue dark:bg-neon-edu-blue text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(37,99,235,0.5)] dark:hover:shadow-[0_20px_50px_rgba(96,165,250,0.5)] flex items-center justify-center text-2xl transition-shadow duration-250"
               onClick={scrollToTop}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -45,7 +45,7 @@ export const FloatingMenu = () => {
             {/* Back Button - Only show if NOT on main pages */}
             {!isMainPage && (
               <motion.button
-                className="w-14 h-14 bg-gold text-brown-primary rounded-full shadow-xl flex items-center justify-center text-2xl font-bold"
+                className="w-14 h-14 bg-growth-green dark:bg-glow-green text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(22,163,74,0.5)] dark:hover:shadow-[0_20px_50px_rgba(74,222,128,0.5)] flex items-center justify-center text-2xl font-bold transition-shadow duration-250"
                 onClick={goBack}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -59,7 +59,7 @@ export const FloatingMenu = () => {
 
       {/* Main Toggle Button */}
       <motion.button
-        className="w-16 h-16 bg-gradient-to-r from-brown-primary to-gold text-white rounded-full shadow-2xl flex items-center justify-center text-3xl"
+        className="w-16 h-16 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white rounded-full shadow-2xl hover:shadow-[0_25px_60px_rgba(249,115,22,0.6)] dark:hover:shadow-[0_25px_60px_rgba(251,146,60,0.6)] flex items-center justify-center text-3xl transition-all duration-250"
         onClick={() => setShowMenu(!showMenu)}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

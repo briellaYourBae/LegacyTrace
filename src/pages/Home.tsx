@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
+import { BackgroundShapes } from '../components/BackgroundShapes'
 
 export const Home = () => {
   useEffect(() => {
@@ -52,7 +53,8 @@ export const Home = () => {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden relative">
+      <BackgroundShapes variant="default" />
       
       {/* ===== HERO SECTION ===== */}
       <motion.section

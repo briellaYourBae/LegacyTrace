@@ -77,7 +77,7 @@ export const Passport = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">📖 The UMKM Story</h2>
+        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">📖 Kisah UMKM</h2>
         <p className="text-lg text-ink-black dark:text-dark-body leading-relaxed">{product.umkmStory}</p>
       </motion.section>
 
@@ -89,7 +89,7 @@ export const Passport = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">🌿 Cultural Value</h2>
+        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">🌿 Nilai Budaya</h2>
         <p className="text-lg text-ink-black dark:text-dark-body leading-relaxed">{product.culturalValue}</p>
       </motion.section>
 
@@ -101,7 +101,7 @@ export const Passport = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-12">🔗 Supply Chain Journey</h2>
+        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-12">🔨 Proses Pembuatan Produk</h2>
         <div className="relative">
           {/* Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-edu-blue via-growth-green to-action-orange dark:from-neon-edu-blue dark:via-glow-green dark:to-dark-action-orange"></div>
@@ -128,10 +128,10 @@ export const Passport = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-6">✋ Meet the Artisan</h2>
+        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-6">👋 Kenali Pengrajinnya</h2>
         <div className="bg-sky-soft-blue dark:bg-blue-glow-soft p-8 rounded-lg border-l-4 border-growth-green dark:border-glow-green">
           <h3 className="text-2xl font-serif font-bold text-ink-black dark:text-dark-heading mb-1">{product.artisanName}</h3>
-          <p className="text-lg text-slate-text dark:text-dark-body font-semibold mb-4">Craft Master • {product.artisanExperience}+ years experience</p>
+          <p className="text-lg text-slate-text dark:text-dark-body font-semibold mb-4">Ahli Kerajinan • Pengalaman {product.artisanExperience}+ tahun</p>
           <blockquote className="text-xl italic text-edu-blue dark:text-neon-edu-blue leading-relaxed mb-3">
             "{product.artisanQuote}"
           </blockquote>
@@ -153,8 +153,8 @@ export const Passport = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="mb-8">
-            <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2">📚 Test Your Knowledge</h2>
-            <p className="text-lg text-slate-text dark:text-dark-body">Learn more about this product's ethical journey!</p>
+            <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2">📚 Uji Pengetahuan Anda</h2>
+            <p className="text-lg text-slate-text dark:text-dark-body">Pelajari lebih lanjut tentang perjalanan etis produk ini!</p>
           </div>
 
           {!showQuiz ? (
@@ -164,7 +164,7 @@ export const Passport = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Start Interactive Quiz →
+              Mulai Kuis Interaktif →
             </motion.button>
           ) : (
             <QuizCard questions={quizQuestions} />
@@ -179,7 +179,7 @@ export const Passport = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <p className="text-xl text-edu-blue dark:text-neon-edu-blue font-semibold mb-6">🎉 Thank you for supporting ethical artisan production!</p>
+        {/* <p className="text-xl text-edu-blue dark:text-neon-edu-blue font-semibold mb-6">🎉 Thank you for supporting ethical artisan production!</p> */}
       </motion.section>
     </div>
   )
