@@ -6,6 +6,7 @@ import { Product, QuizQuestion } from '../types/product'
 import { TimelineStep } from '../components/TimelineStep'
 import { QuizCard } from '../components/QuizCard'
 import { BackgroundShapes } from '../components/BackgroundShapes'
+import { MapPin, Check, BookOpen, Leaf, Hammer, Hand } from 'lucide-react'
 
 export const Passport = () => {
   const { productId } = useParams()
@@ -45,15 +46,15 @@ export const Passport = () => {
         <div>
           <h1 className="text-5xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2">{product.name}</h1>
           <p className="text-2xl text-growth-green dark:text-glow-green font-semibold mb-1">{product.umkm}</p>
-          <p className="text-lg text-slate-text dark:text-dark-body mb-4">📍 {product.village}</p>
+          <p className="text-lg text-slate-text dark:text-dark-body mb-4 flex items-center gap-2"><MapPin className="w-5 h-5" /> {product.village}</p>
           <div className="flex flex-wrap gap-3">
             {product.ethicalBadges.map((badge, idx) => (
               <motion.span
                 key={idx}
-                className="bg-growth-green dark:bg-glow-green text-white px-4 py-2 rounded-full font-semibold text-sm shadow-sm"
+                className="bg-growth-green dark:bg-glow-green text-white px-4 py-2 rounded-full font-semibold text-sm shadow-sm flex items-center gap-2"
                 whileHover={{ scale: 1.1 }}
               >
-                ✓ {badge}
+                <Check className="w-4 h-4" /> {badge}
               </motion.span>
             ))}
           </div>
@@ -77,7 +78,7 @@ export const Passport = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">📖 Kisah UMKM</h2>
+        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4 flex items-center gap-3"><BookOpen className="w-8 h-8" /> Kisah UMKM</h2>
         <p className="text-lg text-ink-black dark:text-dark-body leading-relaxed">{product.umkmStory}</p>
       </motion.section>
 
@@ -89,7 +90,7 @@ export const Passport = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">🌿 Nilai Budaya</h2>
+        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4 flex items-center gap-3"><Leaf className="w-8 h-8" /> Nilai Budaya</h2>
         <p className="text-lg text-ink-black dark:text-dark-body leading-relaxed">{product.culturalValue}</p>
       </motion.section>
 
@@ -101,7 +102,7 @@ export const Passport = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-12">🔨 Proses Pembuatan Produk</h2>
+        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-12 flex items-center gap-3"><Hammer className="w-8 h-8" /> Proses Pembuatan Produk</h2>
         <div className="relative">
           {/* Timeline Line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-edu-blue via-growth-green to-action-orange dark:from-neon-edu-blue dark:via-glow-green dark:to-dark-action-orange"></div>
@@ -128,7 +129,7 @@ export const Passport = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-6">👋 Kenali Pengrajinnya</h2>
+        <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-6 flex items-center gap-3"><Hand className="w-8 h-8" /> Kenali Pengrajinnya</h2>
         <div className="bg-sky-soft-blue dark:bg-blue-glow-soft p-8 rounded-lg border-l-4 border-growth-green dark:border-glow-green">
           <h3 className="text-2xl font-serif font-bold text-ink-black dark:text-dark-heading mb-1">{product.artisanName}</h3>
           <p className="text-lg text-slate-text dark:text-dark-body font-semibold mb-4">Ahli Kerajinan • Pengalaman {product.artisanExperience}+ tahun</p>

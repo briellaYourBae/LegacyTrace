@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { products } from '../data/products'
 import { Product } from '../types/product'
+import { MapPin, Trophy, ArrowLeft, Award, Package } from 'lucide-react'
 
 export const ArtisanPage = () => {
   const { artisanId } = useParams()
@@ -33,7 +34,7 @@ export const ArtisanPage = () => {
       >
         <h1 className="text-5xl font-serif font-bold text-brown-primary mb-2">{artisan.artisanName}</h1>
         <p className="text-2xl text-gold font-semibold mb-1">{artisan.category.toUpperCase()} Artisan</p>
-        <p className="text-lg text-brown-light">📍 {artisan.village}</p>
+        <p className="text-lg text-brown-light flex items-center justify-center gap-2"><MapPin className="w-5 h-5" /> {artisan.village}</p>
       </motion.section>
 
       {/* Bio */}
@@ -46,15 +47,17 @@ export const ArtisanPage = () => {
       >
         <div className="grid grid-cols-3 gap-6 mb-8">
           <div className="text-center p-6 bg-gradient-to-br from-gold/10 to-green-accent/10 rounded-lg hover:shadow-md transition-all">
-            <span className="block text-4xl font-bold text-brown-primary mb-2">{artisan.artisanExperience}+</span>
+            <span className="block mb-2 flex justify-center"><Award className="w-10 h-10 text-brown-primary" /></span>
+            <span className="block text-2xl font-bold text-brown-primary mb-1">{artisan.artisanExperience}+</span>
             <span className="block text-sm text-brown-light font-medium">Years of Mastery</span>
           </div>
           <div className="text-center p-6 bg-gradient-to-br from-gold/10 to-green-accent/10 rounded-lg hover:shadow-md transition-all">
-            <span className="block text-4xl font-bold text-brown-primary mb-2">🏆</span>
+            <span className="block mb-2 flex justify-center"><Trophy className="w-10 h-10 text-brown-primary" /></span>
             <span className="block text-sm text-brown-light font-medium">Master Craftsperson</span>
           </div>
           <div className="text-center p-6 bg-gradient-to-br from-gold/10 to-green-accent/10 rounded-lg hover:shadow-md transition-all">
-            <span className="block text-4xl font-bold text-brown-primary mb-2">{artisanProducts.length}</span>
+            <span className="block mb-2 flex justify-center"><Package className="w-10 h-10 text-brown-primary" /></span>
+            <span className="block text-2xl font-bold text-brown-primary mb-1">{artisanProducts.length}</span>
             <span className="block text-sm text-brown-light font-medium">Products Created</span>
           </div>
         </div>
@@ -117,11 +120,11 @@ export const ArtisanPage = () => {
         </p>
         <motion.button
           onClick={() => navigate('/products')}
-          className="px-8 py-3 bg-brown-primary text-white font-semibold rounded-full hover:bg-gold transition-colors"
+          className="px-8 py-3 bg-brown-primary text-white font-semibold rounded-full hover:bg-gold transition-colors flex items-center gap-2 mx-auto"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          ← Back to All Products
+          <ArrowLeft className="w-5 h-5" /> Back to All Products
         </motion.button>
       </motion.section>
     </div>

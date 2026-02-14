@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { Sun, Moon, Menu, X } from 'lucide-react'
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -114,7 +115,7 @@ export const Navbar = () => {
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.3 }}
               >
-                {isDark ? '☀️' : '🌙'}
+                {isDark ? <Sun className="w-6 h-6 text-yellow-400" /> : <Moon className="w-6 h-6 text-edu-blue" />}
               </motion.button>
               
               <Link to="/team">
@@ -134,7 +135,7 @@ export const Navbar = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {isOpen ? '✕' : '☰'}
+                {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
               </motion.button>
             </div>
           </div>

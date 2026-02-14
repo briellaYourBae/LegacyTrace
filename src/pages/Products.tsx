@@ -1,8 +1,12 @@
-import { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { products } from '../data/products'
 import { ProductCard } from '../components/ProductCard'
 import { BackgroundShapes } from '../components/BackgroundShapes'
+import { 
+  Globe, Palette, Utensils, Hammer, Scissors, 
+  Coffee, Leaf 
+} from 'lucide-react'
 
 type Category = 'all' | 'batik' | 'makanan' | 'kerajinan' | 'tenun' | 'gerabah' | 'herbal'
 
@@ -14,14 +18,15 @@ export const Products = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }, [selectedCategory, selectedVillage])
 
-const categories: Array<{ value: Category; label: string; emoji: string }> = [{ value: 'all', label: 'Semua Produk', emoji: '🌍' },
-    { value: 'batik', label: 'Batik', emoji: '🎨' },
-    { value: 'makanan', label: 'Makanan', emoji: '🍴' },
-    { value: 'kerajinan', label: 'Kerajinan', emoji: '🎭' },
-    { value: 'tenun', label: 'Tenun', emoji: '🧵' },
-    { value: 'gerabah', label: 'Gerabah', emoji: '🏺' },
-    { value: 'herbal', label: 'Herbal', emoji: '🌿' }
-]
+  const categories: Array<{ value: Category; label: string; icon: React.ReactNode }> = [
+    { value: 'all', label: 'Semua Produk', icon: <Globe className="w-5 h-5" /> },
+    { value: 'batik', label: 'Batik', icon: <Palette className="w-5 h-5" /> },
+    { value: 'makanan', label: 'Makanan', icon: <Utensils className="w-5 h-5" /> },
+    { value: 'kerajinan', label: 'Kerajinan', icon: <Hammer className="w-5 h-5" /> },
+    { value: 'tenun', label: 'Tenun', icon: <Scissors className="w-5 h-5" /> },
+    { value: 'gerabah', label: 'Gerabah', icon: <Coffee className="w-5 h-5" /> },
+    { value: 'herbal', label: 'Herbal', icon: <Leaf className="w-5 h-5" /> }
+  ]
 
     const villages = useMemo(() => {
       const unique = ['all', ...new Set(products.map(p => p.village))]
@@ -70,7 +75,7 @@ const categories: Array<{ value: Category; label: string; emoji: string }> = [{ 
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <span>{cat.emoji}</span> {cat.label}
+                        <span>{cat.icon}</span> {cat.label}
                       </motion.button>
                   ))}
                 </div>

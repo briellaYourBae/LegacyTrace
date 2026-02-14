@@ -2,41 +2,48 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useEffect } from 'react'
 import { BackgroundShapes } from '../components/BackgroundShapes'
+import { 
+  Search, ShieldCheck, QrCode, Users, 
+  Palette, Utensils, Hammer, Scissors, 
+  Coffee, Leaf, ArrowRight, Map, BookOpen, 
+  Heart, Globe 
+} from 'lucide-react'
 
 export const Home = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
+
   const features = [
     { 
-      icon: '🔗', 
+      icon: <Search className="w-10 h-10 text-edu-blue dark:text-neon-edu-blue" />, 
       title: 'Rantai Pasokan Transparan', 
       desc: 'Lihat perjalanan lengkap dari setiap produk dari artisan hingga ke tangan Anda. Transparansi penuh adalah komitmen kami.' 
     },
     { 
-      icon: '✋', 
+      icon: <Users className="w-10 h-10 text-action-orange dark:text-dark-action-orange" />, 
       title: 'Kerajinan Etis', 
       desc: 'Dukung perdagangan adil dan komunitas artisan. Setiap pembelian memberdayakan pengrajin lokal.' 
     },
     { 
-      icon: '🛂', 
+      icon: <QrCode className="w-10 h-10 text-growth-green dark:text-glow-green" />, 
       title: 'Paspor Digital', 
       desc: 'Setiap produk memiliki paspor digital interaktif yang menceritakan kisah uniknya.' 
     },
     { 
-      icon: '📖', 
+      icon: <BookOpen className="w-10 h-10 text-purple-500 dark:text-purple-400" />, 
       title: 'Kisah Artisan', 
       desc: 'Temui para pembuat di balik produk. Dengarkan kisah hidup, passion, dan budaya mereka.' 
     }
   ]
 
   const categories = [
-    { icon: '🎨', name: 'Batik', desc: 'Pola batik tulis tradisional' },
-    { icon: '🍴', name: 'Makanan', desc: 'Kuliner lokal autentik' },
-    { icon: '🎭', name: 'Kerajinan', desc: 'Artefak budaya buatan tangan' },
-    { icon: '🧵', name: 'Tenun', desc: 'Tenunan tekstil rumit' },
-    { icon: '🏺', name: 'Gerabah', desc: 'Kreasi keramik artisan' },
-    { icon: '🌿', name: 'Herbal', desc: 'Produk kesehatan tradisional' }
+    { icon: <Palette className="w-12 h-12 mb-4 text-edu-blue" />, name: 'Batik', desc: 'Pola batik tulis tradisional' },
+    { icon: <Utensils className="w-12 h-12 mb-4 text-action-orange" />, name: 'Makanan', desc: 'Kuliner lokal autentik' },
+    { icon: <Hammer className="w-12 h-12 mb-4 text-brown-primary" />, name: 'Kerajinan', desc: 'Artefak budaya buatan tangan' },
+    { icon: <Scissors className="w-12 h-12 mb-4 text-purple-500" />, name: 'Tenun', desc: 'Tenunan tekstil rumit' },
+    { icon: <Coffee className="w-12 h-12 mb-4 text-growth-green" />, name: 'Gerabah', desc: 'Kreasi keramik artisan' },
+    { icon: <Leaf className="w-12 h-12 mb-4 text-green-600" />, name: 'Herbal', desc: 'Produk kesehatan tradisional' }
   ]
 
   const containerVariants = {
@@ -77,11 +84,11 @@ export const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link to="/products">
               <motion.button
-                className="px-8 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-250"
+                className="px-8 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-250 flex items-center gap-2"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Jelajahi Cerita →
+                Jelajahi Cerita <ArrowRight className="w-5 h-5" />
               </motion.button>
             </Link>
             <Link to="/edutainment">
@@ -131,7 +138,7 @@ export const Home = () => {
             transition={{ duration: 3, repeat: Infinity }}
             className="relative z-10"
           >
-            🎨🧵🏭✨
+            <Globe className="w-40 h-40 text-edu-blue dark:text-neon-edu-blue opacity-80" />
           </motion.div>
         </motion.div>
       </motion.section>
@@ -155,7 +162,7 @@ export const Home = () => {
               className="bg-pure-card dark:bg-dark-surface p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-250 text-center hover:-translate-y-2 border-2 border-soft-border dark:border-soft-dark-border hover:border-edu-blue dark:hover:border-neon-edu-blue"
               variants={itemVariants}
             >
-              <div className="text-5xl mb-4">{feature.icon}</div>
+              <div className="flex justify-center mb-4">{feature.icon}</div>
               <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-2">{feature.title}</h3>
               <p className="text-slate-text dark:text-dark-body text-sm leading-relaxed">{feature.desc}</p>
             </motion.div>
@@ -183,7 +190,7 @@ export const Home = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
             >
-              <div className="text-6xl mb-4">{cat.icon}</div>
+              <div className="flex justify-center">{cat.icon}</div>
               <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-2">{cat.name}</h3>
               <p className="text-sm text-slate-text dark:text-dark-body">{cat.desc}</p>
             </motion.div>
@@ -202,10 +209,10 @@ export const Home = () => {
         <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue text-center mb-16 relative z-10">Bagaimana Cara Kerja?</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative z-10">
           {[
-            { step: '1', title: 'Jelajahi', desc: 'Jelajahi koleksi produk UMKM etis kami' },
-            { step: '2', title: 'Temukan', desc: 'Pelajari cerita unik di balik setiap produk' },
-            { step: '3', title: 'Belajar', desc: 'Ikuti quiz interaktif tentang supply chain' },
-            { step: '4', title: 'Dukung', desc: 'Dukung artisan dengan pembelian yang bermakna' }
+            { step: '1', title: 'Jelajahi', desc: 'Jelajahi koleksi produk UMKM etis kami', icon: <Search className="w-6 h-6" /> },
+            { step: '2', title: 'Temukan', desc: 'Pelajari cerita unik di balik setiap produk', icon: <BookOpen className="w-6 h-6" /> },
+            { step: '3', title: 'Belajar', desc: 'Ikuti quiz interaktif tentang supply chain', icon: <ShieldCheck className="w-6 h-6" /> },
+            { step: '4', title: 'Dukung', desc: 'Dukung artisan dengan pembelian yang bermakna', icon: <Heart className="w-6 h-6" /> }
           ].map((item, idx) => (
             <motion.div
               key={idx}
@@ -217,7 +224,7 @@ export const Home = () => {
             >
               <div className="bg-sky-soft-blue dark:bg-blue-glow-soft rounded-2xl p-8 text-center border-2 border-edu-blue/30 dark:border-neon-edu-blue/30 hover:border-edu-blue dark:hover:border-neon-edu-blue hover:shadow-lg transition-all duration-250">
                 <div className="w-12 h-12 bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
-                  {item.step}
+                  {item.icon}
                 </div>
                 <h4 className="text-lg font-bold text-ink-black dark:text-dark-heading mb-2">{item.title}</h4>
                 <p className="text-sm text-slate-text dark:text-dark-body">{item.desc}</p>
@@ -229,7 +236,7 @@ export const Home = () => {
                     transition={{ duration: 1.5, repeat: Infinity }}
                     className="text-2xl text-edu-blue dark:text-neon-edu-blue"
                   >
-                    →
+                    <ArrowRight />
                   </motion.div>
                 </div>
               )}
@@ -246,7 +253,7 @@ export const Home = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue text-center mb-4 relative z-10">🗺️ Explore by Region</h2>
+        <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue text-center mb-4 relative z-10 flex items-center justify-center gap-3"><Map className="w-10 h-10" /> Explore by Region</h2>
         <p className="text-lg text-slate-text dark:text-dark-body text-center mb-12 relative z-10">
           Temukan kerajinan tradisional unik dari berbagai pulau di Indonesia
         </p>
@@ -258,11 +265,11 @@ export const Home = () => {
           >
             <p className="text-2xl font-bold text-ink-black dark:text-dark-heading mb-6">Jelajahi Produk Berdasarkan Region</p>
             <motion.button
-              className="px-8 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-250"
+              className="px-8 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-250 flex items-center gap-2 mx-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Lihat Semua Region →
+              Lihat Semua Region <ArrowRight className="w-5 h-5" />
             </motion.button>
           </motion.div>
         </Link>
@@ -293,7 +300,7 @@ export const Home = () => {
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-lg">⭐</span>
+                  <span key={i} className="text-lg text-yellow-400">★</span>
                 ))}
               </div>
               <p className="text-slate-text dark:text-dark-body italic mb-4">"{testimonial.quote}"</p>

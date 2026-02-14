@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { Rocket, ArrowLeft } from 'lucide-react'
 
 export const Team = () => {
   return (
@@ -17,7 +18,7 @@ export const Team = () => {
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          🚀
+          <Rocket className="w-32 h-32 text-action-orange dark:text-dark-action-orange mx-auto" />
         </motion.div>
 
         {/* Title */}
@@ -58,11 +59,11 @@ export const Team = () => {
         >
           <Link to="/">
             <motion.button
-              className="px-8 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold text-lg rounded-full shadow-md hover:shadow-lg transition-all duration-250"
+              className="px-8 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold text-lg rounded-full shadow-md hover:shadow-lg transition-all duration-250 flex items-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              ← Back to Home
+              <ArrowLeft className="w-6 h-6" /> Back to Home
             </motion.button>
           </Link>
         </motion.div>

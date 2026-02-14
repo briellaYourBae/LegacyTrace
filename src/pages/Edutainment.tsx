@@ -1,6 +1,10 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { QuizCard } from '../components/QuizCard'
+import { 
+  Map, Landmark, Trees, Palmtree, Bird, 
+  Globe, Scale, Heart, Recycle, Award, Leaf, Search
+} from 'lucide-react'
 
 type Island = 'sumatra' | 'java' | 'kalimantan' | 'sulawesi' | 'papua'
 
@@ -382,28 +386,32 @@ export const Edutainment = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [selectedIsland])
   
-  const islands: { id: Island; name: string; icon: string }[] = [
-    { id: 'sumatra', name: 'Sumatra', icon: '🌴' },
-    { id: 'java', name: 'Jawa', icon: '🏛️' },
-    { id: 'kalimantan', name: 'Kalimantan', icon: '🌳' },
-    { id: 'sulawesi', name: 'Sulawesi', icon: '🏝️' },
-    { id: 'papua', name: 'Papua', icon: '🦜' }
+  const islands: { id: Island; name: string; icon: React.ReactNode }[] = [
+    { id: 'sumatra', name: 'Sumatra', icon: <Palmtree className="w-6 h-6" /> },
+    { id: 'java', name: 'Jawa', icon: <Landmark className="w-6 h-6" /> },
+    { id: 'kalimantan', name: 'Kalimantan', icon: <Trees className="w-6 h-6" /> },
+    { id: 'sulawesi', name: 'Sulawesi', icon: <Map className="w-6 h-6" /> },
+    { id: 'papua', name: 'Papua', icon: <Bird className="w-6 h-6" /> }
   ]
   
   const lessons = [
     {
+      icon: <Scale className="w-5 h-5" />,
       title: 'Apa itu Fair Trade?',
       content: 'Fair trade memastikan bahwa artisan dan petani menerima kompensasi yang adil untuk pekerjaan mereka, mempromosikan kehidupan sustainable dan praktik produksi ethical.'
     },
     {
+      icon: <Search className="w-5 h-5" />,
       title: 'Transparansi Supply Chain',
       content: 'Mengetahui dari mana produk berasal dan bagaimana dibuat menciptakan akuntabilitas dan mendukung komunitas yang layak mendapat pengakuan atas craftsmanship mereka.'
     },
     {
+      icon: <Landmark className="w-5 h-5" />,
       title: 'Pelestarian Cultural',
       content: 'Kerajinan tradisional membawa warisan budaya. Mendukung artisan membantu melestarikan teknik berabad-abad dan identitas cultural.'
     },
     {
+      icon: <Leaf className="w-5 h-5" />,
       title: 'Praktik Sustainable',
       content: 'Banyak UMKM menggunakan bahan alami dan metode eco-friendly, mengurangi dampak lingkungan sambil mempertahankan kualitas dan authenticity.'
     }
@@ -453,7 +461,7 @@ export const Edutainment = () => {
               variants={itemVariants}
             >
               <div className="w-10 h-10 bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green text-white rounded-full flex items-center justify-center font-bold mb-4 text-lg">
-                {idx + 1}
+                {lesson.icon}
               </div>
               <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-3">{lesson.title}</h3>
               <p className="text-slate-text dark:text-dark-body leading-relaxed text-sm">{lesson.content}</p>
@@ -488,7 +496,7 @@ export const Edutainment = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="text-2xl">{island.icon}</span>
+              <span className="text-2xl flex items-center justify-center">{island.icon}</span>
               <span className="text-lg">{island.name}</span>
             </motion.button>
           ))}
@@ -515,13 +523,13 @@ export const Edutainment = () => {
         <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue text-center mb-12">💚 Komitmen Kami</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: '🌍', title: 'Komunitas Global', desc: 'Mendukung UMKM di seluruh Indonesia' },
-            { icon: '✨', title: 'Quality Craftsmanship', desc: 'Melestarikan teknik tradisional' },
-            { icon: '💰', title: 'Kompensasi Fair', desc: 'Memastikan artisan mendapat yang layak' },
-            { icon: '🌱', title: 'Produksi Sustainable', desc: 'Praktik eco-friendly dan ethical' }
+            { icon: <Globe className="w-12 h-12 text-edu-blue" />, title: 'Komunitas Global', desc: 'Mendukung UMKM di seluruh Indonesia' },
+            { icon: <Award className="w-12 h-12 text-action-orange" />, title: 'Quality Craftsmanship', desc: 'Melestarikan teknik tradisional' },
+            { icon: <Scale className="w-12 h-12 text-purple-500" />, title: 'Kompensasi Fair', desc: 'Memastikan artisan mendapat yang layak' },
+            { icon: <Recycle className="w-12 h-12 text-growth-green" />, title: 'Produksi Sustainable', desc: 'Praktik eco-friendly dan ethical' }
           ].map((item, idx) => (
             <div key={idx} className="bg-sky-soft-blue dark:bg-blue-glow-soft p-8 rounded-2xl text-center hover:shadow-md transition-all duration-250 border border-edu-blue/20 dark:border-neon-edu-blue/20">
-              <div className="text-5xl mb-4">{item.icon}</div>
+              <div className="flex justify-center mb-4">{item.icon}</div>
               <h3 className="text-lg font-serif font-bold text-ink-black dark:text-dark-heading mb-2">{item.title}</h3>
               <p className="text-slate-text dark:text-dark-body text-sm">{item.desc}</p>
             </div>

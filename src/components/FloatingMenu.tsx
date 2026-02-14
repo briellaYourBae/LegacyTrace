@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { ArrowUp, ArrowLeft, Plus } from 'lucide-react'
 
 export const FloatingMenu = () => {
   const navigate = useNavigate()
@@ -39,7 +40,7 @@ export const FloatingMenu = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              ↑
+              <ArrowUp className="w-6 h-6" />
             </motion.button>
 
             {/* Back Button - Only show if NOT on main pages */}
@@ -50,7 +51,7 @@ export const FloatingMenu = () => {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                ←
+                <ArrowLeft className="w-6 h-6" />
               </motion.button>
             )}
           </motion.div>
@@ -65,7 +66,7 @@ export const FloatingMenu = () => {
         whileTap={{ scale: 0.9 }}
         animate={{ rotate: showMenu ? 45 : 0 }}
       >
-        +
+        <Plus className="w-8 h-8" />
       </motion.button>
     </div>
   )
