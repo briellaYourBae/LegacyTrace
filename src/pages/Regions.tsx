@@ -12,9 +12,21 @@ import { BackgroundShapes } from '../components/BackgroundShapes'
 export const Regions = () => {
   const [selectedRegion, setSelectedRegion] = useState(regions[0])
 
+  const scrollToDetail = () => {
+    const detailSection = document.getElementById('region-detail')
+    if (detailSection) {
+      detailSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  const handleRegionSelect = (region: typeof regions[0]) => {
+    setSelectedRegion(region)
+    setTimeout(scrollToDetail, 100)
+  }
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [selectedRegion])
+  }, [])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -96,7 +108,7 @@ export const Regions = () => {
           {pulauBesar.map((region) => (
             <motion.button
               key={region.id}
-              onClick={() => setSelectedRegion(region)}
+              onClick={() => handleRegionSelect(region)}
               className={`p-6 rounded-2xl font-semibold transition-all duration-300 text-center group ${
                 selectedRegion.id === region.id
                   ? 'bg-action-orange text-white shadow-lg scale-105 ring-4 ring-action-orange/20'
@@ -136,7 +148,7 @@ export const Regions = () => {
           {pulauKecil.map((region) => (
             <motion.button
               key={region.id}
-              onClick={() => setSelectedRegion(region)}
+              onClick={() => handleRegionSelect(region)}
               className={`p-6 rounded-2xl font-semibold transition-all duration-300 text-center group ${
                 selectedRegion.id === region.id
                   ? 'bg-growth-green text-white shadow-lg scale-105 ring-4 ring-growth-green/20'
@@ -156,7 +168,7 @@ export const Regions = () => {
       </motion.section>
 
       {/* Region Detail */}
-      <motion.section className="max-w-6xl mx-auto px-8 mb-12 relative z-10">
+      <motion.section id="region-detail" className="max-w-6xl mx-auto px-8 mb-12 relative z-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={selectedRegion.id}
@@ -201,37 +213,6 @@ export const Regions = () => {
                     <p className="text-xs text-slate-text dark:text-dark-body truncate">{product.umkm}</p>
                   </motion.div>
                 ))}
-              </motion.div>
-            </div>
-
-            {/* Stats */}
-            <div className="flex flex-wrap gap-8 mt-12 pt-8 border-t border-soft-border dark:border-soft-dark-border">
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="text-center"
-              >
-                <p className="text-3xl font-bold text-edu-blue dark:text-neon-edu-blue mb-1">{selectedRegion.products.length}</p>
-                <p className="text-sm text-slate-text dark:text-dark-body font-medium">Produk Unggulan</p>
-              </motion.div>
-              <motion.div
-                initial={{ scale: 0 }} 
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.3 }}
-                className="text-center"
-              >
-                <p className="text-3xl font-bold text-growth-green dark:text-glow-green flex justify-center mb-1"><CheckCircle className="w-9 h-9" /></p>
-                <p className="text-sm text-slate-text dark:text-dark-body font-medium">Fair Trade</p>
-              </motion.div>
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.4 }}
-                className="text-center"
-              >
-                <p className="text-3xl font-bold text-action-orange dark:text-dark-action-orange flex justify-center mb-1"><LeafIcon className="w-9 h-9" /></p>
-                <p className="text-sm text-slate-text dark:text-dark-body font-medium">Sustainable</p>
               </motion.div>
             </div>
           </motion.div>

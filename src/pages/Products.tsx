@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
+import { useSearchParams } from 'react-router-dom'
 import { products } from '../data/products'
 import { ProductCard } from '../components/ProductCard'
 import { BackgroundShapes } from '../components/BackgroundShapes'
@@ -11,11 +12,17 @@ import {
 type Category = 'all' | 'batik' | 'makanan' | 'kerajinan' | 'tenun' | 'gerabah' | 'herbal'
 
 export const Products = () => {
-    const [selectedCategory, setSelectedCategory] = useState<Category>('all')
+    const [searchParams, setSearchParams] = useSearchParams()
+    const categoryFromUrl = (searchParams.get('category') as Category) || 'all'
+    const [selectedCategory, setSelectedCategory] = useState<Category>(categoryFromUrl)
 
     useEffect(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }, [selectedCategory])
+
+    useEffect(() => {
+      setSelectedCategory(categoryFromUrl)
+    }, [categoryFromUrl])
 
   const categories: Array<{ value: Category; label: string; icon: React.ReactNode }> = [
     { value: 'all', label: 'Semua Produk', icon: <Globe className="w-5 h-5" /> },
@@ -63,8 +70,11 @@ export const Products = () => {
                               ? 'bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white shadow-lg hover:shadow-xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50'
                               : 'glass text-ink-black dark:text-dark-body hover:bg-gradient-to-r hover:from-sky-soft-blue hover:to-leaf-soft-green dark:hover:from-blue-glow-soft dark:hover:to-deep-green-base border border-soft-border/50 dark:border-soft-dark-border/50'
                         }`}
-                        onClick={() => setSelectedCategory(cat.value)}
-                        whileHover={{ scale: 1.08, y: -2 }}
+                        onClick={() => {
+                          setSelectedCategory(cat.value)
+                          setSearchParams(cat.value === 'all' ? {} : { category: cat.value })
+                        }}
+                        whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                       >
                         <span className={selectedCategory === cat.value ? 'transform rotate-12' : ''}>{cat.icon}</span> {cat.label}
@@ -89,7 +99,7 @@ export const Products = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: idx * 0.1 }}
                   >
-                      <ProductCard product={product} />
+                      <ProductCard product={product} selectedCategory={selectedCategory} />
                   </motion.div>
                 ))
             ) : (

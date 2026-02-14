@@ -4,6 +4,7 @@ import { Product } from '../types/product'
 
 interface ProductCardProps {
   product: Product
+  selectedCategory?: string
 }
 
 const getCategoryColor = (category: string) => {
@@ -18,9 +19,13 @@ const getCategoryColor = (category: string) => {
   return colors[category as keyof typeof colors] || colors.kerajinan
 }
 
-export const ProductCard = ({ product }: ProductCardProps) => {
+export const ProductCard = ({ product, selectedCategory }: ProductCardProps) => {
+  const passportLink = selectedCategory && selectedCategory !== 'all' 
+    ? `/passport/${product.id}?category=${selectedCategory}`
+    : `/passport/${product.id}`
+  
   return (
-    <Link to={`/passport/${product.id}`}>
+    <Link to={passportLink}>
       <motion.div
         className="glass rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-soft-border/50 dark:border-soft-dark-border/50 card-hover group"
         whileHover={{ y: -12, scale: 1.02 }}

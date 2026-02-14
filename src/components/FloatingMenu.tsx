@@ -17,7 +17,14 @@ export const FloatingMenu = () => {
 
   const goBack = () => {
     if (location.pathname.includes('/passport/')) {
-      navigate('/products')
+      // Check if there's a referrer state with category
+      const searchParams = new URLSearchParams(location.search)
+      const category = searchParams.get('category')
+      if (category) {
+        navigate(`/products?category=${category}`)
+      } else {
+        navigate('/products')
+      }
     } else {
       navigate('/')
     }

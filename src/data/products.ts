@@ -363,8 +363,9 @@ export const products: Product[] = [
     ],
     artisanName: 'Ibu Retno',
     artisanExperience: 15,
-    artisanQuote: 'My grandmother\'s recipe is a treasure I proudly share.',
-    culturalValue: 'Lumpia represents Semarang\'s culinary heritage and family values.'
+    artisanQuote: 'Resep nenek saya adalah harta yang saya bagikan dengan bangga.',
+    artisanQuoteLocal: 'Resep mbah saya iku bandha sing tak bagekake kanthi bangga.',
+    culturalValue: 'Lumpia merepresentasikan warisan kuliner Semarang dan nilai-nilai keluarga.'
   },
 
   // ===== CRAFTS =====
@@ -509,8 +510,9 @@ export const products: Product[] = [
     ],
     artisanName: 'Pak Darmanto',
     artisanExperience: 20,
-    artisanQuote: 'Each mask carries the spirit of Cirebon dance.',
-    culturalValue: 'Topeng masks are central to Cirebon\'s mask dance cultural performances.'
+    artisanQuote: 'Setiap topeng membawa semangat tari Cirebon.',
+    artisanQuoteLocal: 'Unggal topeng mawa sumanget tari Cirebon.',
+    culturalValue: 'Topeng adalah pusat pertunjukan budaya tari topeng Cirebon.'
   },
 
   // ===== WOVEN =====
@@ -655,7 +657,8 @@ export const products: Product[] = [
     ],
     artisanName: 'Ibu Mariamah',
     artisanExperience: 25,
-    artisanQuote: 'Songket is the crown of Palembang culture.',
+    artisanQuote: 'Songket adalah mahkota budaya Palembang.',
+    artisanQuoteLocal: 'Songket itu mahkota budaya Palembang.',
     culturalValue: 'Songket melambangkan prestise dan dikenakan untuk upacara kerajaan dan perayaan.'
   },
 
@@ -801,7 +804,8 @@ export const products: Product[] = [
     ],
     artisanName: 'Pak Hendra',
     artisanExperience: 22,
-    artisanQuote: 'Good pottery makes good food. This is my craft.',
+    artisanQuote: 'Gerabah yang baik menghasilkan masakan yang enak. Ini keahlian saya.',
+    artisanQuoteLocal: 'Gerabah sing apik ngasilake masakan sing enak. Iki keahlian aku.',
     culturalValue: 'Peralatan masak gerabah menghubungkan memasak dengan praktik budaya tradisional.'
   },
 
@@ -1087,277 +1091,277 @@ export const quizzes: Record<string, QuizQuestion[]> = {
   'batik-001': [
     {
       id: 'q1',
-      question: 'What traditional material is used to create the resist pattern in batik?',
-      options: ['Clay', 'Wax', 'Paper', 'Salt'],
+      question: 'Bahan tradisional apa yang digunakan untuk membuat pola resist pada batik?',
+      options: ['Tanah liat', 'Lilin', 'Kertas', 'Garam'],
       correct: 1,
-      explanation: 'Hot wax is applied to the fabric to create resist patterns. Where wax is applied, dye cannot penetrate.'
+      explanation: 'Lilin panas diaplikasikan pada kain untuk membuat pola resist. Di mana lilin diaplikasikan, pewarna tidak dapat menembus.'
     },
     {
       id: 'q2',
-      question: 'What does Mega Mendung motif symbolize in Sundanese culture?',
-      options: ['Rain and water', 'Protection and prosperity', 'War and conflict', 'Death and mourning'],
+      question: 'Apa yang disimbolkan oleh motif Mega Mendung dalam budaya Sunda?',
+      options: ['Hujan dan air', 'Perlindungan dan kemakmuran', 'Perang dan konflik', 'Kematian dan berkabung'],
       correct: 1,
-      explanation: 'Mega Mendung symbolizes protection and the continuous flow of prosperity in Sundanese cultural beliefs.'
+      explanation: 'Mega Mendung melambangkan perlindungan dan aliran kemakmuran yang berkelanjutan dalam kepercayaan budaya Sunda.'
     },
     {
       id: 'q3',
-      question: 'How long does it typically take to hand-draw one batik piece?',
-      options: ['2-3 hours', '5-7 hours', '8-12 hours', '20-24 hours'],
+      question: 'Berapa lama waktu yang dibutuhkan untuk menggambar satu lembar batik dengan tangan?',
+      options: ['2-3 jam', '5-7 jam', '8-12 jam', '20-24 jam'],
       correct: 2,
-      explanation: 'Master artisans spend 8-12 hours hand-drawing intricate patterns with wax, making each piece truly unique.'
+      explanation: 'Pengrajin ahli menghabiskan 8-12 jam menggambar pola rumit dengan lilin, membuat setiap karya benar-benar unik.'
     }
   ],
   'batik-002': [
     {
       id: 'q1',
-      question: 'What does Parang Rusak pattern represent?',
-      options: ['Peace', 'Warrior strength', 'Nature', 'Wealth'],
+      question: 'Apa yang direpresentasikan oleh pola Parang Rusak?',
+      options: ['Kedamaian', 'Kekuatan prajurit', 'Alam', 'Kekayaan'],
       correct: 1,
-      explanation: 'Parang Rusak pattern represents warrior strength and confidence in Javanese tradition.'
+      explanation: 'Pola Parang Rusak merepresentasikan kekuatan dan kepercayaan diri prajurit dalam tradisi Jawa.'
     },
     {
       id: 'q2',
-      question: 'How many dye baths are used in Parang Rusak batik?',
-      options: ['One', 'Two', 'Multiple', 'Random'],
+      question: 'Berapa kali pencelupan pewarna digunakan dalam batik Parang Rusak?',
+      options: ['Satu', 'Dua', 'Beberapa kali', 'Acak'],
       correct: 2,
-      explanation: 'Multiple indigo dye baths create the deep, rich color characteristic of classic batik.'
+      explanation: 'Beberapa kali pencelupan pewarna indigo menciptakan warna yang dalam dan kaya khas batik klasik.'
     },
     {
       id: 'q3',
-      question: 'Where is Parang Rusak batik traditionally made?',
+      question: 'Di mana batik Parang Rusak secara tradisional dibuat?',
       options: ['Bandung', 'Yogyakarta', 'Solo', 'Semarang'],
       correct: 2,
-      explanation: 'Parang Rusak is traditional to Solo batik-making heritage.'
+      explanation: 'Parang Rusak adalah tradisional dari warisan pembuatan batik Solo.'
     }
   ],
   'snacks-001': [
     {
       id: 'q1',
-      question: 'What is the main ingredient in tahu goreng?',
-      options: ['Rice', 'Beans', 'Soybeans', 'Wheat'],
+      question: 'Apa bahan utama dalam tahu goreng?',
+      options: ['Beras', 'Kacang', 'Kedelai', 'Gandum'],
       correct: 2,
-      explanation: 'Tofu is made from soybeans. High-quality soybeans are processed into soy milk, then coagulated into tofu.'
+      explanation: 'Tahu dibuat dari kedelai. Kedelai berkualitas tinggi diproses menjadi susu kedelai, kemudian digumpalkan menjadi tahu.'
     },
     {
       id: 'q2',
-      question: 'At what time of day does Mak Sumi start making tofu?',
-      options: ['8:00 AM', '12:00 PM', '5:00 AM', '6:00 PM'],
+      question: 'Pada jam berapa Mak Sumi mulai membuat tahu?',
+      options: ['08:00', '12:00', '05:00', '18:00'],
       correct: 2,
-      explanation: 'Tofu making begins at 5:00 AM to ensure fresh product reaches the market by mid-morning.'
+      explanation: 'Pembuatan tahu dimulai pukul 05:00 pagi untuk memastikan produk segar sampai ke pasar pada pertengahan pagi.'
     },
     {
       id: 'q3',
-      question: 'What makes tahu goreng crispy?',
-      options: ['Salt coating', 'Deep frying in oil', 'Sun drying', 'Baking'],
+      question: 'Apa yang membuat tahu goreng renyah?',
+      options: ['Lapisan garam', 'Digoreng dalam minyak', 'Dijemur', 'Dipanggang'],
       correct: 1,
-      explanation: 'Deep frying tofu in premium oil creates the crispy exterior while keeping the inside soft.'
+      explanation: 'Menggoreng tahu dalam minyak premium menciptakan bagian luar yang renyah sambil menjaga bagian dalam tetap lembut.'
     }
   ],
   'snacks-002': [
     {
       id: 'q1',
-      question: 'What is the crepe wrapper made from?',
-      options: ['Wheat flour', 'Rice flour', 'Corn flour', 'Tapioca'],
+      question: 'Kulit lumpia terbuat dari apa?',
+      options: ['Tepung terigu', 'Tepung beras', 'Tepung jagung', 'Tapioka'],
       correct: 1,
-      explanation: 'Lumpia crepes are made from premium rice flour and water mixed to perfect consistency.'
+      explanation: 'Kulit lumpia dibuat dari tepung beras premium dan air yang dicampur hingga konsistensi sempurna.'
     },
     {
       id: 'q2',
-      question: 'How many generations has the recipe been passed down?',
-      options: ['One', 'Two', 'Three', 'Four'],
+      question: 'Berapa generasi resep ini telah diwariskan?',
+      options: ['Satu', 'Dua', 'Tiga', 'Empat'],
       correct: 2,
-      explanation: 'The recipe comes from grandmother\'s original recipe, passed down through family generations.'
+      explanation: 'Resep ini berasal dari resep asli nenek, diwariskan melalui generasi keluarga.'
     },
     {
       id: 'q3',
-      question: 'What makes lumpia healthy?',
-      options: ['Tanpa MSG', 'Bahan Segar', 'Tanpa Pengawet', 'All of above'],
+      question: 'Apa yang membuat lumpia sehat?',
+      options: ['Tanpa MSG', 'Bahan Segar', 'Tanpa Pengawet', 'Semua benar'],
       correct: 3,
-      explanation: 'Lumpia Ibu Retno is made with all Bahan Segar, Tanpa MSG, and no artificial preservatives.'
+      explanation: 'Lumpia Ibu Retno dibuat dengan semua Bahan Segar, Tanpa MSG, dan tanpa pengawet buatan.'
     }
   ],
   'crafts-001': [
     {
       id: 'q1',
-      question: 'What material is wayang kulit traditionally made from?',
-      options: ['Wood', 'Paper', 'Buffalo leather', 'Fabric'],
+      question: 'Bahan apa yang secara tradisional digunakan untuk membuat wayang kulit?',
+      options: ['Kayu', 'Kertas', 'Kulit kerbau', 'Kain'],
       correct: 2,
-      explanation: 'Wayang kulit is made from carefully selected buffalo leather, which allows light to pass through for shadow effects.'
+      explanation: 'Wayang kulit dibuat dari kulit kerbau yang dipilih dengan hati-hati, yang memungkinkan cahaya menembus untuk efek bayangan.'
     },
     {
       id: 'q2',
-      question: 'How many hours can it take to carve a single wayang puppet?',
-      options: ['10-15 hours', '30-50 hours', '70-90 hours', '120+ hours'],
+      question: 'Berapa jam yang dibutuhkan untuk mengukir satu wayang?',
+      options: ['10-15 jam', '30-50 jam', '70-90 jam', '120+ jam'],
       correct: 1,
-      explanation: 'A master carver invests 30-50 hours per puppet, creating intricate details and openwork patterns.'
+      explanation: 'Pengukir ahli menginvestasikan 30-50 jam per wayang, menciptakan detail rumit dan pola terbuka.'
     },
     {
       id: 'q3',
-      question: 'What is the cultural significance of wayang kulit?',
-      options: ['Just entertainment', 'Voice of ancestors and cultural conscience', 'Religious ritual only', 'Historical record'],
+      question: 'Apa signifikansi budaya wayang kulit?',
+      options: ['Hanya hiburan', 'Suara leluhur dan hati nurani budaya', 'Ritual keagamaan saja', 'Catatan sejarah'],
       correct: 1,
-      explanation: 'Wayang kulit is not merely entertainment—it carries philosophical values and moral teachings from ancestors.'
+      explanation: 'Wayang kulit bukan sekadar hiburan—ia membawa nilai filosofis dan ajaran moral dari leluhur.'
     }
   ],
   'crafts-002': [
     {
       id: 'q1',
-      question: 'What is the base coat color for Cirebon masks?',
-      options: ['Black', 'Red', 'White', 'Gold'],
+      question: 'Apa warna cat dasar untuk topeng Cirebon?',
+      options: ['Hitam', 'Merah', 'Putih', 'Emas'],
       correct: 2,
-      explanation: 'A white base coat is applied before painting vibrant colors on Cirebon masks.'
+      explanation: 'Cat dasar putih diaplikasikan sebelum melukis warna-warna cerah pada topeng Cirebon.'
     },
     {
       id: 'q2',
-      question: 'Topeng masks are used in which performance?',
-      options: ['Theater', 'Dance', 'Ceremony', 'All'],
+      question: 'Topeng digunakan dalam pertunjukan apa?',
+      options: ['Teater', 'Tari', 'Upacara', 'Semua'],
       correct: 3,
-      explanation: 'Topeng masks are central to Cirebon\'s mask dance and cultural ceremonies.'
+      explanation: 'Topeng adalah pusat tari topeng Cirebon dan upacara budaya.'
     },
     {
       id: 'q3',
-      question: 'What material is the mask base made from?',
-      options: ['Clay', 'Wood', 'Paper', 'Metal'],
+      question: 'Bahan dasar topeng terbuat dari apa?',
+      options: ['Tanah liat', 'Kayu', 'Kertas', 'Logam'],
       correct: 1,
-      explanation: 'Topeng masks are carved from lightweight wood suitable for wearing during performances.'
+      explanation: 'Topeng diukir dari kayu ringan yang cocok untuk dikenakan selama pertunjukan.'
     }
   ],
   'woven-001': [
     {
       id: 'q1',
-      question: 'What traditional weaving technique creates the ikat pattern?',
-      options: ['Block printing', 'Thread resist tying', 'Screen printing', 'Digital embroidery'],
+      question: 'Teknik tenun tradisional apa yang menciptakan pola ikat?',
+      options: ['Cetak blok', 'Pengikatan benang resist', 'Sablon', 'Bordir digital'],
       correct: 1,
-      explanation: 'Threads are carefully tied before dyeing to create resist patterns. When ties are removed, the pattern appears.'
+      explanation: 'Benang diikat dengan hati-hati sebelum pewarnaan untuk membuat pola resist. Ketika ikatan dilepas, pola muncul.'
     },
     {
       id: 'q2',
-      question: 'How long can it take to hand-weave one piece of tenun ikat?',
-      options: ['5-10 hours', '20-30 hours', '40-80 hours', '100+ hours'],
+      question: 'Berapa lama waktu yang dibutuhkan untuk menenun satu lembar tenun ikat dengan tangan?',
+      options: ['5-10 jam', '20-30 jam', '40-80 jam', '100+ jam'],
       correct: 2,
-      explanation: 'Master weavers spend 40-80 hours on traditional wooden looms, making each piece a labor of love.'
+      explanation: 'Penenun ahli menghabiskan 40-80 jam pada alat tenun kayu tradisional, membuat setiap karya sebagai hasil kerja cinta.'
     },
     {
       id: 'q3',
-      question: 'What color dyes are traditionally used in Lombok weaving?',
-      options: ['Synthetic chemicals only', 'Natural plant-based dyes', 'Mineral-based dyes', 'Food coloring'],
+      question: 'Pewarna apa yang secara tradisional digunakan dalam tenun Lombok?',
+      options: ['Hanya bahan kimia sintetis', 'Pewarna alami berbasis tumbuhan', 'Pewarna berbasis mineral', 'Pewarna makanan'],
       correct: 1,
-      explanation: 'Tenun ikat uses Pewarna Alamis extracted from plants, creating vibrant authentic colors.'
+      explanation: 'Tenun ikat menggunakan Pewarna Alami yang diekstrak dari tumbuhan, menciptakan warna autentik yang cerah.'
     }
   ],
   'woven-002': [
     {
       id: 'q1',
-      question: 'What makes songket fabric special?',
-      options: ['Silk threads', 'Gold/silver threads', 'Cotton only', 'Synthetic'],
+      question: 'Apa yang membuat kain songket istimewa?',
+      options: ['Benang sutra', 'Benang emas/perak', 'Hanya katun', 'Sintetis'],
       correct: 1,
-      explanation: 'Songket fabric is woven with gold and silver metallic threads for luxury and prestige.'
+      explanation: 'Kain songket ditenun dengan benang metalik emas dan perak untuk kemewahan dan prestise.'
     },
     {
       id: 'q2',
-      question: 'When is songket traditionally worn?',
-      options: ['Daily', 'Royal ceremonies', 'Casual events', 'Never'],
+      question: 'Kapan songket secara tradisional dikenakan?',
+      options: ['Sehari-hari', 'Upacara kerajaan', 'Acara kasual', 'Tidak pernah'],
       correct: 1,
-      explanation: 'Songket is traditionally worn during royal ceremonies, festivals, and special celebratory occasions.'
+      explanation: 'Songket secara tradisional dikenakan selama upacara kerajaan, festival, dan acara perayaan khusus.'
     },
     {
       id: 'q3',
-      question: 'Songket is especially famous from which region?',
+      question: 'Songket sangat terkenal dari daerah mana?',
       options: ['Yogyakarta', 'Bandung', 'Palembang', 'Surabaya'],
       correct: 2,
-      explanation: 'Palembang is famous for producing the finest songket fabric in Indonesia.'
+      explanation: 'Palembang terkenal memproduksi kain songket terbaik di Indonesia.'
     }
   ],
   'pottery-001': [
     {
       id: 'q1',
-      question: 'Where is Kasongan pottery clay extracted from?',
-      options: ['Mountains', 'Riverbank', 'City area', 'Ocean'],
+      question: 'Dari mana tanah liat gerabah Kasongan diekstrak?',
+      options: ['Gunung', 'Tepi sungai', 'Area kota', 'Laut'],
       correct: 1,
-      explanation: 'High-quality Tanah Liat Alami is dug from the Kasongan riverbank using Metode Tradisionals.'
+      explanation: 'Tanah Liat Alami berkualitas tinggi digali dari tepi sungai Kasongan menggunakan Metode Tradisional.'
     },
     {
       id: 'q2',
-      question: 'How long does pottery take to air dry?',
-      options: ['1 day', '3 days', 'Several days', 'One week'],
+      question: 'Berapa lama gerabah membutuhkan waktu untuk kering di udara?',
+      options: ['1 hari', '3 hari', 'Beberapa hari', 'Satu minggu'],
       correct: 2,
-      explanation: 'Shaped pottery is left to dry naturally for several days before firing.'
+      explanation: 'Gerabah yang sudah dibentuk dibiarkan mengering secara alami selama beberapa hari sebelum dibakar.'
     },
     {
       id: 'q3',
-      question: 'What type of kiln is used for firing?',
-      options: ['Electric kiln', 'Gas kiln', 'Wood-burning kiln', 'Solar kiln'],
+      question: 'Jenis tungku apa yang digunakan untuk pembakaran?',
+      options: ['Tungku listrik', 'Tungku gas', 'Tungku kayu bakar', 'Tungku solar'],
       correct: 2,
-      explanation: 'Traditional wood-burning kilns are used to fire Kasongan pottery.'
+      explanation: 'Tungku kayu bakar tradisional digunakan untuk membakar gerabah Kasongan.'
     }
   ],
   'pottery-002': [
     {
       id: 'q1',
-      question: 'What is the main function of periuk tanah liat?',
-      options: ['Decoration', 'Cooking', 'Storage', 'Display'],
+      question: 'Apa fungsi utama periuk tanah liat?',
+      options: ['Dekorasi', 'Memasak', 'Penyimpanan', 'Pajangan'],
       correct: 1,
-      explanation: 'Periuk is functional earthenware cookware perfect for traditional Indonesian cooking.'
+      explanation: 'Periuk adalah peralatan masak gerabah fungsional yang sempurna untuk metode memasak tradisional Indonesia.'
     },
     {
       id: 'q2',
-      question: 'What is removed from clay before molding?',
-      options: ['Water', 'Stones and impurities', 'Color', 'Heat'],
+      question: 'Apa yang dibuang dari tanah liat sebelum pencetakan?',
+      options: ['Air', 'Batu dan kotoran', 'Warna', 'Panas'],
       correct: 1,
-      explanation: 'Stones and impurities are removed during clay refinement process.'
+      explanation: 'Batu dan kotoran dibuang selama proses penyaringan tanah liat.'
     },
     {
       id: 'q3',
-      question: 'How is each pot tested for quality?',
-      options: ['Visual inspection', 'Durability test', 'Function test', 'All above'],
+      question: 'Bagaimana setiap periuk diuji kualitasnya?',
+      options: ['Inspeksi visual', 'Uji ketahanan', 'Uji fungsi', 'Semua benar'],
       correct: 3,
-      explanation: 'Each pot is tested thoroughly for durability, function, and quality before sale.'
+      explanation: 'Setiap periuk diuji secara menyeluruh untuk ketahanan, fungsi, dan kualitas sebelum dijual.'
     }
   ],
   'herbal-001': [
     {
       id: 'q1',
-      question: 'How long has Ibu Citra been making traditional jamu?',
-      options: ['10 years', '20 years', '30 years', '40 years'],
+      question: 'Berapa lama Ibu Citra membuat jamu tradisional?',
+      options: ['10 tahun', '20 tahun', '30 tahun', '40 tahun'],
       correct: 2,
-      explanation: 'Ibu Citra has been brewing traditional jamu for over 30 years with Resep Keluargas.'
+      explanation: 'Ibu Citra telah meracik jamu tradisional selama lebih dari 30 tahun dengan Resep Keluarga.'
     },
     {
       id: 'q2',
-      question: 'What is jamu made from?',
-      options: ['Artificial flavors', 'Natural herbs and spices', 'Sugar water', 'Chemicals'],
+      question: 'Jamu terbuat dari apa?',
+      options: ['Perasa buatan', 'Herbal dan rempah alami', 'Air gula', 'Bahan kimia'],
       correct: 1,
-      explanation: 'Traditional jamu is made from 100% Alami herbs and spices with no artificial additives.'
+      explanation: 'Jamu tradisional dibuat dari 100% Alami herbal dan rempah tanpa tambahan buatan.'
     },
     {
       id: 'q3',
-      question: 'What does jamu represent in Indonesian culture?',
-      options: ['Modern medicine', 'Ancestral healing wisdom', 'Western remedy', 'Commercial product'],
+      question: 'Apa yang direpresentasikan jamu dalam budaya Indonesia?',
+      options: ['Obat modern', 'Kebijaksanaan penyembuhan leluhur', 'Obat Barat', 'Produk komersial'],
       correct: 1,
-      explanation: 'Jamu represents centuries of ancestral Indonesian healing practices and wellness knowledge.'
+      explanation: 'Jamu merepresentasikan berabad-abad praktik penyembuhan Indonesia dan pengetahuan kesehatan leluhur.'
     }
   ],
   'herbal-002': [
     {
       id: 'q1',
-      question: 'What is the main benefit of wedang uwuh?',
-      options: ['Cooling', 'Warmth and wellness', 'Weight loss', 'Sleep aid'],
+      question: 'Apa manfaat utama wedang uwuh?',
+      options: ['Mendinginkan', 'Kehangatan dan kesehatan', 'Menurunkan berat badan', 'Membantu tidur'],
       correct: 1,
-      explanation: 'Wedang uwuh provides warmth and promotes wellness through natural spices and herbs.'
+      explanation: 'Wedang uwuh memberikan kehangatan dan meningkatkan kesehatan melalui rempah dan herbal alami.'
     },
     {
       id: 'q2',
-      question: 'What are the main ingredients in wedang uwuh?',
-      options: ['Coffee and sugar', 'Ginger, cloves, cinnamon, herbs', 'Tea leaves', 'Fruit juice'],
+      question: 'Apa bahan utama dalam wedang uwuh?',
+      options: ['Kopi dan gula', 'Jahe, cengkeh, kayu manis, herbal', 'Daun teh', 'Jus buah'],
       correct: 1,
-      explanation: 'Traditional wedang uwuh is made from ginger, cloves, cinnamon, and various natural herbs.'
+      explanation: 'Wedang uwuh tradisional dibuat dari jahe, cengkeh, kayu manis, dan berbagai herbal alami.'
     },
     {
       id: 'q3',
-      question: 'How long has Pak Joko been making wedang uwuh?',
-      options: ['10 years', '15 years', '25 years', '30 years'],
+      question: 'Berapa lama Pak Joko membuat wedang uwuh?',
+      options: ['10 tahun', '15 tahun', '25 tahun', '30 tahun'],
       correct: 2,
-      explanation: 'Pak Joko Susilo has been preserving the Resep Tradisional for over 25 years.'
+      explanation: 'Pak Joko Susilo telah melestarikan Resep Tradisional selama lebih dari 25 tahun.'
     }
   ]
 }
