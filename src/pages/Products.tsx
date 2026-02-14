@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
+import { useSearchParams } from 'react-router-dom'
 import { products } from '../data/products'
 import { ProductCard } from '../components/ProductCard'
 import { BackgroundShapes } from '../components/BackgroundShapes'
@@ -11,11 +12,17 @@ import {
 type Category = 'all' | 'batik' | 'makanan' | 'kerajinan' | 'tenun' | 'gerabah' | 'herbal'
 
 export const Products = () => {
-    const [selectedCategory, setSelectedCategory] = useState<Category>('all')
+    const [searchParams, setSearchParams] = useSearchParams()
+    const categoryFromUrl = (searchParams.get('category') as Category) || 'all'
+    const [selectedCategory, setSelectedCategory] = useState<Category>(categoryFromUrl)
 
     useEffect(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     }, [selectedCategory])
+
+    useEffect(() => {
+      setSelectedCategory(categoryFromUrl)
+    }, [categoryFromUrl])
 
   const categories: Array<{ value: Category; label: string; icon: React.ReactNode }> = [
     { value: 'all', label: 'Semua Produk', icon: <Globe className="w-5 h-5" /> },
@@ -63,7 +70,10 @@ export const Products = () => {
                               ? 'bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white shadow-md'
                               : 'bg-mist-gray dark:bg-soft-dark-border text-ink-black dark:text-dark-body hover:bg-sky-soft-blue dark:hover:bg-blue-glow-soft'
                         }`}
-                        onClick={() => setSelectedCategory(cat.value)}
+                        onClick={() => {
+                          setSelectedCategory(cat.value)
+                          setSearchParams(cat.value === 'all' ? {} : { category: cat.value })
+                        }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -91,7 +101,7 @@ export const Products = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: idx * 0.1 }}
                   >
-                      <ProductCard product={product} />
+                      <ProductCard product={product} selectedCategory={selectedCategory} />
                   </motion.div>
                 ))
             ) : (

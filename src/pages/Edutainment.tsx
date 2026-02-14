@@ -382,9 +382,17 @@ const islandQuizzes: Record<Island, QuizQuestion[]> = {
 export const Edutainment = () => {
   const [selectedIsland, setSelectedIsland] = useState<Island>('java')
   
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [selectedIsland])
+  const scrollToQuiz = () => {
+    const quizSection = document.getElementById('quiz-section')
+    if (quizSection) {
+      quizSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
+  const handleIslandSelect = (island: Island) => {
+    setSelectedIsland(island)
+    setTimeout(scrollToQuiz, 100)
+  }
   
   const islands: { id: Island; name: string; icon: React.ReactNode }[] = [
     { id: 'sumatra', name: 'Sumatra', icon: <Palmtree className="w-6 h-6" /> },
@@ -500,7 +508,7 @@ export const Edutainment = () => {
                   ? 'bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white shadow-md'
                   : 'bg-mist-gray dark:bg-soft-dark-border text-ink-black dark:text-dark-body hover:bg-sky-soft-blue dark:hover:bg-blue-glow-soft'
               }`}
-              onClick={() => setSelectedIsland(island.id)}
+              onClick={() => handleIslandSelect(island.id)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -511,6 +519,7 @@ export const Edutainment = () => {
         </div>
 
         <motion.div
+          id="quiz-section"
           key={selectedIsland}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

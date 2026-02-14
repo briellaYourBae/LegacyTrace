@@ -31,14 +31,6 @@ export const TimelineStep = ({ step, index, isVisible }: TimelineStepProps) => {
               <p className="text-xs md:text-base text-slate-text dark:text-dark-body font-semibold mb-2 flex items-center gap-2 justify-end"><User className="w-4 h-4" /> {step.actor}</p>
               <p className="text-xs md:text-base text-slate-text dark:text-dark-body font-semibold mb-4 flex items-center gap-2 justify-end"><MapPin className="w-4 h-4" /> {step.location}</p>
               <p className="text-ink-black dark:text-dark-body leading-relaxed text-sm md:text-base mb-4">{step.description}</p>
-              {step.imageUrl && (
-                <motion.img 
-                  src={step.imageUrl} 
-                  alt={step.title}
-                  className="w-full h-40 md:h-56 object-cover rounded-lg mt-3 shadow-md"
-                  whileHover={{ scale: 1.05 }}
-                />
-              )}
             </div>
           </motion.div>
         )}
@@ -66,14 +58,6 @@ export const TimelineStep = ({ step, index, isVisible }: TimelineStepProps) => {
             <p className="text-xs md:text-base text-slate-text dark:text-dark-body font-semibold mb-2 flex items-center gap-2"><User className="w-4 h-4" /> {step.actor}</p>
             <p className="text-xs md:text-base text-slate-text dark:text-dark-body font-semibold mb-4 flex items-center gap-2"><MapPin className="w-4 h-4" /> {step.location}</p>
             <p className="text-ink-black dark:text-dark-body leading-relaxed text-sm md:text-base mb-4">{step.description}</p>
-            {step.imageUrl && (
-              <motion.img 
-                src={step.imageUrl} 
-                alt={step.title}
-                className="w-full h-40 md:h-56 object-cover rounded-lg mt-3 shadow-md"
-                whileHover={{ scale: 1.05 }}
-              />
-            )}
           </motion.div>
         )}
       </div>
