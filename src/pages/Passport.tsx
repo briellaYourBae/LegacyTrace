@@ -13,6 +13,7 @@ export const Passport = () => {
   const [visibleSteps, setVisibleSteps] = useState<Set<number>>(new Set())
   const [showQuiz, setShowQuiz] = useState(false)
   const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([])
+  const [showFloatingMenu, setShowFloatingMenu] = useState(false)
 
   useEffect(() => {
     const found = products.find(p => p.id === productId)
@@ -32,7 +33,7 @@ export const Passport = () => {
   if (!product) return null
 
   return (
-    <div className="min-height-screen pb-20">
+    <div className="min-height-screen pb-20 md:pb-20">
       {/* Header */}
       <motion.section
         className="bg-gradient-to-r from-cream to-gold/10 max-w-6xl mx-auto px-8 py-12 rounded-2xl my-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
@@ -170,23 +171,59 @@ export const Passport = () => {
         </motion.section>
       )}
 
-      {/* Footer Action */}
+      {/* Footer Action - Desktop Only */}
       <motion.section
-        className="max-w-6xl mx-auto px-8 py-8 text-center"
+        className="hidden md:block max-w-6xl mx-auto px-8 py-8 text-center"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
         <p className="text-xl text-brown-primary font-semibold mb-6">🎉 Thank you for supporting ethical artisan production!</p>
-        <motion.button
-          className="px-8 py-3 bg-brown-primary text-white font-semibold rounded-full hover:bg-gold transition-colors"
-          onClick={() => navigate('/products')}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          ← Back to Products
-        </motion.button>
       </motion.section>
+
+      {/* Floating Buttons - Mobile Only */}
+      <div className="md:hidden fixed bottom-6 right-6 z-50">
+        {/* Menu Options */}
+        {showFloatingMenu && (
+          <motion.div
+            className="flex flex-col gap-3 mb-3"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+          >
+            <motion.button
+              className="w-14 h-14 bg-brown-primary text-white rounded-full shadow-xl flex items-center justify-center text-2xl"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+                setShowFloatingMenu(false)
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              ↑
+            </motion.button>
+            <motion.button
+              className="w-14 h-14 bg-gold text-brown-primary rounded-full shadow-xl flex items-center justify-center text-2xl font-bold"
+              onClick={() => navigate('/products')}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              ←
+            </motion.button>
+          </motion.div>
+        )}
+        
+        {/* Main Toggle Button */}
+        <motion.button
+          className="w-16 h-16 bg-gradient-to-r from-brown-primary to-gold text-white rounded-full shadow-2xl flex items-center justify-center text-3xl"
+          onClick={() => setShowFloatingMenu(!showFloatingMenu)}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          animate={{ rotate: showFloatingMenu ? 45 : 0 }}
+        >
+          +
+        </motion.button>
+      </div>
     </div>
   )
 }

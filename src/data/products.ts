@@ -235,55 +235,55 @@ export const products: Product[] = [
     steps: [
       {
         id: 'snacks-step-1',
-        title: 'Soybean Selection',
-        actor: 'Local Farmers',
-        location: 'Malang Region',
-        description: 'Premium soybeans sourced from local farmers in East Java.',
+        title: 'Pemilihan Kedelai',
+        actor: 'Petani Lokal',
+        location: 'Wilayah Malang',
+        description: 'Kedelai premium diperoleh dari petani lokal di Jawa Timur.',
         icon: '🫘',
         imageUrl: 'https://images.unsplash.com/photo-1599599810694-2a7a49d60908?w=400&h=300&fit=crop'
       },
       {
         id: 'snacks-step-2',
-        title: 'Tempe Fermentation',
-        actor: 'Fermentation Master',
-        location: 'Sanan Workshop',
-        description: 'Soybeans are fermented with traditional ragi for 36-48 hours to create quality tempe.',
+        title: 'Fermentasi Tempe',
+        actor: 'Master Fermentasi',
+        location: 'Workshop Sanan',
+        description: 'Kedelai difermentasi dengan ragi tradisional selama 36-48 jam untuk membuat tempe berkualitas.',
         icon: '🦠',
         imageUrl: 'https://images.unsplash.com/photo-1576866209365-74ba233f3f48?w=400&h=300&fit=crop'
       },
       {
         id: 'snacks-step-3',
-        title: 'Slicing',
-        actor: 'Preparation Team',
-        location: 'Sanan Kitchen',
-        description: 'Fresh tempe is thinly sliced by hand to ensure uniform crispiness.',
+        title: 'Pemotongan',
+        actor: 'Tim Persiapan',
+        location: 'Dapur Sanan',
+        description: 'Tempe segar diiris tipis dengan tangan untuk memastikan kerenyahan yang seragam.',
         icon: '🔪',
         imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop'
       },
       {
         id: 'snacks-step-4',
-        title: 'Seasoning',
-        actor: 'Seasoning Specialist',
-        location: 'Sanan Kitchen',
-        description: 'Tempe slices are coated with secret spice blend passed down through generations.',
+        title: 'Pembumbuan',
+        actor: 'Spesialis Bumbu',
+        location: 'Dapur Sanan',
+        description: 'Irisan tempe dilapisi dengan campuran bumbu rahasia yang diwariskan turun-temurun.',
         icon: '🌿',
         imageUrl: 'https://images.unsplash.com/photo-1596040995857-ba42d16cb0f2?w=400&h=300&fit=crop'
       },
       {
         id: 'snacks-step-5',
-        title: 'Deep Frying',
-        actor: 'Frying Master',
-        location: 'Sanan Kitchen',
-        description: 'Seasoned tempe is deep-fried in premium oil until golden and crispy.',
+        title: 'Penggorengan Dalam',
+        actor: 'Master Penggorengan',
+        location: 'Dapur Sanan',
+        description: 'Tempe berbumbu digoreng dalam minyak premium hingga keemasan dan renyah.',
         icon: '🍳',
         imageUrl: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop'
       },
       {
         id: 'snacks-step-6',
-        title: 'Packaging',
-        actor: 'Packaging Team',
+        title: 'Pengemasan',
+        actor: 'Tim Pengemasan',
         location: 'Sanan',
-        description: 'Crispy tempe chips are packed in airtight bags to maintain freshness.',
+        description: 'Keripik tempe renyah dikemas dalam kantong kedap udara untuk menjaga kesegaran.',
         icon: '📦',
         imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
@@ -381,55 +381,55 @@ export const products: Product[] = [
     steps: [
       {
         id: 'craft-step-1',
-        title: 'Leather Selection',
-        actor: 'Master Selector',
-        location: 'Yogyakarta Studio',
-        description: 'Premium buffalo leather is carefully selected for thickness and flexibility suitable for shadow puppet craft.',
+        title: 'Pemilihan Kulit',
+        actor: 'Master Pemilih',
+        location: 'Studio Yogyakarta',
+        description: 'Kulit kerbau premium dipilih dengan hati-hati untuk ketebalan dan fleksibilitas yang cocok untuk kerajinan wayang kulit.',
         icon: '🐃',
-        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop'
       },
       {
         id: 'craft-step-2',
-        title: 'Pattern Transfer',
-        actor: 'Design Artisan',
-        location: 'Yogyakarta Studio',
-        description: 'Traditional wayang character designs are transferred onto prepared leather using time-tested templates.',
+        title: 'Transfer Pola',
+        actor: 'Artisan Desain',
+        location: 'Studio Yogyakarta',
+        description: 'Desain karakter wayang tradisional ditransfer ke kulit yang telah disiapkan menggunakan template yang telah teruji waktu.',
         icon: '🖼️',
-        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop'
       },
       {
         id: 'craft-step-3',
-        title: 'Carving & Chiseling',
-        actor: 'Master Carver',
-        location: 'Yogyakarta Studio',
-        description: 'Each puppet is intricately carved by hand using traditional chisels and tools, taking 30-50 hours per piece.',
+        title: 'Ukiran & Pahat',
+        actor: 'Master Ukir',
+        location: 'Studio Yogyakarta',
+        description: 'Setiap wayang diukir dengan rumit menggunakan pahat dan alat tradisional, memakan waktu 30-50 jam per karya.',
         icon: '⚒️',
-        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=400&h=300&fit=crop'
       },
       {
         id: 'craft-step-4',
-        title: 'Piercing & Detail Work',
-        actor: 'Detail Specialist',
-        location: 'Yogyakarta Studio',
-        description: 'Delicate details are pierced and refined, creating the beautiful shadow effects the puppet will produce.',
+        title: 'Penusukan & Detail',
+        actor: 'Spesialis Detail',
+        location: 'Studio Yogyakarta',
+        description: 'Detail halus ditusuk dan disempurnakan, menciptakan efek bayangan indah yang akan dihasilkan wayang.',
         icon: '🔨',
-        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1565193566173-7cba06dab0d4?w=400&h=300&fit=crop'
       },
       {
         id: 'craft-step-5',
-        title: 'Leather Coloring',
-        actor: 'Color Specialist',
-        location: 'Yogyakarta Studio',
-        description: 'Natural plant-based pigments are applied to color the puppet, enhancing its theatrical beauty.',
+        title: 'Pewarnaan Kulit',
+        actor: 'Spesialis Warna',
+        location: 'Studio Yogyakarta',
+        description: 'Pigmen berbasis tanaman alami diaplikasikan untuk mewarnai wayang, meningkatkan keindahan teatrikalnya.',
         icon: '🎨',
-        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=300&fit=crop'
       },
       {
         id: 'craft-step-6',
-        title: 'Handle Attachment & Quality',
-        actor: 'Assembly Master',
-        location: 'Yogyakarta Studio',
-        description: 'Wooden handles are attached and each puppet undergoes final quality inspection before delivery.',
+        title: 'Pemasangan Pegangan & Kualitas',
+        actor: 'Master Perakitan',
+        location: 'Studio Yogyakarta',
+        description: 'Pegangan kayu dipasang dan setiap wayang menjalani inspeksi kualitas akhir sebelum pengiriman.',
         icon: '🎭',
         imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
@@ -527,57 +527,57 @@ export const products: Product[] = [
     steps: [
       {
         id: 'woven-step-1',
-        title: 'Cotton Preparation',
-        actor: 'Preparation Masters',
-        location: 'Lombok Village',
-        description: 'High-quality cotton threads are prepared and organized by color, ready for dyeing process.',
+        title: 'Persiapan Kapas',
+        actor: 'Master Persiapan',
+        location: 'Desa Lombok',
+        description: 'Benang kapas berkualitas tinggi disiapkan dan diorganisir berdasarkan warna, siap untuk proses pewarnaan.',
         icon: '🧶',
         imageUrl: 'https://images.unsplash.com/photo-1617635279887-4e5d75e5a09d?w=400&h=300&fit=crop'
       },
       {
         id: 'woven-step-2',
-        title: 'Thread Resist Tying',
-        actor: 'Tying Artisans',
-        location: 'Lombok Workshop',
-        description: 'Threads are carefully tied with raffia to create resist patterns, controlling where color will set.',
+        title: 'Pengikatan Benang Resist',
+        actor: 'Artisan Pengikat',
+        location: 'Workshop Lombok',
+        description: 'Benang diikat dengan hati-hati menggunakan raffia untuk membuat pola resist, mengontrol di mana warna akan menempel.',
         icon: '🪢',
-        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=300&fit=crop'
       },
       {
         id: 'woven-step-3',
-        title: 'Natural Dyeing',
-        actor: 'Dye Specialists',
-        location: 'Lombok Workshop',
-        description: 'Threads are immersed in natural dyes from plants, creating vibrant authentic colors.',
+        title: 'Pewarnaan Alami',
+        actor: 'Spesialis Pewarna',
+        location: 'Workshop Lombok',
+        description: 'Benang direndam dalam pewarna alami dari tanaman, menciptakan warna autentik yang cerah.',
         icon: '🌿',
         imageUrl: 'https://images.unsplash.com/photo-1596040995857-ba42d16cb0f2?w=400&h=300&fit=crop'
       },
       {
         id: 'woven-step-4',
-        title: 'Manual Loom Weaving',
-        actor: 'Master Weavers',
-        location: 'Lombok Village',
-        description: 'Dyed threads are hand-woven on traditional wooden looms, taking 40-80 hours per piece.',
+        title: 'Menenun Manual',
+        actor: 'Master Penenun',
+        location: 'Desa Lombok',
+        description: 'Benang yang telah diwarnai ditenun dengan tangan di alat tenun kayu tradisional, memakan waktu 40-80 jam per karya.',
         icon: '🪡',
-        imageUrl: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1565193566173-7cba06dab0d4?w=400&h=300&fit=crop'
       },
       {
         id: 'woven-step-5',
-        title: 'Finishing & Pressing',
-        actor: 'Finishing Team',
-        location: 'Lombok Workshop',
-        description: 'Woven fabric is carefully finished, pressed, and inspected for quality and pattern precision.',
+        title: 'Finishing & Penyetrikaan',
+        actor: 'Tim Finishing',
+        location: 'Workshop Lombok',
+        description: 'Kain tenun diselesaikan dengan hati-hati, disetrika, dan diperiksa kualitas serta presisi polanya.',
         icon: '✨',
-        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop'
       },
       {
         id: 'woven-step-6',
-        title: 'Eco-Packaging & Export',
-        actor: 'Export Team',
-        location: 'Lombok Warehouse',
-        description: 'Finished fabric is packaged in sustainable materials and prepared for fair-trade distribution.',
+        title: 'Pengemasan Ramah Lingkungan & Ekspor',
+        actor: 'Tim Ekspor',
+        location: 'Gudang Lombok',
+        description: 'Kain jadi dikemas dalam bahan berkelanjutan dan disiapkan untuk distribusi perdagangan yang adil.',
         icon: '🌍',
-        imageUrl: 'https://images.unsplash.com/photo-1617635279887-4e5d75e5a09d?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
     ],
     artisanName: 'Pak Wayan',
@@ -673,57 +673,57 @@ export const products: Product[] = [
     steps: [
       {
         id: 'pottery-step-1',
-        title: 'Clay Extraction',
-        actor: 'Clay Miner',
-        location: 'Kasongan Riverbank',
-        description: 'Natural clay is carefully dug from the riverbank using traditional methods.',
+        title: 'Ekstraksi Tanah Liat',
+        actor: 'Penambang Tanah Liat',
+        location: 'Tepi Sungai Kasongan',
+        description: 'Tanah liat alami digali dengan hati-hati dari tepi sungai menggunakan metode tradisional.',
         icon: '⛏️',
         imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=400&h=300&fit=crop'
       },
       {
         id: 'pottery-step-2',
-        title: 'Clay Preparation',
-        actor: 'Prep Team',
-        location: 'Kasongan Workshop',
-        description: 'Clay is kneaded, hydrated, and prepared for pottery making.',
+        title: 'Persiapan Tanah Liat',
+        actor: 'Tim Persiapan',
+        location: 'Workshop Kasongan',
+        description: 'Tanah liat diuleni, dihidrasi, dan disiapkan untuk pembuatan gerabah.',
         icon: '👐',
         imageUrl: 'https://images.unsplash.com/photo-1576066211575-d60bbb31ac0e?w=400&h=300&fit=crop'
       },
       {
         id: 'pottery-step-3',
-        title: 'Hand Shaping',
-        actor: 'Potter Master',
-        location: 'Kasongan Workshop',
-        description: 'Vessels hand-shaped on manual pottery wheel.',
+        title: 'Pembentukan Tangan',
+        actor: 'Master Pembuat Gerabah',
+        location: 'Workshop Kasongan',
+        description: 'Wadah dibentuk dengan tangan di roda gerabah manual.',
         icon: '⚙️',
         imageUrl: 'https://images.unsplash.com/photo-1565193566173-7cba06dab0d4?w=400&h=300&fit=crop'
       },
       {
         id: 'pottery-step-4',
-        title: 'Air Drying',
-        actor: 'Drying Team',
-        location: 'Kasongan Workshop',
-        description: 'Shaped pottery left to dry naturally for several days.',
+        title: 'Pengeringan Udara',
+        actor: 'Tim Pengeringan',
+        location: 'Workshop Kasongan',
+        description: 'Gerabah yang telah dibentuk dibiarkan mengering secara alami selama beberapa hari.',
         icon: '☀️',
         imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=400&h=300&fit=crop'
       },
       {
         id: 'pottery-step-5',
-        title: 'Traditional Firing',
-        actor: 'Kiln Master',
-        location: 'Kasongan Kiln',
-        description: 'Fired in traditional wood-burning kiln to create durable pottery.',
+        title: 'Pembakaran Tradisional',
+        actor: 'Master Kiln',
+        location: 'Kiln Kasongan',
+        description: 'Dibakar dalam kiln pembakaran kayu tradisional untuk membuat gerabah yang tahan lama.',
         icon: '🔥',
-        imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=400&h=300&fit=crop'
       },
       {
         id: 'pottery-step-6',
-        title: 'Motif Painting',
-        actor: 'Artist',
-        location: 'Kasongan Workshop',
-        description: 'Traditional Javanese motifs painted on finished pottery.',
+        title: 'Pengecatan Motif',
+        actor: 'Seniman',
+        location: 'Workshop Kasongan',
+        description: 'Motif Jawa tradisional dilukis pada gerabah yang sudah jadi.',
         icon: '🎨',
-        imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop'
       }
     ],
     artisanName: 'Pak Sulaiman',
@@ -819,55 +819,55 @@ export const products: Product[] = [
     steps: [
       {
         id: 'jamu-step-1',
-        title: 'Herb Harvesting',
-        actor: 'Farmer',
-        location: 'Yogyakarta Gardens',
-        description: 'Organic herbs and roots harvested at peak potency.',
+        title: 'Pemanenan Herbal',
+        actor: 'Petani',
+        location: 'Kebun Yogyakarta',
+        description: 'Herbal dan akar organik dipanen pada puncak potensinya.',
         icon: '🌿',
         imageUrl: 'https://images.unsplash.com/photo-1597318970834-a57ae9eb4f4d?w=400&h=300&fit=crop'
       },
       {
         id: 'jamu-step-2',
-        title: 'Herb Drying',
-        actor: 'Drying Master',
-        location: 'Yogyakarta Workshop',
-        description: 'Herbs dried naturally to preserve potency.',
+        title: 'Pengeringan Herbal',
+        actor: 'Master Pengeringan',
+        location: 'Workshop Yogyakarta',
+        description: 'Herbal dikeringkan secara alami untuk menjaga potensi.',
         icon: '☀️',
         imageUrl: 'https://images.unsplash.com/photo-1571513200266-1d8c3d9bf2fb?w=400&h=300&fit=crop'
       },
       {
         id: 'jamu-step-3',
-        title: 'Herb Grinding',
-        actor: 'Grinder',
-        location: 'Yogyakarta Workshop',
-        description: 'Dried herbs ground to fine powder.',
+        title: 'Penggilingan Herbal',
+        actor: 'Penggiling',
+        location: 'Workshop Yogyakarta',
+        description: 'Herbal kering digiling menjadi bubuk halus.',
         icon: '⚙️',
-        imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=300&fit=crop'
       },
       {
         id: 'jamu-step-4',
-        title: 'Formula Mixing',
-        actor: 'Herbalist Master',
-        location: 'Yogyakarta Workshop',
-        description: 'Mix ingredients according to ancient recipe.',
+        title: 'Pencampuran Formula',
+        actor: 'Master Herbalis',
+        location: 'Workshop Yogyakarta',
+        description: 'Campurkan bahan sesuai resep kuno.',
         icon: '🧪',
-        imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1596040995857-ba42d16cb0f2?w=400&h=300&fit=crop'
       },
       {
         id: 'jamu-step-5',
-        title: 'Brewing & Extraction',
-        actor: 'Brewer',
-        location: 'Yogyakarta Kitchen',
-        description: 'Steep ingredients to extract benefits.',
+        title: 'Penyeduhan & Ekstraksi',
+        actor: 'Penyeduh',
+        location: 'Dapur Yogyakarta',
+        description: 'Seduh bahan untuk mengekstrak manfaat.',
         icon: '☕',
-        imageUrl: 'https://images.unsplash.com/photo-1597318970834-a57ae9eb4f4d?w=400&h=300&fit=crop'
+        imageUrl: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop'
       },
       {
         id: 'jamu-step-6',
-        title: 'Bottling & Packaging',
-        actor: 'Packager',
+        title: 'Pembotolan & Pengemasan',
+        actor: 'Pengemas',
         location: 'Yogyakarta',
-        description: 'Bottled in glass containers to preserve quality.',
+        description: 'Dibotolkan dalam wadah kaca untuk menjaga kualitas.',
         icon: '🍯',
         imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
