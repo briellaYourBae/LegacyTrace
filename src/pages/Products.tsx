@@ -34,7 +34,7 @@ export const Products = () => {
     }, [selectedCategory])
 
     return (
-      <div className="min-h-screen pb-20 relative">
+      <div className="min-h-screen pb-20 relative page-transition">
           <BackgroundShapes variant="minimal" />
           
           {/* Header */}
@@ -44,36 +44,34 @@ export const Products = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2">Jelajahi Produk Ethical</h1>
+            <h1 className="text-4xl font-serif font-bold gradient-text mb-2">Jelajahi Produk Ethical</h1>
             <p className="text-lg text-slate-text dark:text-dark-body">
                 Filter berdasarkan kategori untuk menemukan produk handcrafted favorit Anda
             </p>
           </motion.section>
 
           {/* Filters */}
-          <div className="max-w-6xl mx-auto px-8 mb-8 bg-pure-card dark:bg-dark-surface rounded-2xl shadow-sm p-8 border border-soft-border dark:border-soft-dark-border">
+          <div className="max-w-6xl mx-auto px-8 mb-8 glass rounded-2xl shadow-xl p-8 border border-soft-border/50 dark:border-soft-dark-border/50">
             <div className="mb-6">
-                <h3 className="text-lg font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">Kategori</h3>
+                <h3 className="text-lg font-serif font-bold gradient-text mb-4">Kategori</h3>
                 <div className="flex flex-wrap gap-3">
                   {categories.map(cat => (
                       <motion.button
                         key={cat.value}
-                        className={`px-4 py-2 rounded-full font-semibold transition-all duration-250 flex items-center gap-2 ${
+                        className={`px-5 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
                             selectedCategory === cat.value
-                              ? 'bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white shadow-md'
-                              : 'bg-mist-gray dark:bg-soft-dark-border text-ink-black dark:text-dark-body hover:bg-sky-soft-blue dark:hover:bg-blue-glow-soft'
+                              ? 'bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white shadow-lg hover:shadow-xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50'
+                              : 'glass text-ink-black dark:text-dark-body hover:bg-gradient-to-r hover:from-sky-soft-blue hover:to-leaf-soft-green dark:hover:from-blue-glow-soft dark:hover:to-deep-green-base border border-soft-border/50 dark:border-soft-dark-border/50'
                         }`}
                         onClick={() => setSelectedCategory(cat.value)}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.08, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <span>{cat.icon}</span> {cat.label}
+                        <span className={selectedCategory === cat.value ? 'transform rotate-12' : ''}>{cat.icon}</span> {cat.label}
                       </motion.button>
                   ))}
                 </div>
             </div>
-
-
           </div>
 
           {/* Products Grid */}

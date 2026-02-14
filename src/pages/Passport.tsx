@@ -34,7 +34,7 @@ export const Passport = () => {
   if (!product) return null
 
   return (
-    <div className="min-height-screen pb-20 md:pb-20 relative">
+    <div className="min-height-screen pb-20 md:pb-20 relative page-transition">
       <BackgroundShapes variant="minimal" />
       {/* Header */}
       <motion.section

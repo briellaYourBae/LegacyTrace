@@ -60,7 +60,7 @@ export const Home = () => {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden relative">
+    <div className="min-h-screen overflow-x-hidden relative page-transition">
       <BackgroundShapes variant="default" />
       
       {/* ===== HERO SECTION ===== */}
@@ -75,7 +75,7 @@ export const Home = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className="text-6xl lg:text-7xl font-serif font-bold bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green bg-clip-text text-transparent mb-6">
+          <h1 className="text-6xl lg:text-7xl font-serif font-bold gradient-text mb-6 leading-tight">
             Setiap Produk Punya Cerita
           </h1>
           <p className="text-xl text-slate-text dark:text-dark-body mb-8 leading-relaxed">
@@ -84,8 +84,8 @@ export const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link to="/products">
               <motion.button
-                className="px-8 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-250 flex items-center gap-2"
-                whileHover={{ scale: 1.05 }}
+                className="px-8 py-4 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 transition-all duration-250 flex items-center gap-2 btn-glow"
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Jelajahi Cerita <ArrowRight className="w-5 h-5" />
@@ -93,8 +93,8 @@ export const Home = () => {
             </Link>
             <Link to="/edutainment">
               <motion.button
-                className="px-8 py-4 border-2 border-edu-blue dark:border-neon-edu-blue text-edu-blue dark:text-neon-edu-blue font-semibold rounded-full hover:bg-sky-soft-blue dark:hover:bg-blue-glow-soft transition-all duration-250"
-                whileHover={{ scale: 1.05 }}
+                className="px-8 py-4 border-2 border-edu-blue dark:border-neon-edu-blue text-edu-blue dark:text-neon-edu-blue font-semibold rounded-full hover:bg-gradient-to-r hover:from-sky-soft-blue hover:to-leaf-soft-green dark:hover:from-blue-glow-soft dark:hover:to-deep-green-base transition-all duration-250 glass"
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Pelajari Lebih Lanjut
@@ -159,11 +159,14 @@ export const Home = () => {
           {features.map((feature, idx) => (
             <motion.div 
               key={idx} 
-              className="bg-pure-card dark:bg-dark-surface p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-250 text-center hover:-translate-y-2 border-2 border-soft-border dark:border-soft-dark-border hover:border-edu-blue dark:hover:border-neon-edu-blue"
+              className="glass p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center card-hover border border-soft-border/50 dark:border-soft-dark-border/50 group"
               variants={itemVariants}
+              whileHover={{ y: -8 }}
             >
-              <div className="flex justify-center mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-2">{feature.title}</h3>
+              <div className="flex justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-2 group-hover:text-edu-blue dark:group-hover:text-neon-edu-blue transition-colors">{feature.title}</h3>
               <p className="text-slate-text dark:text-dark-body text-sm leading-relaxed">{feature.desc}</p>
             </motion.div>
           ))}
@@ -186,13 +189,18 @@ export const Home = () => {
           {categories.map((cat, idx) => (
             <motion.div
               key={idx}
-              className="bg-mist-gray dark:bg-dark-surface rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-250 hover:-translate-y-2 border-l-4 border-edu-blue dark:border-neon-edu-blue"
+              className="glass rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 card-hover border border-soft-border/50 dark:border-soft-dark-border/50 group relative overflow-hidden"
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.03, y: -8 }}
             >
-              <div className="flex justify-center">{cat.icon}</div>
-              <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-2">{cat.name}</h3>
-              <p className="text-sm text-slate-text dark:text-dark-body">{cat.desc}</p>
+              <div className="absolute inset-0 bg-gradient-to-br from-edu-blue/5 to-growth-green/5 dark:from-neon-edu-blue/10 dark:to-glow-green/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10">
+                <div className="flex justify-center mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                  {cat.icon}
+                </div>
+                <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-2 group-hover:text-edu-blue dark:group-hover:text-neon-edu-blue transition-colors">{cat.name}</h3>
+                <p className="text-sm text-slate-text dark:text-dark-body">{cat.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -222,11 +230,11 @@ export const Home = () => {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
             >
-              <div className="bg-sky-soft-blue dark:bg-blue-glow-soft rounded-2xl p-8 text-center border-2 border-edu-blue/30 dark:border-neon-edu-blue/30 hover:border-edu-blue dark:hover:border-neon-edu-blue hover:shadow-lg transition-all duration-250">
-                <div className="w-12 h-12 bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
+              <div className="glass rounded-2xl p-8 text-center border border-edu-blue/30 dark:border-neon-edu-blue/30 hover:border-edu-blue dark:hover:border-neon-edu-blue hover:shadow-2xl transition-all duration-300 card-hover group">
+                <div className="w-12 h-12 bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                   {item.icon}
                 </div>
-                <h4 className="text-lg font-bold text-ink-black dark:text-dark-heading mb-2">{item.title}</h4>
+                <h4 className="text-lg font-bold text-ink-black dark:text-dark-heading mb-2 group-hover:text-edu-blue dark:group-hover:text-neon-edu-blue transition-colors">{item.title}</h4>
                 <p className="text-sm text-slate-text dark:text-dark-body">{item.desc}</p>
               </div>
               {idx < 3 && (
@@ -292,11 +300,12 @@ export const Home = () => {
           ].map((testimonial, idx) => (
             <motion.div
               key={idx}
-              className="bg-mist-gray dark:bg-dark-surface rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-250 border-l-4 border-growth-green dark:border-glow-green"
+              className="glass rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-growth-green dark:border-glow-green card-hover group"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
+              whileHover={{ y: -8, scale: 1.02 }}
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
@@ -313,7 +322,7 @@ export const Home = () => {
 
       {/* ===== CTA SECTION ===== */}
       <motion.section
-        className="max-w-6xl mx-auto px-8 py-20 bg-gradient-to-r from-sky-soft-blue/30 via-soft-peach/20 to-leaf-soft-green/30 dark:from-blue-glow-soft/20 dark:via-burnt-orange-base/20 dark:to-deep-green-base/20 rounded-3xl text-center mb-12 relative overflow-hidden border-2 border-edu-blue/30 dark:border-neon-edu-blue/30"
+        className="max-w-6xl mx-auto px-8 py-20 glass rounded-3xl text-center mb-12 relative overflow-hidden border border-edu-blue/30 dark:border-neon-edu-blue/30 shadow-2xl"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -327,8 +336,8 @@ export const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/products">
               <motion.button
-                className="px-8 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-250"
-                whileHover={{ scale: 1.05 }}
+                className="px-8 py-4 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 transition-all duration-250 btn-glow"
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Mulai Jelajah Sekarang
@@ -336,8 +345,8 @@ export const Home = () => {
             </Link>
             <Link to="/edutainment">
               <motion.button
-                className="px-8 py-4 border-2 border-edu-blue dark:border-neon-edu-blue text-edu-blue dark:text-neon-edu-blue font-semibold rounded-full hover:bg-sky-soft-blue dark:hover:bg-blue-glow-soft transition-all duration-250"
-                whileHover={{ scale: 1.05 }}
+                className="px-8 py-4 border-2 border-edu-blue dark:border-neon-edu-blue text-edu-blue dark:text-neon-edu-blue font-semibold rounded-full hover:bg-gradient-to-r hover:from-sky-soft-blue hover:to-leaf-soft-green dark:hover:from-blue-glow-soft dark:hover:to-deep-green-base transition-all duration-250 glass"
+                whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Pelajari Lebih Lanjut

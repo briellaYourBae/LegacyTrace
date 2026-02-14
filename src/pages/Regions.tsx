@@ -56,7 +56,7 @@ export const Regions = () => {
   }
 
   return (
-    <div className="min-h-screen pb-20 relative overflow-hidden">
+    <div className="min-h-screen pb-20 relative overflow-hidden page-transition">
       <BackgroundShapes variant="minimal" />
       
       {/* Header */}

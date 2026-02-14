@@ -55,7 +55,7 @@ export const Navbar = () => {
         <div
           className={`mx-auto my-4 rounded-2xl transition-all duration-300 px-6 md:px-12 py-3 ${
             isScrolled 
-              ? 'bg-pure-card/95 dark:bg-dark-surface/95 backdrop-blur-lg shadow-lg border border-soft-border dark:border-soft-dark-border' 
+              ? 'glass shadow-xl shadow-edu-blue/10 dark:shadow-neon-edu-blue/20 border border-soft-border/50 dark:border-soft-dark-border/50' 
               : 'bg-transparent'
           }`}
         >
@@ -64,7 +64,7 @@ export const Navbar = () => {
             {/* Logo - Kiri */}
             <Link to="/">
               <motion.div
-                className="text-xl md:text-2xl font-bold text-edu-blue dark:text-neon-edu-blue font-serif flex-shrink-0 tracking-wide"
+                className="text-xl md:text-2xl font-bold gradient-text font-serif flex-shrink-0 tracking-wide"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -95,9 +95,9 @@ export const Navbar = () => {
                       {/* Underline Aktif */}
                       {isActive && (
                         <motion.div
-                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green rounded-full"
+                          className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-edu-blue via-growth-green to-edu-blue dark:from-neon-edu-blue dark:via-glow-green dark:to-neon-edu-blue rounded-full shadow-lg shadow-edu-blue/50 dark:shadow-neon-edu-blue/50"
                           layoutId="navbar-underline"
-                          transition={{ duration: 0.3 }}
+                          transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
                         />
                       )}
                     </motion.div>
@@ -120,8 +120,8 @@ export const Navbar = () => {
               
               <Link to="/team">
                 <motion.button
-                  className="hidden md:flex px-6 py-2 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold text-sm rounded-full shadow-md hover:shadow-lg transition-all duration-250"
-                  whileHover={{ scale: 1.05 }}
+                  className="hidden md:flex px-6 py-2 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold text-sm rounded-full shadow-lg hover:shadow-xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 transition-all duration-250 btn-glow"
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Team

@@ -24,7 +24,7 @@ export const ArtisanPage = () => {
   const artisan = artisanProducts[0]
 
   return (
-    <div className="min-h-screen pb-20">
+    <div className="min-h-screen pb-20 page-transition">
       {/* Hero */}
       <motion.section
         className="bg-gradient-to-r from-cream to-gold/10 max-w-6xl mx-auto px-8 py-16 rounded-2xl my-8 text-center"

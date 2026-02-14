@@ -22,25 +22,26 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Link to={`/passport/${product.id}`}>
       <motion.div
-        className="bg-pure-card dark:bg-dark-surface rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-250 h-full flex flex-col border border-soft-border dark:border-soft-dark-border"
-        whileHover={{ y: -8 }}
+        className="glass rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-soft-border/50 dark:border-soft-dark-border/50 card-hover group"
+        whileHover={{ y: -12, scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        transition={{ type: 'spring', stiffness: 300 }}
+        transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       >
-        <div className="relative overflow-hidden h-64">
-          <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-ink-black dark:bg-night-slate bg-opacity-70 dark:bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-250 flex items-center justify-center">
+        <div className="relative overflow-hidden h-64 group/image">
+          <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink-black/90 via-ink-black/70 to-transparent dark:from-night-slate/90 dark:via-night-slate/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <motion.button 
-              className="px-6 py-3 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold rounded-full transition-all duration-250 shadow-md"
-              whileHover={{ scale: 1.05 }}
+              className="px-6 py-3 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold rounded-full transition-all duration-250 shadow-xl hover:shadow-2xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 btn-glow"
+              whileHover={{ scale: 1.1, y: -2 }}
+              whileTap={{ scale: 0.95 }}
             >
               View Digital Passport
             </motion.button>
           </div>
         </div>
         
-        <div className="p-6 flex-grow flex flex-col">
-          <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-1">{product.name}</h3>
+        <div className="p-6 flex-grow flex flex-col relative z-10">
+          <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-1 group-hover:text-edu-blue dark:group-hover:text-neon-edu-blue transition-colors">{product.name}</h3>
           <p className="text-edu-blue dark:text-neon-edu-blue font-semibold text-sm mb-1">{product.umkm}</p>
           <p className="text-slate-text dark:text-dark-body text-sm mb-4">{product.village}</p>
           
@@ -48,8 +49,8 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             {product.ethicalBadges.map((badge, idx) => (
               <motion.span
                 key={idx}
-                className={`${getCategoryColor(product.category)} px-3 py-1 rounded-full text-xs font-semibold transition-all duration-250 hover:text-white`}
-                whileHover={{ scale: 1.05 }}
+                className={`${getCategoryColor(product.category)} px-3 py-1 rounded-full text-xs font-semibold transition-all duration-300 hover:text-white hover:scale-110 shadow-md`}
+                whileHover={{ scale: 1.1, y: -2 }}
               >
                 {badge}
               </motion.span>

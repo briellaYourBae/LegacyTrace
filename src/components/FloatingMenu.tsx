@@ -35,10 +35,11 @@ export const FloatingMenu = () => {
           >
             {/* Back to Top */}
             <motion.button
-              className="w-14 h-14 bg-edu-blue dark:bg-neon-edu-blue text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(37,99,235,0.5)] dark:hover:shadow-[0_20px_50px_rgba(96,165,250,0.5)] flex items-center justify-center text-2xl transition-shadow duration-250"
+              className="w-14 h-14 bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(37,99,235,0.5)] dark:hover:shadow-[0_20px_50px_rgba(96,165,250,0.5)] flex items-center justify-center text-2xl transition-all duration-300 glass"
               onClick={scrollToTop}
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.15, rotate: 360 }}
               whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 300 }}
             >
               <ArrowUp className="w-6 h-6" />
             </motion.button>
@@ -46,10 +47,11 @@ export const FloatingMenu = () => {
             {/* Back Button - Only show if NOT on main pages */}
             {!isMainPage && (
               <motion.button
-                className="w-14 h-14 bg-growth-green dark:bg-glow-green text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(22,163,74,0.5)] dark:hover:shadow-[0_20px_50px_rgba(74,222,128,0.5)] flex items-center justify-center text-2xl font-bold transition-shadow duration-250"
+                className="w-14 h-14 bg-gradient-to-r from-growth-green to-edu-blue dark:from-glow-green dark:to-neon-edu-blue text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(22,163,74,0.5)] dark:hover:shadow-[0_20px_50px_rgba(74,222,128,0.5)] flex items-center justify-center text-2xl font-bold transition-all duration-300 glass"
                 onClick={goBack}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.15, x: -5 }}
                 whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <ArrowLeft className="w-6 h-6" />
               </motion.button>
@@ -60,11 +62,12 @@ export const FloatingMenu = () => {
 
       {/* Main Toggle Button */}
       <motion.button
-        className="w-16 h-16 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white rounded-full shadow-2xl hover:shadow-[0_25px_60px_rgba(249,115,22,0.6)] dark:hover:shadow-[0_25px_60px_rgba(251,146,60,0.6)] flex items-center justify-center text-3xl transition-all duration-250"
+        className="w-16 h-16 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white rounded-full shadow-2xl hover:shadow-[0_25px_60px_rgba(249,115,22,0.6)] dark:hover:shadow-[0_25px_60px_rgba(251,146,60,0.6)] flex items-center justify-center text-3xl transition-all duration-300 glass"
         onClick={() => setShowMenu(!showMenu)}
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.9 }}
         animate={{ rotate: showMenu ? 45 : 0 }}
+        transition={{ type: "spring", stiffness: 300 }}
       >
         <Plus className="w-8 h-8" />
       </motion.button>

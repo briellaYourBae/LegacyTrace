@@ -4,7 +4,7 @@ import { Mail, Phone, Linkedin, Instagram } from 'lucide-react'
 
 export const Team = () => {
   return (
-    <div className="min-h-screen pb-20">
+    <div className="min-h-screen pb-20 page-transition">
       {/* Header */}
       <motion.section
         className="bg-gradient-to-br from-sky-soft-blue to-leaf-soft-green dark:from-edu-blue/10 dark:to-growth-green/10 max-w-6xl mx-auto px-8 py-16 rounded-2xl my-8 text-center relative overflow-hidden border border-soft-border dark:border-soft-dark-border"
