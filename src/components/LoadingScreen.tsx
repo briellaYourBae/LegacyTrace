@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 export const LoadingScreen = () => {
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-brown-primary via-gold to-green-accent"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-edu-blue via-action-orange to-growth-green dark:from-neon-edu-blue dark:via-dark-action-orange dark:to-glow-green"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}

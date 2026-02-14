@@ -47,24 +47,24 @@ const categories: Array<{ value: Category; label: string; emoji: string }> = [{ 
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl font-serif font-bold text-brown-primary mb-2">Jelajahi Produk Ethical</h1>
-            <p className="text-lg text-brown-light">
+            <h1 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2">Jelajahi Produk Ethical</h1>
+            <p className="text-lg text-slate-text dark:text-dark-body">
                 Filter berdasarkan kategori atau wilayah untuk menemukan produk handcrafted favorit Anda
             </p>
           </motion.section>
 
           {/* Filters */}
-          <div className="max-w-6xl mx-auto px-8 mb-8 bg-white rounded-2xl shadow-sm p-8">
+          <div className="max-w-6xl mx-auto px-8 mb-8 bg-pure-card dark:bg-dark-surface rounded-2xl shadow-sm p-8 border border-soft-border dark:border-soft-dark-border">
             <div className="mb-6">
-                <h3 className="text-lg font-serif font-bold text-brown-primary mb-4">Kategori</h3>
+                <h3 className="text-lg font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">Kategori</h3>
                 <div className="flex flex-wrap gap-3">
                   {categories.map(cat => (
                       <motion.button
                         key={cat.value}
-                        className={`px-4 py-2 rounded-full font-semibold transition-all flex items-center gap-2 ${
+                        className={`px-4 py-2 rounded-full font-semibold transition-all duration-250 flex items-center gap-2 ${
                             selectedCategory === cat.value
-                              ? 'bg-gradient-to-r from-brown-primary to-gold text-white'
-                              : 'bg-brown-primary/10 text-dark hover:bg-brown-primary/20'
+                              ? 'bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white shadow-md'
+                              : 'bg-mist-gray dark:bg-soft-dark-border text-ink-black dark:text-dark-body hover:bg-sky-soft-blue dark:hover:bg-blue-glow-soft'
                         }`}
                         onClick={() => setSelectedCategory(cat.value)}
                         whileHover={{ scale: 1.05 }}
@@ -77,9 +77,9 @@ const categories: Array<{ value: Category; label: string; emoji: string }> = [{ 
             </div>
 
             <div>
-                <h3 className="text-lg font-serif font-bold text-brown-primary mb-4">Desa / Wilayah</h3>
+                <h3 className="text-lg font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">Desa / Wilayah</h3>
                 <select
-                  className="px-4 py-2 border-2 border-brown-primary/20 rounded-lg bg-white hover:border-gold focus:border-gold outline-none transition-colors"
+                  className="px-4 py-2 border-2 border-soft-border dark:border-soft-dark-border rounded-lg bg-pure-card dark:bg-dark-surface text-ink-black dark:text-dark-body hover:border-edu-blue dark:hover:border-neon-edu-blue focus:border-edu-blue dark:focus:border-neon-edu-blue outline-none transition-colors duration-250"
                   value={selectedVillage}
                   onChange={(e) => setSelectedVillage(e.target.value)}
                 >
@@ -112,7 +112,7 @@ const categories: Array<{ value: Category; label: string; emoji: string }> = [{ 
                 ))
             ) : (
                 <motion.div
-                  className="col-span-full text-center py-16 text-brown-light"
+                  className="col-span-full text-center py-16 text-slate-text dark:text-dark-body"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 >

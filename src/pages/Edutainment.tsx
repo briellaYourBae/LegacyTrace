@@ -431,8 +431,8 @@ export const Edutainment = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-5xl font-serif font-bold text-brown-primary mb-3">🎓 Edutainment Hub</h1>
-        <p className="text-xl text-brown-light">
+        <h1 className="text-5xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-3">🎓 Edutainment Hub</h1>
+        <p className="text-xl text-slate-text dark:text-dark-body">
           Pelajari tentang produksi ethical, fair trade, dan komunitas artisan
         </p>
       </motion.section>
@@ -449,14 +449,14 @@ export const Edutainment = () => {
           {lessons.map((lesson, idx) => (
             <motion.div 
               key={idx} 
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-all border-t-4 border-gold"
+              className="bg-pure-card dark:bg-dark-surface p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-250 border-t-4 border-action-orange dark:border-dark-action-orange"
               variants={itemVariants}
             >
-              <div className="w-10 h-10 bg-gradient-to-r from-brown-primary to-gold text-white rounded-full flex items-center justify-center font-bold mb-4 text-lg">
+              <div className="w-10 h-10 bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green text-white rounded-full flex items-center justify-center font-bold mb-4 text-lg">
                 {idx + 1}
               </div>
-              <h3 className="text-xl font-serif font-bold text-brown-primary mb-3">{lesson.title}</h3>
-              <p className="text-brown-light leading-relaxed text-sm">{lesson.content}</p>
+              <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-3">{lesson.title}</h3>
+              <p className="text-slate-text dark:text-dark-body leading-relaxed text-sm">{lesson.content}</p>
             </motion.div>
           ))}
         </div>
@@ -464,14 +464,14 @@ export const Edutainment = () => {
 
       {/* Interactive Quiz Section */}
       <motion.section
-        className="max-w-6xl mx-auto px-8 mb-16 bg-white rounded-2xl shadow-md p-8"
+        className="max-w-6xl mx-auto px-8 mb-16 bg-pure-card dark:bg-dark-surface rounded-2xl shadow-md p-8 border border-soft-border dark:border-soft-dark-border"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-serif font-bold text-brown-primary mb-2 text-center">🎮 Interactive Learning</h2>
-        <p className="text-lg text-brown-light text-center mb-8">
+        <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2 text-center">🎮 Interactive Learning</h2>
+        <p className="text-lg text-slate-text dark:text-dark-body text-center mb-8">
           Pilih pulau dan uji pengetahuan Anda tentang kerajinan tradisional Indonesia!
         </p>
 
@@ -479,10 +479,10 @@ export const Edutainment = () => {
           {islands.map(island => (
             <motion.button
               key={island.id}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all flex items-center gap-2 ${
+              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-250 flex items-center gap-2 ${
                 selectedIsland === island.id
-                  ? 'bg-gradient-to-r from-brown-primary to-gold text-white'
-                  : 'bg-brown-primary/10 text-dark hover:bg-brown-primary/20'
+                  ? 'bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white shadow-md'
+                  : 'bg-mist-gray dark:bg-soft-dark-border text-ink-black dark:text-dark-body hover:bg-sky-soft-blue dark:hover:bg-blue-glow-soft'
               }`}
               onClick={() => setSelectedIsland(island.id)}
               whileHover={{ scale: 1.05 }}
@@ -512,7 +512,7 @@ export const Edutainment = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-serif font-bold text-brown-primary text-center mb-12">💚 Komitmen Kami</h2>
+        <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue text-center mb-12">💚 Komitmen Kami</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
             { icon: '🌍', title: 'Komunitas Global', desc: 'Mendukung UMKM di seluruh Indonesia' },
@@ -520,10 +520,10 @@ export const Edutainment = () => {
             { icon: '💰', title: 'Kompensasi Fair', desc: 'Memastikan artisan mendapat yang layak' },
             { icon: '🌱', title: 'Produksi Sustainable', desc: 'Praktik eco-friendly dan ethical' }
           ].map((item, idx) => (
-            <div key={idx} className="bg-gradient-to-br from-gold/10 to-green-accent/10 p-8 rounded-2xl text-center hover:shadow-md transition-all">
+            <div key={idx} className="bg-sky-soft-blue dark:bg-blue-glow-soft p-8 rounded-2xl text-center hover:shadow-md transition-all duration-250 border border-edu-blue/20 dark:border-neon-edu-blue/20">
               <div className="text-5xl mb-4">{item.icon}</div>
-              <h3 className="text-lg font-serif font-bold text-brown-primary mb-2">{item.title}</h3>
-              <p className="text-brown-light text-sm">{item.desc}</p>
+              <h3 className="text-lg font-serif font-bold text-ink-black dark:text-dark-heading mb-2">{item.title}</h3>
+              <p className="text-slate-text dark:text-dark-body text-sm">{item.desc}</p>
             </div>
           ))}
         </div>

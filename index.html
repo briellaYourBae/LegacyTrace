@@ -13,33 +13,73 @@
     <!-- Custom Tailwind Config via Script -->
     <script>
       tailwind.config = {
-        darkMode: 'media',
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              cream: '#f5f1e8',
-              'brown-primary': '#8b6f47',
-              'brown-light': '#a99a8a',
-              gold: '#d4a574',
-              'green-accent': '#7a9d66',
-              dark: '#3d3d3d',
-              light: '#faf8f3',
+              // BASE LIGHT
+              'cloud-white': '#F8FAFC',
+              'mist-gray': '#EEF2F7',
+              'pure-card': '#FFFFFF',
+              'soft-border': '#E2E8F0',
+              // PRIMARY
+              'edu-blue': '#2563EB',
+              'deep-edu-blue': '#1D4ED8',
+              'sky-soft-blue': '#DBEAFE',
+              // SECONDARY
+              'growth-green': '#16A34A',
+              'leaf-soft-green': '#DCFCE7',
+              // CTA
+              'action-orange': '#F97316',
+              'deep-action-orange': '#EA580C',
+              'soft-peach': '#FFEDD5',
+              // TEXT LIGHT
+              'ink-black': '#0F172A',
+              'slate-text': '#334155',
+              'calm-gray': '#64748B',
+              // KATEGORI
+              'royal-purple': '#7C3AED',
+              'sunset-orange': '#F97316',
+              'craft-teal': '#0EA5A4',
+              'indigo-weave': '#6366F1',
+              'clay-brown': '#B45309',
+              'herbal-green': '#16A34A',
+              // DARK MODE
+              'night-slate': '#0B1220',
+              'deep-night': '#0F172A',
+              'dark-surface': '#111827',
+              'soft-dark-border': '#1F2937',
+              'neon-edu-blue': '#60A5FA',
+              'bright-edu-blue': '#3B82F6',
+              'blue-glow-soft': '#1E3A8A',
+              'glow-green': '#4ADE80',
+              'deep-green-base': '#14532D',
+              'dark-action-orange': '#FB923C',
+              'hot-orange': '#F97316',
+              'burnt-orange-base': '#7C2D12',
+              'dark-heading': '#F9FAFB',
+              'dark-body': '#E5E7EB',
+              'dark-muted': '#9CA3AF',
+              'batik-dark': '#A78BFA',
+              'makanan-dark': '#FB923C',
+              'kerajinan-dark': '#2DD4BF',
+              'tenun-dark': '#818CF8',
+              'gerabah-dark': '#D97706',
+              'herbal-dark': '#4ADE80',
             },
             fontFamily: {
               serif: ['Georgia', 'Times New Roman', 'serif'],
               sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
             },
-            boxShadow: {
-              'sm': '0 2px 8px rgba(0, 0, 0, 0.08)',
-              'md': '0 4px 16px rgba(0, 0, 0, 0.12)',
-              'lg': '0 8px 24px rgba(0, 0, 0, 0.15)',
+            transitionDuration: {
+              '250': '250ms',
             },
           },
         },
       }
     </script>
   </head>
-  <body class="bg-light dark:bg-gray-900 transition-colors duration-300">
+  <body class="bg-cloud-white dark:bg-night-slate transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

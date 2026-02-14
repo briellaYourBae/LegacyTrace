@@ -5,7 +5,15 @@ import { motion } from 'framer-motion'
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const [isDark, setIsDark] = useState(() => 
+    document.documentElement.classList.contains('dark')
+  )
   const location = useLocation()
+
+  const toggleDarkMode = () => {
+    setIsDark(!isDark)
+    document.documentElement.classList.toggle('dark')
+  }
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
@@ -42,129 +50,133 @@ export const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Inner Container - Centered with Extended Width */}
-      <div
-        className={`mx-auto my-4 rounded-2xl transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-light/95 backdrop-blur-lg shadow-lg border border-brown-primary/10' 
-            : 'bg-transparent'
-        }`}
-        style={{ 
-          maxWidth: 'calc(100% - 20px)', 
-          width: 'fit-content', 
-          margin: '16px auto',
-          padding: '12px 48px'
-        }}
-      >
-        <div className="flex justify-between items-center gap-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          className={`mx-auto my-4 rounded-2xl transition-all duration-300 px-6 md:px-12 py-3 ${
+            isScrolled 
+              ? 'bg-pure-card/95 dark:bg-dark-surface/95 backdrop-blur-lg shadow-lg border border-soft-border dark:border-soft-dark-border' 
+              : 'bg-transparent'
+          }`}
+        >
+          <div className="flex justify-between items-center gap-8 md:gap-20">
           
-          {/* Logo - Kiri */}
-          <Link to="/">
-            <motion.div
-              className="text-2xl md:text-xl font-bold text-brown-primary font-serif flex-shrink-0 tracking-wide"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-            LegacyTrace
-            </motion.div>
-          </Link>
-
-          {/* Desktop Navigation - Tengah */}
-          <div className="hidden md:flex items-center gap-20">
-            {navItems.map((item, idx) => {
-              const isActive = item.isActive(location.pathname)
-              
-              return (
-                <Link key={idx} to={item.path}>
-                  <motion.div
-                    className="relative"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <span className={`text-sm font-medium transition-colors duration-300 ${
-                      isActive 
-                        ? 'text-brown-primary font-bold' 
-                        : 'text-brown-light hover:text-brown-primary'
-                    }`}>
-                      {item.label}
-                    </span>
-
-                    {/* Underline Aktif */}
-                    {isActive && (
-                      <motion.div
-                        className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-gold to-green-accent rounded-full"
-                        layoutId="navbar-underline"
-                        transition={{ duration: 0.3 }}
-                        style={{ width: '100%' }}
-                      />
-                    )}
-                  </motion.div>
-                </Link>
-              )
-            })}
-          </div>
-
-          {/* Team Button - Kanan */}
-          <div className="flex items-center gap-4 flex-shrink-0">
-            <Link to="/team">
-              <motion.button
-                className="hidden md:flex px-6 py-2 bg-gradient-to-r from-gold to-gold/80 text-brown-primary font-semibold text-sm rounded-full hover:shadow-lg transition-all duration-300"
+            {/* Logo - Kiri */}
+            <Link to="/">
+              <motion.div
+                className="text-xl md:text-2xl font-bold text-edu-blue dark:text-neon-edu-blue font-serif flex-shrink-0 tracking-wide"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Team
-              </motion.button>
+                LegacyTrace
+              </motion.div>
             </Link>
 
-            {/* Mobile Menu Button */}
-            <motion.button
-              className="md:hidden text-brown-primary flex-shrink-0 text-3xl"
-              onClick={() => setIsOpen(!isOpen)}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {isOpen ? '✕' : '☰'}
-            </motion.button>
-          </div>
-        </div>
+            {/* Desktop Navigation - Tengah */}
+            <div className="hidden md:flex items-center gap-8 lg:gap-12">
+              {navItems.map((item, idx) => {
+                const isActive = item.isActive(location.pathname)
+                
+                return (
+                  <Link key={idx} to={item.path}>
+                    <motion.div
+                      className="relative pb-1"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span className={`text-sm font-medium transition-colors duration-250 ${
+                        isActive 
+                          ? 'text-edu-blue dark:text-neon-edu-blue font-bold' 
+                          : 'text-slate-text dark:text-dark-body hover:text-edu-blue dark:hover:text-neon-edu-blue'
+                      }`}>
+                        {item.label}
+                      </span>
 
-        {/* Mobile Menu */}
-        <motion.div
-          className="md:hidden overflow-hidden border-t border-brown-primary/10 mt-4"
-          initial={{ height: 0 }}
-          animate={{ height: isOpen ? 'auto' : 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className="space-y-4 pt-6">
-            {navItems.map((item, idx) => {
-              const isActive = item.isActive(location.pathname)
-              
-              return (
-                <Link key={idx} to={item.path} onClick={() => setIsOpen(false)}>
-                  <motion.div
-                    className={`px-6 py-4 rounded-lg text-lg font-medium transition-all ${
-                      isActive 
-                        ? 'bg-brown-primary/10 text-brown-primary font-bold border-l-4 border-gold' 
-                        : 'text-brown-light hover:text-brown-primary hover:bg-brown-primary/5'
-                    }`}
-                    whileHover={{ x: 4 }}
-                  >
-                    {item.label}
-                  </motion.div>
-                </Link>
-              )
-            })}
+                      {/* Underline Aktif */}
+                      {isActive && (
+                        <motion.div
+                          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green rounded-full"
+                          layoutId="navbar-underline"
+                          transition={{ duration: 0.3 }}
+                        />
+                      )}
+                    </motion.div>
+                  </Link>
+                )
+              })}
+            </div>
 
-            <Link to="/team" onClick={() => setIsOpen(false)}>
+            {/* Team Button & Dark Mode - Kanan */}
+            <div className="flex items-center gap-4 flex-shrink-0">
               <motion.button
-                className="w-full px-6 py-4 bg-gradient-to-r from-gold to-gold/80 text-brown-primary font-semibold text-lg rounded-full mt-2"
-                whileHover={{ scale: 1.02 }}
+                onClick={toggleDarkMode}
+                className="text-2xl hover:opacity-80 transition-opacity"
+                whileHover={{ scale: 1.1, rotate: 180 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ duration: 0.3 }}
               >
-                Team
+                {isDark ? '☀️' : '🌙'}
               </motion.button>
-            </Link>
+              
+              <Link to="/team">
+                <motion.button
+                  className="hidden md:flex px-6 py-2 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold text-sm rounded-full shadow-md hover:shadow-lg transition-all duration-250"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Team
+                </motion.button>
+              </Link>
+
+              {/* Mobile Menu Button */}
+              <motion.button
+                className="md:hidden text-edu-blue dark:text-neon-edu-blue flex-shrink-0 text-3xl"
+                onClick={() => setIsOpen(!isOpen)}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {isOpen ? '✕' : '☰'}
+              </motion.button>
+            </div>
           </div>
-        </motion.div>
+
+          {/* Mobile Menu */}
+          <motion.div
+            className="md:hidden overflow-hidden border-t border-soft-border dark:border-soft-dark-border mt-4"
+            initial={{ height: 0 }}
+            animate={{ height: isOpen ? 'auto' : 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="space-y-4 pt-6">
+              {navItems.map((item, idx) => {
+                const isActive = item.isActive(location.pathname)
+                
+                return (
+                  <Link key={idx} to={item.path} onClick={() => setIsOpen(false)}>
+                    <motion.div
+                      className={`px-6 py-4 rounded-lg text-lg font-medium transition-all duration-250 ${
+                        isActive 
+                          ? 'bg-sky-soft-blue dark:bg-blue-glow-soft text-edu-blue dark:text-neon-edu-blue font-bold border-l-4 border-edu-blue dark:border-neon-edu-blue' 
+                          : 'text-slate-text dark:text-dark-body hover:text-edu-blue dark:hover:text-neon-edu-blue hover:bg-mist-gray dark:hover:bg-soft-dark-border'
+                      }`}
+                      whileHover={{ x: 4 }}
+                    >
+                      {item.label}
+                    </motion.div>
+                  </Link>
+                )
+              })}
+
+              <Link to="/team" onClick={() => setIsOpen(false)}>
+                <motion.button
+                  className="w-full px-6 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold text-lg rounded-full mt-2 shadow-md"
+                  whileHover={{ scale: 1.02 }}
+                >
+                  Team
+                </motion.button>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </motion.nav>
   )

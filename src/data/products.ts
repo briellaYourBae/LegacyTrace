@@ -224,75 +224,75 @@ export const products: Product[] = [
 
   {
     id: 'makanan-002',
-    name: 'Keripik Tempe Original',
-    umkm: 'Keripik Tempe Sanan',
-    umkmStory: 'Established in 1980, Keripik Tempe Sanan has been producing authentic tempe chips for over 40 years from the famous tempe village of Sanan, Malang.',
-    village: 'Sanan, Malang, East Java',
+    name: 'Mendoan Khas Banyumas',
+    umkm: 'Mendoan Pak Karso',
+    umkmStory: 'Established in 1985, Mendoan Pak Karso has been serving authentic Banyumas mendoan for over 35 years, preserving the traditional recipe passed down through generations.',
+    village: 'Banyumas, Central Java',
     category: 'makanan',
-    description: 'Crispy tempe chips made from premium fermented soybeans, a beloved traditional Indonesian snack known nationwide.',
+    description: 'Thin-sliced tempe coated in crispy batter with aromatic herbs, a beloved traditional snack from Banyumas region.',
     imageUrl: '/assets/img/keripik-tempe-original.png',
-    ethicalBadges: ['Traditional Recipe', 'No Preservatives', 'Handmade', 'Natural Ingredients'],
+    ethicalBadges: ['Traditional Recipe', 'No Preservatives', 'Handmade', 'Local Herbs'],
     steps: [
       {
-        id: 'snacks-step-1',
+        id: 'mendoan-step-1',
         title: 'Pemilihan Kedelai',
         actor: 'Petani Lokal',
-        location: 'Wilayah Malang',
-        description: 'Kedelai premium diperoleh dari petani lokal di Jawa Timur.',
+        location: 'Wilayah Banyumas',
+        description: 'Kedelai premium diperoleh dari petani lokal di Banyumas.',
         icon: '🫘',
         imageUrl: 'https://images.unsplash.com/photo-1599599810694-2a7a49d60908?w=400&h=300&fit=crop'
       },
       {
-        id: 'snacks-step-2',
+        id: 'mendoan-step-2',
         title: 'Fermentasi Tempe',
         actor: 'Master Fermentasi',
-        location: 'Workshop Sanan',
-        description: 'Kedelai difermentasi dengan ragi tradisional selama 36-48 jam untuk membuat tempe berkualitas.',
+        location: 'Workshop Banyumas',
+        description: 'Kedelai difermentasi dengan ragi tradisional untuk membuat tempe tipis khas mendoan.',
         icon: '🦠',
         imageUrl: 'https://images.unsplash.com/photo-1576866209365-74ba233f3f48?w=400&h=300&fit=crop'
       },
       {
-        id: 'snacks-step-3',
-        title: 'Pemotongan',
+        id: 'mendoan-step-3',
+        title: 'Pemotongan Tipis',
         actor: 'Tim Persiapan',
-        location: 'Dapur Sanan',
-        description: 'Tempe segar diiris tipis dengan tangan untuk memastikan kerenyahan yang seragam.',
+        location: 'Dapur Banyumas',
+        description: 'Tempe diiris sangat tipis, ciri khas mendoan yang renyah.',
         icon: '🔪',
         imageUrl: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop'
       },
       {
-        id: 'snacks-step-4',
-        title: 'Pembumbuan',
-        actor: 'Spesialis Bumbu',
-        location: 'Dapur Sanan',
-        description: 'Irisan tempe dilapisi dengan campuran bumbu rahasia yang diwariskan turun-temurun.',
+        id: 'mendoan-step-4',
+        title: 'Pembuatan Adonan',
+        actor: 'Spesialis Adonan',
+        location: 'Dapur Banyumas',
+        description: 'Adonan tepung dengan daun bawang, bawang putih, dan ketumbar dicampur untuk coating khas mendoan.',
         icon: '🌿',
         imageUrl: 'https://images.unsplash.com/photo-1596040995857-ba42d16cb0f2?w=400&h=300&fit=crop'
       },
       {
-        id: 'snacks-step-5',
-        title: 'Penggorengan Dalam',
+        id: 'mendoan-step-5',
+        title: 'Penggorengan Setengah Matang',
         actor: 'Master Penggorengan',
-        location: 'Dapur Sanan',
-        description: 'Tempe berbumbu digoreng dalam minyak premium hingga keemasan dan renyah.',
+        location: 'Dapur Banyumas',
+        description: 'Tempe digoreng setengah matang dengan minyak panas, menciptakan tekstur lembut di dalam dan renyah di luar.',
         icon: '🍳',
         imageUrl: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop'
       },
       {
-        id: 'snacks-step-6',
-        title: 'Pengemasan',
+        id: 'mendoan-step-6',
+        title: 'Penyajian & Pengemasan',
         actor: 'Tim Pengemasan',
-        location: 'Sanan',
-        description: 'Keripik tempe renyah dikemas dalam kantong kedap udara untuk menjaga kesegaran.',
+        location: 'Banyumas',
+        description: 'Mendoan disajikan hangat atau dikemas untuk menjaga kerenyahan.',
         icon: '📦',
         imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop'
       }
     ],
-    artisanName: 'Pak Hadi Santoso',
+    artisanName: 'Pak Karso',
     artisanExperience: 35,
-    artisanQuote: 'Tempe adalah kebanggaan Indonesia. Setiap keripik membawa tradisi desa Sanan.',
-    artisanQuoteLocal: 'Tempe iku kebanggaan Indonesia. Saben keripik nggawa tradisi desa Sanan.',
-    culturalValue: 'Tempe is a traditional Indonesian superfood, and Sanan village in Malang is renowned as the center of tempe production.'
+    artisanQuote: 'Mendoan adalah kebanggaan Banyumas. Setiap gigitan membawa rasa kampung halaman.',
+    artisanQuoteLocal: 'Mendoan kuwi kebanggaan Banyumas. Saben gigitan nggawa rasa kampung halaman.',
+    culturalValue: 'Mendoan is a traditional Banyumas snack, representing the culinary heritage and warm hospitality of Central Java.'
   },
 
   {
@@ -949,6 +949,136 @@ export const products: Product[] = [
     artisanQuote: 'Wedang uwuh menghangatkan tubuh dan menenangkan jiwa, seperti yang dimaksudkan leluhur kami.',
     artisanQuoteLocal: 'Wedang uwuh anget awak lan ayem jiwa, kaya sing dikarepake leluhur kita.',
     culturalValue: 'Wedang uwuh is a traditional Javanese herbal drink that represents hospitality and wellness culture.'
+  },
+
+  // ===== BATIK (NEW) =====
+  {
+    id: 'batik-003',
+    name: 'Batik Kawung Yogyakarta',
+    umkm: 'Batik Kawung Heritage',
+    umkmStory: 'Preserving the sacred Kawung pattern for over 20 years, a motif once reserved for Javanese royalty.',
+    village: 'Yogyakarta, Special Region',
+    category: 'batik',
+    description: 'Traditional batik with Kawung motif symbolizing purity and longevity in Javanese philosophy.',
+    imageUrl: '/assets/img/batik-mega-mendung.jpg',
+    ethicalBadges: ['Royal Pattern', 'Hand-Drawn', 'Natural Dye', 'Heritage Craft'],
+    steps: [
+      { id: 'batik3-s1', title: 'Persiapan Kain', actor: 'Tim Persiapan', location: 'Yogyakarta', description: 'Kain mori disiapkan untuk proses batik.', icon: '🧵', imageUrl: 'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&h=300&fit=crop' },
+      { id: 'batik3-s2', title: 'Menggambar Pola Kawung', actor: 'Master Batik', location: 'Yogyakarta', description: 'Pola Kawung digambar dengan lilin panas.', icon: '🖌️', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' },
+      { id: 'batik3-s3', title: 'Pewarnaan Soga', actor: 'Pewarna', location: 'Yogyakarta', description: 'Pewarna soga alami diaplikasikan.', icon: '🎨', imageUrl: 'https://images.unsplash.com/photo-1536228637022-db989d6c8e5b?w=400&h=300&fit=crop' },
+      { id: 'batik3-s4', title: 'Pelepasan Lilin', actor: 'Finisher', location: 'Yogyakarta', description: 'Lilin dilepas dengan air panas.', icon: '🔥', imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop' },
+      { id: 'batik3-s5', title: 'Finishing', actor: 'QC Team', location: 'Yogyakarta', description: 'Inspeksi kualitas dan penyetrikaan.', icon: '✨', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' },
+      { id: 'batik3-s6', title: 'Pengemasan', actor: 'Tim Packaging', location: 'Yogyakarta', description: 'Dikemas dengan bahan ramah lingkungan.', icon: '📦', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' }
+    ],
+    artisanName: 'Ibu Ratna',
+    artisanExperience: 20,
+    artisanQuote: 'Kawung adalah simbol kesucian dan umur panjang dalam filosofi Jawa.',
+    artisanQuoteLocal: 'Kawung iku simbol kesucian lan umur dawa ing filosofi Jawa.',
+    culturalValue: 'Kawung pattern represents purity, longevity, and was historically reserved for Javanese royalty.'
+  },
+
+  // ===== KERAJINAN (NEW) =====
+  {
+    id: 'crafts-003',
+    name: 'Keris Jawa Tradisional',
+    umkm: 'Empu Keris Surakarta',
+    umkmStory: 'Master blacksmith preserving the ancient art of keris making for over 30 years, following sacred traditions.',
+    village: 'Surakarta, Central Java',
+    category: 'kerajinan',
+    description: 'Traditional Javanese ceremonial dagger with intricate patterns, handcrafted by master blacksmith.',
+    imageUrl: '/assets/img/wayang-kulit.png',
+    ethicalBadges: ['Master Craft', 'Sacred Art', 'UNESCO Heritage', 'Handforged'],
+    steps: [
+      { id: 'keris-s1', title: 'Pemilihan Besi', actor: 'Empu', location: 'Surakarta', description: 'Besi meteorit dan besi tua dipilih.', icon: '⚒️', imageUrl: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=300&fit=crop' },
+      { id: 'keris-s2', title: 'Penempaan', actor: 'Empu', location: 'Surakarta', description: 'Besi ditempa berulang kali.', icon: '🔨', imageUrl: 'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=400&h=300&fit=crop' },
+      { id: 'keris-s3', title: 'Pembentukan Pamor', actor: 'Empu', location: 'Surakarta', description: 'Pola pamor dibentuk dengan teknik khusus.', icon: '✨', imageUrl: 'https://images.unsplash.com/photo-1565193566173-7cba06dab0d4?w=400&h=300&fit=crop' },
+      { id: 'keris-s4', title: 'Pengasahan', actor: 'Pengasah', location: 'Surakarta', description: 'Bilah diasah hingga tajam.', icon: '🔪', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' },
+      { id: 'keris-s5', title: 'Pembuatan Warangka', actor: 'Pengukir', location: 'Surakarta', description: 'Sarung kayu diukir dengan motif.', icon: '🎨', imageUrl: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop' },
+      { id: 'keris-s6', title: 'Ritual Penyelesaian', actor: 'Empu', location: 'Surakarta', description: 'Ritual spiritual untuk menyelesaikan keris.', icon: '🙏', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' }
+    ],
+    artisanName: 'Empu Suparman',
+    artisanExperience: 30,
+    artisanQuote: 'Keris bukan sekadar senjata, ini adalah jiwa dan kehormatan leluhur kami.',
+    artisanQuoteLocal: 'Keris dudu mung sanjata, iki jiwa lan pakurmatan leluhur kita.',
+    culturalValue: 'Keris is a sacred Javanese weapon representing spiritual power and cultural heritage.'
+  },
+
+  // ===== TENUN (NEW) =====
+  {
+    id: 'woven-003',
+    name: 'Tenun Ulos Batak',
+    umkm: 'Tenun Ulos Toba',
+    umkmStory: 'Preserving Batak weaving tradition for 40+ years, creating sacred textiles for ceremonies.',
+    village: 'Lake Toba, North Sumatra',
+    category: 'tenun',
+    description: 'Sacred Batak textile with symbolic patterns, traditionally used in important life ceremonies.',
+    imageUrl: '/assets/img/tenun-ikat-lombok.jpg',
+    ethicalBadges: ['Sacred Textile', 'Hand-Woven', 'Cultural Heritage', 'Natural Dye'],
+    steps: [
+      { id: 'ulos-s1', title: 'Persiapan Benang', actor: 'Penenun', location: 'Lake Toba', description: 'Benang kapas disiapkan.', icon: '🧶', imageUrl: 'https://images.unsplash.com/photo-1617635279887-4e5d75e5a09d?w=400&h=300&fit=crop' },
+      { id: 'ulos-s2', title: 'Pewarnaan Alami', actor: 'Pewarna', location: 'Lake Toba', description: 'Pewarna dari tumbuhan lokal.', icon: '🌿', imageUrl: 'https://images.unsplash.com/photo-1596040995857-ba42d16cb0f2?w=400&h=300&fit=crop' },
+      { id: 'ulos-s3', title: 'Pengaturan Alat Tenun', actor: 'Penenun', location: 'Lake Toba', description: 'Alat tenun tradisional disiapkan.', icon: '⚙️', imageUrl: 'https://images.unsplash.com/photo-1565193566173-7cba06dab0d4?w=400&h=300&fit=crop' },
+      { id: 'ulos-s4', title: 'Menenun Pola', actor: 'Master Penenun', location: 'Lake Toba', description: 'Pola simbolis ditenun dengan tangan.', icon: '🪡', imageUrl: 'https://images.unsplash.com/photo-1565193566173-7cba06dab0d4?w=400&h=300&fit=crop' },
+      { id: 'ulos-s5', title: 'Finishing', actor: 'Finisher', location: 'Lake Toba', description: 'Kain diselesaikan dan diperiksa.', icon: '✨', imageUrl: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&h=300&fit=crop' },
+      { id: 'ulos-s6', title: 'Pengemasan', actor: 'Tim', location: 'Lake Toba', description: 'Dikemas dengan hormat.', icon: '📦', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' }
+    ],
+    artisanName: 'Ibu Tiurma',
+    artisanExperience: 40,
+    artisanQuote: 'Ulos adalah kehangatan dan kasih sayang yang ditenun untuk orang terkasih.',
+    artisanQuoteLocal: 'Ulos on hangoluan dohot holong na tinun tu halak na dipangidoahon.',
+    culturalValue: 'Ulos represents warmth, love, and blessing in Batak culture, essential for ceremonies.'
+  },
+
+  // ===== GERABAH (NEW) =====
+  {
+    id: 'pottery-003',
+    name: 'Keramik Dinoyo Malang',
+    umkm: 'Keramik Dinoyo Heritage',
+    umkmStory: 'Traditional pottery village preserving ceramic art for over 50 years in Malang.',
+    village: 'Dinoyo, Malang, East Java',
+    category: 'gerabah',
+    description: 'Decorative and functional ceramics with colorful glazes, handcrafted by local artisans.',
+    imageUrl: '/assets/img/gerabah-kosongan.png',
+    ethicalBadges: ['Handmade', 'Colorful Glaze', 'Village Craft', 'Eco-Friendly'],
+    steps: [
+      { id: 'dinoyo-s1', title: 'Ekstraksi Tanah Liat', actor: 'Penambang', location: 'Dinoyo', description: 'Tanah liat lokal digali.', icon: '⛏️', imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=400&h=300&fit=crop' },
+      { id: 'dinoyo-s2', title: 'Pembentukan', actor: 'Pembuat', location: 'Dinoyo', description: 'Dibentuk dengan roda putar.', icon: '⚙️', imageUrl: 'https://images.unsplash.com/photo-1565193566173-7cba06dab0d4?w=400&h=300&fit=crop' },
+      { id: 'dinoyo-s3', title: 'Pengeringan', actor: 'Tim', location: 'Dinoyo', description: 'Dijemur hingga kering.', icon: '☀️', imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=400&h=300&fit=crop' },
+      { id: 'dinoyo-s4', title: 'Pembakaran Pertama', actor: 'Master Kiln', location: 'Dinoyo', description: 'Dibakar dalam kiln.', icon: '🔥', imageUrl: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=400&h=300&fit=crop' },
+      { id: 'dinoyo-s5', title: 'Glazing', actor: 'Pelukis', location: 'Dinoyo', description: 'Glasir warna diaplikasikan.', icon: '🎨', imageUrl: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop' },
+      { id: 'dinoyo-s6', title: 'Pembakaran Kedua', actor: 'Master Kiln', location: 'Dinoyo', description: 'Dibakar lagi untuk glasir.', icon: '🔥', imageUrl: 'https://images.unsplash.com/photo-1464983953574-0892a7167e67?w=400&h=300&fit=crop' }
+    ],
+    artisanName: 'Pak Bambang',
+    artisanExperience: 28,
+    artisanQuote: 'Keramik Dinoyo adalah warisan desa kami yang penuh warna.',
+    artisanQuoteLocal: 'Keramik Dinoyo iku warisan desa kita sing kebak warna.',
+    culturalValue: 'Dinoyo ceramics represent the vibrant artistic heritage of Malang pottery village.'
+  },
+
+  // ===== HERBAL (NEW) =====
+  {
+    id: 'herbal-003',
+    name: 'Minyak Kayu Putih Ambon',
+    umkm: 'Essential Oil Maluku',
+    umkmStory: 'Producing authentic cajuput oil for over 45 years using traditional distillation methods.',
+    village: 'Ambon, Maluku',
+    category: 'herbal',
+    description: 'Pure cajuput essential oil with therapeutic properties, traditionally used for wellness.',
+    imageUrl: '/assets/img/jamu-tradisional.png',
+    ethicalBadges: ['100% Pure', 'Traditional Method', 'Therapeutic', 'Organic'],
+    steps: [
+      { id: 'kayu-s1', title: 'Pemanenan Daun', actor: 'Petani', location: 'Ambon', description: 'Daun kayu putih dipanen.', icon: '🌿', imageUrl: 'https://images.unsplash.com/photo-1597318970834-a57ae9eb4f4d?w=400&h=300&fit=crop' },
+      { id: 'kayu-s2', title: 'Penyortiran', actor: 'Tim', location: 'Ambon', description: 'Daun segar dipilih.', icon: '✨', imageUrl: 'https://images.unsplash.com/photo-1571513200266-1d8c3d9bf2fb?w=400&h=300&fit=crop' },
+      { id: 'kayu-s3', title: 'Distilasi Uap', actor: 'Operator', location: 'Ambon', description: 'Distilasi dengan uap panas.', icon: '⚙️', imageUrl: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=300&fit=crop' },
+      { id: 'kayu-s4', title: 'Pemisahan Minyak', actor: 'Teknisi', location: 'Ambon', description: 'Minyak dipisahkan dari air.', icon: '💧', imageUrl: 'https://images.unsplash.com/photo-1596040995857-ba42d16cb0f2?w=400&h=300&fit=crop' },
+      { id: 'kayu-s5', title: 'Quality Control', actor: 'QC', location: 'Ambon', description: 'Uji kualitas dan kemurnian.', icon: '🔍', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' },
+      { id: 'kayu-s6', title: 'Pembotolan', actor: 'Pengemas', location: 'Ambon', description: 'Dibotolkan dalam kaca gelap.', icon: '🍯', imageUrl: 'https://images.unsplash.com/photo-1578500494198-246f612d03b3?w=400&h=300&fit=crop' }
+    ],
+    artisanName: 'Pak Yusuf',
+    artisanExperience: 45,
+    artisanQuote: 'Minyak kayu putih Ambon adalah obat alami terbaik dari alam Maluku.',
+    artisanQuoteLocal: 'Minyak kayu putih Ambon adalah obat alami terbaik dari alam Maluku.',
+    culturalValue: 'Cajuput oil from Ambon is renowned for its therapeutic quality and traditional healing properties.'
   }
 ]
 

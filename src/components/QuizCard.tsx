@@ -44,18 +44,18 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
   if (showResult) {
     return (
       <motion.div
-        className="bg-gradient-to-br from-gold/10 to-green-accent/10 rounded-2xl p-8 text-center"
+        className="bg-sky-soft-blue dark:bg-blue-glow-soft rounded-2xl p-8 text-center border border-edu-blue dark:border-neon-edu-blue"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
       >
         <div className="text-6xl mb-4">
           {score === questions.length ? '🏆' : score >= questions.length * 0.6 ? '⭐' : '📚'}
         </div>
-        <h3 className="text-2xl font-serif font-bold text-brown-primary mb-2">Quiz Complete!</h3>
-        <p className="text-lg text-gold font-semibold mb-2">
+        <h3 className="text-2xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2">Quiz Complete!</h3>
+        <p className="text-lg text-growth-green dark:text-glow-green font-semibold mb-2">
           You scored {score} out of {questions.length}
         </p>
-        <p className="text-brown-light mb-6 text-base">
+        <p className="text-slate-text dark:text-dark-body mb-6 text-base">
           {score === questions.length 
             ? 'Perfect! You\'re an expert on this product\'s story!'
             : score >= questions.length * 0.6
@@ -63,7 +63,7 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
             : 'Good effort! Learn more about ethical production!'}
         </p>
         <motion.button
-          className="px-6 py-3 bg-brown-primary text-white rounded-full font-semibold hover:bg-gold transition-colors"
+          className="px-6 py-3 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white rounded-full font-semibold transition-colors duration-250 shadow-md"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={resetQuiz}
@@ -75,18 +75,18 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
   }
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-md">
+    <div className="bg-pure-card dark:bg-dark-surface rounded-2xl p-8 shadow-md border border-soft-border dark:border-soft-dark-border">
       {/* Progress */}
       <div className="mb-8">
-        <div className="w-full h-2 bg-brown-primary/10 rounded-full overflow-hidden mb-2">
+        <div className="w-full h-2 bg-mist-gray dark:bg-soft-dark-border rounded-full overflow-hidden mb-2">
           <motion.div
-            className="h-full bg-gradient-to-r from-brown-primary to-gold"
+            className="h-full bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green"
             initial={{ width: 0 }}
             animate={{ width: `${((currentQ + 1) / questions.length) * 100}%` }}
             transition={{ duration: 0.5 }}
           />
         </div>
-        <p className="text-sm text-brown-light font-medium">
+        <p className="text-sm text-slate-text dark:text-dark-body font-medium">
           Question {currentQ + 1} of {questions.length}
         </p>
       </div>
@@ -99,18 +99,18 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
         >
-          <h4 className="text-lg font-serif font-bold text-brown-primary mb-6">{question.question}</h4>
+          <h4 className="text-lg font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-6">{question.question}</h4>
 
           <div className="space-y-3 mb-6">
             {question.options.map((option, idx) => (
               <motion.button
                 key={idx}
-                className={`w-full flex items-center gap-4 p-4 border-2 rounded-lg transition-all text-left font-medium ${
+                className={`w-full flex items-center gap-4 p-4 border-2 rounded-lg transition-all duration-250 text-left font-medium ${
                   selected === idx 
                     ? idx === question.correct 
-                      ? 'border-green-accent bg-green-accent/10 text-dark'
-                      : 'border-red-500 bg-red-500/10 text-dark'
-                    : 'border-brown-primary/20 hover:border-gold bg-white text-dark'
+                      ? 'border-growth-green bg-leaf-soft-green dark:border-glow-green dark:bg-deep-green-base text-ink-black dark:text-dark-body'
+                      : 'border-red-500 bg-red-500/10 text-ink-black dark:text-dark-body'
+                    : 'border-soft-border dark:border-soft-dark-border hover:border-edu-blue dark:hover:border-neon-edu-blue bg-pure-card dark:bg-dark-surface text-ink-black dark:text-dark-body'
                 }`}
                 onClick={() => !answered && handleAnswer(idx)}
                 whileHover={!answered ? { scale: 1.02 } : {}}
@@ -120,9 +120,9 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
                 <span className={`w-8 h-8 rounded-full font-bold flex items-center justify-center ${
                   selected === idx
                     ? idx === question.correct 
-                      ? 'bg-green-accent text-white'
+                      ? 'bg-growth-green dark:bg-glow-green text-white'
                       : 'bg-red-500 text-white'
-                    : 'bg-gold text-white'
+                    : 'bg-edu-blue dark:bg-neon-edu-blue text-white'
                 }`}>
                   {String.fromCharCode(65 + idx)}
                 </span>
@@ -136,19 +136,19 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
           <AnimatePresence>
             {answered && (
               <motion.div
-                className="bg-gold/10 border-l-4 border-gold p-4 rounded mb-6"
+                className="bg-soft-peach dark:bg-burnt-orange-base border-l-4 border-action-orange dark:border-dark-action-orange p-4 rounded mb-6"
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
               >
-                <p className="text-dark text-sm leading-relaxed">{question.explanation}</p>
+                <p className="text-ink-black dark:text-dark-body text-sm leading-relaxed">{question.explanation}</p>
               </motion.div>
             )}
           </AnimatePresence>
 
           {answered && (
             <motion.button
-              className="w-full py-3 bg-gradient-to-r from-brown-primary to-gold text-white rounded-lg font-semibold hover:shadow-lg transition-shadow"
+              className="w-full py-3 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-250"
               onClick={handleNext}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
