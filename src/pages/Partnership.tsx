@@ -13,7 +13,7 @@ export const Partnership = () => {
     const formData = new FormData(form)
     
     // Submit to Formspree
-    fetch('link taruh sini su', {
+    fetch('https://formspree.io/f/xojndwjk', {
       method: 'POST',
       body: formData,
       headers: {
