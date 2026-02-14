@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Handshake, Package, Send } from 'lucide-react'
+import { Handshake, Package, Send, MapPin } from 'lucide-react'
 import { BackgroundShapes } from '../components/BackgroundShapes'
 import { useEffect } from 'react'
 
@@ -13,7 +13,7 @@ export const Partnership = () => {
     const formData = new FormData(form)
     
     // Submit to Formspree
-    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    fetch('link taruh sini su', {
       method: 'POST',
       body: formData,
       headers: {
@@ -103,14 +103,15 @@ export const Partnership = () => {
 
               <div>
                 <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
-                  Nomor WhatsApp *
+                  <MapPin className="w-4 h-4 inline mr-2" />
+                  Lokasi/Desa *
                 </label>
                 <input
-                  type="tel"
-                  name="phone"
+                  type="text"
+                  name="village"
                   required
                   className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all"
-                  placeholder="08xxxxxxxxxx"
+                  placeholder="Desa/Kota, Provinsi"
                 />
               </div>
             </div>
@@ -137,20 +138,59 @@ export const Partnership = () => {
 
             <div>
               <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+                Kisah UMKM *
+              </label>
+              <textarea
+                name="umkmStory"
+                required
+                rows={3}
+                className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all resize-none"
+                placeholder="Ceritakan sejarah dan perjalanan UMKM Anda..."
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
                 Deskripsi Produk *
               </label>
               <textarea
                 name="description"
                 required
+                rows={4}
+                className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all resize-none"
+                placeholder="Jelaskan produk Anda, keunikan, dan nilai budayanya..."
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+                Badge Etis (pisahkan dengan koma) *
+              </label>
+              <input
+                type="text"
+                name="ethicalBadges"
+                required
+                className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all"
+                placeholder="Contoh: Perdagangan Adil, Ramah Lingkungan, Bahan Alami"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+                Tahapan Produksi *
+              </label>
+              <textarea
+                name="steps"
+                required
                 rows={5}
                 className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all resize-none"
-                placeholder="Ceritakan tentang produk Anda, proses pembuatan, dan keunikannya..."
+                placeholder="Jelaskan tahapan produksi dari awal hingga selesai.&#10;&#10;Contoh:&#10;Step 1: Pemilihan bahan baku berkualitas&#10;Step 2: Proses produksi dengan teknik tradisional&#10;Step 3: Kontrol kualitas produk&#10;Step 4: Pengemasan dan distribusi"
               />
             </div>
 
             <motion.button
               type="submit"
-              className="w-full px-8 py-4 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 transition-all duration-250 flex items-center justify-center gap-2"
+              className="w-full px-8 py-4 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 transition-all duration-250 flex items-center justify-center gap-2 btn-glow"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >

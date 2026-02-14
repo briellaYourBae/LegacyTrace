@@ -36,6 +36,12 @@
   - Cultural preservation
   - Sustainable practices
 
+#### 🤝 Partnership Program
+- Form pengajuan kerja sama untuk UMKM
+- Integrasi dengan Formspree untuk submission
+- Proses onboarding yang mudah dan transparan
+- Gratis bergabung dengan jangkauan pasar yang luas
+
 #### 📦 Kategori Produk
 - 🎨 **Batik** - Kain batik tulis tradisional
 - 🍴 **Snacks** - Makanan ringan tradisional
@@ -66,6 +72,8 @@ LegacyTrace/
 │   │   ├── ProductCard.tsx
 │   │   ├── QuizCard.tsx
 │   │   ├── TimelineStep.tsx
+│   │   ├── FloatingMenu.tsx
+│   │   ├── Navbar.tsx
 │   │   └── ...
 │   ├── data/            # Data sources
 │   │   ├── products.ts  # Product catalog
@@ -77,6 +85,7 @@ LegacyTrace/
 │   │   ├── Passport.tsx
 │   │   ├── Regions.tsx
 │   │   ├── Edutainment.tsx
+│   │   ├── Partnership.tsx
 │   │   └── ...
 │   ├── types/           # TypeScript types
 │   └── App.tsx          # Main app component
@@ -117,6 +126,8 @@ npm run preview
 - **Responsive Design**: Optimized untuk desktop, tablet, dan mobile
 - **Smooth Animations**: Menggunakan Framer Motion untuk transisi yang halus
 - **User-Centric**: Interface yang intuitif dan mudah dinavigasi
+- **Consistent CTA**: Semua call-to-action button menggunakan gradient, shadow glow, dan animasi yang konsisten
+- **Dark Mode Support**: Full dark mode dengan color palette yang disesuaikan
 
 ### 🌍 Impact & Goals
 
@@ -135,16 +146,6 @@ LegacyTrace bertujuan untuk:
 - **Cultural Enthusiasts**: Pecinta budaya dan kerajinan tradisional Indonesia
 - **UMKM Owners**: Pengrajin yang ingin meningkatkan visibilitas produk mereka
 - **Educators**: Guru dan institusi pendidikan yang mengajarkan tentang sustainability
-
-### 📈 Future Development
-
-- [ ] Integration dengan payment gateway
-- [ ] User authentication dan wishlist
-- [ ] Review dan rating system
-- [ ] Mobile app (React Native)
-- [ ] Blockchain untuk supply chain verification
-- [ ] Multi-language support
-- [ ] AR/VR untuk virtual workshop tour
 
 ### 📄 License
 

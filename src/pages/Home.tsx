@@ -95,7 +95,7 @@ export const Home = () => {
             </Link>
             <Link to="/edutainment">
               <motion.button
-                className="px-8 py-4 border-2 border-edu-blue dark:border-neon-edu-blue text-edu-blue dark:text-neon-edu-blue font-semibold rounded-full hover:bg-gradient-to-r hover:from-sky-soft-blue hover:to-leaf-soft-green dark:hover:from-blue-glow-soft dark:hover:to-deep-green-base transition-all duration-250 glass"
+                className="px-8 py-4 bg-gradient-to-r from-edu-blue to-deep-edu-blue dark:from-neon-edu-blue dark:to-bright-edu-blue text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-edu-blue/50 dark:hover:shadow-neon-edu-blue/50 transition-all duration-250 btn-glow"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -275,8 +275,8 @@ export const Home = () => {
           >
             <p className="text-2xl font-bold text-ink-black dark:text-dark-heading mb-6">Jelajahi Produk Berdasarkan Region</p>
             <motion.button
-              className="px-8 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-250 flex items-center gap-2 mx-auto"
-              whileHover={{ scale: 1.05 }}
+              className="px-8 py-4 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 transition-all duration-250 flex items-center gap-2 mx-auto btn-glow"
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               Lihat Semua Region <ArrowRight className="w-5 h-5" />
@@ -330,6 +330,7 @@ export const Home = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
+        <div className="absolute inset-0 bg-gradient-to-br from-edu-blue/5 to-growth-green/5 dark:from-neon-edu-blue/10 dark:to-glow-green/10"></div>
         <div className="relative z-10">
           <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">Siap Mengeksplorasi?</h2>
           <p className="text-xl text-slate-text dark:text-dark-body mb-8">
@@ -347,7 +348,7 @@ export const Home = () => {
             </Link>
             <Link to="/edutainment">
               <motion.button
-                className="px-8 py-4 border-2 border-edu-blue dark:border-neon-edu-blue text-edu-blue dark:text-neon-edu-blue font-semibold rounded-full hover:bg-gradient-to-r hover:from-sky-soft-blue hover:to-leaf-soft-green dark:hover:from-blue-glow-soft dark:hover:to-deep-green-base transition-all duration-250 glass"
+                className="px-8 py-4 bg-gradient-to-r from-edu-blue to-deep-edu-blue dark:from-neon-edu-blue dark:to-bright-edu-blue text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-edu-blue/50 dark:hover:shadow-neon-edu-blue/50 transition-all duration-250 btn-glow"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -360,50 +361,52 @@ export const Home = () => {
 
       {/* ===== PARTNERSHIP SECTION ===== */}
       <motion.section
-        className="max-w-6xl mx-auto px-8 py-20 relative"
+        className="hidden md:block max-w-6xl mx-auto px-8 py-20 relative"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <Link to="/partnership">
-          <motion.div
-            className="glass rounded-3xl p-12 border-2 border-royal-purple/30 dark:border-batik-dark/30 hover:border-royal-purple dark:hover:border-batik-dark transition-all duration-300 hover:shadow-2xl hover:shadow-royal-purple/20 dark:hover:shadow-batik-dark/20 relative overflow-hidden group"
-            whileHover={{ scale: 1.02, y: -5 }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-royal-purple/5 to-indigo-weave/5 dark:from-batik-dark/10 dark:to-tenun-dark/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <motion.div
+          className="glass rounded-3xl text-center p-12 relative overflow-hidden border border-royal-purple/30 dark:border-batik-dark/30 shadow-2xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-royal-purple/5 to-indigo-weave/5 dark:from-batik-dark/10 dark:to-tenun-dark/10"></div>
+          <div className="relative z-10">
+            <motion.div
+              className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-royal-purple to-indigo-weave dark:from-batik-dark dark:to-tenun-dark rounded-full mb-6 shadow-lg"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              <Handshake className="w-10 h-10 text-white" />
+            </motion.div>
             
-            <div className="relative z-10 text-center">
-              <motion.div
-                className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-royal-purple to-indigo-weave dark:from-batik-dark dark:to-tenun-dark rounded-full mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300"
-                whileHover={{ rotate: 15 }}
-              >
-                <Handshake className="w-10 h-10 text-white" />
-              </motion.div>
-              
-              <h3 className="text-3xl font-serif font-bold text-ink-black dark:text-dark-heading mb-4 group-hover:text-royal-purple dark:group-hover:text-batik-dark transition-colors">
-                Punya Produk UMKM?
-              </h3>
-              
-              <p className="text-lg text-slate-text dark:text-dark-body mb-6 max-w-2xl mx-auto">
-                Bergabunglah dengan LegacyTrace dan tampilkan produk Anda ke pasar yang lebih luas. Kami membantu UMKM Indonesia untuk terhubung dengan konsumen yang peduli.
-              </p>
-              
-              <div className="flex flex-wrap gap-4 justify-center mb-6">
-                <span className="px-4 py-2 bg-sky-soft-blue dark:bg-blue-glow-soft text-edu-blue dark:text-neon-edu-blue rounded-full text-sm font-semibold">✓ Gratis Bergabung</span>
-                <span className="px-4 py-2 bg-leaf-soft-green dark:bg-deep-green-base text-growth-green dark:text-glow-green rounded-full text-sm font-semibold">✓ Jangkauan Luas</span>
-                <span className="px-4 py-2 bg-soft-peach dark:bg-burnt-orange-base text-action-orange dark:text-dark-action-orange rounded-full text-sm font-semibold">✓ Transparansi Penuh</span>
-              </div>
-              
-              <motion.div
-                className="inline-flex items-center gap-2 text-royal-purple dark:text-batik-dark font-bold text-lg group-hover:gap-4 transition-all duration-300"
-                whileHover={{ x: 5 }}
-              >
-                Ajukan Kerja Sama Sekarang <ArrowRight className="w-6 h-6" />
-              </motion.div>
+            <h2 className="text-4xl font-serif font-bold text-ink-black dark:text-dark-heading mb-4">Punya Produk UMKM?</h2>
+            <p className="text-xl text-slate-text dark:text-dark-body mb-8 max-w-2xl mx-auto">
+              Bergabunglah dengan LegacyTrace dan tampilkan produk Anda ke pasar yang lebih luas. Kami membantu UMKM Indonesia untuk terhubung dengan konsumen yang peduli.
+            </p>
+            
+            <div className="flex flex-wrap gap-4 justify-center mb-8">
+              <span className="px-4 py-2 bg-sky-soft-blue dark:bg-blue-glow-soft text-edu-blue dark:text-neon-edu-blue rounded-full text-sm font-semibold">✓ Gratis Bergabung</span>
+              <span className="px-4 py-2 bg-leaf-soft-green dark:bg-deep-green-base text-growth-green dark:text-glow-green rounded-full text-sm font-semibold">✓ Jangkauan Luas</span>
+              <span className="px-4 py-2 bg-soft-peach dark:bg-burnt-orange-base text-action-orange dark:text-dark-action-orange rounded-full text-sm font-semibold">✓ Transparansi Penuh</span>
             </div>
-          </motion.div>
-        </Link>
+            
+            <Link to="/partnership">
+              <motion.button
+                className="px-8 py-4 bg-gradient-to-r from-royal-purple to-indigo-weave dark:from-batik-dark dark:to-tenun-dark text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-royal-purple/50 dark:hover:shadow-batik-dark/50 transition-all duration-250 btn-glow"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Ajukan Kerja Sama Sekarang
+              </motion.button>
+            </Link>
+          </div>
+        </motion.div>
       </motion.section>
 
     </div>
