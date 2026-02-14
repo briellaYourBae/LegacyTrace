@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { QuizQuestion } from '../types/product'
+import { Check, X, Trophy, Star, BookOpen, RefreshCw } from 'lucide-react'
 
 interface QuizCardProps {
   questions: QuizQuestion[]
@@ -48,8 +49,12 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
       >
-        <div className="text-6xl mb-4">
-          {score === questions.length ? '🏆' : score >= questions.length * 0.6 ? '⭐' : '📚'}
+        <div className="flex justify-center mb-4">
+          {score === questions.length 
+            ? <Trophy className="w-20 h-20 text-yellow-500" /> 
+            : score >= questions.length * 0.6 
+            ? <Star className="w-20 h-20 text-action-orange" /> 
+            : <BookOpen className="w-20 h-20 text-edu-blue" />}
         </div>
         <h3 className="text-2xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2">Kuis Selesai!</h3>
         <p className="text-lg text-growth-green dark:text-glow-green font-semibold mb-2">
@@ -63,12 +68,12 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
             : 'Usaha yang baik! Pelajari lebih lanjut tentang produksi etis!'}
         </p>
         <motion.button
-          className="px-6 py-3 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white rounded-full font-semibold transition-colors duration-250 shadow-md"
+          className="px-6 py-3 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white rounded-full font-semibold transition-colors duration-250 shadow-md flex items-center gap-2 mx-auto"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={resetQuiz}
         >
-          Ulangi Kuis
+          <RefreshCw className="w-5 h-5" /> Ulangi Kuis
         </motion.button>
       </motion.div>
     )
@@ -127,8 +132,8 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
                   {String.fromCharCode(65 + idx)}
                 </span>
                 <span>{option}</span>
-                {answered && idx === question.correct && <span className="ml-auto text-xl">✓</span>}
-                {answered && selected === idx && selected !== question.correct && <span className="ml-auto text-xl">✗</span>}
+                {answered && idx === question.correct && <Check className="ml-auto w-6 h-6 text-growth-green" />}
+                {answered && selected === idx && selected !== question.correct && <X className="ml-auto w-6 h-6 text-red-500" />}
               </motion.button>
             ))}
           </div>
