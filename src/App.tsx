@@ -12,6 +12,7 @@ import { Edutainment } from './pages/Edutainment'
 import { ArtisanPage } from './pages/Artisan'
 import { Team } from './pages/Team'
 import { Regions } from './pages/Regions'
+import { Partnership } from './pages/Partnership'
 
 export const App = () => {
   const [loading, setLoading] = useState(true)
@@ -41,6 +42,7 @@ export const App = () => {
               <Route path="/artisan/:artisanId" element={<ArtisanPage />} />
               <Route path="/team" element={<Team />} />
               <Route path="/regions" element={<Regions />} />
+              <Route path="/partnership" element={<Partnership />} />
             </Routes>
           </main>
           <Footer />

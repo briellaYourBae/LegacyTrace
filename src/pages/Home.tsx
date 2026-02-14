@@ -6,7 +6,7 @@ import {
   Search, ShieldCheck, QrCode, Users, 
   Palette, Utensils, Hammer, Scissors, 
   Coffee, Leaf, ArrowRight, Map, BookOpen, 
-  Heart, Globe 
+  Heart, Globe, Handshake 
 } from 'lucide-react'
 
 export const Home = () => {
@@ -356,6 +356,54 @@ export const Home = () => {
             </Link>
           </div>
         </div>
+      </motion.section>
+
+      {/* ===== PARTNERSHIP SECTION ===== */}
+      <motion.section
+        className="max-w-6xl mx-auto px-8 py-20 relative"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <Link to="/partnership">
+          <motion.div
+            className="glass rounded-3xl p-12 border-2 border-royal-purple/30 dark:border-batik-dark/30 hover:border-royal-purple dark:hover:border-batik-dark transition-all duration-300 hover:shadow-2xl hover:shadow-royal-purple/20 dark:hover:shadow-batik-dark/20 relative overflow-hidden group"
+            whileHover={{ scale: 1.02, y: -5 }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-royal-purple/5 to-indigo-weave/5 dark:from-batik-dark/10 dark:to-tenun-dark/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            
+            <div className="relative z-10 text-center">
+              <motion.div
+                className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-royal-purple to-indigo-weave dark:from-batik-dark dark:to-tenun-dark rounded-full mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300"
+                whileHover={{ rotate: 15 }}
+              >
+                <Handshake className="w-10 h-10 text-white" />
+              </motion.div>
+              
+              <h3 className="text-3xl font-serif font-bold text-ink-black dark:text-dark-heading mb-4 group-hover:text-royal-purple dark:group-hover:text-batik-dark transition-colors">
+                Punya Produk UMKM?
+              </h3>
+              
+              <p className="text-lg text-slate-text dark:text-dark-body mb-6 max-w-2xl mx-auto">
+                Bergabunglah dengan LegacyTrace dan tampilkan produk Anda ke pasar yang lebih luas. Kami membantu UMKM Indonesia untuk terhubung dengan konsumen yang peduli.
+              </p>
+              
+              <div className="flex flex-wrap gap-4 justify-center mb-6">
+                <span className="px-4 py-2 bg-sky-soft-blue dark:bg-blue-glow-soft text-edu-blue dark:text-neon-edu-blue rounded-full text-sm font-semibold">✓ Gratis Bergabung</span>
+                <span className="px-4 py-2 bg-leaf-soft-green dark:bg-deep-green-base text-growth-green dark:text-glow-green rounded-full text-sm font-semibold">✓ Jangkauan Luas</span>
+                <span className="px-4 py-2 bg-soft-peach dark:bg-burnt-orange-base text-action-orange dark:text-dark-action-orange rounded-full text-sm font-semibold">✓ Transparansi Penuh</span>
+              </div>
+              
+              <motion.div
+                className="inline-flex items-center gap-2 text-royal-purple dark:text-batik-dark font-bold text-lg group-hover:gap-4 transition-all duration-300"
+                whileHover={{ x: 5 }}
+              >
+                Ajukan Kerja Sama Sekarang <ArrowRight className="w-6 h-6" />
+              </motion.div>
+            </div>
+          </motion.div>
+        </Link>
       </motion.section>
 
     </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowUp, ArrowLeft, Plus } from 'lucide-react'
+import { ArrowUp, ArrowLeft, Plus, Handshake } from 'lucide-react'
 
 export const FloatingMenu = () => {
   const navigate = useNavigate()
@@ -30,6 +30,14 @@ export const FloatingMenu = () => {
     }
   }
 
+  const goToPartnership = () => {
+    navigate('/partnership')
+    setShowMenu(false)
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 100)
+  }
+
   return (
     <div className="md:hidden fixed bottom-6 right-6 z-50">
       <AnimatePresence>
@@ -42,7 +50,7 @@ export const FloatingMenu = () => {
           >
             {/* Back to Top */}
             <motion.button
-              className="w-14 h-14 bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(37,99,235,0.5)] dark:hover:shadow-[0_20px_50px_rgba(96,165,250,0.5)] flex items-center justify-center text-2xl transition-all duration-300 glass"
+              className="w-14 h-14 bg-gradient-to-r from-edu-blue to-deep-edu-blue dark:from-neon-edu-blue dark:to-bright-edu-blue text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(37,99,235,0.7)] dark:hover:shadow-[0_20px_50px_rgba(96,165,250,0.5)] flex items-center justify-center text-2xl transition-all duration-300"
               onClick={scrollToTop}
               whileHover={{ scale: 1.15, rotate: 360 }}
               whileTap={{ scale: 0.9 }}
@@ -54,7 +62,7 @@ export const FloatingMenu = () => {
             {/* Back Button - Only show if NOT on main pages */}
             {!isMainPage && (
               <motion.button
-                className="w-14 h-14 bg-gradient-to-r from-growth-green to-edu-blue dark:from-glow-green dark:to-neon-edu-blue text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(22,163,74,0.5)] dark:hover:shadow-[0_20px_50px_rgba(74,222,128,0.5)] flex items-center justify-center text-2xl font-bold transition-all duration-300 glass"
+                className="w-14 h-14 bg-gradient-to-r from-growth-green to-deep-edu-blue dark:from-glow-green dark:to-neon-edu-blue text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(22,163,74,0.7)] dark:hover:shadow-[0_20px_50px_rgba(74,222,128,0.5)] flex items-center justify-center text-2xl font-bold transition-all duration-300"
                 onClick={goBack}
                 whileHover={{ scale: 1.15, x: -5 }}
                 whileTap={{ scale: 0.9 }}
@@ -63,13 +71,24 @@ export const FloatingMenu = () => {
                 <ArrowLeft className="w-6 h-6" />
               </motion.button>
             )}
+
+            {/* Partnership Button */}
+            <motion.button
+              className="w-14 h-14 bg-gradient-to-r from-royal-purple to-indigo-weave dark:from-batik-dark dark:to-tenun-dark text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(124,58,237,0.7)] dark:hover:shadow-[0_20px_50px_rgba(167,139,250,0.5)] flex items-center justify-center text-2xl transition-all duration-300"
+              onClick={goToPartnership}
+              whileHover={{ scale: 1.15, rotate: 15 }}
+              whileTap={{ scale: 0.9 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Handshake className="w-6 h-6" />
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>
 
       {/* Main Toggle Button */}
       <motion.button
-        className="w-16 h-16 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white rounded-full shadow-2xl hover:shadow-[0_25px_60px_rgba(249,115,22,0.6)] dark:hover:shadow-[0_25px_60px_rgba(251,146,60,0.6)] flex items-center justify-center text-3xl transition-all duration-300 glass"
+        className="w-16 h-16 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white rounded-full shadow-2xl hover:shadow-[0_25px_60px_rgba(249,115,22,0.8)] dark:hover:shadow-[0_25px_60px_rgba(251,146,60,0.6)] flex items-center justify-center text-3xl transition-all duration-300"
         onClick={() => setShowMenu(!showMenu)}
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.9 }}
