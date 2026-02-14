@@ -7,6 +7,28 @@
   @apply bg-gray-900 text-gray-100;
 }
 
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-light dark:bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gold/50 dark:bg-amber-600/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gold dark:bg-amber-600;
+}
+
 .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
   @apply text-amber-400;
 }
