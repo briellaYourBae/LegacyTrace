@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion'
 import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { LoadingScreen } from './components/LoadingScreen'
+import { FloatingMenu } from './components/FloatingMenu'
 import { Home } from './pages/Home'
 import { Products } from './pages/Products'
 import { Passport } from './pages/Passport'
@@ -43,6 +44,7 @@ export const App = () => {
             </Routes>
           </main>
           <Footer />
+          <FloatingMenu />
         </Router>
       )}
     </>

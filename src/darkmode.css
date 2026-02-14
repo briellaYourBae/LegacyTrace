@@ -1,0 +1,156 @@
+/* Dark Mode Global Styles */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  @apply text-amber-400;
+}
+
+.dark p, .dark span {
+  @apply text-gray-400;
+}
+
+.dark .text-brown-primary {
+  @apply text-amber-400;
+}
+
+.dark .text-brown-light {
+  @apply text-gray-500;
+}
+
+.dark .text-dark {
+  @apply text-gray-300;
+}
+
+.dark .text-white {
+  @apply text-gray-200;
+}
+
+.dark .text-gold {
+  @apply text-amber-400;
+}
+
+.dark .bg-white {
+  @apply bg-gray-800;
+}
+
+.dark .bg-cream {
+  @apply bg-gray-800;
+}
+
+.dark .bg-light {
+  @apply bg-gray-900;
+}
+
+.dark .from-cream {
+  @apply from-gray-800;
+}
+
+.dark .to-light {
+  @apply to-gray-700;
+}
+
+.dark .from-brown-primary\/10 {
+  @apply from-gray-800;
+}
+
+.dark .to-green-accent\/10 {
+  @apply to-gray-700;
+}
+
+.dark .from-gold\/15 {
+  @apply from-gray-800;
+}
+
+.dark .to-green-accent\/15 {
+  @apply to-gray-700;
+}
+
+.dark .from-brown-primary\/15 {
+  @apply from-gray-800;
+}
+
+.dark .via-gold\/15 {
+  @apply via-gray-800;
+}
+
+.dark .from-cream\/80 {
+  @apply from-gray-800;
+}
+
+.dark .border-brown-primary {
+  @apply border-amber-600;
+}
+
+.dark .bg-brown-primary {
+  @apply bg-gray-700;
+}
+
+.dark .hover\:bg-brown-primary\/90:hover {
+  @apply bg-gray-600;
+}
+
+.dark .hover\:bg-brown-primary\/10:hover {
+  @apply bg-gray-800;
+}
+
+.dark .bg-gradient-to-r.from-brown-primary {
+  @apply from-gray-700;
+}
+
+.dark .bg-gradient-to-r.to-gold {
+  @apply to-amber-600;
+}
+
+.dark .bg-gradient-to-r.from-gold {
+  @apply from-amber-600;
+}
+
+.dark .bg-gradient-to-r.to-green-accent {
+  @apply to-emerald-700;
+}
+
+.dark .bg-gradient-to-br.from-cream\/80 {
+  @apply from-gray-800;
+}
+
+.dark .bg-gradient-to-br.from-gold\/20 {
+  @apply from-gray-800;
+}
+
+.dark .bg-gradient-to-br.to-green-accent\/20 {
+  @apply to-gray-700;
+}
+
+.dark .shadow-sm, .dark .shadow-md, .dark .shadow-lg, .dark .shadow-xl, .dark .shadow-2xl {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.7), 0 2px 4px -1px rgba(0, 0, 0, 0.5);
+}
+
+.dark .border-gold\/20 {
+  @apply border-amber-700/40;
+}
+
+.dark .border-gold\/30 {
+  @apply border-amber-700/50;
+}
+
+.dark .border-gold {
+  @apply border-amber-600;
+}
+
+.dark .bg-gold\/10 {
+  @apply bg-gray-800/50;
+}
+
+.dark .bg-green-accent\/10 {
+  @apply bg-gray-800/50;
+}
+
+.dark .bg-gradient-to-r.from-cream.to-gold\/10 {
+  @apply from-gray-800 to-gray-700;
+}
