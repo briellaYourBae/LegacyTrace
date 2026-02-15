@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { regions } from '../data/regions'
-import { 
-  Map, Palmtree, Mountain, Anchor, Bird, 
-  Palette, Utensils, Hammer, Scissors, Coffee, Leaf, 
+import {
+  Map, Palmtree, Mountain, Anchor, Bird,
+  Palette, Utensils, Hammer, Scissors, Coffee, Leaf,
   ArrowRight, CheckCircle, Leaf as LeafIcon, Sun, Compass
 } from 'lucide-react'
 import { BackgroundShapes } from '../components/BackgroundShapes'
@@ -37,8 +37,8 @@ export const Regions = () => {
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } }
   }
 
   const pulauBesar = regions.slice(0, 5)
@@ -54,7 +54,7 @@ export const Regions = () => {
     if (lower.includes('sulawesi')) return <Anchor className={className} />
     if (lower.includes('papua')) return <Bird className={className} />
     if (lower.includes('bali')) return <Sun className={className} />
-    
+
     // Categories
     if (lower.includes('batik')) return <Palette className={className} />
     if (lower.includes('makanan') || lower.includes('snacks')) return <Utensils className={className} />
@@ -62,7 +62,7 @@ export const Regions = () => {
     if (lower.includes('woven') || lower.includes('tenun')) return <Scissors className={className} />
     if (lower.includes('pottery') || lower.includes('gerabah')) return <Coffee className={className} />
     if (lower.includes('herbal')) return <LeafIcon className={className} />
-    
+
     // Default
     return <Map className={className} />
   }
@@ -70,7 +70,7 @@ export const Regions = () => {
   return (
     <div className="min-h-screen pb-20 relative overflow-hidden page-transition">
       <BackgroundShapes variant="minimal" />
-      
+
       {/* Header */}
       <motion.section
         className="max-w-6xl mx-auto px-8 py-16 text-center relative z-10"
@@ -78,12 +78,13 @@ export const Regions = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="inline-block p-3 rounded-full bg-gold/10 dark:bg-gold-neon/10 mb-6">
-          <Compass className="w-8 h-8 text-gold dark:text-gold-neon" />
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-gold/10 dark:bg-gold-neon/10 rounded-full mb-6">
+          <Compass className="w-4 h-4 text-gold dark:text-gold-neon" />
+          <span className="text-sm font-semibold text-gold dark:text-gold-neon">Peta Nusantara</span>
         </div>
-        <h1 className="text-5xl font-serif font-bold text-gold dark:text-gold-neon mb-6">Jelajahi Nusantara</h1>
-        <p className="text-xl text-stone-text dark:text-dark-body max-w-3xl mx-auto leading-relaxed">
-            Temukan kerajinan tradisional unik dari 5 pulau besar dan 5 pulau kecil terkenal Indonesia.
+        <h1 className="text-4xl md:text-5xl font-serif font-bold gradient-text mb-4">Jelajahi Nusantara</h1>
+        <p className="text-lg text-stone-text dark:text-dark-body max-w-2xl mx-auto leading-relaxed">
+          Temukan kerajinan tradisional unik dari 5 pulau besar dan 5 pulau kecil terkenal Indonesia.
         </p>
       </motion.section>
 
@@ -109,16 +110,15 @@ export const Regions = () => {
             <motion.button
               key={region.id}
               onClick={() => handleRegionSelect(region)}
-              className={`p-6 rounded-2xl font-semibold transition-all duration-300 text-center group ${
-                selectedRegion.id === region.id
-                  ? 'bg-coral text-white shadow-lg scale-105 ring-4 ring-coral/20'
-                  : 'bg-pure-card dark:bg-night-card border border-stone-100 dark:border-night-border text-stone-text dark:text-dark-body hover:border-gold dark:hover:border-gold-neon hover:shadow-md'
-              }`}
+              className={`p-6 rounded-2xl font-semibold transition-all duration-300 text-center group ${selectedRegion.id === region.id
+                ? 'bg-gradient-to-br from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night shadow-lg scale-105 ring-4 ring-gold/20 dark:ring-gold-neon/20'
+                : 'glass border border-stone-100/60 dark:border-night-border/60 text-stone-text dark:text-dark-body hover:border-gold dark:hover:border-gold-neon hover:shadow-md'
+                }`}
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -4 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className={`mb-3 flex justify-center transition-colors ${selectedRegion.id === region.id ? 'text-white' : 'text-gold dark:text-gold-neon group-hover:text-coral'}`}>
+              <span className={`mb-3 flex justify-center transition-colors ${selectedRegion.id === region.id ? 'text-white dark:text-night' : 'text-gold dark:text-gold-neon group-hover:text-gold-deep dark:group-hover:text-gold-bright'}`}>
                 {getIcon(region.name, "w-10 h-10")}
               </span>
               {region.name}
@@ -149,16 +149,15 @@ export const Regions = () => {
             <motion.button
               key={region.id}
               onClick={() => handleRegionSelect(region)}
-              className={`p-6 rounded-2xl font-semibold transition-all duration-300 text-center group ${
-                selectedRegion.id === region.id
-                  ? 'bg-teal text-white shadow-lg scale-105 ring-4 ring-teal/20'
-                  : 'bg-pure-card dark:bg-night-card border border-stone-100 dark:border-night-border text-stone-text dark:text-dark-body hover:border-teal dark:hover:border-teal-neon hover:shadow-md'
-              }`}
+              className={`p-6 rounded-2xl font-semibold transition-all duration-300 text-center group ${selectedRegion.id === region.id
+                ? 'bg-gradient-to-br from-teal to-teal-deep dark:from-teal-neon dark:to-teal-bright text-white shadow-lg scale-105 ring-4 ring-teal/20 dark:ring-teal-neon/20'
+                : 'glass border border-stone-100/60 dark:border-night-border/60 text-stone-text dark:text-dark-body hover:border-teal dark:hover:border-teal-neon hover:shadow-md'
+                }`}
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -4 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className={`mb-3 flex justify-center transition-colors ${selectedRegion.id === region.id ? 'text-white' : 'text-teal dark:text-teal-neon group-hover:text-teal'}`}>
+              <span className={`mb-3 flex justify-center transition-colors ${selectedRegion.id === region.id ? 'text-white' : 'text-teal dark:text-teal-neon group-hover:text-teal-deep dark:group-hover:text-teal-bright'}`}>
                 {getIcon(region.name, "w-10 h-10")}
               </span>
               {region.name}
@@ -176,7 +175,7 @@ export const Regions = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="bg-pure-card dark:bg-night-card rounded-3xl p-8 md:p-12 shadow-xl border border-stone-100 dark:border-night-border"
+            className="glass rounded-3xl p-8 md:p-12 shadow-xl border border-stone-100/60 dark:border-night-border/60"
           >
             {/* Header */}
             <div className="flex flex-col md:flex-row items-start gap-6 mb-8">
@@ -201,15 +200,15 @@ export const Regions = () => {
                 {selectedRegion.products.map((product) => (
                   <motion.div
                     key={product.id}
-                    className="bg-warm-sand dark:bg-night-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all border border-transparent hover:border-coral dark:hover:border-coral-neon group"
+                    className="glass rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-stone-100/60 dark:border-night-border/60 hover:border-gold/30 dark:hover:border-gold-neon/30 group card-hover"
                     variants={itemVariants}
                     whileHover={{ scale: 1.05, y: -5 }}
                   >
-                    <div className="mb-4 text-gold dark:text-gold-neon group-hover:text-coral transition-colors">
+                    <div className="mb-4 text-gold dark:text-gold-neon group-hover:scale-110 transition-transform duration-300">
                       {getIcon(product.category, "w-8 h-8")}
                     </div>
-                    <h5 className="font-serif font-bold text-ink dark:text-dark-heading mb-2 text-sm line-clamp-2">{product.name}</h5>
-                    <p className="text-xs text-coral dark:text-coral-neon font-semibold mb-1 uppercase tracking-wider">{product.category}</p>
+                    <h5 className="font-serif font-bold text-ink dark:text-dark-heading mb-2 text-sm line-clamp-2 group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">{product.name}</h5>
+                    <p className="text-xs text-teal dark:text-teal-neon font-semibold mb-1 uppercase tracking-wider">{product.category}</p>
                     <p className="text-xs text-stone-text dark:text-dark-body truncate">{product.umkm}</p>
                   </motion.div>
                 ))}
@@ -227,18 +226,21 @@ export const Regions = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="bg-gradient-to-r from-gold-soft/30 via-coral-soft/20 to-teal-soft/30 dark:from-gold-glow-bg/20 dark:via-coral-glow-bg/20 dark:to-teal-glow-bg/20 rounded-3xl p-12 text-center border border-gold/20 dark:border-gold-neon/20">
-          <h2 className="text-3xl font-serif font-bold text-gold dark:text-gold-neon mb-4">Ingin Mengeksplorasi Lebih Lanjut?</h2>
-          <p className="text-lg text-stone-text dark:text-dark-body mb-8">Lihat semua produk dari region pilihan Anda</p>
-          <Link to="/products">
-            <motion.button
-              className="px-8 py-4 bg-coral hover:bg-coral-deep dark:bg-coral-neon dark:hover:bg-coral-bright text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-250 flex items-center gap-2 mx-auto"
-              whileHover={{ scale: 1.05, boxShadow: '0 12px 24px rgba(0,0,0,0.15)' }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Jelajahi Semua Produk <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          </Link>
+        <div className="glass rounded-3xl p-12 text-center border border-gold/15 dark:border-gold-neon/15 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.03] to-teal/[0.03] dark:from-gold-neon/[0.06] dark:to-teal-neon/[0.06]" />
+          <div className="relative z-10">
+            <h2 className="text-3xl font-serif font-bold text-ink dark:text-dark-heading mb-3">Ingin <span className="gradient-text">Mengeksplorasi</span> Lebih Lanjut?</h2>
+            <p className="text-lg text-stone-text dark:text-dark-body mb-8">Lihat semua produk dari region pilihan Anda</p>
+            <Link to="/products">
+              <motion.button
+                className="px-8 py-4 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-300 flex items-center gap-2 mx-auto btn-glow"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Jelajahi Semua Produk <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </Link>
+          </div>
         </div>
       </motion.section>
     </div>

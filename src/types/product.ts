@@ -8,7 +8,8 @@ export interface SupplyStep {
     imageUrl?: string
 }
 
-export interface Product {id: string
+export interface Product {
+    id: string
     name: string
     umkm: string
     umkmStory: string
@@ -22,6 +23,7 @@ export interface Product {id: string
     artisanExperience: number
     artisanQuote: string
     artisanQuoteLocal?: string
+    artisanPhotoUrl?: string
     culturalValue: string
 }
 

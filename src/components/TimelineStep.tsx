@@ -23,7 +23,7 @@ export const TimelineStep = ({ step, index, isVisible }: TimelineStepProps) => {
       <div className="w-1/2 pr-4 md:pr-12">
         {!isRight && (
           <motion.div
-            className="bg-pure-card dark:bg-night-card p-5 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-250 ml-auto max-w-sm md:max-w-lg border border-stone-100 dark:border-night-border"
+            className="glass p-5 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ml-auto max-w-sm md:max-w-lg border border-stone-100/60 dark:border-night-border/60"
             whileHover={{ scale: 1.02 }}
           >
             <div className="text-right">
@@ -51,7 +51,7 @@ export const TimelineStep = ({ step, index, isVisible }: TimelineStepProps) => {
       <div className="w-1/2 pl-4 md:pl-12">
         {isRight && (
           <motion.div
-            className="bg-pure-card dark:bg-night-card p-5 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-250 mr-auto max-w-sm md:max-w-lg border border-stone-100 dark:border-night-border"
+            className="glass p-5 md:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 mr-auto max-w-sm md:max-w-lg border border-stone-100/60 dark:border-night-border/60"
             whileHover={{ scale: 1.02 }}
           >
             <h4 className="text-base md:text-xl font-serif font-bold text-gold dark:text-gold-neon mb-3">{step.title}</h4>

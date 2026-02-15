@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { products, quizzes } from '../data/products'
@@ -6,7 +6,25 @@ import { Product, QuizQuestion } from '../types/product'
 import { TimelineStep } from '../components/TimelineStep'
 import { QuizCard } from '../components/QuizCard'
 import { BackgroundShapes } from '../components/BackgroundShapes'
-import { MapPin, Check, BookOpen, Leaf, Hammer, Hand } from 'lucide-react'
+import {
+  MapPin, Check, BookOpen, Leaf, Hammer, Hand,
+  Award, Clock, Quote, Sparkles, ArrowRight, Star
+} from 'lucide-react'
+
+// Generate a deterministic avatar URL based on the artisan name
+const getArtisanAvatar = (name: string, gender: 'men' | 'women' = 'men') => {
+  let hash = 0
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash)
+  }
+  const num = Math.abs(hash) % 90 + 1
+  return `https://randomuser.me/api/portraits/${gender}/${num}.jpg`
+}
+
+const getGender = (name: string): 'men' | 'women' => {
+  if (name.startsWith('Ibu') || name.startsWith('Mak') || name.startsWith('Ni ')) return 'women'
+  return 'men'
+}
 
 export const Passport = () => {
   const { productId } = useParams()
@@ -27,74 +45,165 @@ export const Passport = () => {
     }
   }, [productId, navigate])
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [productId])
+
   const handleStepScroll = (index: number) => {
     setVisibleSteps(prev => new Set([...prev, index]))
+  }
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.1 }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } }
   }
 
   if (!product) return null
 
   return (
-    <div className="min-height-screen pb-20 md:pb-20 relative page-transition">
+    <div className="min-h-screen pb-20 relative page-transition">
       <BackgroundShapes variant="minimal" />
-      {/* Header */}
+
+      {/* ═══════════════════════════════════
+          HERO HEADER
+         ═══════════════════════════════════ */}
       <motion.section
-        className="bg-gradient-to-r from-warm-sand to-gold-soft/30 dark:from-night-card dark:to-gold-glow-bg/20 max-w-6xl mx-auto px-8 py-12 rounded-2xl my-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center border border-stone-100 dark:border-night-border"
+        className="relative max-w-6xl mx-auto px-8 py-10 my-8 overflow-hidden"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div>
-          <h1 className="text-5xl font-serif font-bold text-gold dark:text-gold-neon mb-2">{product.name}</h1>
-          <p className="text-2xl text-teal dark:text-teal-neon font-semibold mb-1">{product.umkm}</p>
-          <p className="text-lg text-stone-text dark:text-dark-body mb-4 flex items-center gap-2"><MapPin className="w-5 h-5" /> {product.village}</p>
-          <div className="flex flex-wrap gap-3">
-            {product.ethicalBadges.map((badge, idx) => (
-              <motion.span
-                key={idx}
-                className="bg-teal dark:bg-teal-neon text-white px-4 py-2 rounded-full font-semibold text-sm shadow-sm flex items-center gap-2"
-                whileHover={{ scale: 1.1 }}
-              >
-                <Check className="w-4 h-4" /> {badge}
-              </motion.span>
-            ))}
-          </div>
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold-soft via-cream to-teal-soft/30 dark:from-night-card dark:via-night dark:to-gold-glow-bg/20 border border-stone-100/60 dark:border-night-border/60" />
+        <div className="absolute inset-0 rounded-3xl overflow-hidden">
+          <div className="absolute top-0 right-0 w-72 h-72 bg-gold/6 dark:bg-gold-neon/6 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-48 h-48 bg-teal/6 dark:bg-teal-neon/6 rounded-full blur-3xl" />
         </div>
 
-        <motion.img
-          src={product.imageUrl}
-          alt={product.name}
-          className="w-full h-80 object-cover rounded-2xl shadow-lg"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        />
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <motion.div
+              className="inline-flex items-center gap-2 px-3 py-1.5 bg-gold/10 dark:bg-gold-neon/10 rounded-full mb-4"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+            >
+              <Sparkles className="w-3.5 h-3.5 text-gold dark:text-gold-neon" />
+              <span className="text-xs font-semibold text-gold dark:text-gold-neon">Digital Passport</span>
+            </motion.div>
+
+            <motion.h1
+              className="text-3xl md:text-4xl font-serif font-bold gradient-text mb-2"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              {product.name}
+            </motion.h1>
+            <motion.p
+              className="text-xl text-teal dark:text-teal-neon font-semibold mb-1"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              {product.umkm}
+            </motion.p>
+            <motion.p
+              className="text-base text-stone-text dark:text-dark-body mb-5 flex items-center gap-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.45 }}
+            >
+              <MapPin className="w-4 h-4 text-gold dark:text-gold-neon" /> {product.village}
+            </motion.p>
+
+            <motion.div
+              className="flex flex-wrap gap-2"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              {product.ethicalBadges.map((badge, idx) => (
+                <motion.span
+                  key={idx}
+                  className="bg-gradient-to-r from-teal to-teal-deep dark:from-teal-neon dark:to-teal-bright text-white px-3 py-1.5 rounded-full font-semibold text-xs shadow-sm flex items-center gap-1.5"
+                  whileHover={{ scale: 1.08, y: -2 }}
+                >
+                  <Check className="w-3.5 h-3.5" /> {badge}
+                </motion.span>
+              ))}
+            </motion.div>
+          </div>
+
+          <motion.div
+            className="relative group"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="absolute -inset-2 bg-gradient-to-br from-gold/20 to-teal/20 dark:from-gold-neon/20 dark:to-teal-neon/20 rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              className="relative w-full h-72 object-cover rounded-2xl shadow-xl group-hover:shadow-2xl transition-shadow duration-300"
+            />
+          </motion.div>
+        </div>
       </motion.section>
 
-      {/* UMKM Story */}
+      {/* ═══════════════════════════════════
+          UMKM STORY & CULTURAL VALUE
+         ═══════════════════════════════════ */}
       <motion.section
-        className="max-w-6xl mx-auto px-8 py-8 bg-pure-card dark:bg-night-card rounded-2xl shadow-sm mb-8 border border-stone-100 dark:border-night-border"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        className="max-w-6xl mx-auto px-8 mb-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-serif font-bold text-gold dark:text-gold-neon mb-4 flex items-center gap-3"><BookOpen className="w-8 h-8" /> Kisah UMKM</h2>
-        <p className="text-lg text-ink dark:text-dark-body leading-relaxed">{product.umkmStory}</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* UMKM Story */}
+          <motion.div
+            className="glass p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-stone-100/60 dark:border-night-border/60 group"
+            variants={itemVariants}
+            whileHover={{ y: -4 }}
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-br from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                <BookOpen className="w-5 h-5" />
+              </div>
+              <h2 className="text-xl font-serif font-bold text-ink dark:text-dark-heading group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">Kisah UMKM</h2>
+            </div>
+            <p className="text-stone-text dark:text-dark-body leading-relaxed">{product.umkmStory}</p>
+          </motion.div>
+
+          {/* Cultural Value */}
+          <motion.div
+            className="glass p-8 rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 border border-stone-100/60 dark:border-night-border/60 group"
+            variants={itemVariants}
+            whileHover={{ y: -4 }}
+          >
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-gradient-to-br from-teal to-teal-deep dark:from-teal-neon dark:to-teal-bright rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                <Leaf className="w-5 h-5" />
+              </div>
+              <h2 className="text-xl font-serif font-bold text-ink dark:text-dark-heading group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">Nilai Budaya</h2>
+            </div>
+            <p className="text-stone-text dark:text-dark-body leading-relaxed">{product.culturalValue}</p>
+          </motion.div>
+        </div>
       </motion.section>
 
-      {/* Cultural Value */}
-      <motion.section
-        className="max-w-6xl mx-auto px-8 py-8 bg-pure-card dark:bg-night-card rounded-2xl shadow-sm mb-8 border border-stone-100 dark:border-night-border"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-      >
-        <h2 className="text-3xl font-serif font-bold text-gold dark:text-gold-neon mb-4 flex items-center gap-3"><Leaf className="w-8 h-8" /> Nilai Budaya</h2>
-        <p className="text-lg text-ink dark:text-dark-body leading-relaxed">{product.culturalValue}</p>
-      </motion.section>
-
-      {/* Supply Chain Timeline */}
+      {/* ═══════════════════════════════════
+          SUPPLY CHAIN TIMELINE
+         ═══════════════════════════════════ */}
       <motion.section
         className="max-w-6xl mx-auto px-8 py-8"
         initial={{ opacity: 0 }}
@@ -102,10 +211,19 @@ export const Passport = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-serif font-bold text-gold dark:text-gold-neon mb-12 flex items-center gap-3"><Hammer className="w-8 h-8" /> Proses Pembuatan Produk</h2>
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gold/10 dark:bg-gold-neon/10 rounded-full mb-4">
+            <Hammer className="w-4 h-4 text-gold dark:text-gold-neon" />
+            <span className="text-sm font-semibold text-gold dark:text-gold-neon">Supply Chain</span>
+          </div>
+          <h2 className="text-3xl font-serif font-bold text-ink dark:text-dark-heading">
+            Proses <span className="gradient-text">Pembuatan</span> Produk
+          </h2>
+        </div>
+
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gold via-teal to-coral dark:from-gold-neon dark:via-teal-neon dark:to-coral-neon"></div>
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-gold via-teal to-gold-deep dark:from-gold-neon dark:via-teal-neon dark:to-gold-bright rounded-full"></div>
 
           {/* Steps */}
           <div className="space-y-12">
@@ -121,30 +239,128 @@ export const Passport = () => {
         </div>
       </motion.section>
 
-      {/* Artisan Feature */}
+      {/* ═══════════════════════════════════
+          ARTISAN SECTION (ENHANCED)
+         ═══════════════════════════════════ */}
       <motion.section
-        className="max-w-6xl mx-auto px-8 py-8 bg-pure-card dark:bg-night-card rounded-2xl shadow-sm mb-8 border border-stone-100 dark:border-night-border"
+        className="max-w-6xl mx-auto px-8 py-8 mb-8"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl font-serif font-bold text-gold dark:text-gold-neon mb-6 flex items-center gap-3"><Hand className="w-8 h-8" /> Kenali Pengrajinnya</h2>
-        <div className="bg-gold-soft dark:bg-gold-glow-bg p-8 rounded-lg border-l-4 border-teal dark:border-teal-neon">
-          <h3 className="text-2xl font-serif font-bold text-ink dark:text-dark-heading mb-1">{product.artisanName}</h3>
-          <p className="text-lg text-stone-text dark:text-dark-body font-semibold mb-4">Ahli Kerajinan • Pengalaman {product.artisanExperience}+ tahun</p>
-          <blockquote className="text-xl italic text-gold dark:text-gold-neon leading-relaxed mb-3">
-            "{product.artisanQuote}"
-          </blockquote>
-          {product.artisanQuoteLocal && (
-            <blockquote className="text-lg italic text-stone-text dark:text-dark-body leading-relaxed border-t border-stone-100 dark:border-night-border pt-3 mt-3">
-              "{product.artisanQuoteLocal}"
-            </blockquote>
-          )}
+        <div className="glass rounded-3xl shadow-xl border border-stone-100/60 dark:border-night-border/60 overflow-hidden">
+          {/* Section Header */}
+          <div className="bg-gradient-to-r from-gold/[0.06] to-teal/[0.06] dark:from-gold-neon/[0.08] dark:to-teal-neon/[0.08] px-8 py-5 border-b border-stone-100/60 dark:border-night-border/60">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright rounded-xl flex items-center justify-center text-white">
+                <Hand className="w-5 h-5" />
+              </div>
+              <div>
+                <h2 className="text-xl font-serif font-bold text-ink dark:text-dark-heading">Kenali Pengrajinnya</h2>
+                <p className="text-xs text-stone-text dark:text-dark-muted">Artisan di balik karya ini</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Artisan Content */}
+          <div className="p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Left: Artisan Identity */}
+              <div className="lg:col-span-1 flex flex-col items-center text-center">
+                {/* Avatar */}
+                <motion.div
+                  className="w-28 h-28 rounded-full overflow-hidden shadow-xl mb-5 ring-4 ring-white dark:ring-night-card"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+                >
+                  <img
+                    src={product.artisanPhotoUrl || getArtisanAvatar(product.artisanName, getGender(product.artisanName))}
+                    alt={product.artisanName}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement
+                      target.style.display = 'none'
+                      target.parentElement!.classList.add('bg-gradient-to-br', 'from-gold', 'to-teal', 'flex', 'items-center', 'justify-center')
+                      target.parentElement!.innerHTML = `<span class="text-4xl text-white font-serif font-bold">${product.artisanName.charAt(0)}</span>`
+                    }}
+                  />
+                </motion.div>
+
+                <h3 className="text-2xl font-serif font-bold text-ink dark:text-dark-heading mb-1">{product.artisanName}</h3>
+                <p className="text-sm text-teal dark:text-teal-neon font-semibold mb-5">Ahli Kerajinan Tradisional</p>
+
+                {/* Stats Row */}
+                <div className="grid grid-cols-2 gap-3 w-full">
+                  <div className="bg-gold-soft dark:bg-gold-glow-bg rounded-xl p-3 text-center">
+                    <Clock className="w-5 h-5 text-gold dark:text-gold-neon mx-auto mb-1" />
+                    <p className="text-xl font-bold text-gold dark:text-gold-neon">{product.artisanExperience}+</p>
+                    <p className="text-xs text-stone-text dark:text-dark-muted">Tahun</p>
+                  </div>
+                  <div className="bg-teal-soft dark:bg-teal-glow-bg rounded-xl p-3 text-center">
+                    <Award className="w-5 h-5 text-teal dark:text-teal-neon mx-auto mb-1" />
+                    <p className="text-xl font-bold text-teal dark:text-teal-neon">Ahli</p>
+                    <p className="text-xs text-stone-text dark:text-dark-muted">Level</p>
+                  </div>
+                </div>
+
+                {/* Badge Tags */}
+                <div className="flex flex-wrap gap-2 mt-4 justify-center">
+                  <span className="px-3 py-1 bg-gold/10 dark:bg-gold-neon/10 text-gold dark:text-gold-neon rounded-full text-xs font-semibold flex items-center gap-1">
+                    <Star className="w-3 h-3" /> Terampil
+                  </span>
+                  <span className="px-3 py-1 bg-teal/10 dark:bg-teal-neon/10 text-teal dark:text-teal-neon rounded-full text-xs font-semibold flex items-center gap-1">
+                    <Leaf className="w-3 h-3" /> Tradisional
+                  </span>
+                </div>
+              </div>
+
+              {/* Right: Quote & Details */}
+              <div className="lg:col-span-2 flex flex-col justify-center">
+                {/* Main Quote */}
+                <div className="relative mb-6">
+                  <Quote className="w-10 h-10 text-gold/20 dark:text-gold-neon/20 absolute -top-2 -left-2" />
+                  <blockquote className="pl-8 text-xl italic text-ink dark:text-dark-heading leading-relaxed font-serif">
+                    "{product.artisanQuote}"
+                  </blockquote>
+                </div>
+
+                {/* Local Quote */}
+                {product.artisanQuoteLocal && (
+                  <motion.div
+                    className="bg-gold-soft/50 dark:bg-gold-glow-bg/50 rounded-xl p-5 border-l-4 border-gold dark:border-gold-neon mb-6"
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                  >
+                    <p className="text-sm text-stone-text dark:text-dark-muted font-semibold mb-1">Dalam bahasa lokal:</p>
+                    <blockquote className="text-base italic text-ink dark:text-dark-body leading-relaxed">
+                      "{product.artisanQuoteLocal}"
+                    </blockquote>
+                  </motion.div>
+                )}
+
+                {/* Artisan Link */}
+                <Link to={`/artisan/${productId}`}>
+                  <motion.button
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-300 btn-glow"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Lihat Profil Lengkap <ArrowRight className="w-4 h-4" />
+                  </motion.button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </motion.section>
 
-      {/* Quiz Section */}
+      {/* ═══════════════════════════════════
+          QUIZ SECTION
+         ═══════════════════════════════════ */}
       {quizQuestions.length > 0 && (
         <motion.section
           className="max-w-6xl mx-auto px-8 py-8 mb-8"
@@ -153,35 +369,37 @@ export const Passport = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="mb-8">
-            <h2 className="text-3xl font-serif font-bold text-gold dark:text-gold-neon mb-2">📚 Uji Pengetahuan Anda</h2>
-            <p className="text-lg text-stone-text dark:text-dark-body">Pelajari lebih lanjut tentang perjalanan etis produk ini!</p>
-          </div>
+          <div className="glass rounded-3xl shadow-xl p-8 border border-stone-100/60 dark:border-night-border/60 relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.02] to-teal/[0.02] dark:from-gold-neon/[0.04] dark:to-teal-neon/[0.04]" />
 
-          {!showQuiz ? (
-            <motion.button
-              className="w-full py-4 bg-coral hover:bg-coral-deep dark:bg-coral-neon dark:hover:bg-coral-bright text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-250"
-              onClick={() => setShowQuiz(true)}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Mulai Kuis Interaktif →
-            </motion.button>
-          ) : (
-            <QuizCard questions={quizQuestions} />
-          )}
+            <div className="relative z-10">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal/10 dark:bg-teal-neon/10 rounded-full mb-4">
+                  <BookOpen className="w-4 h-4 text-teal dark:text-teal-neon" />
+                  <span className="text-sm font-semibold text-teal dark:text-teal-neon">Interactive Quiz</span>
+                </div>
+                <h2 className="text-2xl md:text-3xl font-serif font-bold text-ink dark:text-dark-heading mb-2">
+                  Uji <span className="gradient-text">Pengetahuan</span> Anda
+                </h2>
+                <p className="text-stone-text dark:text-dark-body">Pelajari lebih lanjut tentang perjalanan etis produk ini!</p>
+              </div>
+
+              {!showQuiz ? (
+                <motion.button
+                  className="w-full py-4 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night font-semibold rounded-xl shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-300 btn-glow text-lg"
+                  onClick={() => setShowQuiz(true)}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Mulai Kuis Interaktif →
+                </motion.button>
+              ) : (
+                <QuizCard questions={quizQuestions} />
+              )}
+            </div>
+          </div>
         </motion.section>
       )}
-
-      {/* Footer Action - Desktop Only */}
-      <motion.section
-        className="hidden md:block max-w-6xl mx-auto px-8 py-8 text-center"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-      >
-        {/* <p className="text-xl text-gold dark:text-gold-neon font-semibold mb-6">🎉 Thank you for supporting ethical artisan production!</p> */}
-      </motion.section>
     </div>
   )
 }
