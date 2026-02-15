@@ -448,20 +448,20 @@ export const Edutainment = () => {
     <div className="min-h-screen pb-20 page-transition">
       {/* Header */}
       <motion.section
-        className="bg-gradient-to-br from-sky-soft-blue to-leaf-soft-green dark:from-edu-blue/10 dark:to-growth-green/10 max-w-6xl mx-auto px-8 py-12 rounded-2xl my-8 text-center relative overflow-hidden border border-soft-border dark:border-soft-dark-border"
+        className="bg-gradient-to-br from-gold-soft to-teal-soft dark:from-gold/10 dark:to-teal/10 max-w-6xl mx-auto px-8 py-12 rounded-2xl my-8 text-center relative overflow-hidden border border-stone-100 dark:border-night-border"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
         {/* Background Patterns */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-edu-blue/10 dark:bg-neon-edu-blue/10 rounded-full"></div>
-          <div className="absolute bottom-10 right-10 w-24 h-24 bg-growth-green/10 dark:bg-glow-green/10 rounded-lg rotate-45"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-gold/10 dark:bg-gold-neon/10 rounded-full"></div>
+          <div className="absolute bottom-10 right-10 w-24 h-24 bg-teal/10 dark:bg-teal-neon/10 rounded-lg rotate-45"></div>
         </div>
 
         <div className="relative z-10">
-          <h1 className="text-5xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-3">🎓 Edutainment Hub</h1>
-          <p className="text-xl text-slate-text dark:text-dark-body">
+          <h1 className="text-5xl font-serif font-bold text-gold dark:text-gold-neon mb-3">🎓 Edutainment Hub</h1>
+          <p className="text-xl text-stone-text dark:text-dark-body">
             Pelajari tentang produksi ethical, fair trade, dan komunitas artisan
           </p>
         </div>
@@ -479,14 +479,14 @@ export const Edutainment = () => {
           {lessons.map((lesson, idx) => (
             <motion.div 
               key={idx} 
-              className="bg-pure-card dark:bg-dark-surface p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-250 border-t-4 border-action-orange dark:border-dark-action-orange"
+              className="bg-pure-card dark:bg-night-card p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-250 border-t-4 border-coral dark:border-coral-neon"
               variants={itemVariants}
             >
-              <div className="w-10 h-10 bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green text-white rounded-full flex items-center justify-center font-bold mb-4 text-lg">
+              <div className="w-10 h-10 bg-gradient-to-r from-gold to-teal dark:from-gold-neon dark:to-teal-neon text-white rounded-full flex items-center justify-center font-bold mb-4 text-lg">
                 {lesson.icon}
               </div>
-              <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-3">{lesson.title}</h3>
-              <p className="text-slate-text dark:text-dark-body leading-relaxed text-sm">{lesson.content}</p>
+              <h3 className="text-xl font-serif font-bold text-ink dark:text-dark-heading mb-3">{lesson.title}</h3>
+              <p className="text-stone-text dark:text-dark-body leading-relaxed text-sm">{lesson.content}</p>
             </motion.div>
           ))}
         </div>
@@ -494,14 +494,14 @@ export const Edutainment = () => {
 
       {/* Interactive Quiz Section */}
       <motion.section
-        className="max-w-6xl mx-auto px-8 mb-16 bg-pure-card dark:bg-dark-surface rounded-2xl shadow-md p-8 border border-soft-border dark:border-soft-dark-border"
+        className="max-w-6xl mx-auto px-8 mb-16 bg-pure-card dark:bg-night-card rounded-2xl shadow-md p-8 border border-stone-100 dark:border-night-border"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2 text-center">🎮 Interactive Learning</h2>
-        <p className="text-lg text-slate-text dark:text-dark-body text-center mb-8">
+        <h2 className="text-4xl font-serif font-bold text-gold dark:text-gold-neon mb-2 text-center">🎮 Interactive Learning</h2>
+        <p className="text-lg text-stone-text dark:text-dark-body text-center mb-8">
           Pilih pulau dan uji pengetahuan Anda tentang kerajinan tradisional Indonesia!
         </p>
 
@@ -511,8 +511,8 @@ export const Edutainment = () => {
               key={island.id}
               className={`px-6 py-3 rounded-lg font-semibold transition-all duration-250 flex items-center gap-2 ${
                 selectedIsland === island.id
-                  ? 'bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white shadow-md'
-                  : 'bg-mist-gray dark:bg-soft-dark-border text-ink-black dark:text-dark-body hover:bg-sky-soft-blue dark:hover:bg-blue-glow-soft'
+                  ? 'bg-coral hover:bg-coral-deep dark:bg-coral-neon dark:hover:bg-coral-bright text-white shadow-md'
+                  : 'bg-warm-sand dark:bg-night-border text-ink dark:text-dark-body hover:bg-gold-soft dark:hover:bg-gold-glow-bg'
               }`}
               onClick={() => handleIslandSelect(island.id)}
               whileHover={{ scale: 1.05 }}
@@ -543,18 +543,18 @@ export const Edutainment = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue text-center mb-12">💚 Komitmen Kami</h2>
+        <h2 className="text-4xl font-serif font-bold text-gold dark:text-gold-neon text-center mb-12">💚 Komitmen Kami</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: <Globe className="w-12 h-12 text-edu-blue" />, title: 'Komunitas Global', desc: 'Mendukung UMKM di seluruh Indonesia' },
-            { icon: <Award className="w-12 h-12 text-action-orange" />, title: 'Quality Craftsmanship', desc: 'Melestarikan teknik tradisional' },
+            { icon: <Globe className="w-12 h-12 text-gold" />, title: 'Komunitas Global', desc: 'Mendukung UMKM di seluruh Indonesia' },
+            { icon: <Award className="w-12 h-12 text-coral" />, title: 'Quality Craftsmanship', desc: 'Melestarikan teknik tradisional' },
             { icon: <Scale className="w-12 h-12 text-purple-500" />, title: 'Kompensasi Fair', desc: 'Memastikan artisan mendapat yang layak' },
-            { icon: <Recycle className="w-12 h-12 text-growth-green" />, title: 'Produksi Sustainable', desc: 'Praktik eco-friendly dan ethical' }
+            { icon: <Recycle className="w-12 h-12 text-teal" />, title: 'Produksi Sustainable', desc: 'Praktik eco-friendly dan ethical' }
           ].map((item, idx) => (
-            <div key={idx} className="bg-sky-soft-blue dark:bg-blue-glow-soft p-8 rounded-2xl text-center hover:shadow-md transition-all duration-250 border border-edu-blue/20 dark:border-neon-edu-blue/20">
+            <div key={idx} className="bg-gold-soft dark:bg-gold-glow-bg p-8 rounded-2xl text-center hover:shadow-md transition-all duration-250 border border-gold/20 dark:border-gold-neon/20">
               <div className="flex justify-center mb-4">{item.icon}</div>
-              <h3 className="text-lg font-serif font-bold text-ink-black dark:text-dark-heading mb-2">{item.title}</h3>
-              <p className="text-slate-text dark:text-dark-body text-sm">{item.desc}</p>
+              <h3 className="text-lg font-serif font-bold text-ink dark:text-dark-heading mb-2">{item.title}</h3>
+              <p className="text-stone-text dark:text-dark-body text-sm">{item.desc}</p>
             </div>
           ))}
         </div>

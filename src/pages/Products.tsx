@@ -52,13 +52,13 @@ export const Products = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl font-serif font-bold gradient-text mb-2">Jelajahi Produk Ethical</h1>
-            <p className="text-lg text-slate-text dark:text-dark-body">
+            <p className="text-lg text-stone-text dark:text-dark-body">
                 Filter berdasarkan kategori untuk menemukan produk handcrafted favorit Anda
             </p>
           </motion.section>
 
           {/* Filters */}
-          <div className="max-w-6xl mx-auto px-8 mb-8 glass rounded-2xl shadow-xl p-8 border border-soft-border/50 dark:border-soft-dark-border/50">
+          <div className="max-w-6xl mx-auto px-8 mb-8 glass rounded-2xl shadow-xl p-8 border border-stone-100/50 dark:border-night-border/50">
             <div className="mb-6">
                 <h3 className="text-lg font-serif font-bold gradient-text mb-4">Kategori</h3>
                 <div className="flex flex-wrap gap-3">
@@ -67,8 +67,8 @@ export const Products = () => {
                         key={cat.value}
                         className={`px-5 py-3 rounded-full font-semibold transition-all duration-300 flex items-center gap-2 ${
                             selectedCategory === cat.value
-                              ? 'bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white shadow-lg hover:shadow-xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50'
-                              : 'glass text-ink-black dark:text-dark-body hover:bg-gradient-to-r hover:from-sky-soft-blue hover:to-leaf-soft-green dark:hover:from-blue-glow-soft dark:hover:to-deep-green-base border border-soft-border/50 dark:border-soft-dark-border/50'
+                              ? 'bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white shadow-lg hover:shadow-xl hover:shadow-coral/50 dark:hover:shadow-coral-neon/50'
+                              : 'glass text-ink dark:text-dark-body hover:bg-gradient-to-r hover:from-gold-soft hover:to-teal-soft dark:hover:from-gold-glow-bg dark:hover:to-teal-glow-bg border border-stone-100/50 dark:border-night-border/50'
                         }`}
                         onClick={() => {
                           setSelectedCategory(cat.value)
@@ -104,7 +104,7 @@ export const Products = () => {
                 ))
             ) : (
                 <motion.div
-                  className="col-span-full text-center py-16 text-slate-text dark:text-dark-body"
+                  className="col-span-full text-center py-16 text-stone-text dark:text-dark-body"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 >

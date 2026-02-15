@@ -18,18 +18,18 @@ export const BackgroundShapes = ({ variant = 'default' }: BackgroundShapesProps)
             height: `${40 + i * 30}px`,
             left: `${10 + i * 15}%`,
             top: `${i * 20}%`,
-            border: '2px solid rgba(37, 99, 235, 0.12)',
+            border: `2px solid ${i % 2 === 0 ? 'rgba(184, 134, 11, 0.08)' : 'rgba(13, 148, 136, 0.08)'}`,
             borderRadius: i % 3 === 0 ? '50%' : i % 3 === 1 ? '20px' : '0px',
-            backgroundColor: i % 2 === 0 ? 'rgba(37, 99, 235, 0.03)' : 'rgba(22, 163, 74, 0.03)'
+            backgroundColor: i % 2 === 0 ? 'rgba(184, 134, 11, 0.02)' : 'rgba(13, 148, 136, 0.02)'
           }}
-          animate={{ 
+          animate={{
             rotate: 360,
             scale: [1, 1.1, 1]
           }}
-          transition={{ 
-            duration: 20 + i * 2, 
-            repeat: Infinity, 
-            ease: 'linear' 
+          transition={{
+            duration: 20 + i * 2,
+            repeat: Infinity,
+            ease: 'linear'
           }}
         />
       ))}

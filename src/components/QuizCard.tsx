@@ -45,7 +45,7 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
   if (showResult) {
     return (
       <motion.div
-        className="bg-sky-soft-blue dark:bg-blue-glow-soft rounded-2xl p-8 text-center border border-edu-blue dark:border-neon-edu-blue"
+        className="bg-gold-soft dark:bg-gold-glow-bg rounded-2xl p-8 text-center border border-gold dark:border-gold-neon"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
       >
@@ -53,14 +53,14 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
           {score === questions.length 
             ? <Trophy className="w-20 h-20 text-yellow-500" /> 
             : score >= questions.length * 0.6 
-            ? <Star className="w-20 h-20 text-action-orange" /> 
-            : <BookOpen className="w-20 h-20 text-edu-blue" />}
+            ? <Star className="w-20 h-20 text-coral" /> 
+            : <BookOpen className="w-20 h-20 text-gold" />}
         </div>
-        <h3 className="text-2xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-2">Kuis Selesai!</h3>
-        <p className="text-lg text-growth-green dark:text-glow-green font-semibold mb-2">
+        <h3 className="text-2xl font-serif font-bold text-gold dark:text-gold-neon mb-2">Kuis Selesai!</h3>
+        <p className="text-lg text-teal dark:text-teal-neon font-semibold mb-2">
           Skor Anda {score} dari {questions.length}
         </p>
-        <p className="text-slate-text dark:text-dark-body mb-6 text-base">
+        <p className="text-stone-text dark:text-dark-body mb-6 text-base">
           {score === questions.length 
             ? 'Sempurna! Anda ahli dalam kisah produk ini!'
             : score >= questions.length * 0.6
@@ -68,7 +68,7 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
             : 'Usaha yang baik! Pelajari lebih lanjut tentang produksi etis!'}
         </p>
         <motion.button
-          className="px-6 py-3 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white rounded-full font-semibold transition-colors duration-250 shadow-md flex items-center gap-2 mx-auto"
+          className="px-6 py-3 bg-coral hover:bg-coral-deep dark:bg-coral-neon dark:hover:bg-coral-bright text-white rounded-full font-semibold transition-colors duration-250 shadow-md flex items-center gap-2 mx-auto"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={resetQuiz}
@@ -80,18 +80,18 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
   }
 
   return (
-    <div className="bg-pure-card dark:bg-dark-surface rounded-2xl p-8 shadow-md border border-soft-border dark:border-soft-dark-border">
+    <div className="bg-pure-card dark:bg-night-card rounded-2xl p-8 shadow-md border border-stone-100 dark:border-night-border">
       {/* Progress */}
       <div className="mb-8">
-        <div className="w-full h-2 bg-mist-gray dark:bg-soft-dark-border rounded-full overflow-hidden mb-2">
+        <div className="w-full h-2 bg-warm-sand dark:bg-night-border rounded-full overflow-hidden mb-2">
           <motion.div
-            className="h-full bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green"
+            className="h-full bg-gradient-to-r from-gold to-teal dark:from-gold-neon dark:to-teal-neon"
             initial={{ width: 0 }}
             animate={{ width: `${((currentQ + 1) / questions.length) * 100}%` }}
             transition={{ duration: 0.5 }}
           />
         </div>
-        <p className="text-sm text-slate-text dark:text-dark-body font-medium">
+        <p className="text-sm text-stone-text dark:text-dark-body font-medium">
           Pertanyaan {currentQ + 1} dari {questions.length}
         </p>
       </div>
@@ -104,7 +104,7 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
           exit={{ opacity: 0, y: -20 }}
           transition={{ duration: 0.3 }}
         >
-          <h4 className="text-lg font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-6">{question.question}</h4>
+          <h4 className="text-lg font-serif font-bold text-gold dark:text-gold-neon mb-6">{question.question}</h4>
 
           <div className="space-y-3 mb-6">
             {question.options.map((option, idx) => (
@@ -113,9 +113,9 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
                 className={`w-full flex items-center gap-4 p-4 border-2 rounded-lg transition-all duration-250 text-left font-medium ${
                   selected === idx 
                     ? idx === question.correct 
-                      ? 'border-growth-green bg-leaf-soft-green dark:border-glow-green dark:bg-deep-green-base text-ink-black dark:text-dark-body'
-                      : 'border-red-500 bg-red-500/10 text-ink-black dark:text-dark-body'
-                    : 'border-soft-border dark:border-soft-dark-border hover:border-edu-blue dark:hover:border-neon-edu-blue bg-pure-card dark:bg-dark-surface text-ink-black dark:text-dark-body'
+                      ? 'border-teal bg-teal-soft dark:border-teal-neon dark:bg-teal-glow-bg text-ink dark:text-dark-body'
+                      : 'border-red-500 bg-red-500/10 text-ink dark:text-dark-body'
+                    : 'border-stone-100 dark:border-night-border hover:border-gold dark:hover:border-gold-neon bg-pure-card dark:bg-night-card text-ink dark:text-dark-body'
                 }`}
                 onClick={() => !answered && handleAnswer(idx)}
                 whileHover={!answered ? { scale: 1.02 } : {}}
@@ -125,14 +125,14 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
                 <span className={`w-8 h-8 rounded-full font-bold flex items-center justify-center ${
                   selected === idx
                     ? idx === question.correct 
-                      ? 'bg-growth-green dark:bg-glow-green text-white'
+                      ? 'bg-teal dark:bg-teal-neon text-white'
                       : 'bg-red-500 text-white'
-                    : 'bg-edu-blue dark:bg-neon-edu-blue text-white'
+                    : 'bg-gold dark:bg-gold-neon text-white'
                 }`}>
                   {String.fromCharCode(65 + idx)}
                 </span>
                 <span>{option}</span>
-                {answered && idx === question.correct && <Check className="ml-auto w-6 h-6 text-growth-green" />}
+                {answered && idx === question.correct && <Check className="ml-auto w-6 h-6 text-teal" />}
                 {answered && selected === idx && selected !== question.correct && <X className="ml-auto w-6 h-6 text-red-500" />}
               </motion.button>
             ))}
@@ -141,19 +141,19 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
           <AnimatePresence>
             {answered && (
               <motion.div
-                className="bg-soft-peach dark:bg-burnt-orange-base border-l-4 border-action-orange dark:border-dark-action-orange p-4 rounded mb-6"
+                className="bg-coral-soft dark:bg-coral-glow-bg border-l-4 border-coral dark:border-coral-neon p-4 rounded mb-6"
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
               >
-                <p className="text-ink-black dark:text-dark-body text-sm leading-relaxed">{question.explanation}</p>
+                <p className="text-ink dark:text-dark-body text-sm leading-relaxed">{question.explanation}</p>
               </motion.div>
             )}
           </AnimatePresence>
 
           {answered && (
             <motion.button
-              className="w-full py-3 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-250"
+              className="w-full py-3 bg-coral hover:bg-coral-deep dark:bg-coral-neon dark:hover:bg-coral-bright text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-250"
               onClick={handleNext}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

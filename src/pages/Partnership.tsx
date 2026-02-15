@@ -44,16 +44,16 @@ export const Partnership = () => {
             animate={{ scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <Handshake className="w-12 h-12 text-action-orange dark:text-dark-action-orange" />
+            <Handshake className="w-12 h-12 text-coral dark:text-coral-neon" />
           </motion.div>
           <h1 className="text-5xl font-serif font-bold gradient-text mb-4">Kerja Sama dengan Kami</h1>
-          <p className="text-xl text-slate-text dark:text-dark-body">
+          <p className="text-xl text-stone-text dark:text-dark-body">
             Bergabunglah dengan LegacyTrace dan tampilkan produk UMKM Anda ke pasar yang lebih luas
           </p>
         </div>
 
         <motion.div
-          className="glass rounded-3xl p-8 md:p-12 shadow-2xl border border-soft-border/50 dark:border-soft-dark-border/50"
+          className="glass rounded-3xl p-8 md:p-12 shadow-2xl border border-stone-100/50 dark:border-night-border/50"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
@@ -61,27 +61,27 @@ export const Partnership = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+                <label className="block text-sm font-semibold text-ink dark:text-dark-heading mb-2">
                   Nama Lengkap *
                 </label>
                 <input
                   type="text"
                   name="name"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-100 dark:border-night-border bg-white dark:bg-night-card text-ink dark:text-dark-heading focus:ring-2 focus:ring-gold dark:focus:ring-gold-neon outline-none transition-all"
                   placeholder="Nama Anda"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+                <label className="block text-sm font-semibold text-ink dark:text-dark-heading mb-2">
                   Email *
                 </label>
                 <input
                   type="email"
                   name="email"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-100 dark:border-night-border bg-white dark:bg-night-card text-ink dark:text-dark-heading focus:ring-2 focus:ring-gold dark:focus:ring-gold-neon outline-none transition-all"
                   placeholder="email@example.com"
                 />
               </div>
@@ -89,20 +89,20 @@ export const Partnership = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+                <label className="block text-sm font-semibold text-ink dark:text-dark-heading mb-2">
                   Nama UMKM *
                 </label>
                 <input
                   type="text"
                   name="umkm"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-100 dark:border-night-border bg-white dark:bg-night-card text-ink dark:text-dark-heading focus:ring-2 focus:ring-gold dark:focus:ring-gold-neon outline-none transition-all"
                   placeholder="Nama UMKM Anda"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+                <label className="block text-sm font-semibold text-ink dark:text-dark-heading mb-2">
                   <MapPin className="w-4 h-4 inline mr-2" />
                   Lokasi/Desa *
                 </label>
@@ -110,21 +110,21 @@ export const Partnership = () => {
                   type="text"
                   name="village"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all"
+                  className="w-full px-4 py-3 rounded-xl border border-stone-100 dark:border-night-border bg-white dark:bg-night-card text-ink dark:text-dark-heading focus:ring-2 focus:ring-gold dark:focus:ring-gold-neon outline-none transition-all"
                   placeholder="Desa/Kota, Provinsi"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+              <label className="block text-sm font-semibold text-ink dark:text-dark-heading mb-2">
                 <Package className="w-4 h-4 inline mr-2" />
                 Kategori Produk *
               </label>
               <select
                 name="category"
                 required
-                className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-stone-100 dark:border-night-border bg-white dark:bg-night-card text-ink dark:text-dark-heading focus:ring-2 focus:ring-gold dark:focus:ring-gold-neon outline-none transition-all"
               >
                 <option value="">Pilih Kategori</option>
                 <option value="batik">Batik</option>
@@ -137,60 +137,60 @@ export const Partnership = () => {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+              <label className="block text-sm font-semibold text-ink dark:text-dark-heading mb-2">
                 Kisah UMKM *
               </label>
               <textarea
                 name="umkmStory"
                 required
                 rows={3}
-                className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all resize-none"
+                className="w-full px-4 py-3 rounded-xl border border-stone-100 dark:border-night-border bg-white dark:bg-night-card text-ink dark:text-dark-heading focus:ring-2 focus:ring-gold dark:focus:ring-gold-neon outline-none transition-all resize-none"
                 placeholder="Ceritakan sejarah dan perjalanan UMKM Anda..."
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+              <label className="block text-sm font-semibold text-ink dark:text-dark-heading mb-2">
                 Deskripsi Produk *
               </label>
               <textarea
                 name="description"
                 required
                 rows={4}
-                className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all resize-none"
+                className="w-full px-4 py-3 rounded-xl border border-stone-100 dark:border-night-border bg-white dark:bg-night-card text-ink dark:text-dark-heading focus:ring-2 focus:ring-gold dark:focus:ring-gold-neon outline-none transition-all resize-none"
                 placeholder="Jelaskan produk Anda, keunikan, dan nilai budayanya..."
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+              <label className="block text-sm font-semibold text-ink dark:text-dark-heading mb-2">
                 Badge Etis (pisahkan dengan koma) *
               </label>
               <input
                 type="text"
                 name="ethicalBadges"
                 required
-                className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-stone-100 dark:border-night-border bg-white dark:bg-night-card text-ink dark:text-dark-heading focus:ring-2 focus:ring-gold dark:focus:ring-gold-neon outline-none transition-all"
                 placeholder="Contoh: Perdagangan Adil, Ramah Lingkungan, Bahan Alami"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-ink-black dark:text-dark-heading mb-2">
+              <label className="block text-sm font-semibold text-ink dark:text-dark-heading mb-2">
                 Tahapan Produksi *
               </label>
               <textarea
                 name="steps"
                 required
                 rows={5}
-                className="w-full px-4 py-3 rounded-xl border border-soft-border dark:border-soft-dark-border bg-white dark:bg-dark-surface text-ink-black dark:text-dark-heading focus:ring-2 focus:ring-edu-blue dark:focus:ring-neon-edu-blue outline-none transition-all resize-none"
+                className="w-full px-4 py-3 rounded-xl border border-stone-100 dark:border-night-border bg-white dark:bg-night-card text-ink dark:text-dark-heading focus:ring-2 focus:ring-gold dark:focus:ring-gold-neon outline-none transition-all resize-none"
                 placeholder="Jelaskan tahapan produksi dari awal hingga selesai.&#10;&#10;Contoh:&#10;Step 1: Pemilihan bahan baku berkualitas&#10;Step 2: Proses produksi dengan teknik tradisional&#10;Step 3: Kontrol kualitas produk&#10;Step 4: Pengemasan dan distribusi"
               />
             </div>
 
             <motion.button
               type="submit"
-              className="w-full px-8 py-4 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 transition-all duration-250 flex items-center justify-center gap-2 btn-glow"
+              className="w-full px-8 py-4 bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-coral/50 dark:hover:shadow-coral-neon/50 transition-all duration-250 flex items-center justify-center gap-2 btn-glow"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -201,7 +201,7 @@ export const Partnership = () => {
         </motion.div>
 
         <motion.div
-          className="mt-12 text-center text-slate-text dark:text-dark-body"
+          className="mt-12 text-center text-stone-text dark:text-dark-body"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}

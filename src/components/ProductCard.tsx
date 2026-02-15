@@ -9,12 +9,12 @@ interface ProductCardProps {
 
 const getCategoryColor = (category: string) => {
   const colors = {
-    batik: 'bg-royal-purple/15 text-royal-purple dark:bg-batik-dark/20 dark:text-batik-dark hover:bg-royal-purple dark:hover:bg-batik-dark',
-    makanan: 'bg-sunset-orange/15 text-sunset-orange dark:bg-makanan-dark/20 dark:text-makanan-dark hover:bg-sunset-orange dark:hover:bg-makanan-dark',
-    kerajinan: 'bg-craft-teal/15 text-craft-teal dark:bg-kerajinan-dark/20 dark:text-kerajinan-dark hover:bg-craft-teal dark:hover:bg-kerajinan-dark',
-    tenun: 'bg-indigo-weave/15 text-indigo-weave dark:bg-tenun-dark/20 dark:text-tenun-dark hover:bg-indigo-weave dark:hover:bg-tenun-dark',
-    gerabah: 'bg-clay-brown/15 text-clay-brown dark:bg-gerabah-dark/20 dark:text-gerabah-dark hover:bg-clay-brown dark:hover:bg-gerabah-dark',
-    herbal: 'bg-herbal-green/15 text-herbal-green dark:bg-herbal-dark/20 dark:text-herbal-dark hover:bg-herbal-green dark:hover:bg-herbal-dark'
+    batik: 'bg-cat-batik/15 text-cat-batik dark:bg-cat-batik-dark/20 dark:text-cat-batik-dark hover:bg-cat-batik dark:hover:bg-cat-batik-dark',
+    makanan: 'bg-coral/15 text-coral dark:bg-cat-food-dark/20 dark:text-cat-food-dark hover:bg-coral dark:hover:bg-cat-food-dark',
+    kerajinan: 'bg-cat-craft/15 text-cat-craft dark:bg-cat-craft-dark/20 dark:text-cat-craft-dark hover:bg-cat-craft dark:hover:bg-cat-craft-dark',
+    tenun: 'bg-cat-weave/15 text-cat-weave dark:bg-cat-weave-dark/20 dark:text-cat-weave-dark hover:bg-cat-weave dark:hover:bg-cat-weave-dark',
+    gerabah: 'bg-cat-pottery/15 text-cat-pottery dark:bg-cat-pottery-dark/20 dark:text-cat-pottery-dark hover:bg-cat-pottery dark:hover:bg-cat-pottery-dark',
+    herbal: 'bg-cat-herbal/15 text-cat-herbal dark:bg-cat-herbal-dark/20 dark:text-cat-herbal-dark hover:bg-cat-herbal dark:hover:bg-cat-herbal-dark'
   }
   return colors[category as keyof typeof colors] || colors.kerajinan
 }
@@ -27,16 +27,16 @@ export const ProductCard = ({ product, selectedCategory }: ProductCardProps) => 
   return (
     <Link to={passportLink}>
       <motion.div
-        className="glass rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-soft-border/50 dark:border-soft-dark-border/50 card-hover group"
+        className="glass rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-full flex flex-col border border-stone-100/50 dark:border-night-border/50 card-hover group"
         whileHover={{ y: -12, scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       >
         <div className="relative overflow-hidden h-64 group/image">
           <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink-black/90 via-ink-black/70 to-transparent dark:from-night-slate/90 dark:via-night-slate/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/70 to-transparent dark:from-night/90 dark:via-night/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
             <motion.button 
-              className="px-6 py-3 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold rounded-full transition-all duration-250 shadow-xl hover:shadow-2xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 btn-glow"
+              className="px-6 py-3 bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white font-semibold rounded-full transition-all duration-250 shadow-xl hover:shadow-2xl hover:shadow-coral/50 dark:hover:shadow-coral-neon/50 btn-glow"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -46,9 +46,9 @@ export const ProductCard = ({ product, selectedCategory }: ProductCardProps) => 
         </div>
         
         <div className="p-6 flex-grow flex flex-col relative z-10">
-          <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-1 group-hover:text-edu-blue dark:group-hover:text-neon-edu-blue transition-colors">{product.name}</h3>
-          <p className="text-edu-blue dark:text-neon-edu-blue font-semibold text-sm mb-1">{product.umkm}</p>
-          <p className="text-slate-text dark:text-dark-body text-sm mb-4">{product.village}</p>
+          <h3 className="text-xl font-serif font-bold text-ink dark:text-dark-heading mb-1 group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">{product.name}</h3>
+          <p className="text-gold dark:text-gold-neon font-semibold text-sm mb-1">{product.umkm}</p>
+          <p className="text-stone-text dark:text-dark-body text-sm mb-4">{product.village}</p>
           
           <div className="flex flex-wrap gap-2 mt-auto">
             {product.ethicalBadges.map((badge, idx) => (

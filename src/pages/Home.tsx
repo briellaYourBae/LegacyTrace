@@ -1,151 +1,273 @@
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BackgroundShapes } from '../components/BackgroundShapes'
-import { 
-  Search, ShieldCheck, QrCode, Users, 
-  Palette, Utensils, Hammer, Scissors, 
-  Coffee, Leaf, ArrowRight, Map, BookOpen, 
-  Heart, Globe, Handshake 
+import {
+  Search, ShieldCheck, QrCode, Users,
+  Palette, Utensils, Hammer, Scissors,
+  Coffee, Leaf, ArrowRight, Map, BookOpen,
+  Heart, Globe, Handshake, Sparkles, Award, MapPin
 } from 'lucide-react'
 
+/* ── Animated Counter Hook (rAF-based) ── */
+function useCounter(end: number, durationMs: number = 2000) {
+  const [count, setCount] = useState(0)
+  const ref = useRef<HTMLDivElement>(null)
+  const hasAnimated = useRef(false)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true
+          const start = performance.now()
+          const tick = (now: number) => {
+            const elapsed = now - start
+            const progress = Math.min(elapsed / durationMs, 1)
+            // easeOutQuart
+            const eased = 1 - Math.pow(1 - progress, 4)
+            setCount(Math.round(eased * end))
+            if (progress < 1) requestAnimationFrame(tick)
+          }
+          requestAnimationFrame(tick)
+        }
+      },
+      { threshold: 0.3 }
+    )
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [end, durationMs])
+
+  return { count, ref }
+}
+
+/* ── Stat Counter Component ── */
+const StatCounter = ({ value, suffix, label, delay }: { value: number; suffix: string; label: string; delay: number }) => {
+  const { count, ref } = useCounter(value)
+
+  return (
+    <motion.div
+      ref={ref}
+      className="text-center"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay, duration: 0.5 }}
+    >
+      <div className="text-4xl md:text-5xl font-serif font-bold text-gold dark:text-gold-neon mb-1">
+        {count}{suffix}
+      </div>
+      <div className="text-sm text-stone-text dark:text-dark-muted font-medium uppercase tracking-wider">{label}</div>
+    </motion.div>
+  )
+}
+
 export const Home = () => {
-  const location = useLocation()
-  
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
 
   const features = [
-    { 
-      icon: <Search className="w-10 h-10 text-edu-blue dark:text-neon-edu-blue" />, 
-      title: 'Rantai Pasokan Transparan', 
-      desc: 'Lihat perjalanan lengkap dari setiap produk dari artisan hingga ke tangan Anda. Transparansi penuh adalah komitmen kami.' 
+    {
+      icon: <Search className="w-7 h-7" />,
+      title: 'Rantai Pasokan Transparan',
+      desc: 'Lihat perjalanan lengkap dari setiap produk dari artisan hingga ke tangan Anda.',
+      color: 'text-gold dark:text-gold-neon',
+      bg: 'bg-gold-soft dark:bg-gold-glow-bg'
     },
-    { 
-      icon: <Users className="w-10 h-10 text-action-orange dark:text-dark-action-orange" />, 
-      title: 'Kerajinan Etis', 
-      desc: 'Dukung perdagangan adil dan komunitas artisan. Setiap pembelian memberdayakan pengrajin lokal.' 
+    {
+      icon: <Users className="w-7 h-7" />,
+      title: 'Kerajinan Etis',
+      desc: 'Dukung perdagangan adil dan komunitas artisan. Setiap pembelian memberdayakan pengrajin.',
+      color: 'text-coral dark:text-coral-neon',
+      bg: 'bg-coral-soft dark:bg-coral-glow-bg'
     },
-    { 
-      icon: <QrCode className="w-10 h-10 text-growth-green dark:text-glow-green" />, 
-      title: 'Paspor Digital', 
-      desc: 'Setiap produk memiliki paspor digital interaktif yang menceritakan kisah uniknya.' 
+    {
+      icon: <QrCode className="w-7 h-7" />,
+      title: 'Paspor Digital',
+      desc: 'Setiap produk memiliki paspor digital interaktif yang menceritakan kisah uniknya.',
+      color: 'text-teal dark:text-teal-neon',
+      bg: 'bg-teal-soft dark:bg-teal-glow-bg'
     },
-    { 
-      icon: <BookOpen className="w-10 h-10 text-purple-500 dark:text-purple-400" />, 
-      title: 'Kisah Artisan', 
-      desc: 'Temui para pembuat di balik produk. Dengarkan kisah hidup, passion, dan budaya mereka.' 
+    {
+      icon: <BookOpen className="w-7 h-7" />,
+      title: 'Kisah Artisan',
+      desc: 'Temui para pembuat di balik produk. Dengarkan kisah hidup, passion, dan budaya mereka.',
+      color: 'text-cat-batik dark:text-cat-cat-batik-dark',
+      bg: 'bg-purple-50 dark:bg-purple-950/30'
     }
   ]
 
   const categories = [
-    { icon: <Palette className="w-12 h-12 mb-4 text-edu-blue" />, name: 'Batik', desc: 'Pola batik tulis tradisional' },
-    { icon: <Utensils className="w-12 h-12 mb-4 text-action-orange" />, name: 'Makanan', desc: 'Kuliner lokal autentik' },
-    { icon: <Hammer className="w-12 h-12 mb-4 text-amber-700" />, name: 'Kerajinan', desc: 'Artefak budaya buatan tangan' },
-    { icon: <Scissors className="w-12 h-12 mb-4 text-purple-500" />, name: 'Tenun', desc: 'Tenunan tekstil rumit' },
-    { icon: <Coffee className="w-12 h-12 mb-4 text-growth-green" />, name: 'Gerabah', desc: 'Kreasi keramik artisan' },
-    { icon: <Leaf className="w-12 h-12 mb-4 text-green-600" />, name: 'Herbal', desc: 'Produk kesehatan tradisional' }
+    { icon: <Palette className="w-8 h-8" />, name: 'Batik', desc: 'Pola batik tulis tradisional', color: 'text-cat-batik dark:text-cat-cat-batik-dark', bg: 'bg-purple-50 dark:bg-purple-950/20' },
+    { icon: <Utensils className="w-8 h-8" />, name: 'Makanan', desc: 'Kuliner lokal autentik', color: 'text-coral dark:text-coral-neon', bg: 'bg-coral-soft dark:bg-coral-glow-bg' },
+    { icon: <Hammer className="w-8 h-8" />, name: 'Kerajinan', desc: 'Artefak budaya buatan tangan', color: 'text-teal dark:text-teal-neon', bg: 'bg-teal-soft dark:bg-teal-glow-bg' },
+    { icon: <Scissors className="w-8 h-8" />, name: 'Tenun', desc: 'Tenunan tekstil rumit', color: 'text-cat-weave dark:text-cat-weave-dark', bg: 'bg-indigo-50 dark:bg-indigo-950/20' },
+    { icon: <Coffee className="w-8 h-8" />, name: 'Gerabah', desc: 'Kreasi keramik artisan', color: 'text-cat-pottery dark:text-cat-pottery-dark', bg: 'bg-amber-50 dark:bg-amber-950/20' },
+    { icon: <Leaf className="w-8 h-8" />, name: 'Herbal', desc: 'Produk kesehatan tradisional', color: 'text-cat-herbal dark:text-cat-cat-herbal-dark', bg: 'bg-green-50 dark:bg-green-950/20' }
   ]
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.1 }
+      transition: { staggerChildren: 0.12, delayChildren: 0.1 }
     }
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    hidden: { opacity: 0, y: 24 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
   }
 
   return (
     <div className="min-h-screen overflow-x-hidden relative page-transition">
       <BackgroundShapes variant="default" />
-      
-      {/* ===== HERO SECTION ===== */}
-      <motion.section
-        className="max-w-6xl mx-auto px-8 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <h1 className="text-6xl lg:text-7xl font-serif font-bold gradient-text mb-6 leading-tight">
-            Setiap Produk Punya Cerita
-          </h1>
-          <p className="text-xl text-slate-text dark:text-dark-body mb-8 leading-relaxed">
-            Temukan perjalanan etis di balik setiap produk UMKM Indonesia. Dari artisan hingga tangan Anda dengan transparansi penuh dan cerita yang menginspirasi.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/products">
-              <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 transition-all duration-250 flex items-center gap-2 btn-glow"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Jelajahi Cerita <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </Link>
-            <Link to="/edutainment">
-              <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-edu-blue to-deep-edu-blue dark:from-neon-edu-blue dark:to-bright-edu-blue text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-edu-blue/50 dark:hover:shadow-neon-edu-blue/50 transition-all duration-250 btn-glow"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Pelajari Lebih Lanjut
-              </motion.button>
-            </Link>
-          </div>
-        </motion.div>
 
+      {/* ═══════════════════════════════════
+          HERO SECTION
+         ═══════════════════════════════════ */}
+      <section className="relative bg-mesh-hero">
         <motion.div
-          className="hidden lg:flex items-center justify-center min-h-96 bg-gradient-to-br from-sky-soft-blue/30 to-leaf-soft-green/30 dark:from-blue-glow-soft/20 dark:to-deep-green-base/20 rounded-3xl text-9xl relative overflow-hidden"
-          initial={{ x: 50, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          className="max-w-6xl mx-auto px-8 py-24 md:py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
         >
-          <div className="absolute inset-0 overflow-hidden">
-            {[...Array(5)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute rounded-full border-2 border-edu-blue/20 dark:border-neon-edu-blue/20"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.6, 0.3]
-                }}
-                transition={{ 
-                  duration: 4 + i * 0.5, 
-                  repeat: Infinity,
-                  delay: i * 0.3
-                }}
-                style={{
-                  width: `${100 + i * 40}px`,
-                  height: `${100 + i * 40}px`,
-                  left: `${20 + i * 10}%`,
-                  top: `${15 + i * 10}%`
-                }}
-              />
-            ))}
-          </div>
-
           <motion.div
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className="relative z-10"
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <Globe className="w-40 h-40 text-edu-blue dark:text-neon-edu-blue opacity-80" />
+            {/* Badge */}
+            <motion.div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-soft dark:bg-gold-glow-bg border border-gold/20 dark:border-gold-neon/20 mb-6"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+            >
+              <Sparkles className="w-4 h-4 text-gold dark:text-gold-neon" />
+              <span className="text-sm font-semibold text-gold-deep dark:text-gold-neon">Ethical Supply Chain Platform</span>
+            </motion.div>
+
+            <h1 className="text-5xl lg:text-7xl font-serif font-bold mb-6 leading-tight">
+              <span className="text-ink dark:text-dark-heading">Setiap Produk</span>
+              <br />
+              <span className="text-shimmer">Punya Cerita</span>
+            </h1>
+            <p className="text-lg text-stone-text dark:text-dark-body mb-8 leading-relaxed max-w-lg">
+              Temukan perjalanan etis di balik setiap produk UMKM Indonesia. Dari artisan hingga tangan Anda dengan transparansi penuh dan cerita yang menginspirasi.
+            </p>
+
+            {/* Trust pills */}
+            <div className="flex flex-wrap gap-3 mb-8">
+              {[
+                { icon: <Award className="w-3.5 h-3.5" />, label: 'Fair Trade Verified' },
+                { icon: <ShieldCheck className="w-3.5 h-3.5" />, label: '100% Transparan' },
+                { icon: <Heart className="w-3.5 h-3.5" />, label: 'Dukung UMKM' },
+              ].map((pill, i) => (
+                <motion.span
+                  key={i}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warm-sand dark:bg-night-card text-xs font-medium text-charcoal dark:text-dark-body border border-stone-100 dark:border-night-border"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.6 + i * 0.1 }}
+                >
+                  {pill.icon}
+                  {pill.label}
+                </motion.span>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/products">
+                <motion.button
+                  className="px-8 py-4 bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-coral/30 dark:hover:shadow-coral-neon/30 transition-all duration-250 flex items-center gap-2 btn-glow"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Jelajahi Cerita <ArrowRight className="w-5 h-5" />
+                </motion.button>
+              </Link>
+              <Link to="/edutainment">
+                <motion.button
+                  className="px-8 py-4 bg-gradient-to-r from-teal to-teal-deep dark:from-teal-neon dark:to-teal-bright text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-teal/30 dark:hover:shadow-teal-neon/30 transition-all duration-250 btn-glow"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Pelajari Lebih Lanjut
+                </motion.button>
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Hero Visual */}
+          <motion.div
+            className="hidden lg:flex items-center justify-center min-h-[420px] rounded-3xl relative overflow-hidden"
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            {/* Gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gold-soft/60 via-teal-soft/30 to-coral-soft/40 dark:from-gold-glow-bg/40 dark:via-teal-glow-bg/20 dark:to-coral-glow-bg/30 rounded-3xl" />
+
+            {/* Animated circles */}
+            <div className="absolute inset-0 overflow-hidden">
+              {[...Array(5)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute rounded-full"
+                  style={{
+                    width: `${80 + i * 40} px`,
+                    height: `${80 + i * 40} px`,
+                    left: `${20 + i * 10}% `,
+                    top: `${15 + i * 10}% `,
+                    border: '1.5px solid',
+                    borderColor: i % 2 === 0 ? 'rgba(184, 134, 11, 0.15)' : 'rgba(13, 148, 136, 0.15)',
+                  }}
+                  animate={{
+                    scale: [1, 1.15, 1],
+                    opacity: [0.3, 0.6, 0.3]
+                  }}
+                  transition={{
+                    duration: 4 + i * 0.5,
+                    repeat: Infinity,
+                    delay: i * 0.3
+                  }}
+                />
+              ))}
+            </div>
+
+            <motion.div
+              animate={{ y: [0, -20, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="relative z-10"
+            >
+              <Globe className="w-36 h-36 text-gold dark:text-gold-neon opacity-70" />
+            </motion.div>
           </motion.div>
         </motion.div>
-      </motion.section>
+      </section>
 
-      {/* ===== FEATURES SECTION ===== */}
+      {/* ═══════════════════════════════════
+          IMPACT STATS
+         ═══════════════════════════════════ */}
+      <section className="relative">
+        <div className="section-divider" />
+        <div className="max-w-5xl mx-auto px-8 py-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <StatCounter value={500} suffix="+" label="Produk" delay={0} />
+            <StatCounter value={100} suffix="+" label="Artisan" delay={0.1} />
+            <StatCounter value={10} suffix="" label="Region" delay={0.2} />
+            <StatCounter value={6} suffix="" label="Kategori" delay={0.3} />
+          </div>
+        </div>
+        <div className="section-divider" />
+      </section>
+
+      {/* ═══════════════════════════════════
+          FEATURES SECTION
+         ═══════════════════════════════════ */}
       <motion.section
         className="max-w-6xl mx-auto px-8 py-20 relative"
         variants={containerVariants}
@@ -153,29 +275,34 @@ export const Home = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="absolute -top-10 -left-10 w-40 h-40 bg-sky-soft-blue/20 dark:bg-blue-glow-soft/10 rounded-3xl rotate-45"></div>
-        <div className="absolute -bottom-20 -right-10 w-32 h-32 bg-leaf-soft-green/20 dark:bg-deep-green-base/10 rounded-full"></div>
+        <motion.div className="text-center mb-14" variants={itemVariants}>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-ink dark:text-dark-heading mb-4">
+            Mengapa Memilih <span className="gradient-text">LegacyTrace</span>?
+          </h2>
+          <p className="text-stone-text dark:text-dark-muted max-w-xl mx-auto">Platform yang menghubungkan konsumen dengan artisan lokal Indonesia melalui transparansi dan kepercayaan.</p>
+        </motion.div>
 
-        <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue text-center mb-16 relative z-10">Mengapa Memilih LegacyTrace?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
           {features.map((feature, idx) => (
-            <motion.div 
-              key={idx} 
-              className="glass p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center card-hover border border-soft-border/50 dark:border-soft-dark-border/50 group"
+            <motion.div
+              key={idx}
+              className="glass p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-400 text-center card-hover card-glow border border-stone-100/60 dark:border-night-border/60 group"
               variants={itemVariants}
-              whileHover={{ y: -8 }}
+              whileHover={{ y: -6 }}
             >
-              <div className="flex justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+              <div className={`w - 14 h - 14 ${feature.bg} rounded - 2xl flex items - center justify - center mx - auto mb - 5 ${feature.color} group - hover: scale - 110 transition - transform duration - 300`}>
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-2 group-hover:text-edu-blue dark:group-hover:text-neon-edu-blue transition-colors">{feature.title}</h3>
-              <p className="text-slate-text dark:text-dark-body text-sm leading-relaxed">{feature.desc}</p>
+              <h3 className="text-lg font-serif font-bold text-ink dark:text-dark-heading mb-2 group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">{feature.title}</h3>
+              <p className="text-stone-text dark:text-dark-body text-sm leading-relaxed">{feature.desc}</p>
             </motion.div>
           ))}
         </div>
       </motion.section>
 
-      {/* ===== CATEGORIES SECTION ===== */}
+      {/* ═══════════════════════════════════
+          CATEGORIES SECTION
+         ═══════════════════════════════════ */}
       <motion.section
         className="max-w-6xl mx-auto px-8 py-20 relative"
         variants={containerVariants}
@@ -183,32 +310,37 @@ export const Home = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
-        <div className="absolute top-0 right-20 w-24 h-24 bg-sky-soft-blue/20 dark:bg-blue-glow-soft/10 rounded-lg rotate-12"></div>
-        <div className="absolute bottom-10 left-10 w-20 h-20 bg-leaf-soft-green/20 dark:bg-deep-green-base/10 rounded-full"></div>
+        <motion.div className="text-center mb-14" variants={itemVariants}>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-ink dark:text-dark-heading mb-4">
+            Kategori <span className="gradient-text">Produk</span>
+          </h2>
+          <p className="text-stone-text dark:text-dark-muted max-w-xl mx-auto">Jelajahi kekayaan produk UMKM Indonesia dari berbagai kategori kerajinan tradisional.</p>
+        </motion.div>
 
-        <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue text-center mb-16 relative z-10">Kategori Produk</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-5 relative z-10">
           {categories.map((cat, idx) => (
             <motion.div
               key={idx}
-              className="glass rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 card-hover border border-soft-border/50 dark:border-soft-dark-border/50 group relative overflow-hidden"
+              className="glass rounded-2xl p-7 text-center shadow-sm hover:shadow-xl transition-all duration-400 card-hover card-glow border border-stone-100/60 dark:border-night-border/60 group relative overflow-hidden"
               variants={itemVariants}
-              whileHover={{ scale: 1.03, y: -8 }}
+              whileHover={{ scale: 1.02, y: -6 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-edu-blue/5 to-growth-green/5 dark:from-neon-edu-blue/10 dark:to-glow-green/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.02] to-teal/[0.02] dark:from-gold-neon/[0.04] dark:to-teal-neon/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative z-10">
-                <div className="flex justify-center mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                <div className={`w - 16 h - 16 ${cat.bg} rounded - 2xl flex items - center justify - center mx - auto mb - 4 ${cat.color} group - hover: scale - 110 group - hover: rotate - 3 transition - transform duration - 300`}>
                   {cat.icon}
                 </div>
-                <h3 className="text-xl font-serif font-bold text-ink-black dark:text-dark-heading mb-2 group-hover:text-edu-blue dark:group-hover:text-neon-edu-blue transition-colors">{cat.name}</h3>
-                <p className="text-sm text-slate-text dark:text-dark-body">{cat.desc}</p>
+                <h3 className="text-lg font-serif font-bold text-ink dark:text-dark-heading mb-1 group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">{cat.name}</h3>
+                <p className="text-sm text-stone-text dark:text-dark-body">{cat.desc}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </motion.section>
 
-      {/* ===== HOW IT WORKS SECTION ===== */}
+      {/* ═══════════════════════════════════
+          HOW IT WORKS
+         ═══════════════════════════════════ */}
       <motion.section
         className="max-w-6xl mx-auto px-8 py-20 relative"
         initial={{ opacity: 0 }}
@@ -216,37 +348,46 @@ export const Home = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue text-center mb-16 relative z-10">Bagaimana Cara Kerja?</h2>
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-ink dark:text-dark-heading mb-4">
+            Bagaimana <span className="gradient-text">Cara Kerja</span>?
+          </h2>
+          <p className="text-stone-text dark:text-dark-muted max-w-xl mx-auto">Empat langkah sederhana untuk mengenal produk UMKM Indonesia yang etis dan berkelanjutan.</p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative z-10">
+          {/* Connecting line (desktop) */}
+          <div className="hidden md:block absolute top-[72px] left-[15%] right-[15%] h-[2px] bg-gradient-to-r from-gold/20 via-teal/20 to-gold/20 dark:from-gold-neon/10 dark:via-teal-neon/10 dark:to-gold-neon/10 z-0" />
+
           {[
-            { step: '1', title: 'Jelajahi', desc: 'Jelajahi koleksi produk UMKM etis kami', icon: <Search className="w-6 h-6" /> },
-            { step: '2', title: 'Temukan', desc: 'Pelajari cerita unik di balik setiap produk', icon: <BookOpen className="w-6 h-6" /> },
-            { step: '3', title: 'Belajar', desc: 'Ikuti quiz interaktif tentang supply chain', icon: <ShieldCheck className="w-6 h-6" /> },
-            { step: '4', title: 'Dukung', desc: 'Dukung artisan dengan pembelian yang bermakna', icon: <Heart className="w-6 h-6" /> }
+            { step: '1', title: 'Jelajahi', desc: 'Jelajahi koleksi produk UMKM etis kami', icon: <Search className="w-5 h-5" /> },
+            { step: '2', title: 'Temukan', desc: 'Pelajari cerita unik di balik setiap produk', icon: <BookOpen className="w-5 h-5" /> },
+            { step: '3', title: 'Belajar', desc: 'Ikuti quiz interaktif tentang supply chain', icon: <ShieldCheck className="w-5 h-5" /> },
+            { step: '4', title: 'Dukung', desc: 'Dukung artisan dengan pembelian bermakna', icon: <Heart className="w-5 h-5" /> }
           ].map((item, idx) => (
             <motion.div
               key={idx}
-              className="relative"
+              className="relative z-10"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
             >
-              <div className="glass rounded-2xl p-8 text-center border border-edu-blue/30 dark:border-neon-edu-blue/30 hover:border-edu-blue dark:hover:border-neon-edu-blue hover:shadow-2xl transition-all duration-300 card-hover group">
-                <div className="w-12 h-12 bg-gradient-to-r from-edu-blue to-growth-green dark:from-neon-edu-blue dark:to-glow-green text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+              <div className="glass rounded-2xl p-8 text-center border border-gold/10 dark:border-gold-neon/10 hover:border-gold/30 dark:hover:border-gold-neon/30 hover:shadow-xl transition-all duration-300 card-hover group">
+                <div className="w-14 h-14 bg-gradient-to-br from-gold to-teal dark:from-gold-neon dark:to-teal-neon text-white dark:text-night rounded-full flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
                 </div>
-                <h4 className="text-lg font-bold text-ink-black dark:text-dark-heading mb-2 group-hover:text-edu-blue dark:group-hover:text-neon-edu-blue transition-colors">{item.title}</h4>
-                <p className="text-sm text-slate-text dark:text-dark-body">{item.desc}</p>
+                <h4 className="text-lg font-bold text-ink dark:text-dark-heading mb-2 group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">{item.title}</h4>
+                <p className="text-sm text-stone-text dark:text-dark-body">{item.desc}</p>
               </div>
               {idx < 3 && (
-                <div className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2">
+                <div className="hidden md:block absolute top-[72px] -right-3 transform -translate-y-1/2 z-20">
                   <motion.div
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
-                    className="text-2xl text-edu-blue dark:text-neon-edu-blue"
+                    className="text-xl text-gold dark:text-gold-neon"
                   >
-                    <ArrowRight />
+                    <ArrowRight className="w-5 h-5" />
                   </motion.div>
                 </div>
               )}
@@ -255,7 +396,9 @@ export const Home = () => {
         </div>
       </motion.section>
 
-      {/* ===== REGIONS SECTION ===== */}
+      {/* ═══════════════════════════════════
+          REGIONS SECTION
+         ═══════════════════════════════════ */}
       <motion.section
         className="max-w-6xl mx-auto px-8 py-20 relative"
         initial={{ opacity: 0, y: 20 }}
@@ -263,29 +406,53 @@ export const Home = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue text-center mb-4 relative z-10 flex items-center justify-center gap-3"><Map className="w-10 h-10" /> Explore by Region</h2>
-        <p className="text-lg text-slate-text dark:text-dark-body text-center mb-12 relative z-10">
-          Temukan kerajinan tradisional unik dari berbagai pulau di Indonesia
-        </p>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-ink dark:text-dark-heading mb-4 flex items-center justify-center gap-3">
+            <Map className="w-9 h-9 text-teal dark:text-teal-neon" /> Explore by <span className="gradient-text">Region</span>
+          </h2>
+          <p className="text-stone-text dark:text-dark-body max-w-xl mx-auto">
+            Temukan kerajinan tradisional unik dari berbagai pulau di Indonesia
+          </p>
+        </div>
 
         <Link to="/regions">
           <motion.div
-            className="relative z-10 bg-mist-gray dark:bg-dark-surface rounded-2xl p-12 text-center border-2 border-edu-blue/20 dark:border-neon-edu-blue/20 hover:border-edu-blue dark:hover:border-neon-edu-blue transition-all duration-250 hover:shadow-lg"
-            whileHover={{ scale: 1.02 }}
+            className="relative z-10 bg-gradient-to-br from-warm-sand to-gold-soft/50 dark:from-night-card dark:to-gold-glow-bg/30 rounded-3xl p-12 text-center border border-gold/15 dark:border-gold-neon/15 hover:border-gold/40 dark:hover:border-gold-neon/40 transition-all duration-250 hover:shadow-lg group overflow-hidden"
+            whileHover={{ scale: 1.01 }}
           >
-            <p className="text-2xl font-bold text-ink-black dark:text-dark-heading mb-6">Jelajahi Produk Berdasarkan Region</p>
-            <motion.button
-              className="px-8 py-4 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 transition-all duration-250 flex items-center gap-2 mx-auto btn-glow"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Lihat Semua Region <ArrowRight className="w-5 h-5" />
-            </motion.button>
+            {/* Subtle map pattern overlay */}
+            <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIzIiBmaWxsPSIjQjg4NjBCIi8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iNTAiIHI9IjIiIGZpbGw9IiMwRDk0ODgiLz48Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9IjQiIGZpbGw9IiNCODg2MEIiLz48Y2lyY2xlIGN4PSI1MCIgY3k9IjE1MCIgcj0iMiIgZmlsbD0iIzBEOTQ4OCIvPjxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1MCIgcj0iMyIgZmlsbD0iI0I4ODYwQiIvPjwvc3ZnPg==')]" />
+
+            {/* Floating map pins */}
+            <div className="absolute top-8 left-12 opacity-20 dark:opacity-10">
+              <motion.div animate={{ y: [0, -8, 0] }} transition={{ duration: 3, repeat: Infinity }}>
+                <MapPin className="w-6 h-6 text-gold dark:text-gold-neon" />
+              </motion.div>
+            </div>
+            <div className="absolute bottom-8 right-16 opacity-20 dark:opacity-10">
+              <motion.div animate={{ y: [0, -6, 0] }} transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}>
+                <MapPin className="w-5 h-5 text-teal dark:text-teal-neon" />
+              </motion.div>
+            </div>
+
+            <div className="relative z-10">
+              <p className="text-2xl font-bold text-ink dark:text-dark-heading mb-2">Jelajahi Produk Berdasarkan Region</p>
+              <p className="text-stone-text dark:text-dark-muted mb-8">5 Pulau Besar & 5 Kepulauan dengan keunikan budaya masing-masing</p>
+              <motion.button
+                className="px-8 py-4 bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:shadow-coral/30 dark:hover:shadow-coral-neon/30 transition-all duration-250 flex items-center gap-2 mx-auto btn-glow"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Lihat Semua Region <ArrowRight className="w-5 h-5" />
+              </motion.button>
+            </div>
           </motion.div>
         </Link>
       </motion.section>
 
-      {/* ===== TESTIMONIAL SECTION ===== */}
+      {/* ═══════════════════════════════════
+          TESTIMONIALS
+         ═══════════════════════════════════ */}
       <motion.section
         className="max-w-6xl mx-auto px-8 py-20 relative"
         initial={{ opacity: 0 }}
@@ -293,73 +460,97 @@ export const Home = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue text-center mb-16 relative z-10">Dari Komunitas</h2>
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-ink dark:text-dark-heading mb-4">
+            Dari <span className="gradient-text">Komunitas</span>
+          </h2>
+          <p className="text-stone-text dark:text-dark-muted max-w-xl mx-auto">Cerita dan testimoni dari mereka yang sudah bergabung bersama LegacyTrace.</p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
           {[
-            { quote: 'Produk UMKM berkualitas tinggi dengan cerita yang menginspirasi!', author: 'Dewi S.', role: 'Pembeli Setia' },
-            { quote: 'Platform ini benar-benar membantu kami jangkau pasar yang lebih luas.', author: 'Pak Santoso', role: 'Artisan Batik' },
-            { quote: 'Saya senang belajar tentang proses produksi yang ethical dan sustainable.', author: 'Budi M.', role: 'Conscious Consumer' }
+            { quote: 'Produk UMKM berkualitas tinggi dengan cerita yang menginspirasi!', author: 'Dewi S.', role: 'Pembeli Setia', avatar: '🌸' },
+            { quote: 'Platform ini benar-benar membantu kami jangkau pasar yang lebih luas.', author: 'Pak Santoso', role: 'Artisan Batik', avatar: '🎨' },
+            { quote: 'Saya senang belajar tentang proses produksi yang ethical dan sustainable.', author: 'Budi M.', role: 'Conscious Consumer', avatar: '🌿' }
           ].map((testimonial, idx) => (
             <motion.div
               key={idx}
-              className="glass rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-growth-green dark:border-glow-green card-hover group"
-              initial={{ opacity: 0, scale: 0.9 }}
+              className="glass rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border-l-4 border-gold dark:border-gold-neon card-hover group relative"
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{ y: -6 }}
             >
+              {/* Large quote mark */}
+              <div className="absolute top-4 right-6 text-5xl font-serif text-gold/10 dark:text-gold-neon/10 leading-none">"</div>
+
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-lg text-yellow-400">★</span>
+                  <span key={i} className="text-base text-gold dark:text-gold-neon">★</span>
                 ))}
               </div>
-              <p className="text-slate-text dark:text-dark-body italic mb-4">"{testimonial.quote}"</p>
-              <p className="font-bold text-ink-black dark:text-dark-heading">{testimonial.author}</p>
-              <p className="text-sm text-growth-green dark:text-glow-green">{testimonial.role}</p>
+              <p className="text-charcoal dark:text-dark-body italic mb-6 relative z-10">"{testimonial.quote}"</p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gold-soft dark:bg-gold-glow-bg flex items-center justify-center text-lg">
+                  {testimonial.avatar}
+                </div>
+                <div>
+                  <p className="font-bold text-ink dark:text-dark-heading text-sm">{testimonial.author}</p>
+                  <p className="text-xs text-teal dark:text-teal-neon font-medium">{testimonial.role}</p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
       </motion.section>
 
-      {/* ===== CTA SECTION ===== */}
+      {/* ═══════════════════════════════════
+          CTA SECTION
+         ═══════════════════════════════════ */}
       <motion.section
-        className="max-w-6xl mx-auto px-8 py-20 glass rounded-3xl text-center mb-12 relative overflow-hidden border border-edu-blue/30 dark:border-neon-edu-blue/30 shadow-2xl"
+        className="max-w-6xl mx-auto px-8 py-20 relative"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-edu-blue/5 to-growth-green/5 dark:from-neon-edu-blue/10 dark:to-glow-green/10"></div>
-        <div className="relative z-10">
-          <h2 className="text-4xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">Siap Mengeksplorasi?</h2>
-          <p className="text-xl text-slate-text dark:text-dark-body mb-8">
-            Bergabunglah dengan komunitas global yang mendukung perdagangan etis dan seni tradisional Indonesia
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/products">
-              <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-action-orange to-deep-action-orange dark:from-dark-action-orange dark:to-hot-orange text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-action-orange/50 dark:hover:shadow-dark-action-orange/50 transition-all duration-250 btn-glow"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Mulai Jelajah Sekarang
-              </motion.button>
-            </Link>
-            <Link to="/edutainment">
-              <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-edu-blue to-deep-edu-blue dark:from-neon-edu-blue dark:to-bright-edu-blue text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-edu-blue/50 dark:hover:shadow-neon-edu-blue/50 transition-all duration-250 btn-glow"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Pelajari Lebih Lanjut
-              </motion.button>
-            </Link>
+        <div className="glass rounded-3xl text-center p-12 md:p-16 relative overflow-hidden border border-gold/15 dark:border-gold-neon/15 shadow-xl">
+          <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.03] via-transparent to-teal/[0.03] dark:from-gold-neon/[0.06] dark:via-transparent dark:to-teal-neon/[0.06]" />
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-ink dark:text-dark-heading mb-4">
+              Siap <span className="gradient-text">Mengeksplorasi</span>?
+            </h2>
+            <p className="text-lg text-stone-text dark:text-dark-body mb-8 max-w-2xl mx-auto">
+              Bergabunglah dengan komunitas global yang mendukung perdagangan etis dan seni tradisional Indonesia
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/products">
+                <motion.button
+                  className="px-8 py-4 bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-coral/30 dark:hover:shadow-coral-neon/30 transition-all duration-250 btn-glow"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Mulai Jelajah Sekarang
+                </motion.button>
+              </Link>
+              <Link to="/edutainment">
+                <motion.button
+                  className="px-8 py-4 bg-gradient-to-r from-teal to-teal-deep dark:from-teal-neon dark:to-teal-bright text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-teal/30 dark:hover:shadow-teal-neon/30 transition-all duration-250 btn-glow"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Pelajari Lebih Lanjut
+                </motion.button>
+              </Link>
+            </div>
           </div>
         </div>
       </motion.section>
 
-      {/* ===== PARTNERSHIP SECTION ===== */}
+      {/* ═══════════════════════════════════
+          PARTNERSHIP SECTION
+         ═══════════════════════════════════ */}
       <motion.section
         className="hidden md:block max-w-6xl mx-auto px-8 py-20 relative"
         initial={{ opacity: 0, y: 20 }}
@@ -368,37 +559,38 @@ export const Home = () => {
         transition={{ duration: 0.6 }}
       >
         <motion.div
-          className="glass rounded-3xl text-center p-12 relative overflow-hidden border border-royal-purple/30 dark:border-batik-dark/30 shadow-2xl"
+          className="glass rounded-3xl text-center p-12 relative overflow-hidden border border-cat-batik/15 dark:border-cat-cat-batik-dark/15 shadow-xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-royal-purple/5 to-indigo-weave/5 dark:from-batik-dark/10 dark:to-tenun-dark/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-cat-batik/[0.03] to-cat-weave/[0.03] dark:from-cat-cat-batik-dark/[0.06] dark:to-cat-weave-dark/[0.06]" />
           <div className="relative z-10">
             <motion.div
-              className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-royal-purple to-indigo-weave dark:from-batik-dark dark:to-tenun-dark rounded-full mb-6 shadow-lg"
+              className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-cat-batik to-cat-weave dark:from-cat-cat-batik-dark dark:to-cat-weave-dark rounded-full mb-6 shadow-lg"
               initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
               <Handshake className="w-10 h-10 text-white" />
             </motion.div>
-            
-            <h2 className="text-4xl font-serif font-bold text-ink-black dark:text-dark-heading mb-4">Punya Produk UMKM?</h2>
-            <p className="text-xl text-slate-text dark:text-dark-body mb-8 max-w-2xl mx-auto">
-              Bergabunglah dengan LegacyTrace dan tampilkan produk Anda ke pasar yang lebih luas. Kami membantu UMKM Indonesia untuk terhubung dengan konsumen yang peduli.
+
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-ink dark:text-dark-heading mb-4">Punya Produk UMKM?</h2>
+            <p className="text-lg text-stone-text dark:text-dark-body mb-8 max-w-2xl mx-auto">
+              Bergabunglah dengan LegacyTrace dan tampilkan produk Anda ke pasar yang lebih luas. Kami membantu UMKM Indonesia terhubung dengan konsumen yang peduli.
             </p>
-            
-            <div className="flex flex-wrap gap-4 justify-center mb-8">
-              <span className="px-4 py-2 bg-sky-soft-blue dark:bg-blue-glow-soft text-edu-blue dark:text-neon-edu-blue rounded-full text-sm font-semibold">✓ Gratis Bergabung</span>
-              <span className="px-4 py-2 bg-leaf-soft-green dark:bg-deep-green-base text-growth-green dark:text-glow-green rounded-full text-sm font-semibold">✓ Jangkauan Luas</span>
-              <span className="px-4 py-2 bg-soft-peach dark:bg-burnt-orange-base text-action-orange dark:text-dark-action-orange rounded-full text-sm font-semibold">✓ Transparansi Penuh</span>
+
+            <div className="flex flex-wrap gap-3 justify-center mb-8">
+              <span className="px-4 py-2 bg-gold-soft dark:bg-gold-glow-bg text-gold dark:text-gold-neon rounded-full text-sm font-semibold">✓ Gratis Bergabung</span>
+              <span className="px-4 py-2 bg-teal-soft dark:bg-teal-glow-bg text-teal dark:text-teal-neon rounded-full text-sm font-semibold">✓ Jangkauan Luas</span>
+              <span className="px-4 py-2 bg-coral-soft dark:bg-coral-glow-bg text-coral dark:text-coral-neon rounded-full text-sm font-semibold">✓ Transparansi Penuh</span>
             </div>
-            
+
             <Link to="/partnership">
               <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-royal-purple to-indigo-weave dark:from-batik-dark dark:to-tenun-dark text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-royal-purple/50 dark:hover:shadow-batik-dark/50 transition-all duration-250 btn-glow"
+                className="px-8 py-4 bg-gradient-to-r from-cat-batik to-cat-weave dark:from-cat-cat-batik-dark dark:to-cat-weave-dark text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-cat-batik/30 dark:hover:shadow-cat-cat-batik-dark/30 transition-all duration-250 btn-glow"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

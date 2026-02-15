@@ -4,78 +4,96 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/assets/logo/golden-gunungan-wayang-design-indonesian-javanese-culture-free-png-removebg-preview.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#2563EB" />
+    <meta name="theme-color" content="#B8860B" />
     <title>LegacyTrace - Interactive Ethical UMKM Story Platform</title>
     <meta name="description" content="Discover the ethical journey behind Indonesia's most beautiful handcrafted products. Explore supply chains, meet artisans, and support fair trade." />
     
-    <!-- Google Fonts - Modern Typography -->
+    <!-- Google Fonts - Premium Typography Pairing -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Custom Tailwind Config via Script -->
+    <!-- Custom Tailwind Config -->
     <script>
       tailwind.config = {
         darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              // BASE LIGHT
-              'cloud-white': '#F8FAFC',
-              'mist-gray': '#EEF2F7',
-              'pure-card': '#FFFFFF',
-              'soft-border': '#E2E8F0',
-              // PRIMARY
-              'edu-blue': '#2563EB',
-              'deep-edu-blue': '#1D4ED8',
-              'sky-soft-blue': '#DBEAFE',
-              // SECONDARY
-              'growth-green': '#16A34A',
-              'leaf-soft-green': '#DCFCE7',
-              // CTA
-              'action-orange': '#F97316',
-              'deep-action-orange': '#EA580C',
-              'soft-peach': '#FFEDD5',
-              // TEXT LIGHT
-              'ink-black': '#0F172A',
-              'slate-text': '#334155',
-              'calm-gray': '#64748B',
-              // KATEGORI
-              'royal-purple': '#7C3AED',
-              'sunset-orange': '#F97316',
-              'craft-teal': '#0EA5A4',
-              'indigo-weave': '#6366F1',
-              'clay-brown': '#B45309',
-              'herbal-green': '#16A34A',
-              // DARK MODE
-              'night-slate': '#0B1220',
-              'deep-night': '#0F172A',
-              'dark-surface': '#111827',
-              'soft-dark-border': '#1F2937',
-              'neon-edu-blue': '#60A5FA',
-              'bright-edu-blue': '#3B82F6',
-              'blue-glow-soft': '#1E3A8A',
-              'glow-green': '#4ADE80',
-              'deep-green-base': '#14532D',
-              'dark-action-orange': '#FB923C',
-              'hot-orange': '#F97316',
-              'burnt-orange-base': '#7C2D12',
-              'dark-heading': '#F9FAFB',
-              'dark-body': '#E5E7EB',
-              'dark-muted': '#9CA3AF',
-              'batik-dark': '#A78BFA',
-              'makanan-dark': '#FB923C',
-              'kerajinan-dark': '#2DD4BF',
-              'tenun-dark': '#818CF8',
-              'gerabah-dark': '#D97706',
-              'herbal-dark': '#4ADE80',
+              // ═══════════ LIGHT MODE ═══════════
+              // Base / Background
+              'cream':          '#FAF7F2',
+              'warm-sand':      '#F0EBE3',
+              'stone-100':      '#E8E2D9',
+              'pure-card':      '#FFFFFF',
+
+              // Primary — Warm Gold
+              'gold':           '#B8860B',
+              'gold-light':     '#D4A844',
+              'gold-deep':      '#8B6508',
+              'gold-soft':      '#FDF5E6',
+              'gold-mist':      '#F5ECD5',
+
+              // Secondary — Deep Teal
+              'teal':           '#0D9488',
+              'teal-deep':      '#134E4A',
+              'teal-light':     '#5EEAD4',
+              'teal-soft':      '#E6FAF7',
+
+              // Accent — Vibrant Coral (CTA)
+              'coral':          '#E85D4A',
+              'coral-deep':     '#C0392B',
+              'coral-soft':     '#FDEDEB',
+
+              // Text — Warm Neutrals
+              'ink':            '#1A1613',
+              'charcoal':       '#3D3529',
+              'stone-text':     '#6B5E50',
+              'muted-text':     '#9C8E7E',
+
+              // Category Accents
+              'cat-batik':      '#7C3AED',
+              'cat-food':       '#E85D4A',
+              'cat-craft':      '#0D9488',
+              'cat-weave':      '#6366F1',
+              'cat-pottery':    '#B45309',
+              'cat-herbal':     '#16A34A',
+
+              // ═══════════ DARK MODE ═══════════
+              'night':          '#0F0D0A',
+              'night-surface':  '#1A1613',
+              'night-card':     '#231F1B',
+              'night-border':   '#332D26',
+
+              'gold-neon':      '#E8C560',
+              'gold-bright':    '#D4A844',
+              'gold-glow-bg':   '#3D2E0A',
+
+              'teal-neon':      '#5EEAD4',
+              'teal-bright':    '#2DD4BF',
+              'teal-glow-bg':   '#0A3D37',
+
+              'coral-neon':     '#FF7B6B',
+              'coral-bright':   '#E85D4A',
+              'coral-glow-bg':  '#3D1510',
+
+              'dark-heading':   '#F5F0E8',
+              'dark-body':      '#D4CCBF',
+              'dark-muted':     '#9C8E7E',
+
+              'cat-batik-dark':    '#A78BFA',
+              'cat-food-dark':     '#FF7B6B',
+              'cat-craft-dark':    '#5EEAD4',
+              'cat-weave-dark':    '#818CF8',
+              'cat-pottery-dark':  '#D97706',
+              'cat-herbal-dark':   '#4ADE80',
             },
             fontFamily: {
-              serif: ['Playfair Display', 'Georgia', 'Times New Roman', 'serif'],
-              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+              serif: ['DM Serif Display', 'Georgia', 'Times New Roman', 'serif'],
+              sans: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
             },
             transitionDuration: {
               '250': '250ms',
@@ -85,7 +103,7 @@
       }
     </script>
   </head>
-  <body class="bg-cloud-white dark:bg-night-slate transition-colors duration-300">
+  <body class="font-sans bg-cream dark:bg-night transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

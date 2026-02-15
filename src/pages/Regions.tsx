@@ -78,11 +78,11 @@ export const Regions = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="inline-block p-3 rounded-full bg-edu-blue/10 dark:bg-neon-edu-blue/10 mb-6">
-          <Compass className="w-8 h-8 text-edu-blue dark:text-neon-edu-blue" />
+        <div className="inline-block p-3 rounded-full bg-gold/10 dark:bg-gold-neon/10 mb-6">
+          <Compass className="w-8 h-8 text-gold dark:text-gold-neon" />
         </div>
-        <h1 className="text-5xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-6">Jelajahi Nusantara</h1>
-        <p className="text-xl text-slate-text dark:text-dark-body max-w-3xl mx-auto leading-relaxed">
+        <h1 className="text-5xl font-serif font-bold text-gold dark:text-gold-neon mb-6">Jelajahi Nusantara</h1>
+        <p className="text-xl text-stone-text dark:text-dark-body max-w-3xl mx-auto leading-relaxed">
             Temukan kerajinan tradisional unik dari 5 pulau besar dan 5 pulau kecil terkenal Indonesia.
         </p>
       </motion.section>
@@ -95,7 +95,7 @@ export const Regions = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-2xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-8 flex items-center gap-3">
+        <h2 className="text-2xl font-serif font-bold text-gold dark:text-gold-neon mb-8 flex items-center gap-3">
           <Map className="w-6 h-6" /> Pulau Besar
         </h2>
         <motion.div
@@ -111,14 +111,14 @@ export const Regions = () => {
               onClick={() => handleRegionSelect(region)}
               className={`p-6 rounded-2xl font-semibold transition-all duration-300 text-center group ${
                 selectedRegion.id === region.id
-                  ? 'bg-action-orange text-white shadow-lg scale-105 ring-4 ring-action-orange/20'
-                  : 'bg-pure-card dark:bg-dark-surface border border-soft-border dark:border-soft-dark-border text-slate-text dark:text-dark-body hover:border-edu-blue dark:hover:border-neon-edu-blue hover:shadow-md'
+                  ? 'bg-coral text-white shadow-lg scale-105 ring-4 ring-coral/20'
+                  : 'bg-pure-card dark:bg-night-card border border-stone-100 dark:border-night-border text-stone-text dark:text-dark-body hover:border-gold dark:hover:border-gold-neon hover:shadow-md'
               }`}
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className={`mb-3 flex justify-center transition-colors ${selectedRegion.id === region.id ? 'text-white' : 'text-edu-blue dark:text-neon-edu-blue group-hover:text-action-orange'}`}>
+              <span className={`mb-3 flex justify-center transition-colors ${selectedRegion.id === region.id ? 'text-white' : 'text-gold dark:text-gold-neon group-hover:text-coral'}`}>
                 {getIcon(region.name, "w-10 h-10")}
               </span>
               {region.name}
@@ -135,7 +135,7 @@ export const Regions = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-2xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-8 flex items-center gap-3">
+        <h2 className="text-2xl font-serif font-bold text-gold dark:text-gold-neon mb-8 flex items-center gap-3">
           <Sun className="w-6 h-6" /> Pulau Kecil Terkenal
         </h2>
         <motion.div
@@ -151,14 +151,14 @@ export const Regions = () => {
               onClick={() => handleRegionSelect(region)}
               className={`p-6 rounded-2xl font-semibold transition-all duration-300 text-center group ${
                 selectedRegion.id === region.id
-                  ? 'bg-growth-green text-white shadow-lg scale-105 ring-4 ring-growth-green/20'
-                  : 'bg-pure-card dark:bg-dark-surface border border-soft-border dark:border-soft-dark-border text-slate-text dark:text-dark-body hover:border-growth-green dark:hover:border-glow-green hover:shadow-md'
+                  ? 'bg-teal text-white shadow-lg scale-105 ring-4 ring-teal/20'
+                  : 'bg-pure-card dark:bg-night-card border border-stone-100 dark:border-night-border text-stone-text dark:text-dark-body hover:border-teal dark:hover:border-teal-neon hover:shadow-md'
               }`}
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className={`mb-3 flex justify-center transition-colors ${selectedRegion.id === region.id ? 'text-white' : 'text-growth-green dark:text-glow-green group-hover:text-growth-green'}`}>
+              <span className={`mb-3 flex justify-center transition-colors ${selectedRegion.id === region.id ? 'text-white' : 'text-teal dark:text-teal-neon group-hover:text-teal'}`}>
                 {getIcon(region.name, "w-10 h-10")}
               </span>
               {region.name}
@@ -176,22 +176,22 @@ export const Regions = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="bg-pure-card dark:bg-dark-surface rounded-3xl p-8 md:p-12 shadow-xl border border-soft-border dark:border-soft-dark-border"
+            className="bg-pure-card dark:bg-night-card rounded-3xl p-8 md:p-12 shadow-xl border border-stone-100 dark:border-night-border"
           >
             {/* Header */}
             <div className="flex flex-col md:flex-row items-start gap-6 mb-8">
-              <div className="p-6 bg-sky-soft-blue dark:bg-blue-glow-soft rounded-2xl shadow-inner text-edu-blue dark:text-neon-edu-blue">
+              <div className="p-6 bg-gold-soft dark:bg-gold-glow-bg rounded-2xl shadow-inner text-gold dark:text-gold-neon">
                 {getIcon(selectedRegion.name, "w-16 h-16")}
               </div>
               <div className="flex-1">
-                <h3 className="text-4xl font-serif font-bold text-ink-black dark:text-dark-heading mb-3">{selectedRegion.name}</h3>
-                <p className="text-slate-text dark:text-dark-body text-lg leading-relaxed">{selectedRegion.description}</p>
+                <h3 className="text-4xl font-serif font-bold text-ink dark:text-dark-heading mb-3">{selectedRegion.name}</h3>
+                <p className="text-stone-text dark:text-dark-body text-lg leading-relaxed">{selectedRegion.description}</p>
               </div>
             </div>
 
             {/* Products */}
             <div className="mt-12">
-              <h4 className="text-2xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-6 border-b border-soft-border dark:border-soft-dark-border pb-4">Produk Unggulan</h4>
+              <h4 className="text-2xl font-serif font-bold text-gold dark:text-gold-neon mb-6 border-b border-stone-100 dark:border-night-border pb-4">Produk Unggulan</h4>
               <motion.div
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4"
                 variants={containerVariants}
@@ -201,16 +201,16 @@ export const Regions = () => {
                 {selectedRegion.products.map((product) => (
                   <motion.div
                     key={product.id}
-                    className="bg-mist-gray dark:bg-soft-dark-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all border border-transparent hover:border-action-orange dark:hover:border-dark-action-orange group"
+                    className="bg-warm-sand dark:bg-night-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all border border-transparent hover:border-coral dark:hover:border-coral-neon group"
                     variants={itemVariants}
                     whileHover={{ scale: 1.05, y: -5 }}
                   >
-                    <div className="mb-4 text-edu-blue dark:text-neon-edu-blue group-hover:text-action-orange transition-colors">
+                    <div className="mb-4 text-gold dark:text-gold-neon group-hover:text-coral transition-colors">
                       {getIcon(product.category, "w-8 h-8")}
                     </div>
-                    <h5 className="font-serif font-bold text-ink-black dark:text-dark-heading mb-2 text-sm line-clamp-2">{product.name}</h5>
-                    <p className="text-xs text-action-orange dark:text-dark-action-orange font-semibold mb-1 uppercase tracking-wider">{product.category}</p>
-                    <p className="text-xs text-slate-text dark:text-dark-body truncate">{product.umkm}</p>
+                    <h5 className="font-serif font-bold text-ink dark:text-dark-heading mb-2 text-sm line-clamp-2">{product.name}</h5>
+                    <p className="text-xs text-coral dark:text-coral-neon font-semibold mb-1 uppercase tracking-wider">{product.category}</p>
+                    <p className="text-xs text-stone-text dark:text-dark-body truncate">{product.umkm}</p>
                   </motion.div>
                 ))}
               </motion.div>
@@ -227,12 +227,12 @@ export const Regions = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="bg-gradient-to-r from-sky-soft-blue/30 via-soft-peach/20 to-leaf-soft-green/30 dark:from-blue-glow-soft/20 dark:via-burnt-orange-base/20 dark:to-deep-green-base/20 rounded-3xl p-12 text-center border border-edu-blue/20 dark:border-neon-edu-blue/20">
-          <h2 className="text-3xl font-serif font-bold text-edu-blue dark:text-neon-edu-blue mb-4">Ingin Mengeksplorasi Lebih Lanjut?</h2>
-          <p className="text-lg text-slate-text dark:text-dark-body mb-8">Lihat semua produk dari region pilihan Anda</p>
+        <div className="bg-gradient-to-r from-gold-soft/30 via-coral-soft/20 to-teal-soft/30 dark:from-gold-glow-bg/20 dark:via-coral-glow-bg/20 dark:to-teal-glow-bg/20 rounded-3xl p-12 text-center border border-gold/20 dark:border-gold-neon/20">
+          <h2 className="text-3xl font-serif font-bold text-gold dark:text-gold-neon mb-4">Ingin Mengeksplorasi Lebih Lanjut?</h2>
+          <p className="text-lg text-stone-text dark:text-dark-body mb-8">Lihat semua produk dari region pilihan Anda</p>
           <Link to="/products">
             <motion.button
-              className="px-8 py-4 bg-action-orange hover:bg-deep-action-orange dark:bg-dark-action-orange dark:hover:bg-hot-orange text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-250 flex items-center gap-2 mx-auto"
+              className="px-8 py-4 bg-coral hover:bg-coral-deep dark:bg-coral-neon dark:hover:bg-coral-bright text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-250 flex items-center gap-2 mx-auto"
               whileHover={{ scale: 1.05, boxShadow: '0 12px 24px rgba(0,0,0,0.15)' }}
               whileTap={{ scale: 0.95 }}
             >
