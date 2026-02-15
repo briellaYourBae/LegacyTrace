@@ -28,7 +28,7 @@ export const Partnership = () => {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden relative page-transition">
+    <div className="min-h-screen relative page-transition">
       <BackgroundShapes variant="default" />
       
       <motion.section

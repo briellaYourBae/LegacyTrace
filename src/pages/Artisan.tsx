@@ -110,17 +110,17 @@ export const ArtisanPage = () => {
 
       {/* Footer */}
       <motion.section
-        className="max-w-6xl mx-auto px-8 py-8 text-center"
+        className="max-w-2xl mx-auto px-16 py-8 text-center bg-brown-primary rounded-[2rem]"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
-        <p className="text-lg text-brown-primary font-semibold mb-6">
+        <p className="text-lg text-white font-semibold mb-6">
           Support this artisan by exploring their digital passports
         </p>
         <motion.button
           onClick={() => navigate('/products')}
-          className="px-8 py-3 bg-brown-primary text-white font-semibold rounded-full hover:bg-gold transition-colors flex items-center gap-2 mx-auto"
+          className="px-8 py-3 bg-white text-brown-primary font-semibold rounded-full hover:bg-gold hover:text-white transition-colors flex items-center gap-2 mx-auto"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >

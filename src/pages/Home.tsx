@@ -121,7 +121,7 @@ export const Home = () => {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden relative page-transition">
+    <div className="min-h-screen relative page-transition">
       <BackgroundShapes variant="default" />
 
       {/* ═══════════════════════════════════
@@ -182,7 +182,7 @@ export const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/products">
                 <motion.button
-                  className="px-8 py-4 bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-coral/30 dark:hover:shadow-coral-neon/30 transition-all duration-250 flex items-center gap-2 btn-glow"
+                  className="px-8 py-4 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-250 flex items-center gap-2 btn-glow"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -191,7 +191,7 @@ export const Home = () => {
               </Link>
               <Link to="/edutainment">
                 <motion.button
-                  className="px-8 py-4 bg-gradient-to-r from-teal to-teal-deep dark:from-teal-neon dark:to-teal-bright text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-teal/30 dark:hover:shadow-teal-neon/30 transition-all duration-250 btn-glow"
+                  className="px-8 py-4 bg-cream dark:bg-night-card text-gold dark:text-gold-neon font-semibold rounded-full border-2 border-gold dark:border-gold-neon shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-250"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -439,7 +439,7 @@ export const Home = () => {
               <p className="text-2xl font-bold text-ink dark:text-dark-heading mb-2">Jelajahi Produk Berdasarkan Region</p>
               <p className="text-stone-text dark:text-dark-muted mb-8">5 Pulau Besar & 5 Kepulauan dengan keunikan budaya masing-masing</p>
               <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white font-semibold rounded-full shadow-md hover:shadow-lg hover:shadow-coral/30 dark:hover:shadow-coral-neon/30 transition-all duration-250 flex items-center gap-2 mx-auto btn-glow"
+                className="px-8 py-4 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night font-semibold rounded-full shadow-md hover:shadow-lg hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-250 flex items-center gap-2 mx-auto btn-glow"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -527,7 +527,7 @@ export const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/products">
                 <motion.button
-                  className="px-8 py-4 bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-coral/30 dark:hover:shadow-coral-neon/30 transition-all duration-250 btn-glow"
+                  className="px-8 py-4 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-250 btn-glow"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -536,7 +536,7 @@ export const Home = () => {
               </Link>
               <Link to="/edutainment">
                 <motion.button
-                  className="px-8 py-4 bg-gradient-to-r from-teal to-teal-deep dark:from-teal-neon dark:to-teal-bright text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-teal/30 dark:hover:shadow-teal-neon/30 transition-all duration-250 btn-glow"
+                  className="px-8 py-4 bg-cream dark:bg-night-card text-gold dark:text-gold-neon font-semibold rounded-full border-2 border-gold dark:border-gold-neon shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-250"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -590,7 +590,7 @@ export const Home = () => {
 
             <Link to="/partnership">
               <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-cat-batik to-cat-weave dark:from-cat-cat-batik-dark dark:to-cat-weave-dark text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-cat-batik/30 dark:hover:shadow-cat-cat-batik-dark/30 transition-all duration-250 btn-glow"
+                className="px-8 py-4 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-250 btn-glow"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

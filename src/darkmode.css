@@ -2,6 +2,11 @@
    LegacyTrace — Premium Design System CSS
    ══════════════════════════════════════════ */
 
+/* ── Global Box Sizing ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* ── Smooth Transitions ── */
 * {
   transition-property: background-color, border-color, color, transform, box-shadow, opacity;
@@ -22,6 +27,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.01em;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Fix Double Scrollbar ── */
+#root {
+  width: 100%;
+}
+
+/* ── Prevent Horizontal Overflow ── */
+main {
+  width: 100%;
+}
+
+section {
+  max-width: 100%;
 }
 
 /* ══════════════════════
@@ -391,4 +412,14 @@ body {
   :root:not(.light) {
     color-scheme: dark;
   }
+}
+
+/* Fix scrollbar issues */
+* {
+  overflow-x: clip !important;
+}
+
+html, body, #root {
+  overflow-x: visible !important;
+  overflow-y: auto !important;
 }

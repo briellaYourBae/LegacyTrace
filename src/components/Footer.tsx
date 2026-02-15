@@ -14,19 +14,16 @@ export const Footer = () => {
 
   return (
     <motion.footer
-      className="relative mt-20 border-t border-stone-100/50 dark:border-night-border/50"
+      className="relative mt-12 border-t border-stone-100/50 dark:border-night-border/50"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      {/* Gradient divider line */}
-      <div className="section-divider" />
-
-      <div className="bg-warm-sand/50 dark:bg-night-surface/50 py-16">
+      <div className="bg-warm-sand/50 dark:bg-night-surface/50 py-8">
         <div className="max-w-6xl mx-auto px-8">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* Brand */}
             <div>
               <h3 className="text-2xl font-serif font-bold gradient-text mb-3">LegacyTrace</h3>
@@ -67,16 +64,16 @@ export const Footer = () => {
           </div>
 
           {/* Bottom bar */}
-          <div className="section-divider mb-6" />
+          <div className="border-t border-stone-100/50 dark:border-night-border/50 pt-6 mt-2">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-muted-text dark:text-dark-muted">
-              © {currentYear} <span className="font-semibold gradient-text">LegacyTrace</span> — Built with ❤️ for Indonesian Artisans
+            <p className="text-xs text-muted-text dark:text-dark-muted font-serif italic">
+              © {currentYear} <span className="font-semibold gradient-text">LegacyTrace</span> — Crafted with passion for Indonesia's heritage
             </p>
             <p className="text-xs text-muted-text dark:text-dark-muted">
               Ethical Supply Chain • Transparent Commerce
             </p>
           </div>
-
+          </div>
         </div>
       </div>
     </motion.footer>
