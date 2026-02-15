@@ -93,18 +93,18 @@ export const Home = () => {
       icon: <BookOpen className="w-7 h-7" />,
       title: 'Kisah Artisan',
       desc: 'Temui para pembuat di balik produk. Dengarkan kisah hidup, passion, dan budaya mereka.',
-      color: 'text-cat-batik dark:text-cat-cat-batik-dark',
+      color: 'text-cat-batik dark:text-cat-batik-dark',
       bg: 'bg-purple-50 dark:bg-purple-950/30'
     }
   ]
 
   const categories = [
-    { icon: <Palette className="w-8 h-8" />, name: 'Batik', desc: 'Pola batik tulis tradisional', color: 'text-cat-batik dark:text-cat-cat-batik-dark', bg: 'bg-purple-50 dark:bg-purple-950/20' },
+    { icon: <Palette className="w-8 h-8" />, name: 'Batik', desc: 'Pola batik tulis tradisional', color: 'text-cat-batik dark:text-cat-batik-dark', bg: 'bg-purple-50 dark:bg-purple-950/20' },
     { icon: <Utensils className="w-8 h-8" />, name: 'Makanan', desc: 'Kuliner lokal autentik', color: 'text-coral dark:text-coral-neon', bg: 'bg-coral-soft dark:bg-coral-glow-bg' },
     { icon: <Hammer className="w-8 h-8" />, name: 'Kerajinan', desc: 'Artefak budaya buatan tangan', color: 'text-teal dark:text-teal-neon', bg: 'bg-teal-soft dark:bg-teal-glow-bg' },
     { icon: <Scissors className="w-8 h-8" />, name: 'Tenun', desc: 'Tenunan tekstil rumit', color: 'text-cat-weave dark:text-cat-weave-dark', bg: 'bg-indigo-50 dark:bg-indigo-950/20' },
     { icon: <Coffee className="w-8 h-8" />, name: 'Gerabah', desc: 'Kreasi keramik artisan', color: 'text-cat-pottery dark:text-cat-pottery-dark', bg: 'bg-amber-50 dark:bg-amber-950/20' },
-    { icon: <Leaf className="w-8 h-8" />, name: 'Herbal', desc: 'Produk kesehatan tradisional', color: 'text-cat-herbal dark:text-cat-cat-herbal-dark', bg: 'bg-green-50 dark:bg-green-950/20' }
+    { icon: <Leaf className="w-8 h-8" />, name: 'Herbal', desc: 'Produk kesehatan tradisional', color: 'text-cat-herbal dark:text-cat-herbal-dark', bg: 'bg-green-50 dark:bg-green-950/20' }
   ]
 
   const containerVariants = {
@@ -290,7 +290,7 @@ export const Home = () => {
               variants={itemVariants}
               whileHover={{ y: -6 }}
             >
-              <div className={`w - 14 h - 14 ${feature.bg} rounded - 2xl flex items - center justify - center mx - auto mb - 5 ${feature.color} group - hover: scale - 110 transition - transform duration - 300`}>
+              <div className={`w-14 h-14 ${feature.bg} rounded-2xl flex items-center justify-center mx-auto mb-5 ${feature.color} group-hover:scale-110 transition-transform duration-300`}>
                 {feature.icon}
               </div>
               <h3 className="text-lg font-serif font-bold text-ink dark:text-dark-heading mb-2 group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">{feature.title}</h3>
@@ -327,7 +327,7 @@ export const Home = () => {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.02] to-teal/[0.02] dark:from-gold-neon/[0.04] dark:to-teal-neon/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative z-10">
-                <div className={`w - 16 h - 16 ${cat.bg} rounded - 2xl flex items - center justify - center mx - auto mb - 4 ${cat.color} group - hover: scale - 110 group - hover: rotate - 3 transition - transform duration - 300`}>
+                <div className={`w-16 h-16 ${cat.bg} rounded-2xl flex items-center justify-center mx-auto mb-4 ${cat.color} group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300`}>
                   {cat.icon}
                 </div>
                 <h3 className="text-lg font-serif font-bold text-ink dark:text-dark-heading mb-1 group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">{cat.name}</h3>
@@ -559,16 +559,16 @@ export const Home = () => {
         transition={{ duration: 0.6 }}
       >
         <motion.div
-          className="glass rounded-3xl text-center p-12 relative overflow-hidden border border-cat-batik/15 dark:border-cat-cat-batik-dark/15 shadow-xl"
+          className="glass rounded-3xl text-center p-12 relative overflow-hidden border border-cat-batik/15 dark:border-cat-batik-dark/15 shadow-xl"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-cat-batik/[0.03] to-cat-weave/[0.03] dark:from-cat-cat-batik-dark/[0.06] dark:to-cat-weave-dark/[0.06]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-cat-batik/[0.03] to-cat-weave/[0.03] dark:from-cat-batik-dark/[0.06] dark:to-cat-weave-dark/[0.06]" />
           <div className="relative z-10">
             <motion.div
-              className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-cat-batik to-cat-weave dark:from-cat-cat-batik-dark dark:to-cat-weave-dark rounded-full mb-6 shadow-lg"
+              className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-cat-batik to-cat-weave dark:from-cat-batik-dark dark:to-cat-weave-dark rounded-full mb-6 shadow-lg"
               initial={{ scale: 0 }}
               whileInView={{ scale: 1 }}
               viewport={{ once: true }}

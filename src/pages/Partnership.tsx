@@ -11,7 +11,7 @@ export const Partnership = () => {
     e.preventDefault()
     const form = e.currentTarget
     const formData = new FormData(form)
-    
+
     // Submit to Formspree
     fetch('https://formspree.io/f/xojndwjk', {
       method: 'POST',
@@ -30,7 +30,7 @@ export const Partnership = () => {
   return (
     <div className="min-h-screen relative page-transition">
       <BackgroundShapes variant="default" />
-      
+
       <motion.section
         className="max-w-4xl mx-auto px-8 py-20"
         initial={{ opacity: 0, y: 20 }}
@@ -44,7 +44,7 @@ export const Partnership = () => {
             animate={{ scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <Handshake className="w-12 h-12 text-coral dark:text-coral-neon" />
+            <Handshake className="w-12 h-12 text-gold dark:text-gold-neon" />
           </motion.div>
           <h1 className="text-5xl font-serif font-bold gradient-text mb-4">Kerja Sama dengan Kami</h1>
           <p className="text-xl text-stone-text dark:text-dark-body">
@@ -190,7 +190,7 @@ export const Partnership = () => {
 
             <motion.button
               type="submit"
-              className="w-full px-8 py-4 bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-coral/50 dark:hover:shadow-coral-neon/50 transition-all duration-250 flex items-center justify-center gap-2 btn-glow"
+              className="w-full px-8 py-4 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-gold/50 dark:hover:shadow-gold-neon/50 transition-all duration-250 flex items-center justify-center gap-2 btn-glow"
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
             >

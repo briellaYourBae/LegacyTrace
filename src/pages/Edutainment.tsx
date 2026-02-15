@@ -2,9 +2,10 @@ import { motion } from 'framer-motion'
 import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { QuizCard } from '../components/QuizCard'
-import { 
-  Map, Landmark, Trees, Palmtree, Bird, 
-  Globe, Scale, Heart, Recycle, Award, Leaf, Search
+import { BackgroundShapes } from '../components/BackgroundShapes'
+import {
+  Map, Landmark, Trees, Palmtree, Bird,
+  Globe, Scale, Heart, Recycle, Award, Leaf, Search, Sparkles, BookOpen
 } from 'lucide-react'
 
 type Island = 'sumatra' | 'java' | 'kalimantan' | 'sulawesi' | 'papua'
@@ -383,11 +384,11 @@ const islandQuizzes: Record<Island, QuizQuestion[]> = {
 export const Edutainment = () => {
   const location = useLocation()
   const [selectedIsland, setSelectedIsland] = useState<Island>('java')
-  
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [])
-  
+
   const scrollToQuiz = () => {
     const quizSection = document.getElementById('quiz-section')
     if (quizSection) {
@@ -399,36 +400,47 @@ export const Edutainment = () => {
     setSelectedIsland(island)
     setTimeout(scrollToQuiz, 100)
   }
-  
-  const islands: { id: Island; name: string; icon: React.ReactNode }[] = [
-    { id: 'sumatra', name: 'Sumatra', icon: <Palmtree className="w-6 h-6" /> },
-    { id: 'java', name: 'Jawa', icon: <Landmark className="w-6 h-6" /> },
-    { id: 'kalimantan', name: 'Kalimantan', icon: <Trees className="w-6 h-6" /> },
-    { id: 'sulawesi', name: 'Sulawesi', icon: <Map className="w-6 h-6" /> },
-    { id: 'papua', name: 'Papua', icon: <Bird className="w-6 h-6" /> }
+
+  const islands: { id: Island; name: string; icon: React.ReactNode; desc: string }[] = [
+    { id: 'sumatra', name: 'Sumatra', icon: <Palmtree className="w-6 h-6" />, desc: 'Songket & Tenun' },
+    { id: 'java', name: 'Jawa', icon: <Landmark className="w-6 h-6" />, desc: 'Batik & Wayang' },
+    { id: 'kalimantan', name: 'Kalimantan', icon: <Trees className="w-6 h-6" />, desc: 'Rotan & Mandau' },
+    { id: 'sulawesi', name: 'Sulawesi', icon: <Map className="w-6 h-6" />, desc: 'Sutra Bugis' },
+    { id: 'papua', name: 'Papua', icon: <Bird className="w-6 h-6" />, desc: 'Noken & Asmat' }
   ]
-  
+
   const lessons = [
     {
-      icon: <Scale className="w-5 h-5" />,
+      icon: <Scale className="w-6 h-6" />,
       title: 'Apa itu Fair Trade?',
-      content: 'Fair trade memastikan bahwa artisan dan petani menerima kompensasi yang adil untuk pekerjaan mereka, mempromosikan kehidupan sustainable dan praktik produksi ethical.'
+      content: 'Fair trade memastikan artisan dan petani menerima kompensasi yang adil, mempromosikan kehidupan sustainable dan praktik produksi ethical.',
+      accent: 'from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright'
     },
     {
-      icon: <Search className="w-5 h-5" />,
+      icon: <Search className="w-6 h-6" />,
       title: 'Transparansi Supply Chain',
-      content: 'Mengetahui dari mana produk berasal dan bagaimana dibuat menciptakan akuntabilitas dan mendukung komunitas yang layak mendapat pengakuan atas craftsmanship mereka.'
+      content: 'Mengetahui dari mana produk berasal dan bagaimana dibuat menciptakan akuntabilitas dan mendukung komunitas artisan.',
+      accent: 'from-teal to-teal-deep dark:from-teal-neon dark:to-teal-bright'
     },
     {
-      icon: <Landmark className="w-5 h-5" />,
+      icon: <Landmark className="w-6 h-6" />,
       title: 'Pelestarian Cultural',
-      content: 'Kerajinan tradisional membawa warisan budaya. Mendukung artisan membantu melestarikan teknik berabad-abad dan identitas cultural.'
+      content: 'Kerajinan tradisional membawa warisan budaya. Mendukung artisan membantu melestarikan teknik berabad-abad.',
+      accent: 'from-cat-batik to-cat-weave dark:from-cat-batik-dark dark:to-cat-weave-dark'
     },
     {
-      icon: <Leaf className="w-5 h-5" />,
+      icon: <Leaf className="w-6 h-6" />,
       title: 'Praktik Sustainable',
-      content: 'Banyak UMKM menggunakan bahan alami dan metode eco-friendly, mengurangi dampak lingkungan sambil mempertahankan kualitas dan authenticity.'
+      content: 'Banyak UMKM menggunakan bahan alami dan metode eco-friendly, mengurangi dampak lingkungan sambil mempertahankan kualitas.',
+      accent: 'from-teal to-cat-herbal dark:from-teal-neon dark:to-cat-herbal-dark'
     }
+  ]
+
+  const commitments = [
+    { icon: <Globe className="w-10 h-10" />, title: 'Komunitas Global', desc: 'Mendukung UMKM di seluruh Indonesia', color: 'text-gold dark:text-gold-neon', bg: 'bg-gold-soft dark:bg-gold-glow-bg', border: 'border-gold/20 dark:border-gold-neon/20' },
+    { icon: <Award className="w-10 h-10" />, title: 'Quality Craftsmanship', desc: 'Melestarikan teknik tradisional', color: 'text-teal dark:text-teal-neon', bg: 'bg-teal-soft dark:bg-teal-glow-bg', border: 'border-teal/20 dark:border-teal-neon/20' },
+    { icon: <Scale className="w-10 h-10" />, title: 'Kompensasi Fair', desc: 'Memastikan artisan mendapat yang layak', color: 'text-cat-batik dark:text-cat-batik-dark', bg: 'bg-purple-50 dark:bg-purple-950/20', border: 'border-cat-batik/20 dark:border-cat-batik-dark/20' },
+    { icon: <Recycle className="w-10 h-10" />, title: 'Produksi Sustainable', desc: 'Praktik eco-friendly dan ethical', color: 'text-cat-herbal dark:text-cat-herbal-dark', bg: 'bg-green-50 dark:bg-green-950/20', border: 'border-cat-herbal/20 dark:border-cat-herbal-dark/20' }
   ]
 
   const containerVariants = {
@@ -440,34 +452,64 @@ export const Edutainment = () => {
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } }
   }
 
   return (
-    <div className="min-h-screen pb-20 page-transition">
-      {/* Header */}
+    <div className="min-h-screen pb-20 relative page-transition">
+      <BackgroundShapes variant="minimal" />
+
+      {/* ═══════════════════════════════════
+          HERO HEADER
+         ═══════════════════════════════════ */}
       <motion.section
-        className="bg-gradient-to-br from-gold-soft to-teal-soft dark:from-gold/10 dark:to-teal/10 max-w-6xl mx-auto px-8 py-12 rounded-2xl my-8 text-center relative overflow-hidden border border-stone-100 dark:border-night-border"
+        className="relative max-w-6xl mx-auto px-8 py-16 my-8 text-center overflow-hidden"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        {/* Background Patterns */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-gold/10 dark:bg-gold-neon/10 rounded-full"></div>
-          <div className="absolute bottom-10 right-10 w-24 h-24 bg-teal/10 dark:bg-teal-neon/10 rounded-lg rotate-45"></div>
+        {/* Decorative background */}
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-gold-soft via-cream to-teal-soft dark:from-gold/10 dark:via-night dark:to-teal/10 border border-stone-100/60 dark:border-night-border/60" />
+        <div className="absolute inset-0 rounded-3xl overflow-hidden">
+          <div className="absolute top-8 left-8 w-40 h-40 bg-gold/8 dark:bg-gold-neon/8 rounded-full blur-2xl" />
+          <div className="absolute bottom-8 right-8 w-32 h-32 bg-teal/8 dark:bg-teal-neon/8 rounded-full blur-2xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-cat-batik/5 dark:bg-cat-batik-dark/5 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10">
-          <h1 className="text-5xl font-serif font-bold text-gold dark:text-gold-neon mb-3">🎓 Edutainment Hub</h1>
-          <p className="text-xl text-stone-text dark:text-dark-body">
-            Pelajari tentang produksi ethical, fair trade, dan komunitas artisan
-          </p>
+          <motion.div
+            className="inline-flex items-center gap-2 px-4 py-2 bg-gold/10 dark:bg-gold-neon/10 rounded-full mb-6"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+          >
+            <Sparkles className="w-4 h-4 text-gold dark:text-gold-neon" />
+            <span className="text-sm font-semibold text-gold dark:text-gold-neon">Belajar Sambil Bermain</span>
+          </motion.div>
+
+          <motion.h1
+            className="text-4xl md:text-5xl font-serif font-bold gradient-text mb-4"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            Edutainment Hub
+          </motion.h1>
+          <motion.p
+            className="text-lg text-stone-text dark:text-dark-body max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            Pelajari tentang produksi ethical, fair trade, dan komunitas artisan Indonesia melalui konten interaktif
+          </motion.p>
         </div>
       </motion.section>
 
-      {/* Lessons Grid */}
+      {/* ═══════════════════════════════════
+          LESSONS GRID
+         ═══════════════════════════════════ */}
       <motion.section
         className="max-w-6xl mx-auto px-8 mb-16"
         variants={containerVariants}
@@ -475,87 +517,131 @@ export const Edutainment = () => {
         whileInView="visible"
         viewport={{ once: true }}
       >
+        <motion.div className="text-center mb-10" variants={itemVariants}>
+          <h2 className="text-3xl font-serif font-bold text-ink dark:text-dark-heading mb-2">
+            Pelajari <span className="gradient-text">Konsep Penting</span>
+          </h2>
+          <p className="text-stone-text dark:text-dark-muted">Memahami prinsip-prinsip di balik produksi ethical dan fair trade</p>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {lessons.map((lesson, idx) => (
-            <motion.div 
-              key={idx} 
-              className="bg-pure-card dark:bg-night-card p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-250 border-t-4 border-coral dark:border-coral-neon"
+            <motion.div
+              key={idx}
+              className="glass p-7 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-stone-100/60 dark:border-night-border/60 card-hover group relative overflow-hidden"
               variants={itemVariants}
+              whileHover={{ y: -6 }}
             >
-              <div className="w-10 h-10 bg-gradient-to-r from-gold to-teal dark:from-gold-neon dark:to-teal-neon text-white rounded-full flex items-center justify-center font-bold mb-4 text-lg">
+              {/* Top accent gradient bar */}
+              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${lesson.accent} opacity-60 group-hover:opacity-100 transition-opacity`} />
+
+              <div className={`w-12 h-12 bg-gradient-to-r ${lesson.accent} text-white rounded-2xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}>
                 {lesson.icon}
               </div>
-              <h3 className="text-xl font-serif font-bold text-ink dark:text-dark-heading mb-3">{lesson.title}</h3>
+              <h3 className="text-lg font-serif font-bold text-ink dark:text-dark-heading mb-3 group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">{lesson.title}</h3>
               <p className="text-stone-text dark:text-dark-body leading-relaxed text-sm">{lesson.content}</p>
             </motion.div>
           ))}
         </div>
       </motion.section>
 
-      {/* Interactive Quiz Section */}
+      {/* ═══════════════════════════════════
+          INTERACTIVE QUIZ SECTION
+         ═══════════════════════════════════ */}
       <motion.section
-        className="max-w-6xl mx-auto px-8 mb-16 bg-pure-card dark:bg-night-card rounded-2xl shadow-md p-8 border border-stone-100 dark:border-night-border"
+        className="max-w-6xl mx-auto px-8 mb-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-serif font-bold text-gold dark:text-gold-neon mb-2 text-center">🎮 Interactive Learning</h2>
-        <p className="text-lg text-stone-text dark:text-dark-body text-center mb-8">
-          Pilih pulau dan uji pengetahuan Anda tentang kerajinan tradisional Indonesia!
-        </p>
+        <div className="glass rounded-3xl shadow-xl p-8 md:p-10 border border-stone-100/60 dark:border-night-border/60 relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.02] to-teal/[0.02] dark:from-gold-neon/[0.04] dark:to-teal-neon/[0.04]" />
 
-        <div className="flex flex-wrap gap-3 mb-8 justify-center">
-          {islands.map(island => (
-            <motion.button
-              key={island.id}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-250 flex items-center gap-2 ${
-                selectedIsland === island.id
-                  ? 'bg-coral hover:bg-coral-deep dark:bg-coral-neon dark:hover:bg-coral-bright text-white shadow-md'
-                  : 'bg-warm-sand dark:bg-night-border text-ink dark:text-dark-body hover:bg-gold-soft dark:hover:bg-gold-glow-bg'
-              }`}
-              onClick={() => handleIslandSelect(island.id)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+          <div className="relative z-10">
+            <motion.div
+              className="text-center mb-8"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
             >
-              <span className="text-2xl flex items-center justify-center">{island.icon}</span>
-              <span className="text-lg">{island.name}</span>
-            </motion.button>
-          ))}
-        </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal/10 dark:bg-teal-neon/10 rounded-full mb-4">
+                <BookOpen className="w-4 h-4 text-teal dark:text-teal-neon" />
+                <span className="text-sm font-semibold text-teal dark:text-teal-neon">Interactive Quiz</span>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-ink dark:text-dark-heading mb-2">
+                Uji <span className="gradient-text">Pengetahuan</span> Anda
+              </h2>
+              <p className="text-stone-text dark:text-dark-body">
+                Pilih pulau dan uji pengetahuan Anda tentang kerajinan tradisional Indonesia!
+              </p>
+            </motion.div>
 
-        <motion.div
-          id="quiz-section"
-          key={selectedIsland}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <QuizCard questions={islandQuizzes[selectedIsland]} />
-        </motion.div>
+            {/* Island Selector */}
+            <div className="flex flex-wrap gap-3 mb-8 justify-center">
+              {islands.map(island => (
+                <motion.button
+                  key={island.id}
+                  className={`px-5 py-3 rounded-2xl font-semibold transition-all duration-300 flex items-center gap-3 ${selectedIsland === island.id
+                      ? 'bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30'
+                      : 'glass text-ink dark:text-dark-body hover:bg-gradient-to-r hover:from-gold-soft hover:to-teal-soft dark:hover:from-gold-glow-bg dark:hover:to-teal-glow-bg border border-stone-100/50 dark:border-night-border/50'
+                    }`}
+                  onClick={() => handleIslandSelect(island.id)}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span className="flex items-center justify-center">{island.icon}</span>
+                  <div className="text-left">
+                    <span className="block text-sm font-bold">{island.name}</span>
+                    <span className={`block text-xs ${selectedIsland === island.id ? 'text-white/80 dark:text-night/60' : 'text-stone-text dark:text-dark-muted'}`}>{island.desc}</span>
+                  </div>
+                </motion.button>
+              ))}
+            </div>
+
+            <motion.div
+              id="quiz-section"
+              key={selectedIsland}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              <QuizCard questions={islandQuizzes[selectedIsland]} />
+            </motion.div>
+          </div>
+        </div>
       </motion.section>
 
-      {/* Ethical Commitment */}
+      {/* ═══════════════════════════════════
+          ETHICAL COMMITMENT
+         ═══════════════════════════════════ */}
       <motion.section
         className="max-w-6xl mx-auto px-8"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-serif font-bold text-gold dark:text-gold-neon text-center mb-12">💚 Komitmen Kami</h2>
+        <motion.div className="text-center mb-10" variants={itemVariants}>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold text-ink dark:text-dark-heading mb-2">
+            Komitmen <span className="gradient-text">Kami</span>
+          </h2>
+          <p className="text-stone-text dark:text-dark-muted">Nilai-nilai yang kami pegang teguh dalam setiap langkah</p>
+        </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { icon: <Globe className="w-12 h-12 text-gold" />, title: 'Komunitas Global', desc: 'Mendukung UMKM di seluruh Indonesia' },
-            { icon: <Award className="w-12 h-12 text-coral" />, title: 'Quality Craftsmanship', desc: 'Melestarikan teknik tradisional' },
-            { icon: <Scale className="w-12 h-12 text-purple-500" />, title: 'Kompensasi Fair', desc: 'Memastikan artisan mendapat yang layak' },
-            { icon: <Recycle className="w-12 h-12 text-teal" />, title: 'Produksi Sustainable', desc: 'Praktik eco-friendly dan ethical' }
-          ].map((item, idx) => (
-            <div key={idx} className="bg-gold-soft dark:bg-gold-glow-bg p-8 rounded-2xl text-center hover:shadow-md transition-all duration-250 border border-gold/20 dark:border-gold-neon/20">
-              <div className="flex justify-center mb-4">{item.icon}</div>
-              <h3 className="text-lg font-serif font-bold text-ink dark:text-dark-heading mb-2">{item.title}</h3>
+          {commitments.map((item, idx) => (
+            <motion.div
+              key={idx}
+              className={`${item.bg} p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300 border ${item.border} card-hover group`}
+              variants={itemVariants}
+              whileHover={{ y: -6 }}
+            >
+              <div className={`flex justify-center mb-4 ${item.color} group-hover:scale-110 transition-transform duration-300`}>{item.icon}</div>
+              <h3 className="text-lg font-serif font-bold text-ink dark:text-dark-heading mb-2 group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">{item.title}</h3>
               <p className="text-stone-text dark:text-dark-body text-sm">{item.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </motion.section>

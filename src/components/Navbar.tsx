@@ -60,9 +60,9 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className={`mx-auto my-4 rounded-2xl transition-all duration-300 px-6 md:px-12 py-3 ${isScrolled
-              ? 'glass shadow-xl shadow-gold/5 dark:shadow-gold-neon/10 border border-stone-100/60 dark:border-night-border/60'
-              : 'bg-transparent'
+          className={`mx-auto my-4 rounded-2xl transition-all duration-300 px-6 md:px-12 py-3 bg-white dark:bg-night-surface border border-stone-100/60 dark:border-night-border/60 ${isScrolled
+            ? 'shadow-xl shadow-gold/5 dark:shadow-gold-neon/10'
+            : 'shadow-md'
             }`}
         >
           <div className="flex justify-between items-center gap-8 md:gap-20">
@@ -94,8 +94,8 @@ export const Navbar = () => {
                         whileTap={{ scale: 0.95 }}
                       >
                         <span className={`text-sm font-medium transition-colors duration-250 ${isActive
-                            ? 'text-gold dark:text-gold-neon font-bold'
-                            : 'text-charcoal dark:text-dark-body hover:text-gold dark:hover:text-gold-neon'
+                          ? 'text-gold dark:text-gold-neon font-bold'
+                          : 'text-charcoal dark:text-dark-body hover:text-gold dark:hover:text-gold-neon'
                           }`}>
                           {item.label}
                         </span>
@@ -165,8 +165,8 @@ export const Navbar = () => {
                     <Link to={item.path} onClick={() => setIsOpen(false)}>
                       <motion.div
                         className={`px-6 py-4 rounded-lg text-lg font-medium transition-all duration-250 ${isActive
-                            ? 'bg-gold-soft dark:bg-gold-glow-bg text-gold dark:text-gold-neon font-bold border-l-4 border-gold dark:border-gold-neon'
-                            : 'text-charcoal dark:text-dark-body hover:text-gold dark:hover:text-gold-neon hover:bg-warm-sand dark:hover:bg-night-border'
+                          ? 'bg-gold-soft dark:bg-gold-glow-bg text-gold dark:text-gold-neon font-bold border-l-4 border-gold dark:border-gold-neon'
+                          : 'text-charcoal dark:text-dark-body hover:text-gold dark:hover:text-gold-neon hover:bg-warm-sand dark:hover:bg-night-border'
                           }`}
                         whileHover={{ x: 4 }}
                       >

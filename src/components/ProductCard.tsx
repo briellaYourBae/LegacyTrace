@@ -20,10 +20,10 @@ const getCategoryColor = (category: string) => {
 }
 
 export const ProductCard = ({ product, selectedCategory }: ProductCardProps) => {
-  const passportLink = selectedCategory && selectedCategory !== 'all' 
+  const passportLink = selectedCategory && selectedCategory !== 'all'
     ? `/passport/${product.id}?category=${selectedCategory}`
     : `/passport/${product.id}`
-  
+
   return (
     <Link to={passportLink}>
       <motion.div
@@ -35,8 +35,8 @@ export const ProductCard = ({ product, selectedCategory }: ProductCardProps) => 
         <div className="relative overflow-hidden h-64 group/image">
           <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/70 to-transparent dark:from-night/90 dark:via-night/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <motion.button 
-              className="px-6 py-3 bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white font-semibold rounded-full transition-all duration-250 shadow-xl hover:shadow-2xl hover:shadow-coral/50 dark:hover:shadow-coral-neon/50 btn-glow"
+            <motion.button
+              className="px-6 py-3 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night font-semibold rounded-full transition-all duration-250 shadow-xl hover:shadow-2xl hover:shadow-gold/50 dark:hover:shadow-gold-neon/50 btn-glow"
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -44,12 +44,12 @@ export const ProductCard = ({ product, selectedCategory }: ProductCardProps) => 
             </motion.button>
           </div>
         </div>
-        
+
         <div className="p-6 flex-grow flex flex-col relative z-10">
           <h3 className="text-xl font-serif font-bold text-ink dark:text-dark-heading mb-1 group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">{product.name}</h3>
           <p className="text-gold dark:text-gold-neon font-semibold text-sm mb-1">{product.umkm}</p>
           <p className="text-stone-text dark:text-dark-body text-sm mb-4">{product.village}</p>
-          
+
           <div className="flex flex-wrap gap-2 mt-auto">
             {product.ethicalBadges.map((badge, idx) => (
               <motion.span

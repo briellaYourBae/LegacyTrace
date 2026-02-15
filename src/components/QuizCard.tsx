@@ -50,25 +50,25 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
         animate={{ opacity: 1, scale: 1 }}
       >
         <div className="flex justify-center mb-4">
-          {score === questions.length 
-            ? <Trophy className="w-20 h-20 text-yellow-500" /> 
-            : score >= questions.length * 0.6 
-            ? <Star className="w-20 h-20 text-coral" /> 
-            : <BookOpen className="w-20 h-20 text-gold" />}
+          {score === questions.length
+            ? <Trophy className="w-20 h-20 text-yellow-500" />
+            : score >= questions.length * 0.6
+              ? <Star className="w-20 h-20 text-gold dark:text-gold-neon" />
+              : <BookOpen className="w-20 h-20 text-gold" />}
         </div>
         <h3 className="text-2xl font-serif font-bold text-gold dark:text-gold-neon mb-2">Kuis Selesai!</h3>
         <p className="text-lg text-teal dark:text-teal-neon font-semibold mb-2">
           Skor Anda {score} dari {questions.length}
         </p>
         <p className="text-stone-text dark:text-dark-body mb-6 text-base">
-          {score === questions.length 
+          {score === questions.length
             ? 'Sempurna! Anda ahli dalam kisah produk ini!'
             : score >= questions.length * 0.6
-            ? 'Bagus sekali! Anda memahami rantai pasokan dengan baik!'
-            : 'Usaha yang baik! Pelajari lebih lanjut tentang produksi etis!'}
+              ? 'Bagus sekali! Anda memahami rantai pasokan dengan baik!'
+              : 'Usaha yang baik! Pelajari lebih lanjut tentang produksi etis!'}
         </p>
         <motion.button
-          className="px-6 py-3 bg-coral hover:bg-coral-deep dark:bg-coral-neon dark:hover:bg-coral-bright text-white rounded-full font-semibold transition-colors duration-250 shadow-md flex items-center gap-2 mx-auto"
+          className="px-6 py-3 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 flex items-center gap-2 mx-auto btn-glow"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={resetQuiz}
@@ -110,25 +110,23 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
             {question.options.map((option, idx) => (
               <motion.button
                 key={idx}
-                className={`w-full flex items-center gap-4 p-4 border-2 rounded-lg transition-all duration-250 text-left font-medium ${
-                  selected === idx 
-                    ? idx === question.correct 
+                className={`w-full flex items-center gap-4 p-4 border-2 rounded-lg transition-all duration-250 text-left font-medium ${selected === idx
+                    ? idx === question.correct
                       ? 'border-teal bg-teal-soft dark:border-teal-neon dark:bg-teal-glow-bg text-ink dark:text-dark-body'
                       : 'border-red-500 bg-red-500/10 text-ink dark:text-dark-body'
                     : 'border-stone-100 dark:border-night-border hover:border-gold dark:hover:border-gold-neon bg-pure-card dark:bg-night-card text-ink dark:text-dark-body'
-                }`}
+                  }`}
                 onClick={() => !answered && handleAnswer(idx)}
                 whileHover={!answered ? { scale: 1.02 } : {}}
                 whileTap={!answered ? { scale: 0.98 } : {}}
                 disabled={answered}
               >
-                <span className={`w-8 h-8 rounded-full font-bold flex items-center justify-center ${
-                  selected === idx
-                    ? idx === question.correct 
+                <span className={`w-8 h-8 rounded-full font-bold flex items-center justify-center ${selected === idx
+                    ? idx === question.correct
                       ? 'bg-teal dark:bg-teal-neon text-white'
                       : 'bg-red-500 text-white'
                     : 'bg-gold dark:bg-gold-neon text-white'
-                }`}>
+                  }`}>
                   {String.fromCharCode(65 + idx)}
                 </span>
                 <span>{option}</span>
@@ -141,7 +139,7 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
           <AnimatePresence>
             {answered && (
               <motion.div
-                className="bg-coral-soft dark:bg-coral-glow-bg border-l-4 border-coral dark:border-coral-neon p-4 rounded mb-6"
+                className="bg-gold-soft dark:bg-gold-glow-bg border-l-4 border-gold dark:border-gold-neon p-4 rounded-xl mb-6"
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
@@ -153,7 +151,7 @@ export const QuizCard = ({ questions }: QuizCardProps) => {
 
           {answered && (
             <motion.button
-              className="w-full py-3 bg-coral hover:bg-coral-deep dark:bg-coral-neon dark:hover:bg-coral-bright text-white rounded-lg font-semibold shadow-md hover:shadow-lg transition-all duration-250"
+              className="w-full py-3 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night rounded-xl font-semibold shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-300 btn-glow"
               onClick={handleNext}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

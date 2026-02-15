@@ -73,7 +73,7 @@ export const FloatingMenu = () => {
 
             {/* Partnership Button */}
             <motion.button
-              className="w-14 h-14 bg-gradient-to-r from-cat-batik to-cat-weave dark:from-cat-cat-batik-dark dark:to-cat-weave-dark text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(124,58,237,0.5)] dark:hover:shadow-[0_20px_50px_rgba(167,139,250,0.3)] flex items-center justify-center transition-all duration-300"
+              className="w-14 h-14 bg-gradient-to-r from-cat-batik to-cat-weave dark:from-cat-batik-dark dark:to-cat-weave-dark text-white rounded-full shadow-2xl hover:shadow-[0_20px_50px_rgba(124,58,237,0.5)] dark:hover:shadow-[0_20px_50px_rgba(167,139,250,0.3)] flex items-center justify-center transition-all duration-300"
               onClick={goToPartnership}
               whileHover={{ scale: 1.15, rotate: 15 }}
               whileTap={{ scale: 0.9 }}
@@ -87,7 +87,7 @@ export const FloatingMenu = () => {
 
       {/* Main Toggle Button */}
       <motion.button
-        className="w-16 h-16 bg-gradient-to-r from-coral to-coral-deep dark:from-coral-neon dark:to-coral-bright text-white rounded-full shadow-2xl hover:shadow-[0_25px_60px_rgba(232,93,74,0.5)] dark:hover:shadow-[0_25px_60px_rgba(255,123,107,0.4)] flex items-center justify-center text-3xl transition-all duration-300"
+        className="w-16 h-16 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night rounded-full shadow-2xl hover:shadow-[0_25px_60px_rgba(184,134,11,0.5)] dark:hover:shadow-[0_25px_60px_rgba(232,197,96,0.4)] flex items-center justify-center text-3xl transition-all duration-300"
         onClick={() => setShowMenu(!showMenu)}
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.9 }}

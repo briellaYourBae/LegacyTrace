@@ -3,7 +3,9 @@
    ══════════════════════════════════════════ */
 
 /* ── Global Box Sizing ── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -15,10 +17,7 @@
 }
 
 /* ── Smooth Scroll ── */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px;
-}
+/* scroll-behavior is on body because body is the scroll container */
 
 /* ── Body Optimizations ── */
 body {
@@ -414,12 +413,33 @@ section {
   }
 }
 
-/* Fix scrollbar issues */
-* {
-  overflow-x: clip !important;
+/* ══════════════════════
+   Scrollbar — single scroll context
+   ══════════════════════ */
+
+/* html must NOT scroll — only body scrolls */
+html {
+  overflow: hidden;
+  height: 100%;
 }
 
-html, body, #root {
-  overflow-x: visible !important;
-  overflow-y: auto !important;
+body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  /* always one scrollbar, no layout shift */
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* clip decorative overflow (BackgroundShapes, mesh gradients) */
+#root {
+  min-height: 100%;
+  overflow-x: clip;
+}
+
+/* page-transition animation can push content via translateY,
+   clip it so no extra scrollbar appears during the animation */
+.page-transition {
+  overflow: clip;
 }
