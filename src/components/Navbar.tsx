@@ -24,13 +24,11 @@ export const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false)
+    window.scrollTo(0, 0)
   }, [location.pathname])
 
   const handleNavClick = (e: React.MouseEvent, path: string) => {
-    if (location.pathname === path) {
-      e.preventDefault()
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   const navItems = [
