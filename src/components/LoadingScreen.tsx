@@ -34,7 +34,7 @@ export const LoadingScreen = () => {
           className="mb-8 flex items-center justify-center"
           initial={{ scale: 0.3, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 10, opacity: 0 }}
+          exit={{ scale: 20, opacity: 0 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <motion.img

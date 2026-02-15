@@ -11,21 +11,6 @@ import {
   Award, Clock, Quote, Sparkles, ArrowRight, Star
 } from 'lucide-react'
 
-// Generate a deterministic avatar URL based on the artisan name
-const getArtisanAvatar = (name: string, gender: 'men' | 'women' = 'men') => {
-  let hash = 0
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash)
-  }
-  const num = Math.abs(hash) % 90 + 1
-  return `https://randomuser.me/api/portraits/${gender}/${num}.jpg`
-}
-
-const getGender = (name: string): 'men' | 'women' => {
-  if (name.startsWith('Ibu') || name.startsWith('Mak') || name.startsWith('Ni ')) return 'women'
-  return 'men'
-}
-
 export const Passport = () => {
   const { productId } = useParams()
   const navigate = useNavigate()
@@ -270,27 +255,45 @@ export const Passport = () => {
               <div className="lg:col-span-1 flex flex-col items-center text-center">
                 {/* Avatar */}
                 <motion.div
-                  className="w-28 h-28 rounded-full overflow-hidden shadow-xl mb-5 ring-4 ring-white dark:ring-night-card"
+                  className="w-28 h-28 rounded-full overflow-hidden shadow-xl mb-5 ring-4 ring-white dark:ring-night-card bg-gradient-to-br from-gold to-teal dark:from-gold-neon dark:to-teal-neon flex items-center justify-center"
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
                 >
-                  <img
-                    src={product.artisanPhotoUrl || getArtisanAvatar(product.artisanName, getGender(product.artisanName))}
-                    alt={product.artisanName}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement
-                      target.style.display = 'none'
-                      target.parentElement!.classList.add('bg-gradient-to-br', 'from-gold', 'to-teal', 'flex', 'items-center', 'justify-center')
-                      target.parentElement!.innerHTML = `<span class="text-4xl text-white font-serif font-bold">${product.artisanName.charAt(0)}</span>`
-                    }}
-                  />
+                  {product.artisanPhotoUrl ? (
+                    <img
+                      src={product.artisanPhotoUrl}
+                      alt={product.artisanName}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement
+                        target.style.display = 'none'
+                        const parent = target.parentElement
+                        if (parent) {
+                          parent.innerHTML = `<span class="text-4xl text-white font-serif font-bold">${product.artisanName.charAt(0)}</span>`
+                        }
+                      }}
+                    />
+                  ) : (
+                    <span className="text-4xl text-white font-serif font-bold">
+                      {product.artisanName.charAt(0)}
+                    </span>
+                  )}
                 </motion.div>
 
                 <h3 className="text-2xl font-serif font-bold text-ink dark:text-dark-heading mb-1">{product.artisanName}</h3>
-                <p className="text-sm text-teal dark:text-teal-neon font-semibold mb-5">Ahli Kerajinan Tradisional</p>
+                <p className="text-sm text-teal dark:text-teal-neon font-semibold mb-2">
+                  {product.category === 'batik' && 'Ahli Pembatik Tradisional'}
+                  {product.category === 'makanan' && 'Ahli Kuliner Tradisional'}
+                  {product.category === 'kerajinan' && 'Ahli Kerajinan Tradisional'}
+                  {product.category === 'tenun' && 'Ahli Penenun Tradisional'}
+                  {product.category === 'gerabah' && 'Ahli Pembuat Gerabah'}
+                  {product.category === 'herbal' && 'Ahli Herbalis Tradisional'}
+                </p>
+                <p className="text-xs text-stone-text dark:text-dark-muted mb-5">
+                  📍 {product.village}
+                </p>
 
                 {/* Stats Row */}
                 <div className="grid grid-cols-2 gap-3 w-full">
@@ -319,39 +322,47 @@ export const Passport = () => {
 
               {/* Right: Quote & Details */}
               <div className="lg:col-span-2 flex flex-col justify-center">
+                {/* Artisan Bio */}
+                <div className="mb-6 p-4 bg-gradient-to-r from-cream to-gold-soft/30 dark:from-night-card/50 dark:to-gold-glow-bg/20 rounded-xl border-l-4 border-gold dark:border-gold-neon">
+                  <h4 className="text-sm font-semibold text-gold dark:text-gold-neon mb-2 flex items-center gap-2">
+                    <Award className="w-4 h-4" /> Tentang Pengrajin
+                  </h4>
+                  <p className="text-sm text-stone-text dark:text-dark-body leading-relaxed">
+                    {product.artisanName} adalah pengrajin berpengalaman dengan lebih dari {product.artisanExperience} tahun dedikasi dalam melestarikan warisan budaya Indonesia. 
+                    Keahlian dan ketekunan beliau telah menghasilkan karya-karya berkualitas tinggi yang menggabungkan teknik tradisional dengan sentuhan artistik yang unik.
+                  </p>
+                </div>
+
                 {/* Main Quote */}
                 <div className="relative mb-6">
                   <Quote className="w-10 h-10 text-gold/20 dark:text-gold-neon/20 absolute -top-2 -left-2" />
                   <blockquote className="pl-8 text-xl italic text-ink dark:text-dark-heading leading-relaxed font-serif">
                     "{product.artisanQuote}"
                   </blockquote>
+                  <p className="text-right text-sm text-stone-text dark:text-dark-muted mt-2 pr-2">
+                    — {product.artisanName}
+                  </p>
                 </div>
 
                 {/* Local Quote */}
                 {product.artisanQuoteLocal && (
                   <motion.div
-                    className="bg-gold-soft/50 dark:bg-gold-glow-bg/50 rounded-xl p-5 border-l-4 border-gold dark:border-gold-neon mb-6"
+                    className="bg-gradient-to-r from-teal-soft/60 to-gold-soft/40 dark:from-teal-glow-bg/50 dark:to-gold-glow-bg/30 rounded-xl p-5 border-l-4 border-teal dark:border-teal-neon mb-6"
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                   >
-                    <p className="text-sm text-stone-text dark:text-dark-muted font-semibold mb-1">Dalam bahasa lokal:</p>
-                    <blockquote className="text-base italic text-ink dark:text-dark-body leading-relaxed">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Sparkles className="w-4 h-4 text-teal dark:text-teal-neon" />
+                      <p className="text-sm text-teal dark:text-teal-neon font-semibold">Dalam Bahasa Lokal:</p>
+                    </div>
+                    <blockquote className="text-base italic text-ink dark:text-dark-body leading-relaxed font-serif">
                       "{product.artisanQuoteLocal}"
                     </blockquote>
                   </motion.div>
                 )}
 
-                {/* Artisan Link */}
-                <Link to={`/artisan/${productId}`}>
-                  <motion.button
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-300 btn-glow"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Lihat Profil Lengkap <ArrowRight className="w-4 h-4" />
-                  </motion.button>
-                </Link>
+
               </div>
             </div>
           </div>

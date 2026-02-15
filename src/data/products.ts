@@ -72,6 +72,7 @@ export const products: Product[] = [
     artisanExperience: 28,
     artisanQuote: 'Setiap pola menceritakan kisah leluhur kami. Saya hanya penjaga tradisi indah ini.',
     artisanQuoteLocal: 'Unggal pola nyaritakeun carita karuhun urang. Abdi ngan ukur panjaga tradisi geulis ieu.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Mega Mendung melambangkan perlindungan dan aliran kemakmuran yang berkelanjutan dalam budaya Sunda.'
   },
 
@@ -145,6 +146,7 @@ export const products: Product[] = [
     artisanExperience: 32,
     artisanQuote: 'Parang Rusak membawa semangat leluhur prajurit kami.',
     artisanQuoteLocal: 'Parang Rusak nggawa semangat leluhur prajurit kita.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Melambangkan kekuatan dan martabat prajurit dalam tradisi Jawa.'
   },
 
@@ -219,6 +221,7 @@ export const products: Product[] = [
     artisanExperience: 35,
     artisanQuote: 'Rendang bukan sekadar makanan, ini warisan kami yang dimasak dengan kesabaran dan cinta.',
     artisanQuoteLocal: 'Randang indak cuma makanan, ko warisan kami nan dimasak jo kasabaran dan cinto.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Rendang merupakan keunggulan kuliner Minangkabau dan disajikan pada upacara-upacara penting.'
   },
 
@@ -292,6 +295,7 @@ export const products: Product[] = [
     artisanExperience: 35,
     artisanQuote: 'Mendoan adalah kebanggaan Banyumas. Setiap gigitan membawa rasa kampung halaman.',
     artisanQuoteLocal: 'Mendoan kuwi kebanggaan Banyumas. Saben gigitan nggawa rasa kampung halaman.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Mendoan adalah camilan tradisional Banyumas yang merepresentasikan warisan kuliner dan keramahan hangat masyarakat Jawa Tengah.'
   },
 
@@ -365,6 +369,7 @@ export const products: Product[] = [
     artisanExperience: 15,
     artisanQuote: 'Resep nenek saya adalah harta yang saya bagikan dengan bangga.',
     artisanQuoteLocal: 'Resep mbah saya iku bandha sing tak bagekake kanthi bangga.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Lumpia merepresentasikan warisan kuliner Semarang dan nilai-nilai keluarga.'
   },
 
@@ -439,6 +444,7 @@ export const products: Product[] = [
     artisanExperience: 35,
     artisanQuote: 'Wayang bukan hanya seni—ini adalah suara leluhur kami, hati nurani rakyat kami.',
     artisanQuoteLocal: 'Wayang dudu mung seni—iki swara leluhur kita, ati nurani wong kita.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Wayang kulit adalah warisan budaya takbenda yang diakui UNESCO yang merepresentasikan nilai-nilai filosofis Indonesia.'
   },
 
@@ -512,6 +518,7 @@ export const products: Product[] = [
     artisanExperience: 20,
     artisanQuote: 'Setiap topeng membawa semangat tari Cirebon.',
     artisanQuoteLocal: 'Unggal topeng mawa sumanget tari Cirebon.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Topeng adalah pusat pertunjukan budaya tari topeng Cirebon.'
   },
 
@@ -586,6 +593,7 @@ export const products: Product[] = [
     artisanExperience: 42,
     artisanQuote: 'Kakek saya mengajari ayah saya, ayah saya mengajari saya, dan sekarang saya mengajari putri saya. Ini warisan kami.',
     artisanQuoteLocal: 'Kaki tiang ngajahin bapa tiang, bapa tiang ngajahin tiang, tur mangkin tiang ngajahin pianak tiang. Puniki warisan tiange.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Tenun ikat merepresentasikan identitas budaya dan kepercayaan spiritual masyarakat Lombok.'
   },
 
@@ -659,6 +667,7 @@ export const products: Product[] = [
     artisanExperience: 25,
     artisanQuote: 'Songket adalah mahkota budaya Palembang.',
     artisanQuoteLocal: 'Songket itu mahkota budaya Palembang.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Songket melambangkan prestise dan dikenakan untuk upacara kerajaan dan perayaan.'
   },
 
@@ -733,6 +742,7 @@ export const products: Product[] = [
     artisanExperience: 38,
     artisanQuote: 'Tanah liat menghubungkan kami dengan bumi dan tradisi, setiap karya membawa roh leluhur kami.',
     artisanQuoteLocal: 'Lempung nyambungake kita karo bumi lan tradhisi, saben karya nggawa roh leluhur kita.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Gerabah Kasongan memupuk identitas komunitas dan melestarikan warisan seni Jawa.'
   },
 
@@ -806,6 +816,7 @@ export const products: Product[] = [
     artisanExperience: 22,
     artisanQuote: 'Gerabah yang baik menghasilkan masakan yang enak. Ini keahlian saya.',
     artisanQuoteLocal: 'Gerabah sing apik ngasilake masakan sing enak. Iki keahlian aku.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Peralatan masak gerabah menghubungkan memasak dengan praktik budaya tradisional.'
   },
 
@@ -880,6 +891,7 @@ export const products: Product[] = [
     artisanExperience: 30,
     artisanQuote: 'Jamu bukan sekadar minuman, ini adalah kebijaksanaan penyembuhan dari leluhur kami.',
     artisanQuoteLocal: 'Jamu dudu mung unjukan, iki kawruh marasake sehat saka leluhur kita.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Jamu tradisional merepresentasikan berabad-abad praktik penyembuhan dan budaya kesehatan Indonesia.'
   },
 
@@ -953,6 +965,7 @@ export const products: Product[] = [
     artisanExperience: 25,
     artisanQuote: 'Wedang uwuh menghangatkan tubuh dan menenangkan jiwa, seperti yang dimaksudkan leluhur kami.',
     artisanQuoteLocal: 'Wedang uwuh anget awak lan ayem jiwa, kaya sing dikarepake leluhur kita.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Wedang uwuh is a traditional Javanese herbal drink that represents hospitality and wellness culture.'
   },
 
@@ -979,6 +992,7 @@ export const products: Product[] = [
     artisanExperience: 20,
     artisanQuote: 'Kawung adalah simbol kesucian dan umur panjang dalam filosofi Jawa.',
     artisanQuoteLocal: 'Kawung iku simbol kesucian lan umur dawa ing filosofi Jawa.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Kawung pattern represents purity, longevity, and was historically reserved for Javanese royalty.'
   },
 
@@ -1005,6 +1019,7 @@ export const products: Product[] = [
     artisanExperience: 30,
     artisanQuote: 'Keris bukan sekadar senjata, ini adalah jiwa dan kehormatan leluhur kami.',
     artisanQuoteLocal: 'Keris dudu mung sanjata, iki jiwa lan pakurmatan leluhur kita.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Keris is a sacred Javanese weapon representing spiritual power and cultural heritage.'
   },
 
@@ -1031,6 +1046,7 @@ export const products: Product[] = [
     artisanExperience: 40,
     artisanQuote: 'Ulos adalah kehangatan dan kasih sayang yang ditenun untuk orang terkasih.',
     artisanQuoteLocal: 'Ulos on hangoluan dohot holong na tinun tu halak na dipangidoahon.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Ulos represents warmth, love, and blessing in Batak culture, essential for ceremonies.'
   },
 
@@ -1057,6 +1073,7 @@ export const products: Product[] = [
     artisanExperience: 28,
     artisanQuote: 'Keramik Dinoyo adalah warisan desa kami yang penuh warna.',
     artisanQuoteLocal: 'Keramik Dinoyo iku warisan desa kita sing kebak warna.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Dinoyo ceramics represent the vibrant artistic heritage of Malang pottery village.'
   },
 
@@ -1083,6 +1100,7 @@ export const products: Product[] = [
     artisanExperience: 45,
     artisanQuote: 'Minyak kayu putih Ambon adalah obat alami terbaik dari alam Maluku.',
     artisanQuoteLocal: 'Minyak kayu putih Ambon adalah obat alami terbaik dari alam Maluku.',
+    artisanPhotoUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=faces',
     culturalValue: 'Cajuput oil from Ambon is renowned for its Terapeutik quality and traditional healing properties.'
   }
 ]
