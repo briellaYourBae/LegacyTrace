@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { BackgroundShapes } from '../components/BackgroundShapes'
+import { HeroVisual } from '../components/HeroVisual'
 import {
   Search, ShieldCheck, QrCode, Users,
   Palette, Utensils, Hammer, Scissors,
   Coffee, Leaf, ArrowRight, Map, BookOpen,
-  Heart, Globe, Handshake, Sparkles, Award, MapPin
+  Heart, Handshake, Sparkles, Award, MapPin
 } from 'lucide-react'
 
 /* ── Animated Counter Hook (rAF-based) ── */
@@ -205,43 +206,7 @@ export const Home = () => {
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            {/* Gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gold-soft/60 via-teal-soft/30 to-coral-soft/40 dark:from-gold-glow-bg/40 dark:via-teal-glow-bg/20 dark:to-coral-glow-bg/30 rounded-3xl" />
-
-            {/* Animated circles */}
-            <div className="absolute inset-0 overflow-hidden">
-              {[...Array(5)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute rounded-full"
-                  style={{
-                    width: `${80 + i * 40} px`,
-                    height: `${80 + i * 40} px`,
-                    left: `${20 + i * 10}% `,
-                    top: `${15 + i * 10}% `,
-                    border: '1.5px solid',
-                    borderColor: i % 2 === 0 ? 'rgba(184, 134, 11, 0.15)' : 'rgba(13, 148, 136, 0.15)',
-                  }}
-                  animate={{
-                    scale: [1, 1.15, 1],
-                    opacity: [0.3, 0.6, 0.3]
-                  }}
-                  transition={{
-                    duration: 4 + i * 0.5,
-                    repeat: Infinity,
-                    delay: i * 0.3
-                  }}
-                />
-              ))}
-            </div>
-
-            <motion.div
-              animate={{ y: [0, -20, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="relative z-10"
-            >
-              <Globe className="w-36 h-36 text-gold dark:text-gold-neon opacity-70" />
-            </motion.div>
+            <HeroVisual />
           </motion.div>
         </motion.div>
       </section>
