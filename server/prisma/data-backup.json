@@ -1,0 +1,1664 @@
+{
+  "exportedAt": "2026-02-16T17:45:59.575Z",
+  "users": [
+    {
+      "id": 3,
+      "email": "admin@legacytrace.id",
+      "password": "$2a$10$Hax4fhNsRoeRKS5NpCvlseRWkx9.vrf1D5AoXCTrvpfLfQlRgCQeq",
+      "name": "Admin LegacyTrace",
+      "role": "ADMIN",
+      "createdAt": "2026-02-16T16:02:17.990Z",
+      "updatedAt": "2026-02-16T16:02:17.990Z"
+    },
+    {
+      "id": 4,
+      "email": "user@legacytrace.id",
+      "password": "$2a$10$E4XsOiKmIdmIwx34vsmLh.prESq6jXJY4AWwfz4yR33z/m678DzrG",
+      "name": "Demo User",
+      "role": "USER",
+      "createdAt": "2026-02-16T16:02:18.085Z",
+      "updatedAt": "2026-02-16T16:02:18.085Z"
+    },
+    {
+      "id": 5,
+      "email": "k@gmail.com",
+      "password": "$2a$10$7d.s0iLV6zhRb155ybJMZO29vb2Hy6YYYhNw4cScCZXrJAji19loO",
+      "name": "kaffqa",
+      "role": "USER",
+      "createdAt": "2026-02-16T16:15:58.144Z",
+      "updatedAt": "2026-02-16T16:15:58.144Z"
+    }
+  ],
+  "artisans": [
+    {
+      "id": 19,
+      "name": "Ibu Siti Nurhaliza",
+      "specialty": "batik",
+      "location": "Cirebon, West Java",
+      "description": null,
+      "quote": "Setiap pola menceritakan kisah leluhur kami. Saya hanya penjaga tradisi indah ini.",
+      "quoteLocal": "Unggal pola nyaritakeun carita karuhun urang. Abdi ngan ukur panjaga tradisi geulis ieu.",
+      "photoUrl": "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 30,
+      "culturalBackground": "Sundanese batik artisan",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:52:28.706Z"
+    },
+    {
+      "id": 20,
+      "name": "Ibu Ratna",
+      "specialty": "batik",
+      "location": "Yogyakarta, Special Region",
+      "description": null,
+      "quote": "Kawung adalah simbol kesucian dan umur panjang dalam filosofi Jawa.",
+      "quoteLocal": "Kawung iku simbol kesucian lan umur dawa ing filosofi Jawa.",
+      "photoUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 20,
+      "culturalBackground": "Yogyakarta royal batik tradition",
+      "createdAt": "2026-02-16T16:02:18.095Z",
+      "updatedAt": "2026-02-16T16:02:18.095Z"
+    },
+    {
+      "id": 21,
+      "name": "Empu Suparman",
+      "specialty": "kerajinan",
+      "location": "Surakarta, Central Java",
+      "description": null,
+      "quote": "Keris bukan sekadar senjata, ini adalah jiwa dan kehormatan leluhur kami.",
+      "quoteLocal": "Keris dudu mung sanjata, iki jiwa lan pakurmatan leluhur kita.",
+      "photoUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 30,
+      "culturalBackground": "Sacred Javanese keris maker",
+      "createdAt": "2026-02-16T16:02:18.098Z",
+      "updatedAt": "2026-02-16T16:02:18.098Z"
+    },
+    {
+      "id": 22,
+      "name": "Ibu Tiurma",
+      "specialty": "tenun",
+      "location": "Lake Toba, North Sumatra",
+      "description": null,
+      "quote": "Ulos adalah kehangatan dan kasih sayang yang ditenun untuk orang terkasih.",
+      "quoteLocal": "Ulos on hangoluan dohot holong na tinun tu halak na dipangidoahon.",
+      "photoUrl": "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 40,
+      "culturalBackground": "Batak weaving tradition",
+      "createdAt": "2026-02-16T16:02:18.102Z",
+      "updatedAt": "2026-02-16T16:02:18.102Z"
+    },
+    {
+      "id": 23,
+      "name": "Pak Bambang",
+      "specialty": "gerabah",
+      "location": "Dinoyo, Malang, East Java",
+      "description": null,
+      "quote": "Keramik Dinoyo adalah warisan desa kami yang penuh warna.",
+      "quoteLocal": "Keramik Dinoyo iku warisan desa kita sing kebak warna.",
+      "photoUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 28,
+      "culturalBackground": "Malang pottery village",
+      "createdAt": "2026-02-16T16:02:18.104Z",
+      "updatedAt": "2026-02-16T16:02:18.104Z"
+    },
+    {
+      "id": 24,
+      "name": "Pak Yusuf",
+      "specialty": "herbal",
+      "location": "Ambon, Maluku",
+      "description": null,
+      "quote": "Minyak kayu putih Ambon adalah obat alami terbaik dari alam Maluku.",
+      "quoteLocal": "Minyak kayu putih Ambon adalah obat alami terbaik dari alam Maluku.",
+      "photoUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 45,
+      "culturalBackground": "Maluku essential oil tradition",
+      "createdAt": "2026-02-16T16:02:18.124Z",
+      "updatedAt": "2026-02-16T16:02:18.124Z"
+    },
+    {
+      "id": 25,
+      "name": "Ki Purbo",
+      "specialty": "kerajinan",
+      "location": "Yogyakarta, Special Region",
+      "description": null,
+      "quote": "Wayang bukan hanya seni—ini adalah suara leluhur kami.",
+      "quoteLocal": "Wayang dudu mung seni—iki swara leluhur kita.",
+      "photoUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 35,
+      "culturalBackground": "UNESCO heritage craftsman",
+      "createdAt": "2026-02-16T16:02:18.127Z",
+      "updatedAt": "2026-02-16T16:02:18.127Z"
+    },
+    {
+      "id": 26,
+      "name": "Pak Wayan",
+      "specialty": "tenun",
+      "location": "Lombok, Nusa Tenggara Barat",
+      "description": null,
+      "quote": "Kakek saya mengajari ayah saya, ayah saya mengajari saya, dan sekarang saya mengajari putri saya.",
+      "quoteLocal": "Kaki tiang ngajahin bapa tiang, bapa tiang ngajahin tiang, tur mangkin tiang ngajahin pianak tiang.",
+      "photoUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 42,
+      "culturalBackground": "Lombok ikat weaving tradition",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:02:18.091Z"
+    },
+    {
+      "id": 27,
+      "name": "Ibu Mariamah",
+      "specialty": "tenun",
+      "location": "Palembang, South Sumatra",
+      "description": null,
+      "quote": "Songket adalah mahkota budaya Palembang.",
+      "quoteLocal": "Songket itu mahkota budaya Palembang.",
+      "photoUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 25,
+      "culturalBackground": "Palembang royal weaving tradition",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:02:18.091Z"
+    },
+    {
+      "id": 28,
+      "name": "Pak Joko Susilo",
+      "specialty": "herbal",
+      "location": "Imogiri, Yogyakarta",
+      "description": null,
+      "quote": "Wedang uwuh menghangatkan tubuh dan menenangkan jiwa.",
+      "quoteLocal": "Wedang uwuh anget awak lan ayem jiwa.",
+      "photoUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 25,
+      "culturalBackground": "Javanese herbal drink tradition",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:02:18.091Z"
+    },
+    {
+      "id": 29,
+      "name": "Pak Sulaiman",
+      "specialty": "gerabah",
+      "location": "Bantul, Yogyakarta",
+      "description": null,
+      "quote": "Tanah liat menghubungkan kami dengan bumi dan tradisi.",
+      "quoteLocal": "Lempung nyambungake kita karo bumi lan tradhisi.",
+      "photoUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 38,
+      "culturalBackground": "Kasongan pottery village",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:02:18.091Z"
+    },
+    {
+      "id": 30,
+      "name": "Pak Hendra",
+      "specialty": "gerabah",
+      "location": "Bandung, West Java",
+      "description": null,
+      "quote": "Gerabah yang baik menghasilkan masakan yang enak.",
+      "quoteLocal": "Gerabah sing apik ngasilake masakan sing enak.",
+      "photoUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 22,
+      "culturalBackground": "Bandung earthenware tradition",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:02:18.091Z"
+    },
+    {
+      "id": 31,
+      "name": "Mak Uni",
+      "specialty": "makanan",
+      "location": "Padang, West Sumatra",
+      "description": null,
+      "quote": "Rendang bukan sekadar makanan, ini warisan kami yang dimasak dengan kesabaran dan cinta.",
+      "quoteLocal": "Randang indak cuma makanan, ko warisan kami nan dimasak jo kasabaran dan cinto.",
+      "photoUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 35,
+      "culturalBackground": "Minangkabau culinary expert",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:02:18.091Z"
+    },
+    {
+      "id": 32,
+      "name": "Ibu Citra",
+      "specialty": "herbal",
+      "location": "Yogyakarta, Special Region",
+      "description": null,
+      "quote": "Jamu bukan sekadar minuman, ini adalah kebijaksanaan penyembuhan dari leluhur kami.",
+      "quoteLocal": "Jamu dudu mung unjukan, iki kawruh marasake sehat saka leluhur kita.",
+      "photoUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 30,
+      "culturalBackground": "Traditional Javanese herbalist",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:02:18.091Z"
+    },
+    {
+      "id": 33,
+      "name": "Pak Karso",
+      "specialty": "makanan",
+      "location": "Banyumas, Central Java",
+      "description": null,
+      "quote": "Mendoan adalah kebanggaan Banyumas.",
+      "quoteLocal": "Mendoan kuwi kebanggaan Banyumas.",
+      "photoUrl": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 35,
+      "culturalBackground": "Banyumas culinary tradition",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:02:18.091Z"
+    },
+    {
+      "id": 34,
+      "name": "Pak Darmanto",
+      "specialty": "kerajinan",
+      "location": "Cirebon, West Java",
+      "description": null,
+      "quote": "Setiap topeng membawa semangat tari Cirebon.",
+      "quoteLocal": "Unggal topeng mawa sumanget tari Cirebon.",
+      "photoUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 20,
+      "culturalBackground": "Cirebon mask dance tradition",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:02:18.091Z"
+    },
+    {
+      "id": 35,
+      "name": "Ibu Retno",
+      "specialty": "makanan",
+      "location": "Semarang, Central Java",
+      "description": null,
+      "quote": "Resep nenek saya adalah harta yang saya bagikan dengan bangga.",
+      "quoteLocal": "Resep mbah saya iku bandha sing tak bagekake kanthi bangga.",
+      "photoUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 15,
+      "culturalBackground": "Semarang culinary heritage",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:02:18.091Z"
+    },
+    {
+      "id": 36,
+      "name": "Pak Santoso",
+      "specialty": "batik",
+      "location": "Solo, Central Java",
+      "description": null,
+      "quote": "Parang Rusak membawa semangat leluhur prajurit kami.",
+      "quoteLocal": "Parang Rusak nggawa semangat leluhur prajurit kita.",
+      "photoUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=faces",
+      "yearsExperience": 32,
+      "culturalBackground": "Javanese batik master",
+      "createdAt": "2026-02-16T16:02:18.091Z",
+      "updatedAt": "2026-02-16T16:02:18.091Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 12,
+      "name": "Batik Mega Mendung",
+      "description": "Traditional Gambar Tangan batik with Mega Mendung motif, symbolizing protection and prosperity in Sundanese culture.",
+      "category": "batik",
+      "imageUrl": "/assets/img/batik-mega-mendung.jpg",
+      "umkm": "Batik Tulis Setono",
+      "umkmStory": "Didirikan pada tahun 1995, Batik Tulis Setono telah menghasilkan batik tulis tradisional berkualitas tinggi dari Cirebon selama lebih dari 25 tahun.",
+      "village": "Cirebon, West Java",
+      "culturalValue": "Mega Mendung melambangkan perlindungan dan aliran kemakmuran yang berkelanjutan dalam budaya Sunda.",
+      "ethicalBadges": [
+        "100% Tulis Tangan",
+        "Perdagangan Adil",
+        "Pewarna Ramah Lingkungan",
+        "Bersertifikat Pengrajin"
+      ],
+      "artisanId": 19,
+      "createdAt": "2026-02-16T16:02:18.343Z",
+      "updatedAt": "2026-02-16T16:02:18.343Z"
+    },
+    {
+      "id": 13,
+      "name": "Batik Parang Rusak",
+      "description": "Classic Parang Rusak motif representing warrior strength and confidence.",
+      "category": "batik",
+      "imageUrl": "/assets/img/batik-parang-rusak.png",
+      "umkm": "Batik Tulis Klasik",
+      "umkmStory": "Lebih dari 30 tahun melestarikan warisan budaya.",
+      "village": "Solo, Central Java",
+      "culturalValue": "Melambangkan kekuatan dan martabat prajurit dalam tradisi Jawa.",
+      "ethicalBadges": [
+        "Pola Warisan",
+        "Bahan Alami",
+        "Autentik Solo"
+      ],
+      "artisanId": 36,
+      "createdAt": "2026-02-16T16:02:18.355Z",
+      "updatedAt": "2026-02-16T16:02:18.355Z"
+    },
+    {
+      "id": 14,
+      "name": "Rendang Padang Asli",
+      "description": "Slow-cooked beef in rich coconut milk and spices, recognized by CNN as World's Most Delicious Food.",
+      "category": "makanan",
+      "imageUrl": "/assets/img/rendang-padang.jpg",
+      "umkm": "Rendang Mak Uni",
+      "umkmStory": "Established in 1985, cooking authentic Padang rendang for over 35 years.",
+      "village": "Padang, West Sumatra",
+      "culturalValue": "Rendang merupakan keunggulan kuliner Minangkabau.",
+      "ethicalBadges": [
+        "Resep Tradisional",
+        "Tanpa Pengawet",
+        "Bersertifikat Halal",
+        "Dimasak Lambat"
+      ],
+      "artisanId": 31,
+      "createdAt": "2026-02-16T16:02:18.361Z",
+      "updatedAt": "2026-02-16T16:02:18.361Z"
+    },
+    {
+      "id": 15,
+      "name": "Mendoan Khas Banyumas",
+      "description": "Thin-sliced tempe coated in crispy batter with aromatic herbs.",
+      "category": "makanan",
+      "imageUrl": "/assets/img/mendoan-banyumas.png",
+      "umkm": "Mendoan Pak Karso",
+      "umkmStory": "Didirikan pada tahun 1985, melestarikan resep tradisional.",
+      "village": "Banyumas, Central Java",
+      "culturalValue": "Mendoan adalah camilan tradisional Banyumas.",
+      "ethicalBadges": [
+        "Resep Tradisional",
+        "Tanpa Pengawet",
+        "Buatan Tangan",
+        "Rempah Lokal"
+      ],
+      "artisanId": 33,
+      "createdAt": "2026-02-16T16:02:18.365Z",
+      "updatedAt": "2026-02-16T16:02:18.365Z"
+    },
+    {
+      "id": 16,
+      "name": "Kue Lumpia Basah",
+      "description": "Fresh soft spring rolls filled with vegetables and meat.",
+      "category": "makanan",
+      "imageUrl": "/assets/img/kue-lumpia-basah.png",
+      "umkm": "Kue Lumpia Ibu Retno",
+      "umkmStory": "Traditional spring rolls maker for 15 years.",
+      "village": "Semarang, Central Java",
+      "culturalValue": "Lumpia merepresentasikan warisan kuliner Semarang.",
+      "ethicalBadges": [
+        "Bahan Segar",
+        "Tanpa MSG",
+        "Resep Tradisional",
+        "Buatan Tangan Wrappers"
+      ],
+      "artisanId": 35,
+      "createdAt": "2026-02-16T16:02:18.369Z",
+      "updatedAt": "2026-02-16T16:02:18.369Z"
+    },
+    {
+      "id": 17,
+      "name": "Wayang Kulit Diukir Tangan",
+      "description": "Hand-carved leather shadow puppets, intricate pieces of theatrical art.",
+      "category": "kerajinan",
+      "imageUrl": "/assets/img/wayang-kulit.png",
+      "umkm": "Wayang Kulit Yogyakarta Artisan",
+      "umkmStory": "Studio keluarga melestarikan seni wayang kulit sejak 1987.",
+      "village": "Yogyakarta, Special Region",
+      "culturalValue": "Wayang kulit adalah warisan budaya takbenda UNESCO.",
+      "ethicalBadges": [
+        "Diukir Tangan",
+        "Warisan UNESCO",
+        "Pelestarian Budaya",
+        "Kerajinan Master"
+      ],
+      "artisanId": 25,
+      "createdAt": "2026-02-16T16:02:18.374Z",
+      "updatedAt": "2026-02-16T16:02:18.374Z"
+    },
+    {
+      "id": 18,
+      "name": "Topeng Cirebon Buatan Tangan",
+      "description": "Handmade wooden masks with vibrant colors.",
+      "category": "kerajinan",
+      "imageUrl": "/assets/img/topeng-cirebon.png",
+      "umkm": "Topeng Cirebon Heritage",
+      "umkmStory": "Selama 20 tahun menciptakan seni topeng tradisional.",
+      "village": "Cirebon, West Java",
+      "culturalValue": "Topeng adalah pusat pertunjukan budaya tari topeng Cirebon.",
+      "ethicalBadges": [
+        "Kerajinan Tangan",
+        "Seni Tradisional",
+        "Cat Alami"
+      ],
+      "artisanId": 34,
+      "createdAt": "2026-02-16T16:02:18.380Z",
+      "updatedAt": "2026-02-16T16:02:18.380Z"
+    },
+    {
+      "id": 19,
+      "name": "Tenun Ikat Lombok",
+      "description": "Hand-woven ikat fabric with intricate geometric patterns.",
+      "category": "tenun",
+      "imageUrl": "/assets/img/tenun-ikat-lombok.jpg",
+      "umkm": "Tenun Songket Lombok Heritage",
+      "umkmStory": "Melestarikan tradisi tenun berusia 200+ tahun dari Lombok.",
+      "village": "Lombok, Nusa Tenggara Barat",
+      "culturalValue": "Tenun ikat merepresentasikan identitas budaya Lombok.",
+      "ethicalBadges": [
+        "Tenun Tangan",
+        "Perdagangan Adil Certified",
+        "Dukungan Pengrajin",
+        "Warisan 200+ Tahun"
+      ],
+      "artisanId": 26,
+      "createdAt": "2026-02-16T16:02:18.383Z",
+      "updatedAt": "2026-02-16T16:02:18.383Z"
+    },
+    {
+      "id": 20,
+      "name": "Kain Songket Palembang",
+      "description": "Luxury hand-woven fabric with gold and silver thread accents.",
+      "category": "tenun",
+      "imageUrl": "/assets/img/kain-songket-palembang.png",
+      "umkm": "Songket Palembang Premium",
+      "umkmStory": "Selama 25 tahun menciptakan kain songket mewah.",
+      "village": "Palembang, South Sumatra",
+      "culturalValue": "Songket melambangkan prestise dan kerajaan.",
+      "ethicalBadges": [
+        "Benang Emas",
+        "Kualitas Kerajaan",
+        "Tenun Tangan",
+        "Pakaian Festival"
+      ],
+      "artisanId": 27,
+      "createdAt": "2026-02-16T16:02:18.388Z",
+      "updatedAt": "2026-02-16T16:02:18.388Z"
+    },
+    {
+      "id": 21,
+      "name": "Gerabah Kasongan Tradisional",
+      "description": "Handmade pottery with traditional Javanese motifs.",
+      "category": "gerabah",
+      "imageUrl": "/assets/img/gerabah-kosongan.png",
+      "umkm": "Gerabah Kasongan Sentra",
+      "umkmStory": "Lebih dari 40 tahun melestarikan teknik gerabah tradisional.",
+      "village": "Bantul, Yogyakarta",
+      "culturalValue": "Gerabah Kasongan memupuk identitas komunitas.",
+      "ethicalBadges": [
+        "Buatan Tangan",
+        "Tanah Liat Alami",
+        "Ikon Budaya",
+        "Komunitas Pengrajin"
+      ],
+      "artisanId": 29,
+      "createdAt": "2026-02-16T16:02:18.394Z",
+      "updatedAt": "2026-02-16T16:02:18.394Z"
+    },
+    {
+      "id": 22,
+      "name": "Jamu Tradisional Asli",
+      "description": "Authentic traditional herbal drink made from natural herbs and spices.",
+      "category": "herbal",
+      "imageUrl": "/assets/img/jamu-tradisional.png",
+      "umkm": "Jamu Mak Citra Nusantara",
+      "umkmStory": "Lebih dari 30 tahun meracik jamu tradisional Indonesia.",
+      "village": "Yogyakarta, Special Region",
+      "culturalValue": "Jamu tradisional merepresentasikan praktik penyembuhan Indonesia.",
+      "ethicalBadges": [
+        "100% Alami",
+        "Tanpa Tambahan",
+        "Resep Keluarga",
+        "Herbal Organik"
+      ],
+      "artisanId": 32,
+      "createdAt": "2026-02-16T16:02:18.397Z",
+      "updatedAt": "2026-02-16T16:02:18.397Z"
+    }
+  ],
+  "supplySteps": [
+    {
+      "id": 67,
+      "title": "Pemanenan Kapas",
+      "actor": "Petani Lokal",
+      "location": "Ladang Jawa Barat",
+      "description": "Kapas premium dipanen dari pertanian berkelanjutan di Jawa Barat.",
+      "icon": "I",
+      "imageUrl": null,
+      "sortOrder": 0,
+      "productId": 12
+    },
+    {
+      "id": 68,
+      "title": "Persiapan dan Pencucian Kain",
+      "actor": "Tim Persiapan",
+      "location": "Workshop Cirebon",
+      "description": "Kain mori dicuci bersih dan dikeringkan.",
+      "icon": "II",
+      "imageUrl": null,
+      "sortOrder": 1,
+      "productId": 12
+    },
+    {
+      "id": 69,
+      "title": "Pembatikan dengan Canting",
+      "actor": "Pengrajin Batik",
+      "location": "Workshop Cirebon",
+      "description": "Pengrajin menggambar motif Mega Mendung menggunakan canting berisi lilin malam panas.",
+      "icon": "III",
+      "imageUrl": null,
+      "sortOrder": 2,
+      "productId": 12
+    },
+    {
+      "id": 70,
+      "title": "Pewarnaan dengan Pewarna Alami",
+      "actor": "Ahli Pewarna",
+      "location": "Workshop Cirebon",
+      "description": "Kain dicelupkan ke dalam larutan pewarna indigo alami.",
+      "icon": "IV",
+      "imageUrl": null,
+      "sortOrder": 3,
+      "productId": 12
+    },
+    {
+      "id": 71,
+      "title": "Pelorodan (Pelepasan Lilin)",
+      "actor": "Tim Finishing",
+      "location": "Workshop Cirebon",
+      "description": "Kain direbus dalam air panas untuk melepaskan lilin malam.",
+      "icon": "V",
+      "imageUrl": null,
+      "sortOrder": 4,
+      "productId": 12
+    },
+    {
+      "id": 72,
+      "title": "Kontrol Kualitas dan Pengemasan",
+      "actor": "Tim Kontrol Kualitas",
+      "location": "Gudang Cirebon",
+      "description": "Setiap lembar diperiksa secara teliti dan dikemas ramah lingkungan.",
+      "icon": "VI",
+      "imageUrl": null,
+      "sortOrder": 5,
+      "productId": 12
+    },
+    {
+      "id": 73,
+      "title": "Pemilihan Benang Kapas",
+      "actor": "Ahli Benang",
+      "location": "Solo",
+      "description": "Benang kapas berkualitas tinggi dipilih.",
+      "icon": "I",
+      "imageUrl": null,
+      "sortOrder": 0,
+      "productId": 13
+    },
+    {
+      "id": 74,
+      "title": "Perancangan Pola",
+      "actor": "Desainer Batik",
+      "location": "Workshop Solo",
+      "description": "Pola Parang Rusak dirancang mengikuti pakem tradisional.",
+      "icon": "II",
+      "imageUrl": null,
+      "sortOrder": 1,
+      "productId": 13
+    },
+    {
+      "id": 75,
+      "title": "Pembatikan",
+      "actor": "Pembatik Ahli",
+      "location": "Workshop Solo",
+      "description": "Lilin malam diaplikasikan dengan canting.",
+      "icon": "III",
+      "imageUrl": null,
+      "sortOrder": 2,
+      "productId": 13
+    },
+    {
+      "id": 76,
+      "title": "Pewarnaan",
+      "actor": "Ahli Pewarna",
+      "location": "Workshop Solo",
+      "description": "Pencelupan pewarna indigo berulang.",
+      "icon": "IV",
+      "imageUrl": null,
+      "sortOrder": 3,
+      "productId": 13
+    },
+    {
+      "id": 77,
+      "title": "Pelorodan",
+      "actor": "Tim Finishing",
+      "location": "Workshop Solo",
+      "description": "Lilin dilelehkan.",
+      "icon": "V",
+      "imageUrl": null,
+      "sortOrder": 4,
+      "productId": 13
+    },
+    {
+      "id": 78,
+      "title": "Pemeriksaan",
+      "actor": "Tim Kontrol Kualitas",
+      "location": "Solo",
+      "description": "Batik diperiksa dan dikemas.",
+      "icon": "VI",
+      "imageUrl": null,
+      "sortOrder": 5,
+      "productId": 13
+    },
+    {
+      "id": 79,
+      "title": "Penggilingan Bumbu Segar",
+      "actor": "Ahli Bumbu",
+      "location": "Dapur Padang",
+      "description": "Bumbu-bumbu segar digiling halus.",
+      "icon": "I",
+      "imageUrl": null,
+      "sortOrder": 0,
+      "productId": 14
+    },
+    {
+      "id": 80,
+      "title": "Pemilihan Daging Sapi Premium",
+      "actor": "Ahli Daging",
+      "location": "Pasar Padang",
+      "description": "Daging sapi bagian has dalam dipilih.",
+      "icon": "II",
+      "imageUrl": null,
+      "sortOrder": 1,
+      "productId": 14
+    },
+    {
+      "id": 81,
+      "title": "Pemerasan Santan Kelapa",
+      "actor": "Spesialis Santan",
+      "location": "Dapur Padang",
+      "description": "Santan segar diperas dari kelapa lokal.",
+      "icon": "III",
+      "imageUrl": null,
+      "sortOrder": 2,
+      "productId": 14
+    },
+    {
+      "id": 82,
+      "title": "Pemasakan Lambat Tradisional",
+      "actor": "Juru Masak Ahli",
+      "location": "Dapur Padang",
+      "description": "Dimasak 4-6 jam dengan api kecil.",
+      "icon": "IV",
+      "imageUrl": null,
+      "sortOrder": 3,
+      "productId": 14
+    },
+    {
+      "id": 83,
+      "title": "Proses Karamelisasi",
+      "actor": "Juru Masak Ahli",
+      "location": "Dapur Padang",
+      "description": "Memasak hingga minyak kelapa terpisah.",
+      "icon": "V",
+      "imageUrl": null,
+      "sortOrder": 4,
+      "productId": 14
+    },
+    {
+      "id": 84,
+      "title": "Pengemasan Vakum",
+      "actor": "Tim Pengemasan",
+      "location": "Padang",
+      "description": "Rendang dikemas vakum.",
+      "icon": "VI",
+      "imageUrl": null,
+      "sortOrder": 5,
+      "productId": 14
+    },
+    {
+      "id": 85,
+      "title": "Pemilihan Kedelai Berkualitas",
+      "actor": "Petani Lokal",
+      "location": "Wilayah Banyumas",
+      "description": "Kedelai lokal premium dipilih.",
+      "icon": "I",
+      "imageUrl": null,
+      "sortOrder": 0,
+      "productId": 15
+    },
+    {
+      "id": 86,
+      "title": "Fermentasi Tempe Tipis",
+      "actor": "Ahli Fermentasi",
+      "location": "Workshop Banyumas",
+      "description": "Kedelai difermentasi 24-36 jam.",
+      "icon": "II",
+      "imageUrl": null,
+      "sortOrder": 1,
+      "productId": 15
+    },
+    {
+      "id": 87,
+      "title": "Pemotongan Tempe Tipis",
+      "actor": "Tim Persiapan",
+      "location": "Dapur Banyumas",
+      "description": "Tempe diiris 3-5 mm.",
+      "icon": "III",
+      "imageUrl": null,
+      "sortOrder": 2,
+      "productId": 15
+    },
+    {
+      "id": 88,
+      "title": "Pembuatan Adonan Bumbu",
+      "actor": "Spesialis Adonan",
+      "location": "Dapur Banyumas",
+      "description": "Adonan tepung dicampur bumbu.",
+      "icon": "IV",
+      "imageUrl": null,
+      "sortOrder": 3,
+      "productId": 15
+    },
+    {
+      "id": 89,
+      "title": "Penggorengan Setengah Matang",
+      "actor": "Juru Goreng",
+      "location": "Dapur Banyumas",
+      "description": "Digoreng setengah matang.",
+      "icon": "V",
+      "imageUrl": null,
+      "sortOrder": 4,
+      "productId": 15
+    },
+    {
+      "id": 90,
+      "title": "Penyajian dan Pengemasan",
+      "actor": "Tim Pengemasan",
+      "location": "Banyumas",
+      "description": "Disajikan hangat atau dikemas.",
+      "icon": "VI",
+      "imageUrl": null,
+      "sortOrder": 5,
+      "productId": 15
+    },
+    {
+      "id": 91,
+      "title": "Penggilingan Tepung Beras",
+      "actor": "Penggiling",
+      "location": "Semarang",
+      "description": "Beras digiling menjadi tepung halus.",
+      "icon": "I",
+      "imageUrl": null,
+      "sortOrder": 0,
+      "productId": 16
+    },
+    {
+      "id": 92,
+      "title": "Pembuatan Adonan Kulit",
+      "actor": "Pembuat Kulit",
+      "location": "Dapur Semarang",
+      "description": "Tepung beras dicampur air dan garam.",
+      "icon": "II",
+      "imageUrl": null,
+      "sortOrder": 1,
+      "productId": 16
+    },
+    {
+      "id": 93,
+      "title": "Pembuatan Kulit Lumpia",
+      "actor": "Ahli Kulit Lumpia",
+      "location": "Dapur Semarang",
+      "description": "Adonan dituang tipis di wajan panas.",
+      "icon": "III",
+      "imageUrl": null,
+      "sortOrder": 2,
+      "productId": 16
+    },
+    {
+      "id": 94,
+      "title": "Persiapan Isian",
+      "actor": "Tim Isian",
+      "location": "Dapur Semarang",
+      "description": "Sayuran dan daging ditumis.",
+      "icon": "IV",
+      "imageUrl": null,
+      "sortOrder": 3,
+      "productId": 16
+    },
+    {
+      "id": 95,
+      "title": "Penggulungan Lumpia",
+      "actor": "Pembungkus",
+      "location": "Dapur Semarang",
+      "description": "Isian digulung dalam kulit.",
+      "icon": "V",
+      "imageUrl": null,
+      "sortOrder": 4,
+      "productId": 16
+    },
+    {
+      "id": 96,
+      "title": "Pengemasan Siap Saji",
+      "actor": "Tim Pengemasan",
+      "location": "Semarang",
+      "description": "Lumpia dikemas higienis.",
+      "icon": "VI",
+      "imageUrl": null,
+      "sortOrder": 5,
+      "productId": 16
+    },
+    {
+      "id": 97,
+      "title": "Pemilihan Kulit Kerbau",
+      "actor": "Ahli Pemilih Kulit",
+      "location": "Studio Yogyakarta",
+      "description": "Kulit kerbau premium dipilih.",
+      "icon": "I",
+      "imageUrl": null,
+      "sortOrder": 0,
+      "productId": 17
+    },
+    {
+      "id": 98,
+      "title": "Pemindahan Pola",
+      "actor": "Desainer Wayang",
+      "location": "Studio Yogyakarta",
+      "description": "Desain karakter dipindahkan ke kulit.",
+      "icon": "II",
+      "imageUrl": null,
+      "sortOrder": 1,
+      "productId": 17
+    },
+    {
+      "id": 99,
+      "title": "Pengukiran Detail",
+      "actor": "Pengukir Ahli",
+      "location": "Studio Yogyakarta",
+      "description": "30-50 jam per wayang.",
+      "icon": "III",
+      "imageUrl": null,
+      "sortOrder": 2,
+      "productId": 17
+    },
+    {
+      "id": 100,
+      "title": "Penusukan Pola Bayangan",
+      "actor": "Spesialis Detail",
+      "location": "Studio Yogyakarta",
+      "description": "Detail halus ditusuk.",
+      "icon": "IV",
+      "imageUrl": null,
+      "sortOrder": 3,
+      "productId": 17
+    },
+    {
+      "id": 101,
+      "title": "Pewarnaan Pigmen Alami",
+      "actor": "Ahli Pewarna",
+      "location": "Studio Yogyakarta",
+      "description": "Pigmen alami diaplikasikan.",
+      "icon": "V",
+      "imageUrl": null,
+      "sortOrder": 4,
+      "productId": 17
+    },
+    {
+      "id": 102,
+      "title": "Pemasangan Gagang",
+      "actor": "Perakit Ahli",
+      "location": "Studio Yogyakarta",
+      "description": "Gagang dipasang dan diinspeksi.",
+      "icon": "VI",
+      "imageUrl": null,
+      "sortOrder": 5,
+      "productId": 17
+    },
+    {
+      "id": 103,
+      "title": "Pemilihan Kayu Ringan",
+      "actor": "Ahli Kayu",
+      "location": "Cirebon",
+      "description": "Kayu pule atau sengon dipilih.",
+      "icon": "I",
+      "imageUrl": null,
+      "sortOrder": 0,
+      "productId": 18
+    },
+    {
+      "id": 104,
+      "title": "Pengukiran Bentuk Wajah",
+      "actor": "Pengukir Ahli",
+      "location": "Studio Cirebon",
+      "description": "Kayu diukir menjadi karakter topeng.",
+      "icon": "II",
+      "imageUrl": null,
+      "sortOrder": 1,
+      "productId": 18
+    },
+    {
+      "id": 105,
+      "title": "Penghalusan Permukaan",
+      "actor": "Tim Finishing",
+      "location": "Studio Cirebon",
+      "description": "Permukaan diamplas halus.",
+      "icon": "III",
+      "imageUrl": null,
+      "sortOrder": 2,
+      "productId": 18
+    },
+    {
+      "id": 106,
+      "title": "Pengecatan Dasar Putih",
+      "actor": "Pelukis",
+      "location": "Studio Cirebon",
+      "description": "Cat dasar putih diaplikasikan.",
+      "icon": "IV",
+      "imageUrl": null,
+      "sortOrder": 3,
+      "productId": 18
+    },
+    {
+      "id": 107,
+      "title": "Pewarnaan dan Detail",
+      "actor": "Seniman Pelukis",
+      "location": "Studio Cirebon",
+      "description": "Warna-warna cerah khas Cirebon dilukis.",
+      "icon": "V",
+      "imageUrl": null,
+      "sortOrder": 4,
+      "productId": 18
+    },
+    {
+      "id": 108,
+      "title": "Pemasangan Tali Pengikat",
+      "actor": "Perakit",
+      "location": "Studio Cirebon",
+      "description": "Tali elastis dipasang.",
+      "icon": "VI",
+      "imageUrl": null,
+      "sortOrder": 5,
+      "productId": 18
+    },
+    {
+      "id": 109,
+      "title": "Persiapan Benang Kapas",
+      "actor": "Ahli Persiapan",
+      "location": "Desa Lombok",
+      "description": "Benang kapas disiapkan.",
+      "icon": "I",
+      "imageUrl": null,
+      "sortOrder": 0,
+      "productId": 19
+    },
+    {
+      "id": 110,
+      "title": "Pengikatan Pola Resist",
+      "actor": "Pengrajin Pengikat",
+      "location": "Workshop Lombok",
+      "description": "Benang diikat untuk pola resist.",
+      "icon": "II",
+      "imageUrl": null,
+      "sortOrder": 1,
+      "productId": 19
+    },
+    {
+      "id": 111,
+      "title": "Pewarnaan Alami",
+      "actor": "Ahli Pewarna",
+      "location": "Workshop Lombok",
+      "description": "Pewarna alami dari tumbuhan.",
+      "icon": "III",
+      "imageUrl": null,
+      "sortOrder": 2,
+      "productId": 19
+    },
+    {
+      "id": 112,
+      "title": "Menenun Manual",
+      "actor": "Penenun Ahli",
+      "location": "Desa Lombok",
+      "description": "40-80 jam per kain.",
+      "icon": "IV",
+      "imageUrl": null,
+      "sortOrder": 3,
+      "productId": 19
+    },
+    {
+      "id": 113,
+      "title": "Finishing",
+      "actor": "Tim Finishing",
+      "location": "Workshop Lombok",
+      "description": "Kain dirapikan dan disetrika.",
+      "icon": "V",
+      "imageUrl": null,
+      "sortOrder": 4,
+      "productId": 19
+    },
+    {
+      "id": 114,
+      "title": "Pengemasan Ramah Lingkungan",
+      "actor": "Tim Ekspor",
+      "location": "Gudang Lombok",
+      "description": "Dikemas ramah lingkungan.",
+      "icon": "VI",
+      "imageUrl": null,
+      "sortOrder": 5,
+      "productId": 19
+    },
+    {
+      "id": 115,
+      "title": "Pengadaan Benang Premium",
+      "actor": "Ahli Benang",
+      "location": "Palembang",
+      "description": "Benang sutra dan metalik disiapkan.",
+      "icon": "I",
+      "imageUrl": null,
+      "sortOrder": 0,
+      "productId": 20
+    },
+    {
+      "id": 116,
+      "title": "Pengorganisasian Benang",
+      "actor": "Pengorganisir",
+      "location": "Workshop Palembang",
+      "description": "Benang dipisahkan berdasarkan jenis.",
+      "icon": "II",
+      "imageUrl": null,
+      "sortOrder": 1,
+      "productId": 20
+    },
+    {
+      "id": 117,
+      "title": "Pengaturan Alat Tenun",
+      "actor": "Ahli Alat Tenun",
+      "location": "Workshop Palembang",
+      "description": "Alat tenun tradisional disiapkan.",
+      "icon": "III",
+      "imageUrl": null,
+      "sortOrder": 2,
+      "productId": 20
+    },
+    {
+      "id": 118,
+      "title": "Menenun dengan Benang Emas",
+      "actor": "Penenun Ahli",
+      "location": "Workshop Palembang",
+      "description": "Benang emas ditenun hati-hati.",
+      "icon": "IV",
+      "imageUrl": null,
+      "sortOrder": 3,
+      "productId": 20
+    },
+    {
+      "id": 119,
+      "title": "Inspeksi Kualitas",
+      "actor": "Inspektur Kualitas",
+      "location": "Workshop Palembang",
+      "description": "Pola diperiksa teliti.",
+      "icon": "V",
+      "imageUrl": null,
+      "sortOrder": 4,
+      "productId": 20
+    },
+    {
+      "id": 120,
+      "title": "Pengemasan Mewah",
+      "actor": "Tim Pengemasan",
+      "location": "Palembang",
+      "description": "Dikemas dalam kotak premium.",
+      "icon": "VI",
+      "imageUrl": null,
+      "sortOrder": 5,
+      "productId": 20
+    },
+    {
+      "id": 121,
+      "title": "Penggalian Tanah Liat",
+      "actor": "Penambang",
+      "location": "Tepi Sungai Kasongan",
+      "description": "Tanah liat alami digali.",
+      "icon": "I",
+      "imageUrl": null,
+      "sortOrder": 0,
+      "productId": 21
+    },
+    {
+      "id": 122,
+      "title": "Persiapan Tanah Liat",
+      "actor": "Tim Persiapan",
+      "location": "Workshop Kasongan",
+      "description": "Tanah liat dibersihkan dan diuleni.",
+      "icon": "II",
+      "imageUrl": null,
+      "sortOrder": 1,
+      "productId": 21
+    },
+    {
+      "id": 123,
+      "title": "Pembentukan dengan Roda Putar",
+      "actor": "Pembuat Gerabah",
+      "location": "Workshop Kasongan",
+      "description": "Dibentuk dengan roda putar manual.",
+      "icon": "III",
+      "imageUrl": null,
+      "sortOrder": 2,
+      "productId": 21
+    },
+    {
+      "id": 124,
+      "title": "Pengeringan Alami",
+      "actor": "Tim Pengeringan",
+      "location": "Workshop Kasongan",
+      "description": "Dijemur beberapa hari.",
+      "icon": "IV",
+      "imageUrl": null,
+      "sortOrder": 3,
+      "productId": 21
+    },
+    {
+      "id": 125,
+      "title": "Pembakaran Tungku Tradisional",
+      "actor": "Ahli Tungku",
+      "location": "Tungku Kasongan",
+      "description": "Dibakar dalam tungku kayu.",
+      "icon": "V",
+      "imageUrl": null,
+      "sortOrder": 4,
+      "productId": 21
+    },
+    {
+      "id": 126,
+      "title": "Pengecatan Motif",
+      "actor": "Seniman Pelukis",
+      "location": "Workshop Kasongan",
+      "description": "Motif tradisional dilukis.",
+      "icon": "VI",
+      "imageUrl": null,
+      "sortOrder": 5,
+      "productId": 21
+    },
+    {
+      "id": 127,
+      "title": "Pemanenan Rempah",
+      "actor": "Petani Herbal",
+      "location": "Kebun Yogyakarta",
+      "description": "Rempah-rempah organik dipanen.",
+      "icon": "I",
+      "imageUrl": null,
+      "sortOrder": 0,
+      "productId": 22
+    },
+    {
+      "id": 128,
+      "title": "Pengeringan Alami",
+      "actor": "Ahli Pengeringan",
+      "location": "Workshop Yogyakarta",
+      "description": "Rempah dikeringkan alami.",
+      "icon": "II",
+      "imageUrl": null,
+      "sortOrder": 1,
+      "productId": 22
+    },
+    {
+      "id": 129,
+      "title": "Penggilingan",
+      "actor": "Penggiling",
+      "location": "Workshop Yogyakarta",
+      "description": "Digiling menjadi bubuk halus.",
+      "icon": "III",
+      "imageUrl": null,
+      "sortOrder": 2,
+      "productId": 22
+    },
+    {
+      "id": 130,
+      "title": "Pencampuran Formula",
+      "actor": "Herbalis Ahli",
+      "location": "Workshop Yogyakarta",
+      "description": "Dicampur sesuai resep tradisional.",
+      "icon": "IV",
+      "imageUrl": null,
+      "sortOrder": 3,
+      "productId": 22
+    },
+    {
+      "id": 131,
+      "title": "Penyeduhan dan Ekstraksi",
+      "actor": "Penyeduh",
+      "location": "Dapur Yogyakarta",
+      "description": "Diseduh air panas.",
+      "icon": "V",
+      "imageUrl": null,
+      "sortOrder": 4,
+      "productId": 22
+    },
+    {
+      "id": 132,
+      "title": "Pembotolan",
+      "actor": "Tim Pengemasan",
+      "location": "Yogyakarta",
+      "description": "Dibotolkan dalam wadah kaca.",
+      "icon": "VI",
+      "imageUrl": null,
+      "sortOrder": 5,
+      "productId": 22
+    }
+  ],
+  "reviews": [
+    {
+      "id": 4,
+      "rating": 5,
+      "comment": "Produk yang luar biasa! Kualitas kerajinannya sangat bagus.",
+      "userId": 4,
+      "productId": 12,
+      "createdAt": "2026-02-16T16:02:18.546Z"
+    },
+    {
+      "id": 5,
+      "rating": 5,
+      "comment": "Produk yang luar biasa! Kualitas kerajinannya sangat bagus.",
+      "userId": 4,
+      "productId": 13,
+      "createdAt": "2026-02-16T16:02:18.549Z"
+    },
+    {
+      "id": 6,
+      "rating": 5,
+      "comment": "Produk yang luar biasa! Kualitas kerajinannya sangat bagus.",
+      "userId": 4,
+      "productId": 14,
+      "createdAt": "2026-02-16T16:02:18.554Z"
+    }
+  ],
+  "regions": [
+    {
+      "id": 8,
+      "name": "Pulau Jawa",
+      "emoji": "🏝️",
+      "description": "Pusat kerajinan tangan Indonesia dengan tradisi batik, wayang kulit, dan keramik terkenal dunia.",
+      "createdAt": "2026-02-16T16:02:18.430Z",
+      "updatedAt": "2026-02-16T16:02:18.430Z"
+    },
+    {
+      "id": 9,
+      "name": "Pulau Sumatra",
+      "emoji": "🏝️",
+      "description": "Kaya dengan tekstil tradisional, kopi premium, dan kerajinan tangan dari berbagai suku.",
+      "createdAt": "2026-02-16T16:02:18.434Z",
+      "updatedAt": "2026-02-16T16:02:18.434Z"
+    },
+    {
+      "id": 10,
+      "name": "Pulau Kalimantan",
+      "emoji": "🏝️",
+      "description": "Warisan budaya Dayak dengan ukiran kayu, anyaman rotan, dan kerajinan tradisional unik.",
+      "createdAt": "2026-02-16T16:02:18.438Z",
+      "updatedAt": "2026-02-16T16:02:18.438Z"
+    },
+    {
+      "id": 11,
+      "name": "Pulau Sulawesi",
+      "emoji": "🏝️",
+      "description": "Kekayaan budaya Bugis, Makassar, dan Minahasa.",
+      "createdAt": "2026-02-16T16:02:18.442Z",
+      "updatedAt": "2026-02-16T16:02:18.442Z"
+    },
+    {
+      "id": 12,
+      "name": "Pulau Papua",
+      "emoji": "🏝️",
+      "description": "Budaya asli Papua dengan kerajinan unik dan seni ukir autentik.",
+      "createdAt": "2026-02-16T16:02:18.445Z",
+      "updatedAt": "2026-02-16T16:02:18.445Z"
+    },
+    {
+      "id": 13,
+      "name": "Pulau Bali",
+      "emoji": "🏖️",
+      "description": "Surga wisata dengan kerajinan seni tradisional Bali.",
+      "createdAt": "2026-02-16T16:02:18.451Z",
+      "updatedAt": "2026-02-16T16:02:18.451Z"
+    },
+    {
+      "id": 14,
+      "name": "Pulau Lombok",
+      "emoji": "🏖️",
+      "description": "Destinasi wisata dengan tenun ikat terkenal dan keramik.",
+      "createdAt": "2026-02-16T16:02:18.454Z",
+      "updatedAt": "2026-02-16T16:02:18.454Z"
+    }
+  ],
+  "regionProducts": [
+    {
+      "id": 24,
+      "name": "Batik Parang Rusak",
+      "category": "Batik",
+      "umkm": "Batik Tulis Klasik",
+      "emoji": "🎨",
+      "regionId": 8
+    },
+    {
+      "id": 25,
+      "name": "Wayang Kulit",
+      "category": "Crafts",
+      "umkm": "Wayang Kulit Yogyakarta",
+      "emoji": "🎭",
+      "regionId": 8
+    },
+    {
+      "id": 26,
+      "name": "Gerabah Kasongan",
+      "category": "Pottery",
+      "umkm": "Sentra Kasongan",
+      "emoji": "🏺",
+      "regionId": 8
+    },
+    {
+      "id": 27,
+      "name": "Jamu Tradisional",
+      "category": "Herbal",
+      "umkm": "Jamu Mak Citra",
+      "emoji": "🌿",
+      "regionId": 8
+    },
+    {
+      "id": 28,
+      "name": "Tahu Goreng Pedas",
+      "category": "Snacks",
+      "umkm": "Mak Sumi Bandung",
+      "emoji": "🍴",
+      "regionId": 8
+    },
+    {
+      "id": 29,
+      "name": "Kain Songket Palembang",
+      "category": "Woven",
+      "umkm": "Songket Premium",
+      "emoji": "🧵",
+      "regionId": 9
+    },
+    {
+      "id": 30,
+      "name": "Minyak Kayu Putih",
+      "category": "Herbal",
+      "umkm": "Essential Oil Ambon",
+      "emoji": "🧴",
+      "regionId": 9
+    },
+    {
+      "id": 31,
+      "name": "Tenun Ulos Batak",
+      "category": "Woven",
+      "umkm": "Tenun Tradisional",
+      "emoji": "🧶",
+      "regionId": 9
+    },
+    {
+      "id": 32,
+      "name": "Kopi Arabika Gayo",
+      "category": "Snacks",
+      "umkm": "Kopi Specialty",
+      "emoji": "☕",
+      "regionId": 9
+    },
+    {
+      "id": 33,
+      "name": "Batik Jambi Modern",
+      "category": "Batik",
+      "umkm": "Batik Jambi",
+      "emoji": "🎨",
+      "regionId": 9
+    },
+    {
+      "id": 34,
+      "name": "Ukiran Kayu Dayak",
+      "category": "Crafts",
+      "umkm": "Ukir Tradisional",
+      "emoji": "🎭",
+      "regionId": 10
+    },
+    {
+      "id": 35,
+      "name": "Anyaman Rotan",
+      "category": "Crafts",
+      "umkm": "Kerajinan Rotan",
+      "emoji": "🧺",
+      "regionId": 10
+    },
+    {
+      "id": 36,
+      "name": "Batik Kalimantan",
+      "category": "Batik",
+      "umkm": "Batik Lokal",
+      "emoji": "🎨",
+      "regionId": 10
+    },
+    {
+      "id": 37,
+      "name": "Tenun Ikat Sulawesi",
+      "category": "Woven",
+      "umkm": "Tenun Sulawesi",
+      "emoji": "🧵",
+      "regionId": 11
+    },
+    {
+      "id": 38,
+      "name": "Batik Makassar",
+      "category": "Batik",
+      "umkm": "Batik Makassar",
+      "emoji": "🎨",
+      "regionId": 11
+    },
+    {
+      "id": 39,
+      "name": "Tenun Papua Asli",
+      "category": "Woven",
+      "umkm": "Tenun Tradisional",
+      "emoji": "🧵",
+      "regionId": 12
+    },
+    {
+      "id": 40,
+      "name": "Ukir Kayu Papua",
+      "category": "Crafts",
+      "umkm": "Seni Ukir",
+      "emoji": "🎭",
+      "regionId": 12
+    },
+    {
+      "id": 41,
+      "name": "Madu Hutan Papua",
+      "category": "Herbal",
+      "umkm": "Madu Organik",
+      "emoji": "🍯",
+      "regionId": 12
+    },
+    {
+      "id": 42,
+      "name": "Batik Bali",
+      "category": "Batik",
+      "umkm": "Batik Bali Tradisional",
+      "emoji": "🎨",
+      "regionId": 13
+    },
+    {
+      "id": 43,
+      "name": "Ukir Kayu Bali",
+      "category": "Crafts",
+      "umkm": "Ukir Bali",
+      "emoji": "🎭",
+      "regionId": 13
+    },
+    {
+      "id": 44,
+      "name": "Silver Jewelry Ubud",
+      "category": "Crafts",
+      "umkm": "Perak Ubud",
+      "emoji": "✨",
+      "regionId": 13
+    },
+    {
+      "id": 45,
+      "name": "Tenun Ikat Lombok",
+      "category": "Woven",
+      "umkm": "Tenun Songket",
+      "emoji": "🧵",
+      "regionId": 14
+    },
+    {
+      "id": 46,
+      "name": "Keramik Lombok",
+      "category": "Pottery",
+      "umkm": "Keramik Tradisional",
+      "emoji": "🏺",
+      "regionId": 14
+    }
+  ],
+  "teamMembers": [
+    {
+      "id": 4,
+      "name": "Muhammad Faqih",
+      "role": "Beban Fakultas",
+      "position": "Beban Fakultas",
+      "bio": "anu",
+      "image": "/assets/team/golden-gunungan-wayang-design-indonesian-javanese-culture-free-png-removebg-preview.png",
+      "email": "faqih@legacytrace.id",
+      "phone": "+62 812-3456-7890",
+      "linkedin": null,
+      "twitter": null,
+      "instagram": "https://instagram.com/voidbriella",
+      "expertise": [
+        "Beban Kampus"
+      ],
+      "experience": 8,
+      "quote": "yang penting makan nasi ayam",
+      "createdAt": "2026-02-16T16:02:18.459Z",
+      "updatedAt": "2026-02-16T16:49:36.390Z"
+    },
+    {
+      "id": 5,
+      "name": "Kaffqa Tegar Gayuh Pamungkas",
+      "role": "Beban Fakultas",
+      "position": "Beban Fakultas",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "image": "/assets/team/golden-gunungan-wayang-design-indonesian-javanese-culture-free-png-removebg-preview.png",
+      "email": "kaffqa@legacytrace.id",
+      "phone": "+62 821-9876-5432",
+      "linkedin": null,
+      "twitter": null,
+      "instagram": null,
+      "expertise": [
+        "Beban Kampus"
+      ],
+      "experience": 6,
+      "quote": "yang penting makan nasi",
+      "createdAt": "2026-02-16T16:02:18.465Z",
+      "updatedAt": "2026-02-16T16:02:18.465Z"
+    },
+    {
+      "id": 6,
+      "name": "Desmonda Varel Robel Salim",
+      "role": "Beban Fakultas",
+      "position": "Beban Fakultas",
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "image": "/assets/team/golden-gunungan-wayang-design-indonesian-javanese-culture-free-png-removebg-preview.png",
+      "email": "v@legacytrace.id",
+      "phone": "+62 822-1111-2222",
+      "linkedin": null,
+      "twitter": null,
+      "instagram": null,
+      "expertise": [
+        "Beban Kampus"
+      ],
+      "experience": 5,
+      "quote": "yang penting makan nasi",
+      "createdAt": "2026-02-16T16:02:18.469Z",
+      "updatedAt": "2026-02-16T16:02:18.469Z"
+    }
+  ],
+  "quizQuestions": [
+    {
+      "id": 9,
+      "question": "Bahan tradisional apa yang digunakan untuk membuat pola resist pada batik?",
+      "options": [
+        "Tanah liat",
+        "Lilin",
+        "Kertas",
+        "Garam"
+      ],
+      "correct": 1,
+      "explanation": "Lilin panas diaplikasikan pada kain untuk membuat pola resist."
+    },
+    {
+      "id": 10,
+      "question": "Apa yang disimbolkan oleh motif Mega Mendung dalam budaya Sunda?",
+      "options": [
+        "Hujan dan air",
+        "Perlindungan dan kemakmuran",
+        "Perang dan konflik",
+        "Kematian dan berkabung"
+      ],
+      "correct": 1,
+      "explanation": "Mega Mendung melambangkan perlindungan dan aliran kemakmuran."
+    },
+    {
+      "id": 11,
+      "question": "Berapa lama waktu menggambar satu lembar batik dengan tangan?",
+      "options": [
+        "2-3 jam",
+        "5-7 jam",
+        "8-12 jam",
+        "20-24 jam"
+      ],
+      "correct": 2,
+      "explanation": "Pengrajin ahli menghabiskan 8-12 jam menggambar pola rumit."
+    },
+    {
+      "id": 12,
+      "question": "Bahan apa yang secara tradisional digunakan untuk membuat wayang kulit?",
+      "options": [
+        "Kayu",
+        "Kertas",
+        "Kulit kerbau",
+        "Kain"
+      ],
+      "correct": 2,
+      "explanation": "Wayang kulit dibuat dari kulit kerbau."
+    },
+    {
+      "id": 13,
+      "question": "Berapa jam yang dibutuhkan untuk mengukir satu wayang?",
+      "options": [
+        "10-15 jam",
+        "30-50 jam",
+        "70-90 jam",
+        "120+ jam"
+      ],
+      "correct": 1,
+      "explanation": "Pengukir ahli menginvestasikan 30-50 jam per wayang."
+    },
+    {
+      "id": 14,
+      "question": "Apa yang membuat kain songket istimewa?",
+      "options": [
+        "Benang sutra",
+        "Benang emas/perak",
+        "Hanya katun",
+        "Sintetis"
+      ],
+      "correct": 1,
+      "explanation": "Kain songket ditenun dengan benang metalik emas dan perak."
+    },
+    {
+      "id": 15,
+      "question": "Dari mana tanah liat gerabah Kasongan diekstrak?",
+      "options": [
+        "Gunung",
+        "Tepi sungai",
+        "Area kota",
+        "Laut"
+      ],
+      "correct": 1,
+      "explanation": "Tanah liat digali dari tepi sungai Kasongan."
+    },
+    {
+      "id": 16,
+      "question": "Jamu terbuat dari apa?",
+      "options": [
+        "Perasa buatan",
+        "Herbal dan rempah alami",
+        "Air gula",
+        "Bahan kimia"
+      ],
+      "correct": 1,
+      "explanation": "Jamu tradisional dibuat dari 100% herbal dan rempah alami."
+    }
+  ]
+}

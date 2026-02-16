@@ -1,10 +1,9 @@
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { products, quizzes } from '../data/products'
-import { Product, QuizQuestion } from '../types/product'
+import { api } from '../lib/api'
+import { Product } from '../types/product'
 import { TimelineStep } from '../components/TimelineStep'
-import { QuizCard } from '../components/QuizCard'
 import { BackgroundShapes } from '../components/BackgroundShapes'
 import {
   MapPin, Check, BookOpen, Leaf, Hammer, Hand,
@@ -15,19 +14,15 @@ export const Passport = () => {
   const { productId } = useParams()
   const navigate = useNavigate()
   const [product, setProduct] = useState<Product | null>(null)
+  const [loading, setLoading] = useState(true)
   const [visibleSteps, setVisibleSteps] = useState<Set<number>>(new Set())
-  const [showQuiz, setShowQuiz] = useState(false)
-  const [quizQuestions, setQuizQuestions] = useState<QuizQuestion[]>([])
 
   useEffect(() => {
-    const found = products.find(p => p.id === productId)
-    if (found && productId) {
-      setProduct(found)
-      const questions = quizzes[productId] || []
-      setQuizQuestions(questions)
-    } else {
-      navigate('/products')
-    }
+    if (!productId) { navigate('/products'); return }
+    api.get<Product>(`/products/${productId}`)
+      .then(setProduct)
+      .catch(() => navigate('/products'))
+      .finally(() => setLoading(false))
   }, [productId, navigate])
 
   useEffect(() => {
@@ -51,7 +46,20 @@ export const Passport = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } }
   }
 
+  if (loading) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="w-8 h-8 border-3 border-gold/30 border-t-gold dark:border-gold-neon/30 dark:border-t-gold-neon rounded-full animate-spin" />
+    </div>
+  )
   if (!product) return null
+
+  // Map artisan fields from nested object for backward compat
+  const artisanName = product.artisan?.name || product.artisanName || 'Pengrajin'
+  const artisanExperience = product.artisan?.yearsExperience || product.artisanExperience || 0
+  const artisanQuote = product.artisan?.quote || product.artisanQuote || ''
+  const artisanQuoteLocal = product.artisan?.quoteLocal || product.artisanQuoteLocal || ''
+  const artisanPhotoUrl = product.artisan?.photoUrl || product.artisanPhotoUrl || ''
+  const steps = product.supplySteps || product.steps || []
 
   return (
     <div className="min-h-screen pb-20 relative page-transition">
@@ -212,7 +220,7 @@ export const Passport = () => {
 
           {/* Steps */}
           <div className="space-y-12">
-            {product.steps.map((step, idx) => (
+            {steps.map((step, idx) => (
               <TimelineStep
                 key={step.id}
                 step={step}
@@ -261,28 +269,28 @@ export const Passport = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
                 >
-                  {product.artisanPhotoUrl ? (
+                  {artisanPhotoUrl ? (
                     <img
-                      src={product.artisanPhotoUrl}
-                      alt={product.artisanName}
+                      src={artisanPhotoUrl}
+                      alt={artisanName}
                       className="w-full h-full object-cover"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement
                         target.style.display = 'none'
                         const parent = target.parentElement
                         if (parent) {
-                          parent.innerHTML = `<span class="text-4xl text-white font-serif font-bold">${product.artisanName.charAt(0)}</span>`
+                          parent.innerHTML = `<span class="text-4xl text-white font-serif font-bold">${artisanName.charAt(0)}</span>`
                         }
                       }}
                     />
                   ) : (
                     <span className="text-4xl text-white font-serif font-bold">
-                      {product.artisanName.charAt(0)}
+                      {artisanName.charAt(0)}
                     </span>
                   )}
                 </motion.div>
 
-                <h3 className="text-2xl font-serif font-bold text-ink dark:text-dark-heading mb-1">{product.artisanName}</h3>
+                <h3 className="text-2xl font-serif font-bold text-ink dark:text-dark-heading mb-1">{artisanName}</h3>
                 <p className="text-sm text-teal dark:text-teal-neon font-semibold mb-2">
                   {product.category === 'batik' && 'Ahli Pembatik Tradisional'}
                   {product.category === 'makanan' && 'Ahli Kuliner Tradisional'}
@@ -299,7 +307,7 @@ export const Passport = () => {
                 <div className="grid grid-cols-2 gap-3 w-full">
                   <div className="bg-gold-soft dark:bg-gold-glow-bg rounded-xl p-3 text-center">
                     <Clock className="w-5 h-5 text-gold dark:text-gold-neon mx-auto mb-1" />
-                    <p className="text-xl font-bold text-gold dark:text-gold-neon">{product.artisanExperience}+</p>
+                    <p className="text-xl font-bold text-gold dark:text-gold-neon">{artisanExperience}+</p>
                     <p className="text-xs text-stone-text dark:text-dark-muted">Tahun</p>
                   </div>
                   <div className="bg-teal-soft dark:bg-teal-glow-bg rounded-xl p-3 text-center">
@@ -328,7 +336,7 @@ export const Passport = () => {
                     <Award className="w-4 h-4" /> Tentang Pengrajin
                   </h4>
                   <p className="text-sm text-stone-text dark:text-dark-body leading-relaxed">
-                    {product.artisanName} adalah pengrajin berpengalaman dengan lebih dari {product.artisanExperience} tahun dedikasi dalam melestarikan warisan budaya Indonesia. 
+                    {artisanName} adalah pengrajin berpengalaman dengan lebih dari {artisanExperience} tahun dedikasi dalam melestarikan warisan budaya Indonesia.
                     Keahlian dan ketekunan beliau telah menghasilkan karya-karya berkualitas tinggi yang menggabungkan teknik tradisional dengan sentuhan artistik yang unik.
                   </p>
                 </div>
@@ -337,15 +345,15 @@ export const Passport = () => {
                 <div className="relative mb-6">
                   <Quote className="w-10 h-10 text-gold/20 dark:text-gold-neon/20 absolute -top-2 -left-2" />
                   <blockquote className="pl-8 text-xl italic text-ink dark:text-dark-heading leading-relaxed font-serif">
-                    "{product.artisanQuote}"
+                    "{artisanQuote}"
                   </blockquote>
                   <p className="text-right text-sm text-stone-text dark:text-dark-muted mt-2 pr-2">
-                    — {product.artisanName}
+                    — {artisanName}
                   </p>
                 </div>
 
                 {/* Local Quote */}
-                {product.artisanQuoteLocal && (
+                {artisanQuoteLocal && (
                   <motion.div
                     className="bg-gradient-to-r from-teal-soft/60 to-gold-soft/40 dark:from-teal-glow-bg/50 dark:to-gold-glow-bg/30 rounded-xl p-5 border-l-4 border-teal dark:border-teal-neon mb-6"
                     initial={{ opacity: 0, x: -10 }}
@@ -357,7 +365,7 @@ export const Passport = () => {
                       <p className="text-sm text-teal dark:text-teal-neon font-semibold">Dalam Bahasa Lokal:</p>
                     </div>
                     <blockquote className="text-base italic text-ink dark:text-dark-body leading-relaxed font-serif">
-                      "{product.artisanQuoteLocal}"
+                      "{artisanQuoteLocal}"
                     </blockquote>
                   </motion.div>
                 )}
@@ -372,45 +380,7 @@ export const Passport = () => {
       {/* ═══════════════════════════════════
           QUIZ SECTION
          ═══════════════════════════════════ */}
-      {quizQuestions.length > 0 && (
-        <motion.section
-          className="max-w-6xl mx-auto px-8 py-8 mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="glass rounded-3xl shadow-xl p-8 border border-stone-100/60 dark:border-night-border/60 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.02] to-teal/[0.02] dark:from-gold-neon/[0.04] dark:to-teal-neon/[0.04]" />
 
-            <div className="relative z-10">
-              <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-teal/10 dark:bg-teal-neon/10 rounded-full mb-4">
-                  <BookOpen className="w-4 h-4 text-teal dark:text-teal-neon" />
-                  <span className="text-sm font-semibold text-teal dark:text-teal-neon">Interactive Quiz</span>
-                </div>
-                <h2 className="text-2xl md:text-3xl font-serif font-bold text-ink dark:text-dark-heading mb-2">
-                  Uji <span className="gradient-text">Pengetahuan</span> Anda
-                </h2>
-                <p className="text-stone-text dark:text-dark-body">Pelajari lebih lanjut tentang perjalanan etis produk ini!</p>
-              </div>
-
-              {!showQuiz ? (
-                <motion.button
-                  className="w-full py-4 bg-gradient-to-r from-gold to-gold-deep dark:from-gold-neon dark:to-gold-bright text-white dark:text-night font-semibold rounded-xl shadow-lg hover:shadow-xl hover:shadow-gold/30 dark:hover:shadow-gold-neon/30 transition-all duration-300 btn-glow text-lg"
-                  onClick={() => setShowQuiz(true)}
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Mulai Kuis Interaktif →
-                </motion.button>
-              ) : (
-                <QuizCard questions={quizQuestions} />
-              )}
-            </div>
-          </div>
-        </motion.section>
-      )}
     </div>
   )
 }

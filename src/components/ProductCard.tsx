@@ -51,7 +51,7 @@ export const ProductCard = ({ product, selectedCategory }: ProductCardProps) => 
           <p className="text-stone-text dark:text-dark-body text-sm mb-4">{product.village}</p>
 
           <div className="flex flex-wrap gap-2 mt-auto">
-            {product.ethicalBadges.map((badge, idx) => (
+            {(Array.isArray(product.ethicalBadges) ? product.ethicalBadges : []).map((badge, idx) => (
               <motion.span
                 key={idx}
                 className={`${getCategoryColor(product.category)} px-3 py-1 rounded-full text-xs font-semibold transition-all duration-300 hover:text-white hover:scale-110 shadow-md`}

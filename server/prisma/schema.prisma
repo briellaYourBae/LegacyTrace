@@ -1,0 +1,125 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("USER") // "ADMIN" or "USER"
+  reviews   Review[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Artisan {
+  id                Int       @id @default(autoincrement())
+  name              String
+  specialty         String
+  location          String
+  description       String?
+  quote             String?
+  quoteLocal        String?
+  photoUrl          String?
+  yearsExperience   Int       @default(0)
+  culturalBackground String?
+  products          Product[]
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+model Product {
+  id            Int          @id @default(autoincrement())
+  name          String
+  description   String
+  category      String
+  imageUrl      String
+  umkm          String?
+  umkmStory     String?
+  village       String?
+  culturalValue String?
+  ethicalBadges Json       @default("[]")
+  artisanId     Int
+  artisan       Artisan      @relation(fields: [artisanId], references: [id], onDelete: Cascade)
+  supplySteps   SupplyStep[]
+  reviews       Review[]
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model SupplyStep {
+  id          Int     @id @default(autoincrement())
+  title       String
+  actor       String
+  location    String
+  description String
+  icon        String  @default("")
+  imageUrl    String?
+  sortOrder   Int     @default(0)
+  productId   Int
+  product     Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+}
+
+model Review {
+  id        Int      @id @default(autoincrement())
+  rating    Int
+  comment   String
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  productId Int
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model Region {
+  id          Int            @id @default(autoincrement())
+  name        String
+  emoji       String         @default("")
+  description String
+  products    RegionProduct[]
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+model RegionProduct {
+  id       Int    @id @default(autoincrement())
+  name     String
+  category String
+  umkm     String
+  emoji    String @default("")
+  regionId Int
+  region   Region @relation(fields: [regionId], references: [id], onDelete: Cascade)
+}
+
+model TeamMember {
+  id         Int      @id @default(autoincrement())
+  name       String
+  role       String
+  position   String
+  bio        String
+  image      String
+  email      String
+  phone      String
+  linkedin   String?
+  twitter    String?
+  instagram  String?
+  expertise  Json     @default("[]")
+  experience Int      @default(0)
+  quote      String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model QuizQuestion {
+  id          Int    @id @default(autoincrement())
+  question    String
+  options     Json   @default("[]")
+  correct     Int    @default(0)
+  explanation String
+}

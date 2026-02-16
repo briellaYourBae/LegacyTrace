@@ -1,7 +1,7 @@
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { products } from '../data/products'
+import { motion } from 'framer-motion'
+import { api } from '../lib/api'
 import { Product } from '../types/product'
 import { BackgroundShapes } from '../components/BackgroundShapes'
 import {
@@ -10,35 +10,26 @@ import {
   BookOpen, CheckCircle
 } from 'lucide-react'
 
-// Generate a deterministic avatar URL based on the artisan name
-const getArtisanAvatar = (name: string, gender: 'men' | 'women' = 'men') => {
-  // Create a hash from the name to get a consistent but varied number
-  let hash = 0
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash)
-  }
-  const num = Math.abs(hash) % 90 + 1
-  return `https://randomuser.me/api/portraits/${gender}/${num}.jpg`
-}
-
-// Determine gender from Indonesian name conventions
-const getGender = (name: string): 'men' | 'women' => {
-  if (name.startsWith('Ibu') || name.startsWith('Mak') || name.startsWith('Ni ')) return 'women'
-  return 'men'
-}
-
 export const ArtisanPage = () => {
   const { artisanId } = useParams()
   const navigate = useNavigate()
   const [artisanProducts, setArtisanProducts] = useState<Product[]>([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const found = products.filter(p => p.id.includes(artisanId || ''))
-    if (found.length > 0) {
-      setArtisanProducts(found)
-    } else {
-      navigate('/products')
-    }
+    if (!artisanId) { navigate('/products'); return }
+    // Fetch all products and filter by artisanId
+    api.get<Product[]>('/products')
+      .then(all => {
+        const found = all.filter(p => p.artisanId === Number(artisanId))
+        if (found.length > 0) {
+          setArtisanProducts(found)
+        } else {
+          navigate('/products')
+        }
+      })
+      .catch(() => navigate('/products'))
+      .finally(() => setLoading(false))
   }, [artisanId, navigate])
 
   useEffect(() => {
@@ -58,10 +49,21 @@ export const ArtisanPage = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } }
   }
 
+  if (loading) return (
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="w-8 h-8 border-3 border-gold/30 border-t-gold dark:border-gold-neon/30 dark:border-t-gold-neon rounded-full animate-spin" />
+    </div>
+  )
+
   if (artisanProducts.length === 0) return null
 
-  const artisan = artisanProducts[0]
-  const avatarUrl = artisan.artisanPhotoUrl || getArtisanAvatar(artisan.artisanName, getGender(artisan.artisanName))
+  const firstProduct = artisanProducts[0]
+  const artisan = firstProduct.artisan
+  const artisanName = artisan?.name || firstProduct.artisanName || 'Pengrajin'
+  const artisanExperience = artisan?.yearsExperience || firstProduct.artisanExperience || 0
+  const artisanQuote = artisan?.quote || firstProduct.artisanQuote || ''
+  const artisanQuoteLocal = artisan?.quoteLocal || firstProduct.artisanQuoteLocal || ''
+  const artisanPhotoUrl = artisan?.photoUrl || firstProduct.artisanPhotoUrl || ''
 
   return (
     <div className="min-h-screen pb-20 relative page-transition">
@@ -106,15 +108,14 @@ export const ArtisanPage = () => {
               <div className="absolute -inset-3 bg-gradient-to-br from-gold/30 to-teal/30 dark:from-gold-neon/30 dark:to-teal-neon/30 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden ring-4 ring-white dark:ring-night-card shadow-2xl">
                 <img
-                  src={avatarUrl}
-                  alt={artisan.artisanName}
+                  src={artisanPhotoUrl}
+                  alt={artisanName}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   onError={(e) => {
-                    // Fallback to initial-based avatar if image fails
                     const target = e.target as HTMLImageElement
                     target.style.display = 'none'
                     target.parentElement!.classList.add('bg-gradient-to-br', 'from-gold', 'to-teal', 'dark:from-gold-neon', 'dark:to-teal-neon', 'flex', 'items-center', 'justify-center')
-                    target.parentElement!.innerHTML = `<span class="text-5xl text-white font-serif font-bold">${artisan.artisanName.charAt(0)}</span>`
+                    target.parentElement!.innerHTML = `<span class="text-5xl text-white font-serif font-bold">${artisanName.charAt(0)}</span>`
                   }}
                 />
               </div>
@@ -138,7 +139,7 @@ export const ArtisanPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 }}
               >
-                {artisan.artisanName}
+                {artisanName}
               </motion.h1>
               <motion.p
                 className="text-lg text-teal dark:text-teal-neon font-semibold mb-1"
@@ -146,7 +147,7 @@ export const ArtisanPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                Ahli {artisan.category.charAt(0).toUpperCase() + artisan.category.slice(1)} Tradisional
+                Ahli {firstProduct.category.charAt(0).toUpperCase() + firstProduct.category.slice(1)} Tradisional
               </motion.p>
               <motion.p
                 className="text-base text-stone-text dark:text-dark-body flex items-center gap-2 justify-center md:justify-start mb-5"
@@ -154,7 +155,7 @@ export const ArtisanPage = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.45 }}
               >
-                <MapPin className="w-4 h-4 text-gold dark:text-gold-neon" /> {artisan.village}
+                <MapPin className="w-4 h-4 text-gold dark:text-gold-neon" /> {firstProduct.village}
               </motion.p>
 
               {/* Ethical badges */}
@@ -164,7 +165,7 @@ export const ArtisanPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                {artisan.ethicalBadges.slice(0, 3).map((badge, idx) => (
+                {firstProduct.ethicalBadges.slice(0, 3).map((badge, idx) => (
                   <span
                     key={idx}
                     className="px-3 py-1 bg-teal/10 dark:bg-teal-neon/10 text-teal dark:text-teal-neon rounded-full text-xs font-semibold flex items-center gap-1"
@@ -195,7 +196,7 @@ export const ArtisanPage = () => {
             whileHover={{ y: -4 }}
           >
             <Clock className="w-8 h-8 text-gold dark:text-gold-neon mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-            <p className="text-3xl font-bold text-gold dark:text-gold-neon">{artisan.artisanExperience}+</p>
+            <p className="text-3xl font-bold text-gold dark:text-gold-neon">{artisanExperience}+</p>
             <p className="text-sm text-stone-text dark:text-dark-muted font-medium">Tahun Pengalaman</p>
           </motion.div>
 
@@ -248,15 +249,15 @@ export const ArtisanPage = () => {
             <Quote className="w-12 h-12 text-gold/20 dark:text-gold-neon/20 flex-shrink-0" />
             <div className="flex-1">
               <blockquote className="text-xl md:text-2xl italic text-ink dark:text-dark-heading leading-relaxed font-serif mb-4">
-                "{artisan.artisanQuote}"
+                "{artisanQuote}"
               </blockquote>
-              {artisan.artisanQuoteLocal && (
+              {artisanQuoteLocal && (
                 <div className="bg-gold-soft/50 dark:bg-gold-glow-bg/50 rounded-xl p-4 border-l-4 border-gold dark:border-gold-neon mb-4">
                   <p className="text-xs text-stone-text dark:text-dark-muted font-semibold mb-1">Dalam bahasa lokal:</p>
-                  <p className="text-base italic text-ink dark:text-dark-body leading-relaxed">"{artisan.artisanQuoteLocal}"</p>
+                  <p className="text-base italic text-ink dark:text-dark-body leading-relaxed">"{artisanQuoteLocal}"</p>
                 </div>
               )}
-              <p className="text-sm text-gold dark:text-gold-neon font-semibold">— {artisan.artisanName}</p>
+              <p className="text-sm text-gold dark:text-gold-neon font-semibold">— {artisanName}</p>
             </div>
           </div>
         </div>
@@ -281,7 +282,7 @@ export const ArtisanPage = () => {
               </div>
               <h2 className="text-xl font-serif font-bold text-ink dark:text-dark-heading group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">Kisah Pengrajin</h2>
             </div>
-            <p className="text-stone-text dark:text-dark-body leading-relaxed">{artisan.umkmStory}</p>
+            <p className="text-stone-text dark:text-dark-body leading-relaxed">{firstProduct.umkmStory}</p>
           </div>
 
           {/* Cultural Value */}
@@ -292,7 +293,7 @@ export const ArtisanPage = () => {
               </div>
               <h2 className="text-xl font-serif font-bold text-ink dark:text-dark-heading group-hover:text-gold dark:group-hover:text-gold-neon transition-colors">Nilai Budaya</h2>
             </div>
-            <p className="text-stone-text dark:text-dark-body leading-relaxed">{artisan.culturalValue}</p>
+            <p className="text-stone-text dark:text-dark-body leading-relaxed">{firstProduct.culturalValue}</p>
           </div>
         </div>
       </motion.section>
@@ -313,12 +314,12 @@ export const ArtisanPage = () => {
             <span className="text-sm font-semibold text-gold dark:text-gold-neon">Karya & Produk</span>
           </div>
           <h2 className="text-3xl font-serif font-bold text-ink dark:text-dark-heading">
-            Kreasi <span className="gradient-text">{artisan.artisanName}</span>
+            Kreasi <span className="gradient-text">{artisanName}</span>
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {artisanProducts.map((product, idx) => (
+          {artisanProducts.map((product) => (
             <motion.div
               key={product.id}
               className="glass rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-stone-100/60 dark:border-night-border/60 group card-hover"

@@ -1,47 +1,106 @@
 export interface SupplyStep {
-    id: string
+    id: number | string
     title: string
     actor: string
     location: string
     description: string
     icon: string
-    imageUrl?: string
+    imageUrl?: string | null
+    sortOrder?: number
+    productId?: number | string
+}
+
+export interface Artisan {
+    id: number | string
+    name: string
+    specialty: string
+    location: string
+    description?: string | null
+    quote: string
+    quoteLocal?: string | null
+    photoUrl: string
+    yearsExperience: number
+    culturalBackground: string
+    createdAt?: string
+    updatedAt?: string
+}
+
+export interface Review {
+    id: number | string
+    rating: number
+    comment: string
+    userId: number | string
+    productId: number | string
+    createdAt?: string
+    user?: { id: number | string; name: string }
 }
 
 export interface Product {
-    id: string
+    id: number | string
     name: string
+    description: string
+    category: string
+    imageUrl: string
     umkm: string
     umkmStory: string
     village: string
-    category: 'batik' | 'makanan' | 'kerajinan' | 'tenun' | 'gerabah' | 'herbal'
-    description: string
-    imageUrl: string
+    culturalValue: string
     ethicalBadges: string[]
-    steps: SupplyStep[]
-    artisanName: string
-    artisanExperience: number
-    artisanQuote: string
+    artisanId?: number | string
+    createdAt?: string
+    updatedAt?: string
+    artisan?: Artisan
+    supplySteps?: SupplyStep[]
+    reviews?: Review[]
+    // Legacy compat aliases
+    steps?: SupplyStep[]
+    artisanName?: string
+    artisanExperience?: number
+    artisanQuote?: string
     artisanQuoteLocal?: string
     artisanPhotoUrl?: string
-    culturalValue: string
 }
 
 export interface QuizQuestion {
-    id: string
+    id: number | string
     question: string
     options: string[]
     correct: number
     explanation: string
 }
 
-export interface Artisan {
-    id: string
+export interface Region {
+    id: number
     name: string
-    photoUrl: string
-    yearsExperience: number
-    specialty: string
-    culturalBackground: string
+    emoji: string
+    description: string
+    createdAt: string
+    updatedAt: string
+    products: Array<{
+        id: number
+        name: string
+        category: string
+        umkm: string
+        emoji: string
+        regionId: number
+    }>
+}
+
+export interface TeamMember {
+    id: number
+    name: string
+    role: string
+    position: string
+    bio: string
+    image: string
+    email: string
+    phone: string
+    linkedin?: string | null
+    twitter?: string | null
+    instagram?: string | null
+    expertise: string[]
+    experience: number
     quote: string
-    products: string[]
+    createdAt: string
+    updatedAt: string
 }
