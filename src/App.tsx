@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { LoadingScreen } from './components/LoadingScreen'
 import { FloatingMenu } from './components/FloatingMenu'
+import { ScrollToTop } from './components/ScrollToTop'
 import { Home } from './pages/Home'
 import { Products } from './pages/Products'
 import { Passport } from './pages/Passport'
@@ -29,9 +30,10 @@ export const App = () => {
       <AnimatePresence>
         {loading && <LoadingScreen />}
       </AnimatePresence>
-      
+
       {!loading && (
         <Router>
+          <ScrollToTop />
           <Navbar />
           <main className="pt-24">
             <Routes>

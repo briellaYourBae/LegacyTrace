@@ -10,6 +10,11 @@ export const FloatingMenu = () => {
 
   const isMainPage = ['/', '/products', '/edutainment'].includes(location.pathname)
 
+  // Close menu when route changes
+  useEffect(() => {
+    setShowMenu(false)
+  }, [location.pathname])
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     setShowMenu(false)
@@ -31,10 +36,6 @@ export const FloatingMenu = () => {
 
   const goToPartnership = () => {
     navigate('/partnership')
-    setShowMenu(false)
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    }, 100)
   }
 
   return (

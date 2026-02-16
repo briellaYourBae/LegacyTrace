@@ -24,7 +24,6 @@ export const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false)
-    window.scrollTo(0, 0)
   }, [location.pathname])
 
   const handleNavClick = (e: React.MouseEvent, path: string) => {

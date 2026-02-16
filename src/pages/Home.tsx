@@ -63,9 +63,6 @@ const StatCounter = ({ value, suffix, label, delay }: { value: number; suffix: s
 }
 
 export const Home = () => {
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [])
 
   const features = [
     {
