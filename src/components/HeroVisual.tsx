@@ -33,23 +33,12 @@ export const HeroVisual = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-gold-soft/60 via-teal-soft/30 to-coral-soft/40 dark:from-gold-glow-bg/40 dark:via-teal-glow-bg/20 dark:to-coral-glow-bg/30" />
 
                 {/* Animated gradient orbs */}
+                {/* Single ambient gradient orb (reduced from 3 for performance) */}
                 <motion.div
-                    className="absolute w-48 h-48 rounded-full bg-gradient-to-br from-gold/20 to-gold-light/10 dark:from-gold-neon/15 dark:to-gold-bright/5 blur-3xl"
-                    style={{ top: '10%', left: '15%' }}
+                    className="absolute w-48 h-48 rounded-full bg-gradient-to-br from-gold/20 to-teal/10 dark:from-gold-neon/15 dark:to-teal-neon/5 blur-3xl"
+                    style={{ top: '20%', left: '25%', willChange: 'transform' }}
                     animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.7, 0.4] }}
-                    transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                />
-                <motion.div
-                    className="absolute w-40 h-40 rounded-full bg-gradient-to-br from-teal/15 to-teal-light/10 dark:from-teal-neon/12 dark:to-teal-bright/5 blur-3xl"
-                    style={{ bottom: '10%', right: '10%' }}
-                    animate={{ scale: [1, 1.4, 1], opacity: [0.3, 0.6, 0.3] }}
-                    transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                />
-                <motion.div
-                    className="absolute w-32 h-32 rounded-full bg-gradient-to-br from-coral/10 to-coral/5 dark:from-coral-neon/8 dark:to-coral-bright/3 blur-3xl"
-                    style={{ top: '50%', left: '60%' }}
-                    animate={{ scale: [1, 1.25, 1], opacity: [0.2, 0.5, 0.2] }}
-                    transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+                    transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
                 />
 
                 {/* Decorative grid dots */}
@@ -266,29 +255,7 @@ export const HeroVisual = () => {
                 </defs>
             </svg>
 
-            {/* ── Small floating particles ── */}
-            {[...Array(8)].map((_, i) => (
-                <motion.div
-                    key={`particle-${i}`}
-                    className="absolute w-1.5 h-1.5 rounded-full z-0"
-                    style={{
-                        left: `${15 + ((i * 37) % 70)}%`,
-                        top: `${10 + ((i * 29) % 75)}%`,
-                        backgroundColor: i % 2 === 0 ? 'rgba(184,134,11,0.25)' : 'rgba(13,148,136,0.25)',
-                    }}
-                    animate={{
-                        y: [0, -15, 0],
-                        opacity: [0.3, 0.7, 0.3],
-                        scale: [1, 1.3, 1],
-                    }}
-                    transition={{
-                        duration: 3 + i * 0.5,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                        delay: i * 0.4,
-                    }}
-                />
-            ))}
+            {/* Floating particles removed for performance (was 8 infinite animations) */}
         </div>
     )
 }

@@ -2,6 +2,10 @@
    LegacyTrace — Premium Design System CSS
    ══════════════════════════════════════════ */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ── Global Box Sizing ── */
 *,
 *::before,
@@ -9,12 +13,10 @@
   box-sizing: border-box;
 }
 
-/* ── Smooth Transitions ── */
-* {
-  transition-property: background-color, border-color, color, transform, box-shadow, opacity;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* NOTE: Global * transition removed — it was forcing ALL elements
+   to run transitions, causing massive reflow/repaint.
+   Tailwind utility classes (transition-colors, transition-all etc.)
+   are applied per-element in components instead. */
 
 /* ── Smooth Scroll ── */
 /* scroll-behavior is on body because body is the scroll container */
